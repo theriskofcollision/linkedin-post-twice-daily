@@ -4,48 +4,53 @@ import random
 import requests
 from dataclasses import dataclass
 from typing import List, Optional
-
+import google.generativeai as genai
 # --- Data Structures ---
-
 @dataclass
 class TrendReport:
     topic: str
     source: str
     relevance: str
     details: str
-
 @dataclass
 class StrategyBrief:
     hook: str
     angle: str
     target_audience: str
     cta: str
-
 @dataclass
 class ContentDraft:
     text: str
     visual_prompt: str
     visual_text_overlay: Optional[str]
-
 # --- Base Agent ---
-
 class Agent:
     def __init__(self, name: str, role: str, system_prompt: str):
         self.name = name
         self.role = role
         self.system_prompt = system_prompt
-
     def run(self, input_data: str) -> str:
-        # In a real implementation, this would call an LLM API (Gemini, GPT, etc.)
-        # For this simulation, we will print the prompt and return a placeholder or mock response.
+        api_key = os.environ.get("GEMINI_API_KEY")
+        if not api_key:
+            print(f"⚠️  Missing GEMINI_API_KEY. Returning mock data for {self.name}.")
+            return f"[{self.name} Output based on '{input_data}']"
         print(f"\n--- {self.name} ({self.role}) Working ---")
         print(f"INPUT: {input_data}")
         print(f"Thinking...")
-        # Mocking output for demonstration purposes
-        return f"[{self.name} Output based on '{input_data}']"
-
+        try:
+            genai.configure(api_key=api_key)
+            model = genai.GenerativeModel('gemini-1.5-flash')
+            
+            full_prompt = f"{self.system_prompt}\n\nTask Input: {input_data}"
+            response = model.generate_content(full_prompt)
+            
+            result = response.text.strip()
+            print(f"OUTPUT: {result[:100]}...") # Print first 100 chars
+            return result
+        except Exception as e:
+            print(f"❌ Gemini Error: {e}")
+            return f"[Error generating content for {self.name}]"
 # --- Specific Agents ---
-
 class TrendScout(Agent):
     def __init__(self):
         super().__init__(
@@ -54,7 +59,6 @@ class TrendScout(Agent):
             system_prompt="""You are an expert AI Trend Researcher. Your job is to scour sources to find the latest breakthroughs in Agentic AI.
 Output Format: Topic, Source, Why it's hot, Relevance."""
         )
-
 class Strategist(Agent):
     def __init__(self):
         super().__init__(
@@ -63,7 +67,6 @@ class Strategist(Agent):
             system_prompt="""You are a LinkedIn Growth Strategist. Analyze trends and align them with Hakan's persona.
 Define: The Hook, The Angle, Target Audience, CTA."""
         )
-
 class Ghostwriter(Agent):
     def __init__(self):
         super().__init__(
@@ -72,7 +75,6 @@ class Ghostwriter(Agent):
             system_prompt="""You are a top-tier LinkedIn Ghostwriter. Write punchy, readable posts.
 Structure: Hook, Meat, Takeaway, CTA. Max 1500 chars."""
         )
-
 class ArtDirector(Agent):
     def __init__(self):
         super().__init__(
@@ -81,7 +83,6 @@ class ArtDirector(Agent):
             system_prompt="""You are an AI Art Director. Design visual concepts (Cyberpunk/Neon/Deep Space).
 Output: Visual Format, Image Prompt, Text Overlay."""
         )
-
 class Critic(Agent):
     def __init__(self):
         super().__init__(
@@ -90,19 +91,15 @@ class Critic(Agent):
             system_prompt="""You are a harsh LinkedIn Critic. Review the draft post and visual concept.
 Checklist: Hook weak? Too long? Readable? Value clear?"""
         )
-
 # --- LinkedIn Connector ---
-
 class LinkedInConnector:
     def __init__(self):
         self.access_token = os.environ.get("LINKEDIN_ACCESS_TOKEN")
         self.author_urn = os.environ.get("LINKEDIN_PERSON_URN") # e.g., "urn:li:person:12345"
-
     def post_content(self, text: str, image_url: str = None):
         if not self.access_token or not self.author_urn:
             print("⚠️  Missing LinkedIn Credentials (LINKEDIN_ACCESS_TOKEN or LINKEDIN_PERSON_URN). Skipping API call.")
             return
-
         url = "https://api.linkedin.com/rest/posts"
         headers = {
             "Authorization": f"Bearer {self.access_token}",
@@ -110,7 +107,6 @@ class LinkedInConnector:
             "X-Restli-Protocol-Version": "2.0.0",
             "LinkedIn-Version": "202411" # Use latest version
         }
-
         # Construct the payload
         post_data = {
             "author": self.author_urn,
@@ -125,12 +121,6 @@ class LinkedInConnector:
             "isReshareDisabledByAuthor": False
         }
         
-        # Note: Image uploading is a multi-step process (Initialize -> Upload -> Finalize).
-        # For this v1, we will stick to text-only posts to ensure reliability, 
-        # or we would need to implement the full image upload flow.
-        # If image_url is provided (e.g. from an external host), we could try to link it, 
-        # but native image posts require the asset upload workflow.
-        
         try:
             response = requests.post(url, headers=headers, json=post_data)
             response.raise_for_status()
@@ -140,9 +130,7 @@ class LinkedInConnector:
             print(f"❌ Failed to post to LinkedIn: {e}")
             if hasattr(e, 'response') and e.response is not None:
                 print(f"Error Details: {e.response.text}")
-
 # --- Orchestrator ---
-
 class Orchestrator:
     def __init__(self):
         self.trend_scout = TrendScout()
@@ -151,7 +139,6 @@ class Orchestrator:
         self.art_director = ArtDirector()
         self.critic = Critic()
         self.linkedin = LinkedInConnector()
-
     def run_workflow(self, initial_topic: str = None):
         print("🚀 Starting LinkedIn Growth Workflow")
         
@@ -187,7 +174,6 @@ class Orchestrator:
         # Step 5: Publish
         # We pass the text content to the LinkedIn Connector
         self.linkedin.post_content(draft_text)
-
 if __name__ == "__main__":
     orch = Orchestrator()
     # Run without arguments to let the randomizer pick a topic
