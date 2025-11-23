@@ -1,0 +1,33 @@
+name: LinkedIn Growth Bot
+
+on:
+  schedule:
+    # Run at 09:00 and 17:00 UTC everyday
+    - cron: '0 9,17 * * *'
+  # Allow manual trigger for testing
+  workflow_dispatch:
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        
+    - name: Run LinkedIn Workflow
+      env:
+        LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+        LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+      run: |
+        python linkedin_agents.py
