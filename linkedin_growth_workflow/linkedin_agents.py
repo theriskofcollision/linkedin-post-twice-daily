@@ -166,15 +166,57 @@ class NewsAPIConnector:
         except Exception as e:
             print(f"❌ NewsAPI Error: {e}")
             return "Error fetching NewsAPI data."
+class ArxivConnector:
+    def get_latest_papers(self, limit: int = 3) -> str:
+        print("\n--- arXiv Connector Working ---")
+        try:
+            # Search for AI/LLM papers
+            # cat:cs.AI = Computer Science AI
+            # sortBy=submittedDate&sortOrder=descending
+            url = "http://export.arxiv.org/api/query?search_query=cat:cs.AI+OR+cat:cs.CL&start=0&max_results=5&sortBy=submittedDate&sortOrder=descending"
+            response = requests.get(url)
+            
+            # Simple string parsing to avoid heavy XML dependencies if possible, 
+            # but standard xml.etree is safer.
+            import xml.etree.ElementTree as ET
+            root = ET.fromstring(response.content)
+            
+            # Namespace map
+            ns = {'atom': 'http://www.w3.org/2005/Atom'}
+            
+            papers = []
+            print(f"Scanning arXiv for latest papers...")
+            
+            count = 0
+            for entry in root.findall('atom:entry', ns):
+                if count >= limit:
+                    break
+                
+                title = entry.find('atom:title', ns).text.strip().replace('\n', ' ')
+                link = entry.find('atom:id', ns).text.strip()
+                summary = entry.find('atom:summary', ns).text.strip().replace('\n', ' ')[:200] + "..."
+                
+                papers.append(f"- Title: {title}\n  URL: {link}\n  Abstract: {summary}")
+                print(f"Found Paper: {title[:50]}...")
+                count += 1
+            if not papers:
+                return "No recent arXiv papers found."
+            
+            return "\n\n".join(papers)
+            
+        except Exception as e:
+            print(f"❌ arXiv Error: {e}")
+            return "Error fetching arXiv data."
 class TrendScout(Agent):
     def __init__(self):
         self.hn_connector = HackerNewsConnector()
         self.news_connector = NewsAPIConnector()
+        self.arxiv_connector = ArxivConnector()
         super().__init__(
             name="TrendScout",
             role="Researcher",
             system_prompt="""You are an expert AI Trend Researcher. 
-Your job is to analyze the provided stories (HackerNews + NewsAPI) and pick the most relevant one for a LinkedIn post.
+Your job is to analyze the provided stories (HackerNews + NewsAPI + arXiv) and pick the most relevant one for a LinkedIn post.
 Output Format: 
 - Topic: [Title]
 - Source: [URL]
@@ -183,11 +225,12 @@ Output Format:
         )
     
     def run(self, input_data: str) -> str:
-        # Fetch real data from both sources
+        # Fetch real data from all sources
         hn_data = self.hn_connector.get_top_ai_stories()
         news_data = self.news_connector.get_tech_headlines()
+        arxiv_data = self.arxiv_connector.get_latest_papers()
         
-        full_input = f"{input_data}\n\nREAL-TIME HACKERNEWS DATA:\n{hn_data}\n\nREAL-TIME NEWSAPI DATA:\n{news_data}"
+        full_input = f"{input_data}\n\nREAL-TIME HACKERNEWS DATA:\n{hn_data}\n\nREAL-TIME NEWSAPI DATA:\n{news_data}\n\nLATEST ACADEMIC PAPERS (ARXIV):\n{arxiv_data}"
         return super().run(full_input)
 class Strategist(Agent):
     def __init__(self):
