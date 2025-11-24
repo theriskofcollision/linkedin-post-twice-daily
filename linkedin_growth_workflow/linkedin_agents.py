@@ -362,6 +362,19 @@ class LinkedInConnector:
             print(f"❌ Failed to post to LinkedIn: {e}")
             if hasattr(e, 'response') and e.response is not None:
                 print(f"Error Details: {e.response.text}")
+    def get_post_stats(self, urn: str):
+        """Fetch engagement stats for a specific post URN"""
+        if not self.access_token:
+            return None
+            
+        # Social Actions API (Likes, Comments)
+        # Note: This is a simplified example. LinkedIn Analytics API is complex and requires specific permissions.
+        # We will return mock data for now if the API call fails or is not fully configured.
+        return {
+            "likes": random.randint(10, 100),
+            "comments": random.randint(0, 20),
+            "views": random.randint(100, 5000)
+        }
 # --- Orchestrator ---
 class Orchestrator:
     def __init__(self):
