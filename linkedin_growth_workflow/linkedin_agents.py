@@ -155,28 +155,27 @@ class LinkedInConnector:
         self.author_urn = os.environ.get("LINKEDIN_PERSON_URN") # e.g., "urn:li:person:12345"
     def register_upload(self):
         """Step 1: Register the image upload with LinkedIn"""
-        url = "https://api.linkedin.com/v2/assets?action=registerUpload"
+        # Use the new Images API which is compatible with /rest/posts
+        url = "https://api.linkedin.com/rest/images?action=initializeUpload"
         headers = {
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json",
+            "X-Restli-Protocol-Version": "2.0.0",
+            "LinkedIn-Version": "202411"
         }
         payload = {
-            "registerUploadRequest": {
-                "recipes": ["urn:li:digitalmediaRecipe:feedshare-image"],
-                "owner": self.author_urn,
-                "serviceRelationships": [{
-                    "relationshipType": "OWNER",
-                    "identifier": "urn:li:userGeneratedContent"
-                }]
+            "initializeUploadRequest": {
+                "owner": self.author_urn
             }
         }
         response = requests.post(url, headers=headers, json=payload)
         response.raise_for_status()
         data = response.json()
         
-        upload_url = data['value']['uploadMechanism']['com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest']['uploadUrl']
-        asset_urn = data['value']['asset']
-        return upload_url, asset_urn
+        # The response structure is different for rest/images
+        upload_url = data['value']['uploadUrl']
+        image_urn = data['value']['image']
+        return upload_url, image_urn
     def upload_image(self, upload_url, image_data):
         """Step 2: Upload the binary image data"""
         headers = {"Authorization": f"Bearer {self.access_token}"}
