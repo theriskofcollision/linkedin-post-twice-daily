@@ -135,25 +135,59 @@ class HackerNewsConnector:
         except Exception as e:
             print(f"❌ HackerNews Error: {e}")
             return "Error fetching HackerNews data."
+class NewsAPIConnector:
+    def get_tech_headlines(self, limit: int = 5) -> str:
+        print("\n--- NewsAPI Connector Working ---")
+        api_key = os.environ.get("NEWS_API_KEY")
+        if not api_key:
+            print("⚠️  Missing NEWS_API_KEY. Skipping NewsAPI.")
+            return ""
+        try:
+            # Fetch top tech headlines
+            url = f"https://newsapi.org/v2/top-headlines?category=technology&language=en&pageSize=10&apiKey={api_key}"
+            response = requests.get(url)
+            data = response.json()
+            
+            articles = []
+            print(f"Scanning {len(data.get('articles', []))} articles from NewsAPI...")
+            
+            for article in data.get('articles', [])[:limit]:
+                title = article.get('title', '')
+                url = article.get('url', '')
+                source = article.get('source', {}).get('name', 'Unknown')
+                
+                articles.append(f"- Title: {title}\n  Source: {source}\n  URL: {url}")
+                print(f"Found: {title}")
+            if not articles:
+                return "No recent tech headlines found."
+            
+            return "\n\n".join(articles)
+            
+        except Exception as e:
+            print(f"❌ NewsAPI Error: {e}")
+            return "Error fetching NewsAPI data."
 class TrendScout(Agent):
     def __init__(self):
         self.hn_connector = HackerNewsConnector()
+        self.news_connector = NewsAPIConnector()
         super().__init__(
             name="TrendScout",
             role="Researcher",
             system_prompt="""You are an expert AI Trend Researcher. 
-Your job is to analyze the provided HackerNews stories and pick the most relevant one for a LinkedIn post.
+Your job is to analyze the provided stories (HackerNews + NewsAPI) and pick the most relevant one for a LinkedIn post.
 Output Format: 
 - Topic: [Title]
 - Source: [URL]
-- Why it's hot: [Reason based on score/title]
+- Why it's hot: [Reason based on score/title/source]
 - Relevance: [Why it matters to tech professionals]"""
         )
     
     def run(self, input_data: str) -> str:
-        # Fetch real data first
+        # Fetch real data from both sources
         hn_data = self.hn_connector.get_top_ai_stories()
-        full_input = f"{input_data}\n\nREAL-TIME HACKERNEWS DATA:\n{hn_data}"
+        news_data = self.news_connector.get_tech_headlines()
+        
+        full_input = f"{input_data}\n\nREAL-TIME HACKERNEWS DATA:\n{hn_data}\n\nREAL-TIME NEWSAPI DATA:\n{news_data}"
         return super().run(full_input)
 class Strategist(Agent):
     def __init__(self):
