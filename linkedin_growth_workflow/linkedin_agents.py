@@ -2,6 +2,7 @@ import os
 import json
 import random
 import requests
+import urllib.parse
 from dataclasses import dataclass
 from typing import List, Optional
 import google.generativeai as genai
@@ -42,7 +43,6 @@ class Agent:
             
             # Use the model explicitly found in your logs
             model_name = 'gemini-2.0-flash' 
-            # If 2.0 fails, you can try 'gemini-flash-latest'
             
             print(f"Attempting to use model: {model_name}")
             model = genai.GenerativeModel(model_name)
@@ -104,10 +104,10 @@ class ArtDirector(Agent):
             role="Visual Creator",
             system_prompt="""You are a Midjourney/DALL-E Prompt Engineer.
 Style: Cyberpunk, Synthwave, or Abstract Tech.
-Output:
-- Visual Format: (e.g., 'Digital Illustration', '3D Render')
-- Prompt: A detailed, descriptive prompt for an image generator.
-- Text Overlay: A short, catchy phrase to put on the image."""
+STRICT OUTPUT FORMAT (NO CHAT):
+Visual Format: [Format]
+Prompt: [The Prompt]
+Text Overlay: [The Text]"""
         )
 class Critic(Agent):
     def __init__(self):
@@ -129,25 +129,28 @@ class ImageGenerator(Agent):
             role="Visual Artist",
             system_prompt="You are an AI Artist. Generate a high-quality image based on the prompt."
         )
-def generate_image(self, prompt: str) -> Optional[bytes]:
+    def generate_image(self, prompt: str) -> Optional[bytes]:
         print(f"\n--- {self.name} ({self.role}) Working ---")
         
-        # 1. Clean up the prompt
-        # Remove conversational filler if present
+        # Robust Cleaning
+        clean_prompt = prompt
         if "Prompt:" in prompt:
-            prompt = prompt.split("Prompt:")[-1].split("\n")[0]
+            # Extract everything after "Prompt:"
+            clean_prompt = prompt.split("Prompt:", 1)[1]
+            # If there is a "Text Overlay:", stop there
+            if "Text Overlay:" in clean_prompt:
+                clean_prompt = clean_prompt.split("Text Overlay:", 1)[0]
         
-        # Remove "Generate a high quality image:" prefix if present
-        prompt = prompt.replace("Generate a high quality image:", "").strip()
+        # Remove common prefixes/suffixes
+        clean_prompt = clean_prompt.replace("Generate a high quality image:", "").strip()
         
-        # Truncate to avoid URL length limits (Pollinations handles ~1000 chars ok, but safer is 800)
-        prompt = prompt[:800]
+        # Truncate to avoid URL length limits
+        clean_prompt = clean_prompt[:800]
         
-        print(f"Generating image for cleaned prompt: {prompt[:50]}...")
+        print(f"Generating image for cleaned prompt: {clean_prompt[:50]}...")
         try:
             # Use Pollinations.ai (Free, No Key)
-            import urllib.parse
-            encoded_prompt = urllib.parse.quote(prompt)
+            encoded_prompt = urllib.parse.quote(clean_prompt)
             # Request a landscape image (1200x628 is standard for LinkedIn)
             url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?width=1200&height=628&nologo=true"
             
