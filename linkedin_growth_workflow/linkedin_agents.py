@@ -207,16 +207,56 @@ class ArxivConnector:
         except Exception as e:
             print(f"❌ arXiv Error: {e}")
             return "Error fetching arXiv data."
+class TavilyConnector:
+    def search(self, query: str) -> str:
+        print("\n--- Tavily Connector Working ---")
+        api_key = os.environ.get("TAVILY_API_KEY")
+        if not api_key:
+            print("⚠️  Missing TAVILY_API_KEY. Skipping Tavily.")
+            return ""
+        try:
+            url = "https://api.tavily.com/search"
+            payload = {
+                "api_key": api_key,
+                "query": query,
+                "search_depth": "basic",
+                "include_answer": True,
+                "max_results": 3
+            }
+            response = requests.post(url, json=payload)
+            data = response.json()
+            
+            results = []
+            # Check for direct answer
+            if data.get("answer"):
+                results.append(f"💡 Direct Answer: {data['answer']}")
+            
+            # Check for search results
+            for result in data.get("results", []):
+                title = result.get("title", "")
+                url = result.get("url", "")
+                content = result.get("content", "")[:200] + "..."
+                results.append(f"- {title} ({url}): {content}")
+                
+            if not results:
+                return "No Tavily results found."
+                
+            return "\n\n".join(results)
+            
+        except Exception as e:
+            print(f"❌ Tavily Error: {e}")
+            return "Error fetching Tavily data."
 class TrendScout(Agent):
     def __init__(self):
         self.hn_connector = HackerNewsConnector()
         self.news_connector = NewsAPIConnector()
         self.arxiv_connector = ArxivConnector()
+        self.tavily_connector = TavilyConnector()
         super().__init__(
             name="TrendScout",
             role="Researcher",
             system_prompt="""You are an expert AI Trend Researcher. 
-Your job is to analyze the provided stories (HackerNews + NewsAPI + arXiv) and pick the most relevant one for a LinkedIn post.
+Your job is to analyze the provided stories (HackerNews + NewsAPI + arXiv) AND perform a deep-dive search using Tavily to find the absolute latest context.
 Output Format: 
 - Topic: [Title]
 - Source: [URL]
@@ -230,7 +270,10 @@ Output Format:
         news_data = self.news_connector.get_tech_headlines()
         arxiv_data = self.arxiv_connector.get_latest_papers()
         
-        full_input = f"{input_data}\n\nREAL-TIME HACKERNEWS DATA:\n{hn_data}\n\nREAL-TIME NEWSAPI DATA:\n{news_data}\n\nLATEST ACADEMIC PAPERS (ARXIV):\n{arxiv_data}"
+        # Use Tavily to verify/expand on the input topic or general trends
+        tavily_data = self.tavily_connector.search(f"latest critical discussions in {input_data} technology")
+        
+        full_input = f"{input_data}\n\nREAL-TIME HACKERNEWS DATA:\n{hn_data}\n\nREAL-TIME NEWSAPI DATA:\n{news_data}\n\nLATEST ACADEMIC PAPERS (ARXIV):\n{arxiv_data}\n\nDEEP WEB SEARCH (TAVILY):\n{tavily_data}"
         return super().run(full_input)
 class Strategist(Agent):
     def __init__(self):
