@@ -40,16 +40,10 @@ class Agent:
         try:
             genai.configure(api_key=api_key)
             
-            # DEBUG: List available models to verify Key and Region
-            print(f"Checking available models for key ending in ...{api_key[-4:]}")
-            try:
-                for m in genai.list_models():
-                    if 'generateContent' in m.supported_generation_methods:
-                        print(f"Found model: {m.name}")
-            except Exception as e:
-                print(f"❌ Failed to list models. API Key might be invalid. Error: {e}")
-            # Try gemini-1.5-flash first, then fallback
-            model_name = 'gemini-1.5-flash'
+            # Use the model explicitly found in your logs
+            model_name = 'gemini-2.0-flash' 
+            # If 2.0 fails, you can try 'gemini-flash-latest'
+            
             print(f"Attempting to use model: {model_name}")
             model = genai.GenerativeModel(model_name)
             
@@ -190,9 +184,6 @@ class Orchestrator:
         # We pass the text content to the LinkedIn Connector
         self.linkedin.post_content(draft_text)
 if __name__ == "__main__":
-    orch = Orchestrator()
-    # Run without arguments to let the randomizer pick a topic
-    orch.run_workflow()
     orch = Orchestrator()
     # Run without arguments to let the randomizer pick a topic
     orch.run_workflow()
