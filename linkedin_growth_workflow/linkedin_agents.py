@@ -39,7 +39,7 @@ class Agent:
         print(f"Thinking...")
         try:
             genai.configure(api_key=api_key)
-            model = genai.GenerativeModel('gemini-1.5-flash')
+            model = genai.GenerativeModel('gemini-pro')
             
             full_prompt = f"{self.system_prompt}\n\nTask Input: {input_data}"
             response = model.generate_content(full_prompt)
