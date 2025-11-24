@@ -121,23 +121,98 @@ Checklist:
 - Are there too many adjectives? 
 - Is the formatting scannable?"""
         )
+# --- Image Generator Agent ---
+class ImageGenerator(Agent):
+    def __init__(self):
+        super().__init__(
+            name="ImageGenerator",
+            role="Visual Artist",
+            system_prompt="You are an AI Artist. Generate a high-quality image based on the prompt."
+        )
+    def generate_image(self, prompt: str) -> Optional[bytes]:
+        api_key = os.environ.get("GEMINI_API_KEY")
+        if not api_key:
+            print("⚠️ Missing GEMINI_API_KEY for image generation.")
+            return None
+        print(f"\n--- {self.name} ({self.role}) Working ---")
+        print(f"Generating image for prompt: {prompt[:50]}...")
+        try:
+            genai.configure(api_key=api_key)
+            # Use the model explicitly found in logs that supports images
+            model = genai.GenerativeModel('gemini-2.0-flash') 
+            
+            response = model.generate_content(prompt)
+            
+            # Check if response contains image data
+            if response.parts:
+                for part in response.parts:
+                    if part.inline_data:
+                        print("✅ Image generated successfully!")
+                        return part.inline_data.data
+            
+            print("❌ No image data found in response.")
+            return None
+            
+        except Exception as e:
+            print(f"❌ Image Generation Error: {e}")
+            return None
 # --- LinkedIn Connector ---
 class LinkedInConnector:
     def __init__(self):
         self.access_token = os.environ.get("LINKEDIN_ACCESS_TOKEN")
         self.author_urn = os.environ.get("LINKEDIN_PERSON_URN") # e.g., "urn:li:person:12345"
-    def post_content(self, text: str, image_url: str = None):
+    def register_upload(self):
+        """Step 1: Register the image upload with LinkedIn"""
+        url = "https://api.linkedin.com/v2/assets?action=registerUpload"
+        headers = {
+            "Authorization": f"Bearer {self.access_token}",
+            "Content-Type": "application/json",
+        }
+        payload = {
+            "registerUploadRequest": {
+                "recipes": ["urn:li:digitalmediaRecipe:feedshare-image"],
+                "owner": self.author_urn,
+                "serviceRelationships": [{
+                    "relationshipType": "OWNER",
+                    "identifier": "urn:li:userGeneratedContent"
+                }]
+            }
+        }
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+        data = response.json()
+        
+        upload_url = data['value']['uploadMechanism']['com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest']['uploadUrl']
+        asset_urn = data['value']['asset']
+        return upload_url, asset_urn
+    def upload_image(self, upload_url, image_data):
+        """Step 2: Upload the binary image data"""
+        headers = {"Authorization": f"Bearer {self.access_token}"}
+        response = requests.put(upload_url, headers=headers, data=image_data)
+        response.raise_for_status()
+        print("✅ Image uploaded to LinkedIn server.")
+    def post_content(self, text: str, image_data: bytes = None):
         if not self.access_token or not self.author_urn:
-            print("⚠️  Missing LinkedIn Credentials (LINKEDIN_ACCESS_TOKEN or LINKEDIN_PERSON_URN). Skipping API call.")
+            print("⚠️  Missing LinkedIn Credentials. Skipping API call.")
             return
+        asset_urn = None
+        if image_data:
+            try:
+                print("Step 1/3: Registering image upload...")
+                upload_url, asset = self.register_upload()
+                print("Step 2/3: Uploading image binary...")
+                self.upload_image(upload_url, image_data)
+                asset_urn = asset
+                print(f"Step 3/3: Creating post with asset: {asset_urn}")
+            except Exception as e:
+                print(f"❌ Image upload failed: {e}. Falling back to text-only post.")
         url = "https://api.linkedin.com/rest/posts"
         headers = {
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json",
             "X-Restli-Protocol-Version": "2.0.0",
-            "LinkedIn-Version": "202411" # Use latest version
+            "LinkedIn-Version": "202411"
         }
-        # Construct the payload
         post_data = {
             "author": self.author_urn,
             "commentary": text,
@@ -150,7 +225,12 @@ class LinkedInConnector:
             "lifecycleState": "PUBLISHED",
             "isReshareDisabledByAuthor": False
         }
-        
+        if asset_urn:
+            post_data["content"] = {
+                "media": {
+                    "id": asset_urn
+                }
+            }
         try:
             response = requests.post(url, headers=headers, json=post_data)
             response.raise_for_status()
@@ -171,6 +251,7 @@ class Orchestrator:
         self.ghostwriter = Ghostwriter()
         self.art_director = ArtDirector()
         self.critic = Critic()
+        self.image_gen = ImageGenerator()
         self.linkedin = LinkedInConnector()
     def run_workflow(self, initial_topic: str = None):
         print("🚀 Starting LinkedIn Growth Workflow")
@@ -194,19 +275,23 @@ class Orchestrator:
         # Step 2: Strategy
         strategy = self.strategist.run(trend_data)
         
-        # Step 3: Content Creation (Parallel-ish)
+        # Step 3: Content Creation
         draft_text = self.ghostwriter.run(strategy)
         visual_concept = self.art_director.run(strategy)
         
-        # Step 4: Review
+        # Step 4: Image Generation
+        # Extract prompt from visual_concept (simplified for now, just use the whole output)
+        image_prompt = f"Generate a high quality image: {visual_concept}"
+        image_data = self.image_gen.generate_image(image_prompt)
+        
+        # Step 5: Review
         full_package = f"{draft_text}\n\n(Visual Concept: {visual_concept})"
         feedback = self.critic.run(full_package)
         
         print("\n✅ Workflow Complete. Preparing to Post...")
         
-        # Step 5: Publish
-        # We pass the text content to the LinkedIn Connector
-        self.linkedin.post_content(draft_text)
+        # Step 6: Publish
+        self.linkedin.post_content(draft_text, image_data)
 if __name__ == "__main__":
     orch = Orchestrator()
     # Run without arguments to let the randomizer pick a topic
