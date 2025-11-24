@@ -138,8 +138,8 @@ class ImageGenerator(Agent):
         print(f"Generating image for prompt: {prompt[:50]}...")
         try:
             genai.configure(api_key=api_key)
-            # Use the model explicitly found in logs that supports images
-            model = genai.GenerativeModel('gemini-2.0-flash') 
+            # Use the specific image generation model found in logs
+            model = genai.GenerativeModel('gemini-2.0-flash-exp-image-generation') 
             
             response = model.generate_content(prompt)
             
