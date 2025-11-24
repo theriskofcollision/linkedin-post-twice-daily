@@ -6,7 +6,6 @@ import urllib.parse
 from dataclasses import dataclass
 from typing import List, Optional
 import google.generativeai as genai
-from google.generativeai import types
 # --- Data Structures ---
 @dataclass
 class TrendReport:
@@ -58,7 +57,7 @@ class Agent:
         self.name = name
         self.role = role
         self.system_prompt = system_prompt
-    def run(self, input_data: str, use_search: bool = False) -> str:
+    def run(self, input_data: str) -> str:
         api_key = os.environ.get("GEMINI_API_KEY")
         if not api_key:
             print(f"⚠️  Missing GEMINI_API_KEY. Returning mock data for {self.name}.")
@@ -68,28 +67,13 @@ class Agent:
         print(f"Thinking...")
         try:
             genai.configure(api_key=api_key)
-            
             model_name = 'gemini-2.0-flash' 
             print(f"Attempting to use model: {model_name}")
             
-            # Enable Google Search Tool if requested
-            tools = None
-            if use_search:
-                try:
-                    tools = [types.Tool(google_search=types.GoogleSearch())]
-                    print("✅ Google Search Tool enabled.")
-                except AttributeError:
-                    print("⚠️  Google Search Tool not available (SDK version too old). Proceeding without search.")
-                    tools = None
-            
-            model = genai.GenerativeModel(model_name, tools=tools)
+            model = genai.GenerativeModel(model_name)
             
             full_prompt = f"{self.system_prompt}\n\nTask Input: {input_data}"
             response = model.generate_content(full_prompt)
-            
-            # Handle Search Grounding Metadata
-            if use_search and tools and response.candidates[0].grounding_metadata.search_entry_point:
-                print("🌐 Google Search Used. Citations found.")
             
             result = response.text.strip()
             print(f"OUTPUT: {result[:100]}...") 
@@ -98,24 +82,62 @@ class Agent:
             print(f"❌ Gemini Error: {e}")
             return f"[Error generating content for {self.name}]"
 # --- Specific Agents ---
+class HackerNewsConnector:
+    def get_top_ai_stories(self, limit: int = 5) -> str:
+        print("\n--- HackerNews Connector Working ---")
+        try:
+            # 1. Get Top Stories IDs
+            top_stories_url = "https://hacker-news.firebaseio.com/v0/topstories.json"
+            response = requests.get(top_stories_url)
+            story_ids = response.json()[:50] # Get top 50 to filter
+            stories = []
+            print(f"Scanning top {len(story_ids)} stories for AI/LLM content...")
+            
+            for sid in story_ids:
+                if len(stories) >= limit:
+                    break
+                    
+                item_url = f"https://hacker-news.firebaseio.com/v0/item/{sid}.json"
+                item_resp = requests.get(item_url)
+                item = item_resp.json()
+                
+                title = item.get('title', '')
+                url = item.get('url', '')
+                score = item.get('score', 0)
+                
+                # Simple keyword filter
+                keywords = ['ai', 'llm', 'gpt', 'agent', 'model', 'neural', 'machine learning', 'robot', 'bot', 'intelligence', 'deepmind', 'openai']
+                if any(k in title.lower() for k in keywords):
+                    stories.append(f"- Title: {title}\n  URL: {url}\n  Score: {score}")
+                    print(f"Found: {title}")
+            if not stories:
+                return "No specific AI stories found in top 50. Using general knowledge."
+            
+            return "\n\n".join(stories)
+            
+        except Exception as e:
+            print(f"❌ HackerNews Error: {e}")
+            return "Error fetching HackerNews data."
 class TrendScout(Agent):
     def __init__(self):
+        self.hn_connector = HackerNewsConnector()
         super().__init__(
             name="TrendScout",
             role="Researcher",
             system_prompt="""You are an expert AI Trend Researcher. 
-Your job is to scour the web to find the latest, REAL-TIME breakthroughs in Agentic AI.
-You MUST use Google Search to find data from the last 24-48 hours.
+Your job is to analyze the provided HackerNews stories and pick the most relevant one for a LinkedIn post.
 Output Format: 
 - Topic: [Title]
 - Source: [URL]
-- Why it's hot: [Reason]
-- Relevance: [Why it matters]"""
+- Why it's hot: [Reason based on score/title]
+- Relevance: [Why it matters to tech professionals]"""
         )
     
-    # Override run to force search
     def run(self, input_data: str) -> str:
-        return super().run(input_data, use_search=True)
+        # Fetch real data first
+        hn_data = self.hn_connector.get_top_ai_stories()
+        full_input = f"{input_data}\n\nREAL-TIME HACKERNEWS DATA:\n{hn_data}"
+        return super().run(full_input)
 class Strategist(Agent):
     def __init__(self):
         super().__init__(
