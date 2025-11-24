@@ -65,22 +65,39 @@ class Agent:
         print(f"\n--- {self.name} ({self.role}) Working ---")
         print(f"INPUT: {input_data}")
         print(f"Thinking...")
-        try:
-            genai.configure(api_key=api_key)
-            model_name = 'gemini-2.0-flash' 
-            print(f"Attempting to use model: {model_name}")
-            
-            model = genai.GenerativeModel(model_name)
-            
-            full_prompt = f"{self.system_prompt}\n\nTask Input: {input_data}"
-            response = model.generate_content(full_prompt)
-            
-            result = response.text.strip()
-            print(f"OUTPUT: {result[:100]}...") 
-            return result
-        except Exception as e:
-            print(f"❌ Gemini Error: {e}")
-            return f"[Error generating content for {self.name}]"
+        import time
+        
+        max_retries = 3
+        base_delay = 5  # Start with 5 seconds delay
+        
+        for attempt in range(max_retries):
+            try:
+                genai.configure(api_key=api_key)
+                model_name = 'gemini-2.0-flash' 
+                if attempt == 0:
+                    print(f"Attempting to use model: {model_name}")
+                else:
+                    print(f"Retry attempt {attempt + 1}/{max_retries} for model: {model_name}")
+                
+                model = genai.GenerativeModel(model_name)
+                
+                full_prompt = f"{self.system_prompt}\n\nTask Input: {input_data}"
+                response = model.generate_content(full_prompt)
+                
+                result = response.text.strip()
+                print(f"OUTPUT: {result[:100]}...") 
+                return result
+                
+            except Exception as e:
+                if "429" in str(e) or "Resource exhausted" in str(e):
+                    if attempt < max_retries - 1:
+                        wait_time = base_delay * (2 ** attempt) + random.uniform(0, 1)
+                        print(f"⚠️  Rate limit hit (429). Waiting {wait_time:.1f}s before retry...")
+                        time.sleep(wait_time)
+                        continue
+                
+                print(f"❌ Gemini Error: {e}")
+                return f"[Error generating content for {self.name}]"
 # --- Specific Agents ---
 class HackerNewsConnector:
     def get_top_ai_stories(self, limit: int = 5) -> str:
