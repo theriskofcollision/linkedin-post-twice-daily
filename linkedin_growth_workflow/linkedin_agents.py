@@ -24,13 +24,40 @@ class ContentDraft:
     text: str
     visual_prompt: str
     visual_text_overlay: Optional[str]
+# --- Memory System ---
+class Memory:
+    def __init__(self, file_path="memory.json"):
+        self.file_path = file_path
+        if not os.path.exists(self.file_path):
+            with open(self.file_path, "w") as f:
+                json.dump({"rules": []}, f)
+    def get_rules(self) -> List[str]:
+        try:
+            with open(self.file_path, "r") as f:
+                data = json.load(f)
+            return data.get("rules", [])
+        except Exception:
+            return []
+    def add_rule(self, rule: str):
+        try:
+            with open(self.file_path, "r") as f:
+                data = json.load(f)
+            
+            if rule not in data["rules"]:
+                data["rules"].append(rule)
+                
+            with open(self.file_path, "w") as f:
+                json.dump(data, f, indent=2)
+            print(f"🧠 Memory Updated: Added rule '{rule}'")
+        except Exception as e:
+            print(f"❌ Failed to update memory: {e}")
 # --- Base Agent ---
 class Agent:
     def __init__(self, name: str, role: str, system_prompt: str):
         self.name = name
         self.role = role
         self.system_prompt = system_prompt
-    def run(self, input_data: str) -> str:
+    def run(self, input_data: str, use_search: bool = False) -> str:
         api_key = os.environ.get("GEMINI_API_KEY")
         if not api_key:
             print(f"⚠️  Missing GEMINI_API_KEY. Returning mock data for {self.name}.")
@@ -41,17 +68,23 @@ class Agent:
         try:
             genai.configure(api_key=api_key)
             
-            # Use the model explicitly found in your logs
             model_name = 'gemini-2.0-flash' 
-            
             print(f"Attempting to use model: {model_name}")
-            model = genai.GenerativeModel(model_name)
+            
+            # Enable Google Search Tool if requested
+            tools = 'google_search_retrieval' if use_search else None
+            
+            model = genai.GenerativeModel(model_name, tools=tools)
             
             full_prompt = f"{self.system_prompt}\n\nTask Input: {input_data}"
             response = model.generate_content(full_prompt)
             
+            # Handle Search Grounding Metadata
+            if use_search and response.candidates[0].grounding_metadata.search_entry_point:
+                print("🌐 Google Search Used. Citations found.")
+            
             result = response.text.strip()
-            print(f"OUTPUT: {result[:100]}...") # Print first 100 chars
+            print(f"OUTPUT: {result[:100]}...") 
             return result
         except Exception as e:
             print(f"❌ Gemini Error: {e}")
@@ -62,9 +95,19 @@ class TrendScout(Agent):
         super().__init__(
             name="TrendScout",
             role="Researcher",
-            system_prompt="""You are an expert AI Trend Researcher. Your job is to scour sources to find the latest breakthroughs in Agentic AI.
-Output Format: Topic, Source, Why it's hot, Relevance."""
+            system_prompt="""You are an expert AI Trend Researcher. 
+Your job is to scour the web to find the latest, REAL-TIME breakthroughs in Agentic AI.
+You MUST use Google Search to find data from the last 24-48 hours.
+Output Format: 
+- Topic: [Title]
+- Source: [URL]
+- Why it's hot: [Reason]
+- Relevance: [Why it matters]"""
         )
+    
+    # Override run to force search
+    def run(self, input_data: str) -> str:
+        return super().run(input_data, use_search=True)
 class Strategist(Agent):
     def __init__(self):
         super().__init__(
@@ -81,6 +124,7 @@ Output:
         )
 class Ghostwriter(Agent):
     def __init__(self):
+        self.memory = Memory()
         super().__init__(
             name="Ghostwriter",
             role="Content Writer",
@@ -97,6 +141,15 @@ Structure:
 - The Takeaway (Actionable advice)
 - CTA (Question to the reader)"""
         )
+    def run(self, input_data: str) -> str:
+        # Inject Memory into the prompt
+        rules = self.memory.get_rules()
+        memory_prompt = ""
+        if rules:
+            memory_prompt = "\n\n⚠️ CRITICAL FEEDBACK FROM PAST POSTS (DO NOT IGNORE):\n" + "\n".join(f"- {r}" for r in rules)
+        
+        full_input = input_data + memory_prompt
+        return super().run(full_input)
 class ArtDirector(Agent):
     def __init__(self):
         super().__init__(
@@ -111,6 +164,7 @@ Text Overlay: [The Text]"""
         )
 class Critic(Agent):
     def __init__(self):
+        self.memory = Memory()
         super().__init__(
             name="Critic",
             role="Quality Control",
@@ -119,8 +173,20 @@ If it sounds like ChatGPT, say so.
 Checklist: 
 - Is the hook boring? 
 - Are there too many adjectives? 
-- Is the formatting scannable?"""
+- Is the formatting scannable?
+If you find a recurring mistake, output a line starting with "RULE:" to save it to memory.
+Example: "RULE: Never use the word 'unleash'." """
         )
+    def run(self, input_data: str) -> str:
+        feedback = super().run(input_data)
+        
+        # Parse for new rules
+        for line in feedback.split('\n'):
+            if line.strip().startswith("RULE:"):
+                new_rule = line.strip().replace("RULE:", "").strip()
+                self.memory.add_rule(new_rule)
+                
+        return feedback
 # --- Image Generator Agent ---
 class ImageGenerator(Agent):
     def __init__(self):
