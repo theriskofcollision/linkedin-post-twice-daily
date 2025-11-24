@@ -6,6 +6,7 @@ import urllib.parse
 from dataclasses import dataclass
 from typing import List, Optional
 import google.generativeai as genai
+from google.generativeai import types
 # --- Data Structures ---
 @dataclass
 class TrendReport:
@@ -72,8 +73,7 @@ class Agent:
             print(f"Attempting to use model: {model_name}")
             
             # Enable Google Search Tool if requested
-            # Use the dictionary format which is more robust across SDK versions
-            tools = [{'google_search': {}}] if use_search else None
+            tools = [types.Tool(google_search=types.GoogleSearch())] if use_search else None
             
             model = genai.GenerativeModel(model_name, tools=tools)
             
