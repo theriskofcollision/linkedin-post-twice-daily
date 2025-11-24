@@ -73,7 +73,14 @@ class Agent:
             print(f"Attempting to use model: {model_name}")
             
             # Enable Google Search Tool if requested
-            tools = [types.Tool(google_search=types.GoogleSearch())] if use_search else None
+            tools = None
+            if use_search:
+                try:
+                    tools = [types.Tool(google_search=types.GoogleSearch())]
+                    print("✅ Google Search Tool enabled.")
+                except AttributeError:
+                    print("⚠️  Google Search Tool not available (SDK version too old). Proceeding without search.")
+                    tools = None
             
             model = genai.GenerativeModel(model_name, tools=tools)
             
@@ -81,7 +88,7 @@ class Agent:
             response = model.generate_content(full_prompt)
             
             # Handle Search Grounding Metadata
-            if use_search and response.candidates[0].grounding_metadata.search_entry_point:
+            if use_search and tools and response.candidates[0].grounding_metadata.search_entry_point:
                 print("🌐 Google Search Used. Citations found.")
             
             result = response.text.strip()
