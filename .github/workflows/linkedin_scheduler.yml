@@ -29,6 +29,6 @@ jobs:
         LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
         LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      run: |
+run: |
         cd linkedin_growth_workflow
         python linkedin_agents.py
