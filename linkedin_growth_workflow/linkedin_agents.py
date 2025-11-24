@@ -39,7 +39,19 @@ class Agent:
         print(f"Thinking...")
         try:
             genai.configure(api_key=api_key)
-            model = genai.GenerativeModel('gemini-pro')
+            
+            # DEBUG: List available models to verify Key and Region
+            print(f"Checking available models for key ending in ...{api_key[-4:]}")
+            try:
+                for m in genai.list_models():
+                    if 'generateContent' in m.supported_generation_methods:
+                        print(f"Found model: {m.name}")
+            except Exception as e:
+                print(f"❌ Failed to list models. API Key might be invalid. Error: {e}")
+            # Try gemini-1.5-flash first, then fallback
+            model_name = 'gemini-1.5-flash'
+            print(f"Attempting to use model: {model_name}")
+            model = genai.GenerativeModel(model_name)
             
             full_prompt = f"{self.system_prompt}\n\nTask Input: {input_data}"
             response = model.generate_content(full_prompt)
@@ -125,7 +137,10 @@ class LinkedInConnector:
             response = requests.post(url, headers=headers, json=post_data)
             response.raise_for_status()
             print(f"✅ Successfully posted to LinkedIn! Status Code: {response.status_code}")
-            print(f"Response: {response.json()}")
+            try:
+                print(f"Response: {response.json()}")
+            except json.JSONDecodeError:
+                print("Response body is empty (normal for some 201 responses).")
         except requests.exceptions.RequestException as e:
             print(f"❌ Failed to post to LinkedIn: {e}")
             if hasattr(e, 'response') and e.response is not None:
@@ -175,6 +190,9 @@ class Orchestrator:
         # We pass the text content to the LinkedIn Connector
         self.linkedin.post_content(draft_text)
 if __name__ == "__main__":
+    orch = Orchestrator()
+    # Run without arguments to let the randomizer pick a topic
+    orch.run_workflow()
     orch = Orchestrator()
     # Run without arguments to let the randomizer pick a topic
     orch.run_workflow()
