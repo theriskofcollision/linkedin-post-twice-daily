@@ -130,28 +130,20 @@ class ImageGenerator(Agent):
             system_prompt="You are an AI Artist. Generate a high-quality image based on the prompt."
         )
     def generate_image(self, prompt: str) -> Optional[bytes]:
-        api_key = os.environ.get("GEMINI_API_KEY")
-        if not api_key:
-            print("⚠️ Missing GEMINI_API_KEY for image generation.")
-            return None
         print(f"\n--- {self.name} ({self.role}) Working ---")
         print(f"Generating image for prompt: {prompt[:50]}...")
         try:
-            genai.configure(api_key=api_key)
-            # Use the specific image generation model found in logs
-            model = genai.GenerativeModel('gemini-2.0-flash-exp-image-generation') 
+            # Use Pollinations.ai (Free, No Key)
+            import urllib.parse
+            encoded_prompt = urllib.parse.quote(prompt)
+            # Request a landscape image (1200x628 is standard for LinkedIn)
+            url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?width=1200&height=628&nologo=true"
             
-            response = model.generate_content(prompt)
+            response = requests.get(url)
+            response.raise_for_status()
             
-            # Check if response contains image data
-            if response.parts:
-                for part in response.parts:
-                    if part.inline_data:
-                        print("✅ Image generated successfully!")
-                        return part.inline_data.data
-            
-            print("❌ No image data found in response.")
-            return None
+            print("✅ Image generated successfully (via Pollinations)!")
+            return response.content
             
         except Exception as e:
             print(f"❌ Image Generation Error: {e}")
