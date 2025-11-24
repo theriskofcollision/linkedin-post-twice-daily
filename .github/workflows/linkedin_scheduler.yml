@@ -23,6 +23,8 @@ jobs:
         python -m pip install --upgrade pip
         cd linkedin_growth_workflow
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install "google-generativeai>=0.8.3"
+        pip show google-generativeai
         
     - name: Run LinkedIn Workflow
       env:
