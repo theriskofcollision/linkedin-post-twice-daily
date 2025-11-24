@@ -129,9 +129,21 @@ class ImageGenerator(Agent):
             role="Visual Artist",
             system_prompt="You are an AI Artist. Generate a high-quality image based on the prompt."
         )
-    def generate_image(self, prompt: str) -> Optional[bytes]:
+def generate_image(self, prompt: str) -> Optional[bytes]:
         print(f"\n--- {self.name} ({self.role}) Working ---")
-        print(f"Generating image for prompt: {prompt[:50]}...")
+        
+        # 1. Clean up the prompt
+        # Remove conversational filler if present
+        if "Prompt:" in prompt:
+            prompt = prompt.split("Prompt:")[-1].split("\n")[0]
+        
+        # Remove "Generate a high quality image:" prefix if present
+        prompt = prompt.replace("Generate a high quality image:", "").strip()
+        
+        # Truncate to avoid URL length limits (Pollinations handles ~1000 chars ok, but safer is 800)
+        prompt = prompt[:800]
+        
+        print(f"Generating image for cleaned prompt: {prompt[:50]}...")
         try:
             # Use Pollinations.ai (Free, No Key)
             import urllib.parse
