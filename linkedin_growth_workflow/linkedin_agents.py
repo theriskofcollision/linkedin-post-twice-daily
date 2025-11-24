@@ -275,39 +275,59 @@ Output Format:
         
         full_input = f"{input_data}\n\nREAL-TIME HACKERNEWS DATA:\n{hn_data}\n\nREAL-TIME NEWSAPI DATA:\n{news_data}\n\nLATEST ACADEMIC PAPERS (ARXIV):\n{arxiv_data}\n\nDEEP WEB SEARCH (TAVILY):\n{tavily_data}"
         return super().run(full_input)
+# --- Variety Engine ---
+VIBES = {
+    "The Contrarian": {
+        "strategist": "Persona: The Contrarian Tech Realist.\nGoal: Find a unique, slightly controversial angle on the trend.\nOutput:\n- Hook: A single, punchy sentence that challenges the status quo.\n- Angle: The core argument (why most people are wrong).\n- Target Audience: Tech leaders and developers.\n- CTA: A question to provoke debate.",
+        "ghostwriter": "Style: Punchy, provocative, short sentences.\nStructure: Hook -> The 'Meat' -> Takeaway -> CTA.\nTone: Confident, slightly informal.",
+        "art_director": "Style: Cyberpunk, Synthwave, Dark Mode, Neon accents.\nMood: Intense, High-Tech, Mysterious."
+    },
+    "The Visionary": {
+        "strategist": "Persona: The Optimistic Futurist.\nGoal: Highlight the massive potential and long-term impact of this trend.\nOutput:\n- Hook: An inspiring statement about the future.\n- Angle: How this changes the world for the better.\n- Target Audience: Innovators and Dreamers.\n- CTA: Ask readers to imagine the possibilities.",
+        "ghostwriter": "Style: Narrative, flowing, metaphorical.\nStructure: Vision -> The Shift -> The Future -> CTA.\nTone: Excited, Inspiring, Grand.",
+        "art_director": "Style: Solarpunk, Bright, Futuristic Utopia, Studio Ghibli vibes, lush greenery meets high tech.\nMood: Hopeful, Expansive, Bright."
+    },
+    "The Educator": {
+        "strategist": "Persona: The Senior Engineer/Teacher.\nGoal: Demystify a complex concept. Explain 'How it works'.\nOutput:\n- Hook: A clear 'Did you know?' or problem statement.\n- Angle: The technical truth behind the buzzword.\n- Target Audience: Junior to Mid-level Engineers.\n- CTA: Ask what they want to learn next.",
+        "ghostwriter": "Style: Clear, instructional, step-by-step, no fluff.\nStructure: Concept -> How it works -> Why it matters -> CTA.\nTone: Helpful, Authoritative, Calm.",
+        "art_director": "Style: Minimalist 3D, Isometric, Blueprint, Clean lines, White/Light background.\nMood: Professional, Organized, Clarity."
+    },
+    "The Analyst": {
+        "strategist": "Persona: The Data-Driven Analyst.\nGoal: Focus on efficiency, ROI, metrics, and business impact.\nOutput:\n- Hook: A stat or efficiency claim.\n- Angle: Why this makes business sense (or doesn't).\n- Target Audience: CTOs and Product Managers.\n- CTA: Ask about their ROI.",
+        "ghostwriter": "Style: Professional, concise, data-focused.\nStructure: The Stat -> The Insight -> The Impact -> CTA.\nTone: Objective, Serious, Business-like.",
+        "art_director": "Style: Abstract Data Visualization, Geometric patterns, Network nodes, Corporate but premium.\nMood: Sophisticated, Complex, Smart."
+    }
+}
+# --- Specific Agents ---
+# ... (Connectors remain the same) ...
 class Strategist(Agent):
     def __init__(self):
         super().__init__(
             name="Strategist",
             role="Growth Hacker",
-            system_prompt="""You are a LinkedIn Growth Strategist. DO NOT be generic.
-Persona: The Contrarian Tech Realist.
-Goal: Find a unique, slightly controversial angle on the trend.
-Output:
-- Hook: A single, punchy sentence that challenges the status quo.
-- Angle: The core argument (why most people are wrong).
-- Target Audience: Tech leaders and developers.
-- CTA: A question to provoke debate."""
+            system_prompt="You are a LinkedIn Growth Strategist." # Placeholder, set dynamically
         )
+    
+    def set_vibe(self, vibe_name: str, vibe_prompt: str):
+        self.system_prompt = f"""You are a LinkedIn Growth Strategist.
+Current Persona: {vibe_name}
+{vibe_prompt}"""
 class Ghostwriter(Agent):
     def __init__(self):
         self.memory = Memory()
         super().__init__(
             name="Ghostwriter",
             role="Content Writer",
-            system_prompt="""You are a viral LinkedIn Creator. You write like a human, not an AI.
+            system_prompt="You are a viral LinkedIn Creator." # Placeholder
+        )
+    def set_vibe(self, vibe_name: str, vibe_prompt: str):
+        self.system_prompt = f"""You are a viral LinkedIn Creator.
+Current Persona: {vibe_name}
+{vibe_prompt}
 Rules:
 1. NO 'In conclusion', 'In summary', 'Delve', 'Crucial', 'Landscape'.
-2. Use short, punchy sentences. Varied rhythm.
-3. Use bullet points for readability.
-4. Tone: Confident, slightly informal, professional but not stiff.
-5. Max 1500 chars.
-Structure:
-- The Hook (from Strategy)
-- The 'Meat' (The insight, the 'Aha!' moment)
-- The Takeaway (Actionable advice)
-- CTA (Question to the reader)"""
-        )
+2. Write like a human, not an AI.
+3. Max 1500 chars."""
     def run(self, input_data: str) -> str:
         # Inject Memory into the prompt
         rules = self.memory.get_rules()
@@ -322,13 +342,16 @@ class ArtDirector(Agent):
         super().__init__(
             name="ArtDirector",
             role="Visual Creator",
-            system_prompt="""You are a Midjourney/DALL-E Prompt Engineer.
-Style: Cyberpunk, Synthwave, or Abstract Tech.
+            system_prompt="You are a Midjourney/DALL-E Prompt Engineer." # Placeholder
+        )
+    def set_vibe(self, vibe_name: str, vibe_prompt: str):
+        self.system_prompt = f"""You are a Midjourney/DALL-E Prompt Engineer.
+Current Style: {vibe_name}
+{vibe_prompt}
 STRICT OUTPUT FORMAT (NO CHAT):
 Visual Format: [Format]
 Prompt: [The Prompt]
 Text Overlay: [The Text]"""
-        )
 class Critic(Agent):
     def __init__(self):
         self.memory = Memory()
@@ -507,6 +530,16 @@ class Orchestrator:
         self.linkedin = LinkedInConnector()
     def run_workflow(self, initial_topic: str = None):
         print("🚀 Starting LinkedIn Growth Workflow")
+        
+        # 0. Select Vibe
+        vibe_name = random.choice(list(VIBES.keys()))
+        vibe_config = VIBES[vibe_name]
+        print(f"\n🎲 Vibe Selected: {vibe_name}")
+        
+        # Apply Vibe to Agents
+        self.strategist.set_vibe(vibe_name, vibe_config["strategist"])
+        self.ghostwriter.set_vibe(vibe_name, vibe_config["ghostwriter"])
+        self.art_director.set_vibe(vibe_name, vibe_config["art_director"])
         
         # Step 1: Research
         if initial_topic:
