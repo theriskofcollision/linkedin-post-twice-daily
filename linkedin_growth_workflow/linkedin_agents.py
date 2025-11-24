@@ -72,7 +72,8 @@ class Agent:
             print(f"Attempting to use model: {model_name}")
             
             # Enable Google Search Tool if requested
-            tools = 'google_search_retrieval' if use_search else None
+            # Use the dictionary format which is more robust across SDK versions
+            tools = [{'google_search': {}}] if use_search else None
             
             model = genai.GenerativeModel(model_name, tools=tools)
             
