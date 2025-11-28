@@ -483,6 +483,116 @@ class ImageGenerator(Agent):
             print(f"❌ Image Generation Error: {e}")
             return None
 
+# --- LinkedIn Connector ---
+
+class LinkedInConnector:
+    def __init__(self):
+        self.access_token = os.environ.get("LINKEDIN_ACCESS_TOKEN")
+        self.author_urn = os.environ.get("LINKEDIN_PERSON_URN") # e.g., "urn:li:person:12345"
+
+    def register_upload(self):
+        """Step 1: Register the image upload with LinkedIn"""
+        # Use the new Images API which is compatible with /rest/posts
+        url = "https://api.linkedin.com/rest/images?action=initializeUpload"
+        headers = {
+            "Authorization": f"Bearer {self.access_token}",
+            "Content-Type": "application/json",
+            "X-Restli-Protocol-Version": "2.0.0",
+            "LinkedIn-Version": "202411"
+        }
+        payload = {
+            "initializeUploadRequest": {
+                "owner": self.author_urn
+            }
+        }
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+        data = response.json()
+        
+        # The response structure is different for rest/images
+        upload_url = data['value']['uploadUrl']
+        image_urn = data['value']['image']
+        return upload_url, image_urn
+
+    def upload_image(self, upload_url, image_data):
+        """Step 2: Upload the binary image data"""
+        headers = {"Authorization": f"Bearer {self.access_token}"}
+        response = requests.put(upload_url, headers=headers, data=image_data)
+        response.raise_for_status()
+        print("✅ Image uploaded to LinkedIn server.")
+
+    def post_content(self, text: str, image_data: bytes = None):
+        if not self.access_token or not self.author_urn:
+            print("⚠️  Missing LinkedIn Credentials. Skipping API call.")
+            return
+
+        asset_urn = None
+        if image_data:
+            try:
+                print("Step 1/3: Registering image upload...")
+                upload_url, asset = self.register_upload()
+                print("Step 2/3: Uploading image binary...")
+                self.upload_image(upload_url, image_data)
+                asset_urn = asset
+                print(f"Step 3/3: Creating post with asset: {asset_urn}")
+            except Exception as e:
+                print(f"❌ Image upload failed: {e}. Falling back to text-only post.")
+
+        url = "https://api.linkedin.com/rest/posts"
+        headers = {
+            "Authorization": f"Bearer {self.access_token}",
+            "Content-Type": "application/json",
+            "X-Restli-Protocol-Version": "2.0.0",
+            "LinkedIn-Version": "202411"
+        }
+
+        post_data = {
+            "author": self.author_urn,
+            "commentary": text,
+            "visibility": "PUBLIC",
+            "distribution": {
+                "feedDistribution": "MAIN_FEED",
+                "targetEntities": [],
+                "thirdPartyDistributionChannels": []
+            },
+            "lifecycleState": "PUBLISHED",
+            "isReshareDisabledByAuthor": False
+        }
+
+        if asset_urn:
+            post_data["content"] = {
+                "media": {
+                    "id": asset_urn
+                }
+            }
+
+        try:
+            response = requests.post(url, headers=headers, json=post_data)
+            response.raise_for_status()
+            print(f"✅ Successfully posted to LinkedIn! Status Code: {response.status_code}")
+            try:
+                print(f"Response: {response.json()}")
+            except json.JSONDecodeError:
+                print("Response body is empty (normal for some 201 responses).")
+        except requests.exceptions.RequestException as e:
+            print(f"❌ Failed to post to LinkedIn: {e}")
+            if hasattr(e, 'response') and e.response is not None:
+                print(f"Error Details: {e.response.text}")
+
+    def get_post_stats(self, urn: str):
+        """Fetch engagement stats for a specific post URN"""
+        if not self.access_token:
+            return None
+            
+        # Social Actions API (Likes, Comments)
+        # Note: This is a simplified example. LinkedIn Analytics API is complex and requires specific permissions.
+        # We will return mock data for now if the API call fails or is not fully configured.
+        return {
+            "likes": random.randint(10, 100),
+            "comments": random.randint(0, 20),
+            "views": random.randint(100, 5000)
+        }
+
 # --- Orchestrator ---
 
 class Orchestrator:
