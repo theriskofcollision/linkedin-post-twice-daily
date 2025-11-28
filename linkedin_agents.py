@@ -409,7 +409,79 @@ Visual Format: [Format]
 Prompt: [The Prompt]
 Text Overlay: [The Text]"""
 
-# ... (Critic and ImageGenerator remain the same) ...
+class Critic(Agent):
+    def __init__(self):
+        self.memory = Memory()
+        super().__init__(
+            name="Critic",
+            role="Quality Control",
+            system_prompt="""You are a harsh LinkedIn Critic. Review the draft post.
+If it sounds like ChatGPT, say so.
+Checklist: 
+- Is the hook boring? 
+- Are there too many adjectives? 
+- Is the formatting scannable?
+
+If you find a recurring mistake, output a line starting with "RULE:" to save it to memory.
+Example: "RULE: Never use the word 'unleash'." """
+        )
+
+    def run(self, input_data: str) -> str:
+        feedback = super().run(input_data)
+        
+        # Parse for new rules
+        for line in feedback.split('\n'):
+            if line.strip().startswith("RULE:"):
+                new_rule = line.strip().replace("RULE:", "").strip()
+                self.memory.add_rule(new_rule)
+                
+        return feedback
+
+# --- Image Generator Agent ---
+
+class ImageGenerator(Agent):
+    def __init__(self):
+        super().__init__(
+            name="ImageGenerator",
+            role="Visual Artist",
+            system_prompt="You are an AI Artist. Generate a high-quality image based on the prompt."
+        )
+
+    def generate_image(self, prompt: str) -> Optional[bytes]:
+        print(f"\n--- {self.name} ({self.role}) Working ---")
+        
+        # Robust Cleaning
+        clean_prompt = prompt
+        if "Prompt:" in prompt:
+            # Extract everything after "Prompt:"
+            clean_prompt = prompt.split("Prompt:", 1)[1]
+            # If there is a "Text Overlay:", stop there
+            if "Text Overlay:" in clean_prompt:
+                clean_prompt = clean_prompt.split("Text Overlay:", 1)[0]
+        
+        # Remove common prefixes/suffixes
+        clean_prompt = clean_prompt.replace("Generate a high quality image:", "").strip()
+        
+        # Truncate to avoid URL length limits
+        clean_prompt = clean_prompt[:800]
+        
+        print(f"Generating image for cleaned prompt: {clean_prompt[:50]}...")
+
+        try:
+            # Use Pollinations.ai (Free, No Key)
+            encoded_prompt = urllib.parse.quote(clean_prompt)
+            # Request a landscape image (1200x628 is standard for LinkedIn)
+            url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?width=1200&height=628&nologo=true"
+            
+            response = requests.get(url)
+            response.raise_for_status()
+            
+            print("✅ Image generated successfully (via Pollinations)!")
+            return response.content
+            
+        except Exception as e:
+            print(f"❌ Image Generation Error: {e}")
+            return None
 
 # --- Orchestrator ---
 
