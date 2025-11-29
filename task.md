@@ -35,7 +35,9 @@
 - [x] Build Performance Dashboard (Streamlit/Web) <!-- id: 23 -->
 
 ## Phase 5: Long-term Monitoring & Refinement
-- [x] Monitor bot performance for 3-5 days <!-- id: 24 -->
+- [/] Monitor bot performance for 3-5 days (Day 1 Success: "The Contrarian") <!-- id: 24 -->
 - [x] Review "Variety Engine" output for consistency <!-- id: 25 -->
 - [x] Improve post structure with Introduction-Body-Conclusion format <!-- id: 27 -->
+- [x] Add "The Narrator" persona (Dickensian Style) <!-- id: 29 -->
+- [ ] Upgrade GitHub Actions to Python 3.10+ to fix warnings <!-- id: 28 -->
 - [ ] Refactor `TrendScout` into `ResearchManager` (Optional) <!-- id: 26 -->

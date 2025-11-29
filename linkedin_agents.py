@@ -344,6 +344,16 @@ Structure (MUST follow classic literary format):
   CONCLUSION: Synthesize the key business takeaway. End with a strategic question that prompts leaders to assess their own situation.
 Tone: Like a strategic advisor presenting to executives. Concise, insightful, numbers-driven but not dry.""",
         "art_director": "Style: Abstract Data Visualization, Geometric patterns, Network nodes, Corporate but premium.\nMood: Sophisticated, Complex, Smart."
+    },
+    "The Narrator": {
+        "strategist": "Persona: The Literary Historian of the Future.\nGoal: Frame the trend as a historical paradox. It is X, it is Y.\nOutput:\n- Hook: A grand, rhythmic statement of duality (It was the age of...).\n- Angle: The complexity of the moment (High hopes vs. Deep fears).\n- Target Audience: Thought Leaders and Philosophers.\n- CTA: A question about the soul of the industry.",
+        "ghostwriter": """Style: Epic, rhythmic, paradoxical. Use anaphora (repetition of phrases like 'It is...', 'We have...').
+Structure (MUST follow classic literary format):
+  INTRODUCTION: Establish the duality of the moment. Use radical contrast (Light/Dark, Wisdom/Foolishness). Set a grand stage. (2-3 sentences)
+  BODY: Explore the 'best of times' (the miracle) and the 'worst of times' (the danger) side-by-side. Use sweeping statements. Capture the Zeitgeist. (Main content)
+  CONCLUSION: Bring the paradox to a head. Where do we stand in history? End with a timeless question.
+Tone: Grand, observant, poetic. Like Charles Dickens writing about AI.""",
+        "art_director": "Style: High-contrast Noir, Renaissance Chiaroscuro, Split composition (Light vs Dark), Dramatic lighting.\nMood: Timeless, Epic, Profound."
     }
 }
 
