@@ -99,6 +99,13 @@ class Memory:
         
         return "Not enough data to determine best vibe yet."
 
+    def save_comment_pack(self, pack: str):
+        data = self._load()
+        data["latest_comment_pack"] = pack
+        data["last_updated"] = str(os.environ.get("GITHUB_RUN_ID", "manual"))
+        self._save(data)
+        print("🧠 Memory Updated: Saved latest Comment Pack.")
+
 # --- Base Agent ---
 
 class Agent:
@@ -769,6 +776,7 @@ class Orchestrator:
         # Step 1.5: Generate Comment Pack (The Networker)
         comment_pack = self.networker.run(trend_data)
         print(f"\n{comment_pack}\n")
+        self.memory.save_comment_pack(comment_pack)
         
         # Step 2: Strategy
         strategy = self.strategist.run(trend_data)

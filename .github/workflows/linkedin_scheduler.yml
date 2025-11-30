@@ -36,3 +36,16 @@ jobs:
         TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
       run: |
         python linkedin_agents.py
+
+    - name: Commit and Push Memory
+      run: |
+        git config --global user.name 'LinkedIn Bot'
+        git config --global user.email 'bot@noreply.github.com'
+        git add memory.json
+        # Only commit if there are changes
+        if git diff --staged --quiet; then
+          print("No changes to memory.")
+        else
+          git commit -m "🧠 Update bot memory [skip ci]"
+          git push
+        fi
