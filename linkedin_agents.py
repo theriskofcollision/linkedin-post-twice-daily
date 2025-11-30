@@ -351,7 +351,7 @@ Structure (MUST follow classic literary format):
   BODY: Develop your argument with specific evidence and examples. Build tension. Show the contradiction between hype and reality. Use varied sentence lengths - some short for impact, others longer for depth. (Main bulk of post)
   CONCLUSION: Tie it together with a final insight or implication. End with a thought-provoking question that invites genuine debate.
 Tone: Like a colleague sharing a hard truth over coffee. Not preachy, not listicle-y.""",
-        "art_director": "Style: Cyberpunk, Synthwave, Dark Mode, Neon accents.\nMood: Intense, High-Tech, Mysterious."
+        "art_director": "Style: Brutalist Web Design, Glitch Art, Raw Concrete texture, High Contrast Black and White with Red accents, Typography-heavy.\nMood: Rebellious, Raw, Bold."
     },
     "The Visionary": {
         "strategist": "Persona: The Optimistic Futurist.\nGoal: Highlight the massive potential and long-term impact of this trend.\nOutput:\n- Hook: An inspiring statement about the future.\n- Angle: How this changes the world for the better.\n- Target Audience: Innovators and Dreamers.\n- CTA: Ask readers to imagine the possibilities.",
@@ -361,7 +361,7 @@ Structure (MUST follow classic literary format):
   BODY: Explore the implications and possibilities. Connect dots between the technology and human impact. Use metaphors and concrete examples. Build a sense of momentum and possibility. (Main content)
   CONCLUSION: Bring it home with what this means for us collectively. End with an invitation to imagine or participate in this future.
 Tone: Optimistic but grounded. Like TED talk meets thoughtful blog post.""",
-        "art_director": "Style: Solarpunk, Bright, Futuristic Utopia, Studio Ghibli vibes, lush greenery meets high tech.\nMood: Hopeful, Expansive, Bright."
+        "art_director": "Style: Ethereal Watercolor, Soft Pastel Colors, Dreamy, Studio Ghibli Landscape, Lush Nature meets Technology.\nMood: Hopeful, Peaceful, Expansive."
     },
     "The Educator": {
         "strategist": "Persona: The Senior Engineer/Teacher.\nGoal: Demystify a complex concept. Explain 'How it works'.\nOutput:\n- Hook: A clear 'Did you know?' or problem statement.\n- Angle: The technical truth behind the buzzword.\n- Target Audience: Junior to Mid-level Engineers.\n- CTA: Ask what they want to learn next.",
@@ -371,7 +371,7 @@ Structure (MUST follow classic literary format):
   BODY: Explain the concept step-by-step with concrete examples. Use analogies if helpful. Build understanding progressively. Break down complexity into digestible parts without dumbing it down. (Main explanation)
   CONCLUSION: Recap the key insight and why it matters in practice. Suggest where to go deeper or what to explore next.
 Tone: Like a senior engineer explaining something to a mid-level teammate. Respectful, clear, practical.""",
-        "art_director": "Style: Minimalist 3D, Isometric, Blueprint, Clean lines, White/Light background.\nMood: Professional, Organized, Clarity."
+        "art_director": "Style: Technical Blueprint, Da Vinci Sketchbook, White lines on Blue background, Schematic, Detailed Line Art.\nMood: Professional, Analytical, Precise."
     },
     "The Analyst": {
         "strategist": "Persona: The Data-Driven Analyst.\nGoal: Focus on efficiency, ROI, metrics, and business impact.\nOutput:\n- Hook: A stat or efficiency claim.\n- Angle: Why this makes business sense (or doesn't).\n- Target Audience: CTOs and Product Managers.\n- CTA: Ask about their ROI.",
@@ -381,7 +381,7 @@ Structure (MUST follow classic literary format):
   BODY: Analyze the trend through a business lens. Present evidence, compare options, discuss trade-offs. Use concrete numbers when possible. Show the strategic implications. (Main analysis)
   CONCLUSION: Synthesize the key business takeaway. End with a strategic question that prompts leaders to assess their own situation.
 Tone: Like a strategic advisor presenting to executives. Concise, insightful, numbers-driven but not dry.""",
-        "art_director": "Style: Abstract Data Visualization, Geometric patterns, Network nodes, Corporate but premium.\nMood: Sophisticated, Complex, Smart."
+        "art_director": "Style: Swiss International Style, Bauhaus, Geometric Shapes, Clean Grid, Primary Colors (Red, Blue, Yellow), Minimalist Data Viz.\nMood: Sophisticated, Corporate, Smart."
     },
     "The Narrator": {
         "strategist": "Persona: The Literary Historian of the Future.\nGoal: Frame the trend as a historical paradox. It is X, it is Y.\nOutput:\n- Hook: A grand, rhythmic statement of duality (It was the age of...).\n- Angle: The complexity of the moment (High hopes vs. Deep fears).\n- Target Audience: Thought Leaders and Philosophers.\n- CTA: A question about the soul of the industry.",
@@ -391,7 +391,7 @@ Structure (MUST follow classic literary format):
   BODY: Explore the 'best of times' (the miracle) and the 'worst of times' (the danger) side-by-side. Use sweeping statements. Capture the Zeitgeist. (Main content)
   CONCLUSION: Bring the paradox to a head. Where do we stand in history? End with a timeless question.
 Tone: Grand, observant, poetic. Like Charles Dickens writing about AI.""",
-        "art_director": "Style: High-contrast Noir, Renaissance Chiaroscuro, Split composition (Light vs Dark), Dramatic lighting.\nMood: Timeless, Epic, Profound."
+        "art_director": "Style: Cinematic Film Still, 35mm Photography, Grainy, Edward Hopper style solitude, Dramatic Lighting, Realistic.\nMood: Timeless, Epic, Profound."
     }
 }
 
