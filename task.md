@@ -30,7 +30,7 @@
 - [x] Implement NewsAPI Connector (The "News Junkie") <!-- id: 18 -->
 - [x] Implement arXiv API Connector (The "Academic") <!-- id: 19 -->
 - [x] Implement Tavily API Connector (The "Agent-Native") <!-- id: 20 -->
-- [ ] Create `ResearchManager` to aggregate data sources <!-- id: 21 -->
+- [x] Create `ResearchManager` to aggregate data sources <!-- id: 21 -->
 - [ ] Implement `AnalyticsConnector` to fetch LinkedIn post stats <!-- id: 22 -->
 - [x] Build Performance Dashboard (Streamlit/Web) <!-- id: 23 -->
 
@@ -39,7 +39,7 @@
 - [x] Review "Variety Engine" output for consistency <!-- id: 25 -->
 - [x] Improve post structure with Introduction-Body-Conclusion format <!-- id: 27 -->
 - [x] Add "The Narrator" persona (Dickensian Style) <!-- id: 29 -->
-- [ ] Upgrade GitHub Actions to Python 3.10+ to fix warnings <!-- id: 28 -->
+- [x] Upgrade GitHub Actions to Python 3.10+ to fix warnings <!-- id: 28 -->
 
 ## Phase 6: Growth & Engagement (The "Growth Machine")
 - [x] Implement `AnalyticsConnector` (Real Feedback Loop) <!-- id: 30 -->
