@@ -485,6 +485,29 @@ Example: "RULE: Never use the word 'unleash'." """
                 
         return feedback
 
+# --- Networker Agent ---
+
+class Networker(Agent):
+    def __init__(self):
+        super().__init__(
+            name="Networker",
+            role="Comment Strategist",
+            system_prompt="""You are a Networking Expert. Your goal is to help the user grow by commenting on OTHER people's posts.
+Input: A trend or topic summary.
+Output: A "Comment Pack" containing 3 distinct types of comments the user can copy-paste onto relevant posts by influencers.
+
+Types:
+1. The "Value Add": Agree with the premise but add a specific example or data point.
+2. The "Contrarian": Respectfully disagree or point out a missing nuance.
+3. The "Question": Ask a deep, thoughtful question that invites reply.
+
+Format:
+### 🤝 Comment Pack for [Topic]
+**1. Value Add:** [Draft]
+**2. Contrarian:** [Draft]
+**3. Question:** [Draft]"""
+        )
+
 # --- Image Generator Agent ---
 
 class ImageGenerator(Agent):
@@ -685,6 +708,7 @@ class Orchestrator:
         self.image_gen = ImageGenerator()
         self.linkedin = LinkedInConnector()
         self.memory = Memory() # Direct access to memory for orchestrator
+        self.networker = Networker()
 
     def review_past_performance(self):
         print("\n📊 Reviewing Past Performance...")
@@ -741,6 +765,10 @@ class Orchestrator:
             ]
             selected_topic = random.choice(topics)
             trend_data = self.trend_scout.run(f"Find current hot topics in Agentic AI. Selected: {selected_topic}")
+        
+        # Step 1.5: Generate Comment Pack (The Networker)
+        comment_pack = self.networker.run(trend_data)
+        print(f"\n{comment_pack}\n")
         
         # Step 2: Strategy
         strategy = self.strategist.run(trend_data)
