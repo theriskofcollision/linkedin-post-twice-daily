@@ -2,77 +2,114 @@ import streamlit as st
 import json
 import os
 import pandas as pd
-from linkedin_agents import Orchestrator, Memory, LinkedInConnector
+import plotly.express as px
+from linkedin_agents import Orchestrator, Memory
 
 # Page Config
 st.set_page_config(
-    page_title="LinkedIn Agent Command Center",
-    page_icon="🚀",
+    page_title="LinkedIn Growth Machine",
+    page_icon="📈",
     layout="wide"
 )
 
-# Title
-st.title("🚀 LinkedIn Growth Agent: Command Center")
+# --- Helper Functions ---
+def load_memory():
+    try:
+        with open("memory.json", "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {"rules": [], "history": []}
 
-# Sidebar
-st.sidebar.header("Controls")
-if st.sidebar.button("Run Workflow Now 🤖"):
-    with st.spinner("Agents are working... check terminal for details..."):
-        try:
-            orch = Orchestrator()
-            orch.run_workflow()
-            st.success("Workflow completed! Check LinkedIn.")
-        except Exception as e:
-            st.error(f"Workflow failed: {e}")
+# --- Main Layout ---
+st.title("📈 LinkedIn Growth Machine: Command Center")
 
-# --- Memory Viewer ---
-st.header("🧠 Agent Memory (Critic Rules)")
-try:
-    memory = Memory()
-    rules = memory.get_rules()
-    if rules:
-        st.info(f"The agents have learned {len(rules)} rules from feedback.")
-        
-        # Display as a clean list
-        for i, rule in enumerate(rules, 1):
-            st.markdown(f"**{i}.** {rule}")
-    else:
-        st.warning("No rules learned yet. Run the bot to generate feedback.")
-except Exception as e:
-    st.error(f"Could not load memory: {e}")
+# Load Data
+data = load_memory()
+history = data.get("history", [])
+latest_pack = data.get("latest_comment_pack", None)
 
-# --- Analytics Section (Placeholder for now) ---
-st.header("📊 Performance Analytics")
-st.markdown("*(Connects to LinkedIn API to fetch real-time stats)*")
-
-# Mock Data for Visualization
-mock_data = {
-    "Post Date": ["2025-11-20", "2025-11-21", "2025-11-22", "2025-11-23", "2025-11-24"],
-    "Topic": ["AI Agents", "LLM OS", "Prompt Engineering", "Multi-Agent Systems", "Chatbots Dead"],
-    "Likes": [12, 45, 32, 89, 15],
-    "Comments": [2, 8, 5, 12, 3],
-    "Views": [450, 1200, 890, 2500, 600]
-}
-df = pd.DataFrame(mock_data)
-
-# Metrics Row
-col1, col2, col3 = st.columns(3)
-col1.metric("Total Views (Last 5 Posts)", f"{df['Views'].sum()}", "+12%")
-col2.metric("Avg Likes", f"{df['Likes'].mean():.1f}", "+5%")
-col3.metric("Engagement Rate", "3.8%", "+0.5%")
-
-# Charts
-st.subheader("Engagement Trends")
-st.line_chart(df.set_index("Post Date")[["Likes", "Comments"]])
-
-st.subheader("Recent Posts Data")
-st.dataframe(df)
-
-# --- Logs / Status ---
-st.header("📝 System Logs")
-if os.path.exists("linkedin_growth_workflow.log"):
-    with open("linkedin_growth_workflow.log", "r") as f:
-        logs = f.readlines()[-20:] # Last 20 lines
-        st.code("".join(logs))
+# --- Top Section: The Networker (Comment Pack) ---
+st.header("🤝 The Networker: Daily Comment Pack")
+if latest_pack:
+    st.success("New Comment Strategy Available!")
+    with st.expander("View Comment Pack (Copy-Paste these!)", expanded=True):
+        st.markdown(latest_pack)
 else:
-    st.markdown("No log file found (logging might not be enabled in script).")
+    st.info("No comment pack generated yet. Run the workflow to get one.")
+
+st.divider()
+
+# --- Middle Section: Analytics ---
+st.header("📊 Performance Analytics")
+
+if history:
+    # Convert history to DataFrame
+    df_data = []
+    for entry in history:
+        df_data.append({
+            "Date": entry.get("date", "Unknown"),
+            "Topic": entry.get("topic", "Unknown"),
+            "Vibe": entry.get("vibe", "Unknown"),
+            "Likes": entry.get("stats", {}).get("likes", 0),
+            "Comments": entry.get("stats", {}).get("comments", 0)
+        })
+    
+    df = pd.DataFrame(df_data)
+    
+    # Metrics
+    col1, col2, col3 = st.columns(3)
+    total_likes = df["Likes"].sum()
+    total_comments = df["Comments"].sum()
+    top_vibe = df.groupby("Vibe")["Likes"].sum().idxmax() if not df.empty else "N/A"
+    
+    col1.metric("Total Likes", total_likes)
+    col2.metric("Total Comments", total_comments)
+    col3.metric("🏆 Best Vibe", top_vibe)
+    
+    # Charts
+    c1, c2 = st.columns(2)
+    
+    with c1:
+        st.subheader("Engagement over Time")
+        if not df.empty:
+            st.line_chart(df.set_index("Date")[["Likes", "Comments"]])
+            
+    with c2:
+        st.subheader("Vibe Performance")
+        if not df.empty:
+            vibe_stats = df.groupby("Vibe")[["Likes", "Comments"]].sum().reset_index()
+            fig = px.bar(vibe_stats, x="Vibe", y="Likes", color="Vibe", title="Likes by Persona")
+            st.plotly_chart(fig)
+
+    # Raw Data
+    with st.expander("Raw Post History"):
+        st.dataframe(df)
+
+else:
+    st.warning("No post history found. The bot needs to run a few times to gather data.")
+
+st.divider()
+
+# --- Bottom Section: Controls & Memory ---
+c_left, c_right = st.columns([1, 2])
+
+with c_left:
+    st.header("🤖 Controls")
+    if st.button("Run Workflow Now (Manual Trigger)"):
+        with st.spinner("Agents are working... check terminal..."):
+            try:
+                orch = Orchestrator()
+                orch.run_workflow()
+                st.success("Workflow completed! Refresh page to see results.")
+            except Exception as e:
+                st.error(f"Workflow failed: {e}")
+
+with c_right:
+    st.header("🧠 Critic Memory")
+    rules = data.get("rules", [])
+    if rules:
+        st.write(f"The Critic has learned **{len(rules)} rules** to improve future content:")
+        for rule in rules:
+            st.markdown(f"- {rule}")
+    else:
+        st.info("No rules learned yet.")
