@@ -44,7 +44,7 @@ jobs:
         git add memory.json
         # Only commit if there are changes
         if git diff --staged --quiet; then
-          print("No changes to memory.")
+          echo "No changes to memory."
         else
           git commit -m "🧠 Update bot memory [skip ci]"
           git push
