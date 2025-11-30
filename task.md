@@ -46,4 +46,4 @@
 - [x] Update `Memory` to store "Winning" & "Losing" strategies <!-- id: 31 -->
 - [x] Update `Strategist` to use performance data <!-- id: 32 -->
 - [x] Create `Networker` Agent for comment drafting (Comment Pack Strategy) <!-- id: 33 -->
-- [ ] Refactor `TrendScout` into `ResearchManager` (Optional) <!-- id: 26 -->
+- [x] Refactor `TrendScout` into `ResearchManager` (Optional) <!-- id: 26 -->

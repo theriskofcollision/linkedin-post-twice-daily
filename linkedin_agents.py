@@ -317,22 +317,26 @@ class TavilyConnector:
             print(f"❌ Tavily Error: {e}")
             return "Error fetching Tavily data."
 
-class TrendScout(Agent):
+class ResearchManager(Agent):
     def __init__(self):
         self.hn_connector = HackerNewsConnector()
         self.news_connector = NewsAPIConnector()
         self.arxiv_connector = ArxivConnector()
         self.tavily_connector = TavilyConnector()
         super().__init__(
-            name="TrendScout",
-            role="Researcher",
-            system_prompt="""You are an expert AI Trend Researcher. 
-Your job is to analyze the provided stories (HackerNews + NewsAPI + arXiv) AND perform a deep-dive search using Tavily to find the absolute latest context.
-Output Format: 
-- Topic: [Title]
-- Source: [URL]
-- Why it's hot: [Reason based on score/title/source]
-- Relevance: [Why it matters to tech professionals]"""
+            name="ResearchManager",
+            role="Chief Intelligence Officer",
+            system_prompt="""You are the Chief Intelligence Officer (CIO) for a LinkedIn Influencer.
+Your goal is to aggregate data from multiple sources (HackerNews, NewsAPI, arXiv, Tavily) and synthesize it into a comprehensive "Trend Brief".
+
+Input: A raw topic or search query.
+Output: A structured report containing:
+1. THE CORE NEWS: What is actually happening? (Cite sources)
+2. THE CONTEXT: Why does this matter now?
+3. THE CONTROVERSY: What are people arguing about? (HackerNews comments/Tavily results)
+4. THE ACADEMIC ANGLE: Is there new research? (arXiv)
+
+Make it dense, factual, and high-signal. No fluff."""
         )
     
     def run(self, input_data: str) -> str:
@@ -707,7 +711,7 @@ class LinkedInConnector:
 
 class Orchestrator:
     def __init__(self):
-        self.trend_scout = TrendScout()
+        self.research_manager = ResearchManager()
         self.strategist = Strategist()
         self.ghostwriter = Ghostwriter()
         self.art_director = ArtDirector()
@@ -771,7 +775,7 @@ class Orchestrator:
                 "Prompt Engineering is replaced by Flow Engineering"
             ]
             selected_topic = random.choice(topics)
-            trend_data = self.trend_scout.run(f"Find current hot topics in Agentic AI. Selected: {selected_topic}")
+            trend_data = self.research_manager.run(f"Find current hot topics in Agentic AI. Selected: {selected_topic}")
         
         # Step 1.5: Generate Comment Pack (The Networker)
         comment_pack = self.networker.run(trend_data)
