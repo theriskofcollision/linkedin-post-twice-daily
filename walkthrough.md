@@ -57,8 +57,25 @@ Create an autonomous AI agent team that researches trends, strategizes, writes, 
 - **Link**: [View Post: LLMs as OS? Hold on...](https://www.linkedin.com/posts/hakan-k%C3%B6se-agentic-ai_llms-as-os-hold-on-its-more-like-a-fancy-activity-7400127039476756480-oGC7)
 - **Improvements**: Upgraded to Python 3.10 to ensure long-term stability.
 
+## Phase 6: Growth & Engagement (The "Growth Machine")
+- **Analytics Feedback Loop**: The bot now learns from its own success.
+    - `Memory` stores post history and engagement stats (Likes/Comments).
+    - `Strategist` reads this data to double down on "winning" vibes.
+- **The Networker Agent**: A new agent that drafts a "Comment Pack" for every run.
+    - Generates 3 types of comments (Value Add, Contrarian, Question) for you to engage with other influencers.
+    - Output is saved to `memory.json` and displayed on the Dashboard.
+
+## Dashboard 📈
+A real-time command center built with Streamlit.
+- **URL**: [LinkedIn Growth Dashboard](https://linkedin-post-twice-daily-h9akrsza5xz5appdzxen99l.streamlit.app)
+- **Features**:
+    - **Comment Pack Viewer**: Copy-paste ready-to-use comments.
+    - **Analytics**: View total likes, comments, and engagement trends.
+    - **Vibe Check**: See which persona is performing best.
+    - **Critic Rules**: See what the bot has learned.
+
 ## How to Run
 1.  Ensure `GEMINI_API_KEY`, `LINKEDIN_ACCESS_TOKEN`, `LINKEDIN_PERSON_URN`, `NEWS_API_KEY`, and `TAVILY_API_KEY` are set in GitHub Secrets.
 2.  The workflow runs automatically on schedule (09:00 UTC).
 3.  To run manually: Go to GitHub Actions -> "Run LinkedIn Workflow".
-4.  To view the Dashboard: Run `streamlit run dashboard.py` locally (or in Codespaces).
+4.  To view the Dashboard: Visit the [Streamlit App](https://linkedin-post-twice-daily-h9akrsza5xz5appdzxen99l.streamlit.app) or run `python3 -m streamlit run dashboard.py` locally.
