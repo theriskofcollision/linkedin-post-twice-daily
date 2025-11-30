@@ -40,4 +40,10 @@
 - [x] Improve post structure with Introduction-Body-Conclusion format <!-- id: 27 -->
 - [x] Add "The Narrator" persona (Dickensian Style) <!-- id: 29 -->
 - [ ] Upgrade GitHub Actions to Python 3.10+ to fix warnings <!-- id: 28 -->
+
+## Phase 6: Growth & Engagement (The "Growth Machine")
+- [ ] Implement `AnalyticsConnector` (Real Feedback Loop) <!-- id: 30 -->
+- [ ] Update `Memory` to store "Winning" & "Losing" strategies <!-- id: 31 -->
+- [ ] Update `Strategist` to use performance data <!-- id: 32 -->
+- [ ] Create `Networker` Agent for comment drafting (Optional) <!-- id: 33 -->
 - [ ] Refactor `TrendScout` into `ResearchManager` (Optional) <!-- id: 26 -->

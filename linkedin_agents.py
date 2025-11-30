@@ -37,29 +37,67 @@ class Memory:
         self.file_path = file_path
         if not os.path.exists(self.file_path):
             with open(self.file_path, "w") as f:
-                json.dump({"rules": []}, f)
+                json.dump({"rules": [], "history": []}, f)
+
+    def _load(self):
+        try:
+            with open(self.file_path, "r") as f:
+                return json.load(f)
+        except Exception:
+            return {"rules": [], "history": []}
+
+    def _save(self, data):
+        with open(self.file_path, "w") as f:
+            json.dump(data, f, indent=2)
 
     def get_rules(self) -> List[str]:
-        try:
-            with open(self.file_path, "r") as f:
-                data = json.load(f)
-            return data.get("rules", [])
-        except Exception:
-            return []
+        data = self._load()
+        return data.get("rules", [])
 
     def add_rule(self, rule: str):
-        try:
-            with open(self.file_path, "r") as f:
-                data = json.load(f)
-            
-            if rule not in data["rules"]:
-                data["rules"].append(rule)
-                
-            with open(self.file_path, "w") as f:
-                json.dump(data, f, indent=2)
+        data = self._load()
+        if rule not in data["rules"]:
+            data["rules"].append(rule)
+            self._save(data)
             print(f"🧠 Memory Updated: Added rule '{rule}'")
-        except Exception as e:
-            print(f"❌ Failed to update memory: {e}")
+
+    def add_post_history(self, topic: str, vibe: str, urn: str):
+        data = self._load()
+        if "history" not in data:
+            data["history"] = []
+        
+        entry = {
+            "date": str(os.environ.get("GITHUB_RUN_ID", "manual")), # Use run ID or manual
+            "topic": topic,
+            "vibe": vibe,
+            "urn": urn,
+            "stats": {"likes": 0, "comments": 0} # Init stats
+        }
+        data["history"].append(entry)
+        self._save(data)
+        print(f"🧠 Memory Updated: Logged post '{topic}' ({vibe})")
+
+    def update_post_stats(self, urn: str, likes: int, comments: int):
+        data = self._load()
+        for post in data.get("history", []):
+            if post["urn"] == urn:
+                post["stats"] = {"likes": likes, "comments": comments}
+                self._save(data)
+                print(f"🧠 Stats Updated for {urn}: {likes} likes, {comments} comments")
+                return
+
+    def get_performance_insights(self) -> str:
+        data = self._load()
+        history = data.get("history", [])
+        if not history:
+            return "No past performance data available."
+        
+        # Simple analysis
+        best_post = max(history, key=lambda x: x["stats"]["likes"], default=None)
+        if best_post and best_post["stats"]["likes"] > 0:
+            return f"🏆 BEST PERFORMING VIBE: {best_post['vibe']} (Topic: {best_post['topic']} - {best_post['stats']['likes']} likes). REPEAT THIS STYLE."
+        
+        return "Not enough data to determine best vibe yet."
 
 # --- Base Agent ---
 
@@ -531,10 +569,10 @@ class LinkedInConnector:
         response.raise_for_status()
         print("✅ Image uploaded to LinkedIn server.")
 
-    def post_content(self, text: str, image_data: bytes = None):
+    def post_content(self, text: str, image_data: bytes = None) -> Optional[str]:
         if not self.access_token or not self.author_urn:
             print("⚠️  Missing LinkedIn Credentials. Skipping API call.")
-            return
+            return None
 
         asset_urn = None
         if image_data:
@@ -580,28 +618,60 @@ class LinkedInConnector:
             response = requests.post(url, headers=headers, json=post_data)
             response.raise_for_status()
             print(f"✅ Successfully posted to LinkedIn! Status Code: {response.status_code}")
-            try:
-                print(f"Response: {response.json()}")
-            except json.JSONDecodeError:
-                print("Response body is empty (normal for some 201 responses).")
+            
+            # Extract URN
+            post_urn = response.headers.get("x-restli-id")
+            if not post_urn:
+                # Try parsing body if header is missing
+                try:
+                    post_urn = response.json().get("id")
+                except:
+                    pass
+            
+            print(f"🆔 New Post URN: {post_urn}")
+            return post_urn
+
         except requests.exceptions.RequestException as e:
             print(f"❌ Failed to post to LinkedIn: {e}")
             if hasattr(e, 'response') and e.response is not None:
                 print(f"Error Details: {e.response.text}")
+            return None
 
-    def get_post_stats(self, urn: str):
-        """Fetch engagement stats for a specific post URN"""
+    def get_social_actions(self, urn: str):
+        """Fetch real engagement stats (likes/comments) for a specific post URN"""
         if not self.access_token:
             return None
             
-        # Social Actions API (Likes, Comments)
-        # Note: This is a simplified example. LinkedIn Analytics API is complex and requires specific permissions.
-        # We will return mock data for now if the API call fails or is not fully configured.
-        return {
-            "likes": random.randint(10, 100),
-            "comments": random.randint(0, 20),
-            "views": random.randint(100, 5000)
+        # Extract the ID part if it's a full URN (urn:li:share:123 -> 123)
+        # The socialActions API expects the full URN usually, but let's be safe.
+        # Endpoint: https://api.linkedin.com/rest/socialActions/{urn}
+        
+        encoded_urn = urllib.parse.quote(urn)
+        url = f"https://api.linkedin.com/rest/socialActions/{encoded_urn}"
+        
+        headers = {
+            "Authorization": f"Bearer {self.access_token}",
+            "X-Restli-Protocol-Version": "2.0.0",
+            "LinkedIn-Version": "202411"
         }
+        
+        try:
+            response = requests.get(url, headers=headers)
+            if response.status_code == 404:
+                print(f"⚠️ Stats not found for {urn} (might be too new or wrong ID format).")
+                return {"likes": 0, "comments": 0}
+                
+            response.raise_for_status()
+            data = response.json()
+            
+            likes = data.get("likesSummary", {}).get("totalLikes", 0)
+            comments = data.get("commentsSummary", {}).get("totalComments", 0)
+            
+            return {"likes": likes, "comments": comments}
+            
+        except Exception as e:
+            print(f"❌ Failed to fetch stats for {urn}: {e}")
+            return {"likes": 0, "comments": 0}
 
 # --- Orchestrator ---
 
@@ -614,17 +684,45 @@ class Orchestrator:
         self.critic = Critic()
         self.image_gen = ImageGenerator()
         self.linkedin = LinkedInConnector()
+        self.memory = Memory() # Direct access to memory for orchestrator
+
+    def review_past_performance(self):
+        print("\n📊 Reviewing Past Performance...")
+        data = self.memory._load()
+        history = data.get("history", [])
+        
+        updated_count = 0
+        for post in history:
+            urn = post.get("urn")
+            if urn:
+                stats = self.linkedin.get_social_actions(urn)
+                if stats:
+                    self.memory.update_post_stats(urn, stats["likes"], stats["comments"])
+                    updated_count += 1
+        
+        if updated_count > 0:
+            print(f"✅ Updated stats for {updated_count} past posts.")
+        else:
+            print("ℹ️ No past posts to update or API unavailable.")
 
     def run_workflow(self, initial_topic: str = None):
         print("🚀 Starting LinkedIn Growth Workflow")
         
-        # 0. Select Vibe
+        # Step 0: Review Past Performance (The Feedback Loop)
+        self.review_past_performance()
+        performance_insights = self.memory.get_performance_insights()
+        print(f"\n💡 Performance Insight: {performance_insights}")
+        
+        # 0.5. Select Vibe
         vibe_name = random.choice(list(VIBES.keys()))
         vibe_config = VIBES[vibe_name]
         print(f"\n🎲 Vibe Selected: {vibe_name}")
         
         # Apply Vibe to Agents
-        self.strategist.set_vibe(vibe_name, vibe_config["strategist"])
+        # Append performance insights to Strategist's prompt
+        strategist_prompt = f"{vibe_config['strategist']}\n\nDATA FEEDBACK: {performance_insights}"
+        self.strategist.set_vibe(vibe_name, strategist_prompt)
+        
         self.ghostwriter.set_vibe(vibe_name, vibe_config["ghostwriter"])
         self.art_director.set_vibe(vibe_name, vibe_config["art_director"])
         
@@ -663,7 +761,13 @@ class Orchestrator:
         print("\n✅ Workflow Complete. Preparing to Post...")
         
         # Step 6: Publish
-        self.linkedin.post_content(draft_text, image_data)
+        post_urn = self.linkedin.post_content(draft_text, image_data)
+        
+        # Step 7: Save to Memory
+        if post_urn:
+            # Extract topic from trend_data (simplified)
+            topic_summary = initial_topic if initial_topic else selected_topic
+            self.memory.add_post_history(topic_summary, vibe_name, post_urn)
 
 if __name__ == "__main__":
     orch = Orchestrator()
