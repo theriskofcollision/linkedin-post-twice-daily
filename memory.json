@@ -30,8 +30,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "19817425525",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Educator",
+      "urn": "urn:li:share:7401188050287939584",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "Okay, I'm ready to generate a Comment Pack for the trend of Multi-Agent Systems in Agentic AI. Here it is:\n\n### \ud83e\udd1d Comment Pack for The Rise of Multi-Agent Systems in Agentic AI\n**1. Value Add:** I agree that the shift to MAS is significant. We're already seeing this in supply chain optimization where different agents negotiate logistics, warehousing, and delivery schedules in real-time, leading to demonstrable efficiency gains of 15-20% in pilot programs. This proves the value of MAS beyond theoretical discussions.\n\n**2. Contrarian:** While adaptability to human correction is touted as a risk mitigator, I wonder if we're underestimating the potential for \"drift\" in agent behavior over time as they learn from potentially flawed or biased human input. We need more research into long-term alignment strategies in these dynamic learning environments.\n\n**3. Question:** Given the complexity of MAS, how do we develop robust and scalable methods for verifying and validating the collective behavior of these systems, especially when emergent properties arise from agent interactions? Is current testing infrastructure sufficient to address this challenge?",
-  "last_updated": "19802159984"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic AI & Flow Engineering\n**1. Value Add:** I agree that we're moving beyond just crafting the perfect prompt. Think of it like moving from directing a single scene to choreographing an entire play. A great example is in supply chain optimization, where agents can autonomously adjust routes and inventory based on real-time data, something static prompts just can't handle.\n\n**2. Contrarian:** While \"Flow Engineering\" sounds promising, let's not completely dismiss prompt engineering. A well-defined prompt can still be incredibly powerful, especially when combined with retrieval-augmented generation (RAG). It's not necessarily about replacing prompts, but augmenting them within a larger agentic system.\n\n**3. Question:** With Agentic AI taking on more autonomous decision-making, how do we build in robust feedback loops to ensure these systems are constantly learning and adapting to unforeseen consequences in a way that aligns with our values and objectives? What metrics are crucial to monitor beyond simple task completion?",
+  "last_updated": "19817425525"
 }
