@@ -40,8 +40,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "19831146868",
+      "topic": "Why Chatbots are dead",
+      "vibe": "The Contrarian",
+      "urn": "urn:li:share:7401307545904205824",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic AI & Flow Engineering\n**1. Value Add:** I agree that we're moving beyond just crafting the perfect prompt. Think of it like moving from directing a single scene to choreographing an entire play. A great example is in supply chain optimization, where agents can autonomously adjust routes and inventory based on real-time data, something static prompts just can't handle.\n\n**2. Contrarian:** While \"Flow Engineering\" sounds promising, let's not completely dismiss prompt engineering. A well-defined prompt can still be incredibly powerful, especially when combined with retrieval-augmented generation (RAG). It's not necessarily about replacing prompts, but augmenting them within a larger agentic system.\n\n**3. Question:** With Agentic AI taking on more autonomous decision-making, how do we build in robust feedback loops to ensure these systems are constantly learning and adapting to unforeseen consequences in a way that aligns with our values and objectives? What metrics are crucial to monitor beyond simple task completion?",
-  "last_updated": "19817425525"
+  "latest_comment_pack": "Okay, here's a Comment Pack designed to help you engage with conversations about the shift from Chatbots to Agentic AI.\n\n### \ud83e\udd1d Comment Pack for The Shift from Chatbots to Agentic AI\n**1. Value Add:** I agree that Agentic AI is the next step. We're already seeing examples in automated cybersecurity threat response, where AI agents can independently identify, isolate, and remediate threats faster than human teams. This proactive approach is a game-changer.\n\n**2. Contrarian:** While the potential of Agentic AI is undeniable, I think it's crucial to avoid prematurely writing off chatbots. For simple, repetitive customer service tasks, a well-designed chatbot can still be incredibly efficient and cost-effective, and the computational cost is orders of magnitude cheaper. Agentic AI is not a replacement, but an evolution for specific use-cases.\n\n**3. Question:** Given the increasing autonomy of AI agents, how do we ensure robust ethical frameworks and governance models are in place *before* widespread deployment? What specific metrics should we be tracking to identify and mitigate potential unintended consequences or biases in their decision-making processes?",
+  "last_updated": "19831146868"
 }
