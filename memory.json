@@ -50,8 +50,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "19853333972",
+      "topic": "Why Chatbots are dead",
+      "vibe": "The Narrator",
+      "urn": "urn:li:share:7401550083659366400",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "Okay, here's a Comment Pack designed to help you engage with conversations about the shift from Chatbots to Agentic AI.\n\n### \ud83e\udd1d Comment Pack for The Shift from Chatbots to Agentic AI\n**1. Value Add:** I agree that Agentic AI is the next step. We're already seeing examples in automated cybersecurity threat response, where AI agents can independently identify, isolate, and remediate threats faster than human teams. This proactive approach is a game-changer.\n\n**2. Contrarian:** While the potential of Agentic AI is undeniable, I think it's crucial to avoid prematurely writing off chatbots. For simple, repetitive customer service tasks, a well-designed chatbot can still be incredibly efficient and cost-effective, and the computational cost is orders of magnitude cheaper. Agentic AI is not a replacement, but an evolution for specific use-cases.\n\n**3. Question:** Given the increasing autonomy of AI agents, how do we ensure robust ethical frameworks and governance models are in place *before* widespread deployment? What specific metrics should we be tracking to identify and mitigate potential unintended consequences or biases in their decision-making processes?",
-  "last_updated": "19831146868"
+  "latest_comment_pack": "Okay, here's a Comment Pack you can use on relevant posts discussing the rise of Agentic AI and the supposed \"death\" of chatbots:\n\n### \ud83e\udd1d Comment Pack for Agentic AI vs. Chatbots\n\n**1. Value Add:** I agree that Agentic AI represents a significant leap forward. We've seen it firsthand in the financial sector where basic chatbots struggled with nuanced investment queries. Agentic AI, with its ability to access and interpret real-time market data, offers a much more personalized and insightful experience. It's not just about answering questions, it's about proactive portfolio management.\n\n**2. Contrarian:** While Agentic AI certainly offers advancements, I think the \"death of chatbots\" is premature. Simpler chatbots still serve a vital function for handling FAQs and basic support. The key is understanding the *right tool for the right job*. Agentic AI is powerful, but for routine inquiries, a well-designed chatbot can still be far more efficient and cost-effective. Not every problem needs a sledgehammer.\n\n**3. Question:** If Agentic AI truly takes hold, how do we ensure transparency and accountability in its decision-making processes, especially in high-stakes situations like healthcare or finance? What mechanisms will be in place to audit their reasoning and prevent unintended biases from influencing outcomes?",
+  "last_updated": "19853333972"
 }
