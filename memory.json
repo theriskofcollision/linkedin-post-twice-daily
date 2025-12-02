@@ -60,8 +60,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "19867239422",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Analyst",
+      "urn": "urn:li:share:7401670372191879168",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "Okay, here's a Comment Pack you can use on relevant posts discussing the rise of Agentic AI and the supposed \"death\" of chatbots:\n\n### \ud83e\udd1d Comment Pack for Agentic AI vs. Chatbots\n\n**1. Value Add:** I agree that Agentic AI represents a significant leap forward. We've seen it firsthand in the financial sector where basic chatbots struggled with nuanced investment queries. Agentic AI, with its ability to access and interpret real-time market data, offers a much more personalized and insightful experience. It's not just about answering questions, it's about proactive portfolio management.\n\n**2. Contrarian:** While Agentic AI certainly offers advancements, I think the \"death of chatbots\" is premature. Simpler chatbots still serve a vital function for handling FAQs and basic support. The key is understanding the *right tool for the right job*. Agentic AI is powerful, but for routine inquiries, a well-designed chatbot can still be far more efficient and cost-effective. Not every problem needs a sledgehammer.\n\n**3. Question:** If Agentic AI truly takes hold, how do we ensure transparency and accountability in its decision-making processes, especially in high-stakes situations like healthcare or finance? What mechanisms will be in place to audit their reasoning and prevent unintended biases from influencing outcomes?",
-  "last_updated": "19853333972"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic AI: From Prompt Engineering to Flow/Context Engineering\n\n**1. Value Add:** I agree that context engineering is the future. We're seeing this play out in customer service bots. Initially, prompt engineering focused on canned responses. Now, successful deployments require bots to access customer history, real-time inventory, and CRM data to provide truly personalized and effective support. It's all about the richness of the context!\n\n**2. Contrarian:** While the shift to context engineering is definitely happening, let's not completely bury prompt engineering. A well-crafted prompt can still significantly optimize the performance of an agent, even with rich contextual data. It's more about a symbiotic relationship than a full replacement. Think of prompts as the initial guidance and context as the ongoing navigation.\n\n**3. Question:** With the increasing complexity of context engineering, how do we ensure these AI agents remain transparent and explainable? Are we developing robust methods to trace the decision-making process back to the specific contextual factors that influenced the outcome? This seems critical for building trust and addressing potential biases.",
+  "last_updated": "19867239422"
 }
