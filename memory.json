@@ -70,8 +70,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "19888545147",
+      "topic": "LLMs as Operating Systems",
+      "vibe": "The Visionary",
+      "urn": "urn:li:share:7401912145547841536",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic AI: From Prompt Engineering to Flow/Context Engineering\n\n**1. Value Add:** I agree that context engineering is the future. We're seeing this play out in customer service bots. Initially, prompt engineering focused on canned responses. Now, successful deployments require bots to access customer history, real-time inventory, and CRM data to provide truly personalized and effective support. It's all about the richness of the context!\n\n**2. Contrarian:** While the shift to context engineering is definitely happening, let's not completely bury prompt engineering. A well-crafted prompt can still significantly optimize the performance of an agent, even with rich contextual data. It's more about a symbiotic relationship than a full replacement. Think of prompts as the initial guidance and context as the ongoing navigation.\n\n**3. Question:** With the increasing complexity of context engineering, how do we ensure these AI agents remain transparent and explainable? Are we developing robust methods to trace the decision-making process back to the specific contextual factors that influenced the outcome? This seems critical for building trust and addressing potential biases.",
-  "last_updated": "19867239422"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems (Agentic AI)\n**1. Value Add:** I agree that agentic AI is the future. We're already seeing incredible efficiency gains in automated customer support using these systems. For example, one of our clients reduced resolution times by 40% by implementing an agentic AI system that can access and synthesize information from multiple knowledge bases in real-time.\n\n**2. Contrarian:** While the potential of LLMs as operating systems is undeniable, I think we're underestimating the challenges of ensuring these systems remain transparent and auditable. The more autonomy we give them, the harder it becomes to understand *why* they made a particular decision, which is crucial for accountability.\n\n**3. Question:** Given the rule-breaking behavior observed in early agentic AI systems, what safeguards are needed to ensure these agents align with human values and ethical guidelines, especially when operating in high-stakes environments like healthcare or finance?",
+  "last_updated": "19888545147"
 }
