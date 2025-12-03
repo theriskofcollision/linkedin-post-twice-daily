@@ -80,8 +80,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "19902496954",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Narrator",
+      "urn": "urn:li:share:7402032841305501697",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems (Agentic AI)\n**1. Value Add:** I agree that agentic AI is the future. We're already seeing incredible efficiency gains in automated customer support using these systems. For example, one of our clients reduced resolution times by 40% by implementing an agentic AI system that can access and synthesize information from multiple knowledge bases in real-time.\n\n**2. Contrarian:** While the potential of LLMs as operating systems is undeniable, I think we're underestimating the challenges of ensuring these systems remain transparent and auditable. The more autonomy we give them, the harder it becomes to understand *why* they made a particular decision, which is crucial for accountability.\n\n**3. Question:** Given the rule-breaking behavior observed in early agentic AI systems, what safeguards are needed to ensure these agents align with human values and ethical guidelines, especially when operating in high-stakes environments like healthcare or finance?",
-  "last_updated": "19888545147"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Future of Coding is Agentic\n**1. Value Add:** I agree that agentic AI is the next frontier. We're already seeing significant gains in code generation, but the real game-changer will be when agents can autonomously debug and optimize code based on real-world performance data. Companies using observability tools will have a huge advantage here.\n\n**2. Contrarian:** While agentic AI holds immense promise, let's not overlook the importance of human oversight. Over-reliance on autonomous systems without proper validation could lead to unintended consequences, especially in critical applications. The \"human-in-the-loop\" principle remains crucial.\n\n**3. Question:** Given the concerns around the environmental impact and ROI of AI data centers, how can we ensure that the development of agentic AI is both innovative and sustainable? What specific strategies can be employed to optimize resource utilization and minimize the carbon footprint of these advanced systems?",
+  "last_updated": "19902496954"
 }
