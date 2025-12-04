@@ -1,5 +1,10 @@
 {
-  "rules": [],
+  "rules": [
+    "Avoid vague adjectives like \"dynamic,\" \"intelligent,\" and \"adaptive\" without concrete examples.",
+    "Use bolding sparingly and strategically to emphasize critical points.",
+    "Minimize the use of italics.",
+    "Try replacing \"while\" with \"as\" or splitting the sentence in two."
+  ],
   "history": [
     {
       "date": "19797978891",
@@ -100,8 +105,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "19937550466",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Educator",
+      "urn": "urn:li:share:7402395137110335488",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Multi-Agent Systems in Agentic AI\n**1. Value Add:** \"The trend towards MAS is undeniable. We're seeing a huge impact in supply chain optimization, where autonomous agents coordinate logistics, predict disruptions, and dynamically adjust routes. This has led to a reported 15-20% reduction in delivery times in pilot programs we've observed.\"\n**2. Contrarian:** \"While the potential of MAS is vast, we need to be realistic about the challenges. Ensuring reliable communication and conflict resolution between agents, especially in unpredictable real-world environments, is still a significant hurdle. Over-reliance on autonomous agents without human oversight could also lead to unforeseen consequences.\"\n**3. Question:** \"Given the potential for complex emergent behavior in MAS, how can we design these systems to ensure alignment with human values and prevent unintended negative outcomes, especially as they become more deeply integrated into critical infrastructure?\"",
-  "last_updated": "19923690970"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Shift from Prompt Engineering to Flow Engineering in Agentic AI\n**1. Value Add:** I agree that Flow Engineering is the future. We're already seeing internal tools at companies like [Hypothetical Company X] shift from rigid prompt templates to dynamic workflows that allow the agent to iterate and refine its approach based on real-time data. This adaptability significantly improves the quality of the output, especially in complex problem-solving scenarios.\n**2. Contrarian:** While Flow Engineering offers exciting possibilities, I think it's premature to declare prompt engineering dead. Specific, well-crafted prompts will always be crucial for bootstrapping new agents and for tasks requiring precise control. The best approach will likely be a hybrid one, leveraging both flow and prompt techniques depending on the specific application.\n**3. Question:** What are the key metrics we should be tracking to measure the effectiveness of Flow Engineering compared to traditional prompt engineering? Is it purely about output quality, or are factors like agent autonomy, resource utilization, and long-term adaptability equally important?",
+  "last_updated": "19937550466"
 }
