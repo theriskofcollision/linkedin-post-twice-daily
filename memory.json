@@ -125,8 +125,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "19970336023",
+      "topic": "Why Chatbots are dead",
+      "vibe": "The Contrarian",
+      "urn": "urn:li:share:7402756582259748865",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "Okay, I'm ready to generate a comment pack designed to spark engagement on posts discussing LLMs as Operating Systems (Agentic AI). Here's a selection of comments tailored for that purpose:\n\n### \ud83e\udd1d Comment Pack for LLMs as Operating Systems (Agentic AI)\n**1. Value Add:** I completely agree that Agentic AI is going to reshape enterprise operations. We're already seeing this in the customer service space. For example, some companies are piloting LLM-powered agents that can not only answer complex inquiries but also proactively identify and resolve potential issues *before* the customer even notices them, leading to significant improvements in customer satisfaction scores.\n\n**2. Contrarian:** While the potential of LLMs as operating systems is undeniable, I think we need to be realistic about the integration challenges. Data security and bias mitigation are still major hurdles. Enterprise adoption will heavily depend on robust frameworks to address these issues and ensure responsible AI implementation. Also, we can't ignore the \"human in the loop\" consideration. Complete autonomy, especially in critical processes, might not be desirable or even feasible in the near term.\n\n**3. Question:** If LLMs become the operating system for businesses, how do we ensure interoperability and avoid vendor lock-in? Will we see the emergence of open standards for AI agents and their communication protocols, similar to what happened with the internet itself? What governance models are needed to promote competition and innovation in this space?",
-  "last_updated": "19958202094"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for \"Why Chatbots are Dead\"\n\n**1. Value Add:** I agree that the limitations of chatbots are becoming more apparent. A great example is in customer service, where basic chatbots often fail to handle complex or nuanced queries, leading to frustration. Agentic AI, with its ability to learn and adapt, could potentially resolve these issues and provide a more seamless experience.\n\n**2. Contrarian:** While chatbots may be evolving, I think declaring them \"dead\" is premature. They still serve a purpose for simple, repetitive tasks. The real shift is towards *augmenting* chatbots with Agentic AI capabilities to handle more complex interactions, rather than a complete replacement.\n\n**3. Question:** If we're moving towards Agentic AI, what frameworks are needed to ensure responsible development and deployment, especially regarding bias and unintended consequences? How do we avoid the pitfalls we've seen with earlier AI models?",
+  "last_updated": "19970336023"
 }
