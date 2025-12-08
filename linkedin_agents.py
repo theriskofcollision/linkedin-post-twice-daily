@@ -132,7 +132,7 @@ class Agent:
         for attempt in range(max_retries):
             try:
                 genai.configure(api_key=api_key)
-                model_name = 'gemini-1.5-flash' 
+                model_name = 'gemini-1.5-flash-latest' 
                 if attempt == 0:
                     print(f"Attempting to use model: {model_name}")
                 else:
