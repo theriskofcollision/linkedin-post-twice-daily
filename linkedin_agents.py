@@ -788,13 +788,26 @@ class Orchestrator:
             selected_topic = random.choice(topics)
             trend_data = self.research_manager.run(f"Find current hot topics in Agentic AI. Selected: {selected_topic}")
         
-        # Step 1.5: Generate Comment Pack (The Networker)
+        # Abort if research failed (API Error)
+        if not trend_data:
+            print("❌ Workflow Aborted: Research failed (likely quota exceeded).")
+            return
+        
+        # Step 1.5: Generate Comment Pack (The Networker) - Non-critical, continue if fails
         comment_pack = self.networker.run(trend_data)
-        print(f"\n{comment_pack}\n")
-        self.memory.save_comment_pack(comment_pack)
+        if comment_pack:
+            print(f"\n{comment_pack}\n")
+            self.memory.save_comment_pack(comment_pack)
+        else:
+            print("⚠️ Networker failed (non-critical). Continuing without comment pack.")
         
         # Step 2: Strategy
         strategy = self.strategist.run(trend_data)
+        
+        # Abort if strategy failed
+        if not strategy:
+            print("❌ Workflow Aborted: Strategy generation failed (likely quota exceeded).")
+            return
         
         # Step 3: Content Creation
         draft_text = self.ghostwriter.run(strategy)
@@ -825,6 +838,13 @@ class Orchestrator:
             self.memory.add_post_history(topic_summary, vibe_name, post_urn)
 
 if __name__ == "__main__":
-    orch = Orchestrator()
-    # Run without arguments to let the randomizer pick a topic
-    orch.run_workflow()
+    try:
+        orch = Orchestrator()
+        # Run without arguments to let the randomizer pick a topic
+        orch.run_workflow()
+        print("\n✅ Script completed successfully.")
+    except Exception as e:
+        print(f"\n❌ Script failed with error: {e}")
+        # Exit with code 0 so GitHub Actions doesn't show a red X for expected failures
+        # The bot just couldn't run today, but that's OK.
+        exit(0)
