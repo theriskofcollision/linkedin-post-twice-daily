@@ -156,9 +156,8 @@ class Agent:
                         continue
                 
                 print(f"❌ Gemini Error: {e}")
-                return f"[Error generating content for {self.name}]"
+                return None
 
-# --- Specific Agents ---
 
 class HackerNewsConnector:
     def get_top_ai_stories(self, limit: int = 5) -> str:
@@ -703,6 +702,15 @@ class LinkedInConnector:
             
             return {"likes": likes, "comments": comments}
             
+        except requests.exceptions.HTTPError as e:
+            if e.response.status_code == 403:
+                print(f"⚠️  Permission Denied (403) for {urn}. Missing 'r_member_social' scope.")
+                print("   -> To fix: Apply for 'Marketing Developer Platform' in LinkedIn Developer Portal.")
+                return {"likes": 0, "comments": 0}
+            else:
+                print(f"❌ Failed to fetch stats for {urn}: {e}")
+                return {"likes": 0, "comments": 0}
+
         except Exception as e:
             print(f"❌ Failed to fetch stats for {urn}: {e}")
             return {"likes": 0, "comments": 0}
@@ -723,22 +731,25 @@ class Orchestrator:
 
     def review_past_performance(self):
         print("\n📊 Reviewing Past Performance...")
-        data = self.memory._load()
-        history = data.get("history", [])
-        
-        updated_count = 0
-        for post in history:
-            urn = post.get("urn")
-            if urn:
-                stats = self.linkedin.get_social_actions(urn)
-                if stats:
-                    self.memory.update_post_stats(urn, stats["likes"], stats["comments"])
-                    updated_count += 1
-        
-        if updated_count > 0:
-            print(f"✅ Updated stats for {updated_count} past posts.")
-        else:
-            print("ℹ️ No past posts to update or API unavailable.")
+        print("ℹ️ Healer function is currently DISABLED (Personal Profile Mode). Skipping stats check.")
+        return
+
+        # data = self.memory._load()
+        # history = data.get("history", [])
+        # 
+        # updated_count = 0
+        # for post in history:
+        #     urn = post.get("urn")
+        #     if urn:
+        #         stats = self.linkedin.get_social_actions(urn)
+        #         if stats:
+        #             self.memory.update_post_stats(urn, stats["likes"], stats["comments"])
+        #             updated_count += 1
+        # 
+        # if updated_count > 0:
+        #     print(f"✅ Updated stats for {updated_count} past posts.")
+        # else:
+        #     print("ℹ️ No past posts to update or API unavailable.")
 
     def run_workflow(self, initial_topic: str = None):
         print("🚀 Starting LinkedIn Growth Workflow")
@@ -788,6 +799,10 @@ class Orchestrator:
         # Step 3: Content Creation
         draft_text = self.ghostwriter.run(strategy)
         visual_concept = self.art_director.run(strategy)
+
+        if not draft_text or not visual_concept:
+            print("❌ Workflow Aborted: Content generation failed (likely quota exceeded).")
+            return
         
         # Step 4: Image Generation
         # Extract prompt from visual_concept (simplified for now, just use the whole output)
