@@ -7,7 +7,10 @@
     "Never open with \"We stand on the precipice...\" or \"Imagine a future where...\". It's the digital equivalent of a generic stock photo.",
     "Avoid hyperbolic adjectives like \"profound,\" \"perfect,\" \"unheard-of,\" and \"grand\" unless you can back them up with specific, undeniable evidence. Your post is a thesaurus entry for \"aspirational but vague.\"",
     "Stop using fluffy, unspecific metaphors like \"orchestra of AI agents\" or \"digital nervous system\" without immediately following up with concrete, digestible examples. They sound impressive for a second, then fall flat.",
-    "If your post sounds like it was written by the same AI it's trying to promote, you've failed. This sounds exactly like ChatGPT's default \"positive, futuristic, slightly buzzwordy\" tone."
+    "If your post sounds like it was written by the same AI it's trying to promote, you've failed. This sounds exactly like ChatGPT's default \"positive, futuristic, slightly buzzwordy\" tone.",
+    "Stop using vague, aspirational language that promises everything but delivers nothing specific. \"Reimagining creation itself\" is peak LinkedIn over-promising.",
+    "Break up long paragraphs. Use bullet points, short sentences, and bold text to highlight key information.",
+    "Never use the word 'unleash'. (And yes, the image text \"Unleash Your Vision\" falls right into this trap. And \"Architect Tomorrow\" is just as bland as the rest of it.)"
   ],
   "history": [
     {
@@ -209,8 +212,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "20072120273",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Visionary",
+      "urn": "urn:li:share:7404206755171336192",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Demise of Chatbots and the Rise of Agentic AI\n\n**1. Value Add:**\nThis shift from reactive chatbots to proactive agentic AI is a game-changer, especially in network operations. We're moving from a chatbot telling a user 'Your VPN is down' to an agentic system autonomously diagnosing the root cause across a multi-vendor fabric, re-provisioning a necessary service, and updating security policies\u2014all before a user even opens a ticket. It's the difference between passive monitoring and true autonomic networking.\n\n**2. Contrarian:**\nI'd caution against declaring 'chatbots' entirely dead just yet. While the *backend intelligence* is undeniably shifting to agentic frameworks, the conversational interface itself might simply become the 'skin' for these more powerful agents. The real challenge for networking teams, though, isn't just the AI itself, but how we secure the vastly increased attack surface of API calls and autonomous network configuration changes these sophisticated agents will demand. We're talking about systems that *write* rules, not just answer questions.\n\n**3. Question:**\nConsidering the move to agentic AI performing autonomous actions, what specific network architectural shifts\u2014beyond just bandwidth\u2014do we foresee? Specifically, how do we design our network segmentation, identity & access management, and observability stacks to provide secure, auditable guardrails for agents that aren't just querying data, but actively *orchestrating* changes across critical infrastructure elements?",
-  "last_updated": "20058111205"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Future of Coding is Agentic\n\n**1. Value Add:**\nThis shift towards agentic AI in coding is incredibly exciting for tackling complex, iterative problems, especially in areas like cybersecurity and operational efficiency. Dataminr's integration of agentic AI for \"Live Briefs\" is a fantastic real-world example of how these systems can move beyond simple code generation to proactively analyze vast datasets and provide actionable intelligence. It frees up human experts to focus on strategic insights and high-level problem-solving, dramatically accelerating response times and reducing manual toil.\n\n**2. Contrarian:**\nWhile the promise of agentic coding is significant, I'm cautiously observing the practical deployment challenges. The low engagement for \"Launch HN: Mentat\" and past lessons from over-automation, like Kroger's robotics experience, highlight that truly robust \"runtime intervention\" and reliable autonomy are incredibly difficult to achieve at scale. There's a critical nuance between AI *assisting* coding and AI *autonomously owning* the entire development lifecycle, especially for high-stakes, ambiguous projects where human reasoning, ethics, and nuanced decision-making are paramount.\n\n**3. Question:**\nGiven the rapid acceleration towards agentic interfaces and the critical academic research on LLM out-of-distribution generalization, what fundamental shifts do we anticipate in *developer training and team structures* to effectively manage, debug, and oversee these increasingly autonomous coding agents? Will the role primarily evolve into an \"AI Orchestrator,\" and if so, what new skill sets will define success?",
+  "last_updated": "20072120273"
 }
