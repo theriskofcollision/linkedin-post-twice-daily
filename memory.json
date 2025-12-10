@@ -10,7 +10,11 @@
     "If your post sounds like it was written by the same AI it's trying to promote, you've failed. This sounds exactly like ChatGPT's default \"positive, futuristic, slightly buzzwordy\" tone.",
     "Stop using vague, aspirational language that promises everything but delivers nothing specific. \"Reimagining creation itself\" is peak LinkedIn over-promising.",
     "Break up long paragraphs. Use bullet points, short sentences, and bold text to highlight key information.",
-    "Never use the word 'unleash'. (And yes, the image text \"Unleash Your Vision\" falls right into this trap. And \"Architect Tomorrow\" is just as bland as the rest of it.)"
+    "Never use the word 'unleash'. (And yes, the image text \"Unleash Your Vision\" falls right into this trap. And \"Architect Tomorrow\" is just as bland as the rest of it.)",
+    "Never use \"new dawn,\" \"era setting,\" or similar overly dramatic and clich\u00e9 metaphors for technological progress. Be original or be quiet.",
+    "Eliminate at least 50% of your adjectives. If it's not adding critical, unique meaning, it's just fluff.",
+    "Avoid buzzword bingo like \"collaborative intelligence,\" \"agentic AI\" (without explaining it beyond surface level), \"seamless integration,\" and \"co-create\" if you want to sound like a human and not a marketing bot.",
+    "Your call to action (\"Let's discuss, imagine, and build these futures, together. Share your vision below!\") is weak, generic, and overused. Make it specific, actionable, and less like a motivational poster from 2005."
   ],
   "history": [
     {
@@ -222,8 +226,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "20093364355",
+      "topic": "Why Chatbots are dead",
+      "vibe": "The Visionary",
+      "urn": "urn:li:share:7404448895088451584",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Future of Coding is Agentic\n\n**1. Value Add:**\nThis shift towards agentic AI in coding is incredibly exciting for tackling complex, iterative problems, especially in areas like cybersecurity and operational efficiency. Dataminr's integration of agentic AI for \"Live Briefs\" is a fantastic real-world example of how these systems can move beyond simple code generation to proactively analyze vast datasets and provide actionable intelligence. It frees up human experts to focus on strategic insights and high-level problem-solving, dramatically accelerating response times and reducing manual toil.\n\n**2. Contrarian:**\nWhile the promise of agentic coding is significant, I'm cautiously observing the practical deployment challenges. The low engagement for \"Launch HN: Mentat\" and past lessons from over-automation, like Kroger's robotics experience, highlight that truly robust \"runtime intervention\" and reliable autonomy are incredibly difficult to achieve at scale. There's a critical nuance between AI *assisting* coding and AI *autonomously owning* the entire development lifecycle, especially for high-stakes, ambiguous projects where human reasoning, ethics, and nuanced decision-making are paramount.\n\n**3. Question:**\nGiven the rapid acceleration towards agentic interfaces and the critical academic research on LLM out-of-distribution generalization, what fundamental shifts do we anticipate in *developer training and team structures* to effectively manage, debug, and oversee these increasingly autonomous coding agents? Will the role primarily evolve into an \"AI Orchestrator,\" and if so, what new skill sets will define success?",
-  "last_updated": "20072120273"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Decline of Chatbots and Rise of Agentic AI\n\n**1. Value Add:**\nThis shift is undeniable and critically important for enterprise reliability. The 'AI Blunders of 2025' \u2013 like chatbots leaking sensitive data or causing algorithmic discrimination \u2013 were stark reminders of the limitations of older models. It's precisely why we're seeing enterprises rapidly pivot, with 79% now adopting AI agents that offer the context retention and proactive capabilities needed to avoid such pitfalls and truly deliver on ROI.\n\n**2. Contrarian:**\nI agree that the limitations of traditional chatbots are clear, but I'd offer a word of caution regarding the immediate panacea of agentic AI. While they promise greater autonomy, this also amplifies the stakes for errors. The academic work on 'cross-modal inconsistency' in MLLMs suggests even the foundational models powering these agents still struggle with basic reliability. Handing an agent greater autonomous decision-making power before fully addressing these underlying 'inconsistencies' could lead to more profound and less traceable 'AI Blunders' than we saw with static chatbots.\n\n**3. Question:**\nGiven the 'AI Blunders of 2025' that plagued chatbots, and the move towards agentic AI with greater autonomous decision-making, what are the most critical *governance and ethical frameworks* that organizations and policymakers need to urgently develop to manage agent accountability? Specifically, how do we ensure these systems, designed for 'self-directed action,' are not just effective but also transparent and auditable when less-supervised errors occur?",
+  "last_updated": "20093364355"
 }
