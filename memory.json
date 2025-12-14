@@ -338,8 +338,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "20211323542",
+      "topic": "Why Chatbots are dead",
+      "vibe": "The Educator",
+      "urn": "urn:li:share:7406017710180110336",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n\n**1. Value Add:**\n\"Absolutely, the evolution of LLMs into agentic operating systems is a game-changer. We're seeing early but powerful iterations in network operations, where these LLMs could transition from mere log analysis to actively orchestrating multi-vendor network configurations, identifying security anomalies, and even autonomously executing remediation actions across complex infrastructure. This moves far beyond scripting to truly cognitive and adaptive network management.\"\n\n**2. Contrarian:**\n\"While the promise of LLMs acting as operating systems is incredibly exciting for automation, the Amazon 'mess' incident highlights a critical point: the non-deterministic nature of current generative AI. True operating systems demand unparalleled predictability, auditability, and deterministic control, especially for critical infrastructure. The challenge lies in reconciling the creative, emergent capabilities of LLMs with the rigid reliability and security requirements of a system that manages core operations.\"\n\n**3. Question:**\n\"As LLMs advance towards becoming autonomous operating systems, orchestrating tools and making real-world decisions, what fundamental shifts do we need to anticipate in network design and zero-trust security architectures? Specifically, how do we establish clear boundaries, monitor internal LLM processes, and ensure auditable control planes when the core decision-making entity is an increasingly opaque, self-improving AI agent?\"",
-  "last_updated": "20205728821"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Dawn of Agentic AI and the \"Death\" of Chatbots\n\n**1. Value Add:**\nAbsolutely, the shift to Agentic AI represents a monumental leap beyond traditional chatbots, particularly for complex operational environments. In networking, we're already seeing the profound potential to move from reactive troubleshooting to truly proactive, self-healing infrastructures. Imagine AI agents autonomously identifying anomalous traffic patterns, reconfiguring network segments to mitigate threats, and even predicting capacity needs to prevent bottlenecks, dramatically reducing Mean Time To Resolution (MTTR) and improving overall network resilience. This isn't just automation; it's intelligent, autonomous orchestration.\n\n**2. Contrarian:**\nWhile the promise of Agentic AI is compelling, I'd argue that the \"death\" of chatbots might be premature, or at least a mischaracterization. Many current 'chatbot' functions will simply evolve, specializing or becoming integrated components of larger agentic systems. The larger point, especially from a networking and security perspective, is the immense challenge of orchestrating and securing these autonomous agents. Granting agents the ability to make real-time decisions and execute changes across complex infrastructure introduces entirely new attack surfaces and compliance headaches. Human oversight, particularly in defining guardrails and auditing autonomous actions, remains absolutely critical\u2014we're trading one set of problems for another if we don't build secure-by-design frameworks from the ground up.\n\n**3. Question:**\nConsidering Agentic AI's reliance on real-time data, complex decision-making, and autonomous execution across potentially distributed environments, what fundamental shifts in *network architecture* and *security paradigms* do we anticipate will be non-negotiable? Specifically, how will concepts like intelligent edge computing, advanced API security, and granular zero-trust frameworks need to evolve to securely and efficiently support these highly autonomous systems, especially as they move from pilot programs to full-scale enterprise integration?",
+  "last_updated": "20211323542"
 }
