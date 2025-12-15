@@ -358,8 +358,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "20241083528",
+      "topic": "LLMs as Operating Systems",
+      "vibe": "The Visionary",
+      "urn": "urn:li:share:7406382223056093185",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Why Chatbots are Dead \u2013 The Rise of Agentic AI\n\n**1. Value Add:**\nThis resonates so much. The transition from reactive chatbots to proactive, goal-oriented agents is profound. We're already seeing this 'eating SaaS' phenomenon in action \u2013 an agent capable of orchestrating complex workflows, from data retrieval to report generation, effectively replaces several single-purpose tools. It's not just conversation; it's execution at scale, fundamentally shifting how businesses leverage AI for productivity.\n\n**2. Contrarian:**\nWhile the rise of agentic AI is undeniable and exciting, I'd argue it's too soon to declare traditional chatbots 'dead.' For many specific, lower-stakes interactions where predictability and controlled scope are key \u2013 think basic FAQ support or form completion \u2013 a well-engineered chatbot still offers a more reliable and cost-effective solution without the current 'critical mistakes' and complexity associated with autonomous agents. It's more of an evolution and specialization, not a complete replacement across the board.\n\n**3. Question:**\nAs agentic AI moves beyond mere conversation to deep system integration, exemplified by Copilot on consumer devices, how do we ensure meaningful user control and data privacy, especially when these agents become non-deletable or deeply embedded? What are the practical safeguards companies need to implement to avoid new forms of vendor lock-in and maintain user agency in this increasingly automated landscape?",
-  "last_updated": "20226838933"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems (Agentic AI)\n\n**1. Value Add:**\n\"Absolutely, the shift towards LLMs as orchestrating 'operating systems' for agentic AI is poised to revolutionize enterprise automation. We're already seeing early examples of this 'SaaS eating' trend, particularly in areas like complex supply chain management, where agents can dynamically re-route logistics or optimize inventory based on real-time data from disparate systems, moving far beyond traditional RPA workflows. It\u2019s fundamentally changing how data flows and tasks are executed across the network.\"\n\n**2. Contrarian:**\n\"While the vision of LLMs as true operating systems for agentic AI is incredibly powerful, I wonder if we're underestimating the architectural complexity and security implications at the network edge. Orchestrating agents is one thing, but robustly managing their emergent behaviors, securing inter-agent communication at scale, and guaranteeing alignment across dynamic, self-modifying workflows \u2013 especially with vulnerabilities like 'Super Suffixes' emerging \u2013 presents an order of magnitude more challenge than current OS design. It's not just about managing processes; it's about managing autonomous intent across a distributed network.\"\n\n**3. Question:**\n\"If LLMs evolve into true 'operating systems' for agentic AI, where autonomous agents can initiate, execute, and even adapt complex tasks across our digital infrastructure, what fundamental changes do we need to implement in our core networking and security architectures? Specifically, how do we define and enforce 'least privilege' for self-optimizing agents, and how do we build verifiable trust and accountability mechanisms into systems designed for emergent, potentially opaque, decision-making without creating insurmountable bottlenecks?\"",
+  "last_updated": "20241083528"
 }
