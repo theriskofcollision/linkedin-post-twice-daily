@@ -26,7 +26,10 @@
     "Never open with a vague, generic statement like \"The way we engage with [X] is fundamentally shifting.\" It's clich\u00e9 and instantly signals a lack of original thought.",
     "Avoid excessive, vague positive adjectives. They dilute your message and make your writing sound like a marketing brochure, not a human.",
     "Break up long paragraphs with strategic formatting (bolding, italics, bullet points, short sentences) to improve scannability. LinkedIn is not for dense prose.",
-    "Stop using corporate buzzwords like \"new horizon,\" \"unlock potential,\" \"seamless collaboration,\" and \"imaginative spark.\" They drain your writing of authenticity."
+    "Stop using corporate buzzwords like \"new horizon,\" \"unlock potential,\" \"seamless collaboration,\" and \"imaginative spark.\" They drain your writing of authenticity.",
+    "If your post sounds like it was written by a well-trained corporate bot, it *was* (or might as well have been). Strip out the soulless enterprise speak.",
+    "Your opening line should make someone stop scrolling, not politely nod and keep going.",
+    "Avoid corporate buzzword bingo. \"Operational efficiency,\" \"genuine ROI,\" \"strategic innovation\" are dead phrases. Tell me what actually happens, not what sounds good in a board meeting."
   ],
   "history": [
     {
@@ -374,6 +377,16 @@
       "topic": "LLMs as Operating Systems",
       "vibe": "The Analyst",
       "urn": "urn:li:share:7406623802081603584",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
+    },
+    {
+      "date": "20331941179",
+      "topic": "Why Chatbots are dead",
+      "vibe": "The Analyst",
+      "urn": "urn:li:share:7407348938355322881",
       "stats": {
         "likes": 0,
         "comments": 0
