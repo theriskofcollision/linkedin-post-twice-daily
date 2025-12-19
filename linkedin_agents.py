@@ -760,9 +760,15 @@ class Orchestrator:
         print(f"\n💡 Performance Insight: {performance_insights}")
         
         # 0.5. Select Vibe
-        vibe_name = random.choice(list(VIBES.keys()))
+        forced_vibe = os.getenv("FORCED_VIBE")
+        if forced_vibe and forced_vibe in VIBES:
+            vibe_name = forced_vibe
+            print(f"\n📌 Vibe FORCED by Environment Variable: {vibe_name}")
+        else:
+            vibe_name = random.choice(list(VIBES.keys()))
+            print(f"\n🎲 Vibe Selected: {vibe_name}")
+            
         vibe_config = VIBES[vibe_name]
-        print(f"\n🎲 Vibe Selected: {vibe_name}")
         
         # Apply Vibe to Agents
         # Append performance insights to Strategist's prompt

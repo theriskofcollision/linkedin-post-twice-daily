@@ -76,7 +76,33 @@ LinkedIn has recently restricted access to **Personal Profile Stats** (`r_member
 2. Look at the URL: `https://www.linkedin.com/company/12345678/`
 3. Your URN is `urn:li:organization:12345678`.
 
-## Step 6: Update GitHub Secrets
+## Phase 7: The "Company Command Center" (Full Stats)
 
-1. Update `LINKEDIN_ACCESS_TOKEN`.
-2. Update `LINKEDIN_PERSON_URN` (with either the Person URN or Organization URN).
+If you want the bot to **learn** from your post performance (likes/comments), you must switch from a Personal Profile to a Company Page.
+
+### Step 7.1: Create a LinkedIn Page
+
+1. Go to [linkedin.com/company/setup/new/](https://www.linkedin.com/company/setup/new/).
+2. Select **Company**.
+3. Fill in the details (e.g., Name: "Hakan's Lab", Industry: "Technology").
+4. Click **Create Page**.
+5. **Note the ID**: Your page URL will be `https://www.linkedin.com/company/12345678/`. Your URN is `urn:li:organization:12345678`.
+
+### Step 7.2: Apply for Marketing Developer Platform
+
+1. Go to your [LinkedIn Developer Apps](https://www.linkedin.com/developers/apps).
+2. Click on your bot's app.
+3. Go to the **Products** tab.
+4. Find **Marketing Developer Platform** and click **Request Access**.
+5. It will ask for a reason. Use: *"Automated content management and engagement analytics for my company page."*
+6. **Wait for Approval**: This usually takes 2–5 business days.
+
+### Step 7.3: Update GitHub Secrets
+
+Once approved:
+
+1. Generate a **New Access Token** using the [Token Generator](https://www.linkedin.com/developers/tools/oauth/token-generator).
+2. Ensure you check: `w_organization_social` and `r_organization_social`.
+3. Update `LINKEDIN_ACCESS_TOKEN` in GitHub.
+4. Update `LINKEDIN_PERSON_URN` with your `urn:li:organization:ID`.
+5. (Optional) Set `FORCED_VIBE` to `The Narrator` if you want to keep the poetic style.
