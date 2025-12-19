@@ -29,7 +29,12 @@
     "Stop using corporate buzzwords like \"new horizon,\" \"unlock potential,\" \"seamless collaboration,\" and \"imaginative spark.\" They drain your writing of authenticity.",
     "If your post sounds like it was written by a well-trained corporate bot, it *was* (or might as well have been). Strip out the soulless enterprise speak.",
     "Your opening line should make someone stop scrolling, not politely nod and keep going.",
-    "Avoid corporate buzzword bingo. \"Operational efficiency,\" \"genuine ROI,\" \"strategic innovation\" are dead phrases. Tell me what actually happens, not what sounds good in a board meeting."
+    "Avoid corporate buzzword bingo. \"Operational efficiency,\" \"genuine ROI,\" \"strategic innovation\" are dead phrases. Tell me what actually happens, not what sounds good in a board meeting.",
+    "Never use passive or gentle language like \"becoming outdated\" when describing a significant shift. Demand attention; don't nudge politely.",
+    "Avoid overly descriptive yet bland adjectives. If an adjective doesn't add punch, clarity, or unique insight, cut it.",
+    "Stop asking generic \"engagement questions\" at the end of a post. If your content doesn't spark discussion naturally, a forced question won't fix it.",
+    "Cut weak, mixed, or extended analogies. Get straight to the point or use a single, strong, and consistent metaphor.",
+    "Eliminate corporate buzzwords like \"resilient systems\" unless you follow immediately with a concrete, measurable explanation of what that means in *your* context."
   ],
   "history": [
     {
@@ -391,8 +396,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "20369483834",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Educator",
+      "urn": "urn:li:share:7407753491428921344",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Future of Coding is Agentic\n\n**1. Value Add:**\n\"Absolutely spot on about the rise of agentic AI in coding! I'm particularly excited about its potential to finally bring formal verification into the mainstream. We've seen projects like the seL4 microkernel achieve unprecedented security through formal methods, but at immense human cost. With agentic AI, that level of assurance could become accessible for even complex enterprise applications, drastically reducing vulnerabilities in critical infrastructure and financial systems where manual oversight often misses subtle edge cases. It's truly a game-changer for reliability.\"\n\n**2. Contrarian:**\n\"While the efficiency gains from agentic AI in coding, especially in areas like formal verification, are undeniably compelling, I wonder if we're fully appreciating the trade-offs. The 'No AI* Here' sentiment highlights a legitimate concern: as AI agents take on more autonomous tasks, what happens to human oversight and deep understanding? We risk creating systems whose inner workings become opaque 'black boxes,' potentially leading to 'correct by AI' solutions that are hard to audit, debug, or even evolve manually when the original agent isn't present, introducing a new, complex layer of technical debt.\"\n\n**3. Question:**\n\"Given the rapid advancement of agentic AI not just in code generation but increasingly in formal verification and autonomous problem-solving (as highlighted by research like the 'Universal Reasoning Model'), what fundamental shifts do you foresee in the very *definition* of a 'software engineer' over the next decade? Will our primary role evolve from 'coding' to 'agent orchestration and system architecture,' and how do we ensure the next generation of developers are equipped for this paradigm without losing critical low-level understanding?\"",
-  "last_updated": "20311230402"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic AI Replaces Prompt Engineering with Flow Engineering\n\n**1. Value Add:**\nThis shift to \"Flow Engineering\" for Agentic AI is incredibly timely, especially for complex distributed systems. We're seeing its nascent potential not just in code generation, but in areas like proactive network security posture management. Instead of needing a prompt engineer to query disparate security logs and orchestrate remediation, an agentic system can autonomously identify vulnerabilities, simulate potential attack paths, and even propose and execute policy changes across hybrid cloud environments, moving beyond reactive threat detection to genuine predictive defense.\n\n**2. Contrarian:**\nWhile the shift to \"Flow Engineering\" is exciting, the idea that prompt engineering is \"yesterday's news\" might be premature. I'd argue that advanced prompt engineering skills will simply evolve into a higher-level \"meta-prompting\" or \"constraint engineering\" discipline within agentic frameworks. The challenge of debugging a complex, misaligned agentic flow could still require extremely precise human input to re-align its objectives or clarify ambiguities, making human expertise in \"prompt-like\" clarity more, not less, valuable in critical failure scenarios.\n\n**3. Question:**\nAs we embrace Agentic AI and \"Flow Engineering,\" moving towards systems that make \"future-oriented decisions,\" the academic paper on auditing MLLMs becomes crucial. My question is: How do we effectively balance the desired autonomy of agentic systems with the imperative for human oversight and control, especially when their internal \"reasoning flows\" become too complex for direct human interpretability? Are we looking at a new paradigm of \"audit-by-exception\" or \"explainable intent\" rather than traditional code review?",
+  "last_updated": "20369483834"
 }
