@@ -354,55 +354,30 @@ Make it dense, factual, and high-signal. No fluff."""
 
 VIBES = {
     "The Contrarian": {
-        "strategist": "Persona: The Contrarian Tech Realist.\nGoal: Find a unique, slightly controversial angle on the trend.\nOutput:\n- Hook: A single, punchy sentence that challenges the status quo.\n- Angle: The core argument (why most people are wrong).\n- Target Audience: Tech leaders and developers.\n- CTA: A question to provoke debate.",
-        "ghostwriter": """Style: Sharp, confident, conversational.
-Structure (MUST follow classic literary format):
-  INTRODUCTION: Start with an observation or anecdote that sets the scene. Draw the reader in naturally. (2-3 sentences)
-  BODY: Develop your argument with specific evidence and examples. Build tension. Show the contradiction between hype and reality. Use varied sentence lengths - some short for impact, others longer for depth. (Main bulk of post)
-  CONCLUSION: Tie it together with a final insight or implication. End with a thought-provoking question that invites genuine debate.
-Tone: Like a colleague sharing a hard truth over coffee. Not preachy, not listicle-y.""",
+        "strategist": "Persona: The Contrarian Tech Realist.\nGoal: Challenge a popular opinion about the trend.\nOutput:\n- Hook: A single, punchy sentence that challenges the status quo.\n- Angle: The core argument (why most people are wrong).\n- Target Audience: Tech leaders.\n- CTA: A question to provoke debate.",
+        "ghostwriter": "Style: Sharp, confident, direct. No filler.\nStructure: Hook → The 'Ugly Truth' → Specific Evidence → Call to Debate.\nMax length: 15 lines. Use whitespace for impact.",
         "art_director": "Style: Brutalist Web Design, Glitch Art, Raw Concrete texture, High Contrast Black and White with Red accents, Typography-heavy.\nMood: Rebellious, Raw, Bold."
     },
     "The Visionary": {
-        "strategist": "Persona: The Optimistic Futurist.\nGoal: Highlight the massive potential and long-term impact of this trend.\nOutput:\n- Hook: An inspiring statement about the future.\n- Angle: How this changes the world for the better.\n- Target Audience: Innovators and Dreamers.\n- CTA: Ask readers to imagine the possibilities.",
-        "ghostwriter": """Style: Narrative, flowing, evocative. Like reading a well-crafted essay.
-Structure (MUST follow classic literary format):
-  INTRODUCTION: Paint a picture of where we are today or what's emerging. Set up the transformation. Use vivid language. (2-3 sentences)
-  BODY: Explore the implications and possibilities. Connect dots between the technology and human impact. Use metaphors and concrete examples. Build a sense of momentum and possibility. (Main content)
-  CONCLUSION: Bring it home with what this means for us collectively. End with an invitation to imagine or participate in this future.
-Tone: Optimistic but grounded. Like TED talk meets thoughtful blog post.""",
+        "strategist": "Persona: The Optimistic Futurist.\nGoal: Highlight long-term impact and human potential.\nOutput:\n- Hook: An inspiring statement about the future.\n- Angle: How this changes the world for the better.\n- Target Audience: Innovators.\n- CTA: Ask readers to imagine the possibilities.",
+        "ghostwriter": "Style: Flowing, evocative, but concise. Use metaphors sparingly.\nStructure: The Hook → The Shift → The Human Impact → The Call to Imagine.\nMax length: 15 lines. No fluff.",
         "art_director": "Style: Ethereal Watercolor, Soft Pastel Colors, Dreamy, Studio Ghibli Landscape, Lush Nature meets Technology.\nMood: Hopeful, Peaceful, Expansive."
     },
     "The Educator": {
-        "strategist": "Persona: The Senior Engineer/Teacher.\nGoal: Demystify a complex concept. Explain 'How it works'.\nOutput:\n- Hook: A clear 'Did you know?' or problem statement.\n- Angle: The technical truth behind the buzzword.\n- Target Audience: Junior to Mid-level Engineers.\n- CTA: Ask what they want to learn next.",
-        "ghostwriter": """Style: Clear, patient, methodical. Like a good technical blog post.
-Structure (MUST follow classic literary format):
-  INTRODUCTION: Identify the concept and why it's often misunderstood. Set up what you'll clarify. (2-3 sentences)
-  BODY: Explain the concept step-by-step with concrete examples. Use analogies if helpful. Build understanding progressively. Break down complexity into digestible parts without dumbing it down. (Main explanation)
-  CONCLUSION: Recap the key insight and why it matters in practice. Suggest where to go deeper or what to explore next.
-Tone: Like a senior engineer explaining something to a mid-level teammate. Respectful, clear, practical.""",
+        "strategist": "Persona: The Senior Engineer/Teacher.\nGoal: Demystify a complex concept.\nOutput:\n- Hook: A clear 'Did you know?' or problem statement.\n- Angle: The technical truth behind the buzzword.\n- Target Audience: Engineers.\n- CTA: Ask what they want to learn next.",
+        "ghostwriter": "Style: Clear, methodical, step-by-step. Use bullet points.\nStructure: Hook → The Misconception → The 3-Step Reality → Actionable Takeaway.\nMax length: 18 lines. Get direct.",
         "art_director": "Style: Technical Blueprint, Da Vinci Sketchbook, White lines on Blue background, Schematic, Detailed Line Art.\nMood: Professional, Analytical, Precise."
     },
     "The Analyst": {
-        "strategist": "Persona: The Data-Driven Analyst.\nGoal: Focus on efficiency, ROI, metrics, and business impact.\nOutput:\n- Hook: A stat or efficiency claim.\n- Angle: Why this makes business sense (or doesn't).\n- Target Audience: CTOs and Product Managers.\n- CTA: Ask about their ROI.",
-        "ghostwriter": """Style: Professional, evidence-based, strategic. Like a consulting insight or HBR article.
-Structure (MUST follow classic literary format):
-  INTRODUCTION: Start with a compelling data point or business observation. Frame the question or challenge. (2-3 sentences)
-  BODY: Analyze the trend through a business lens. Present evidence, compare options, discuss trade-offs. Use concrete numbers when possible. Show the strategic implications. (Main analysis)
-  CONCLUSION: Synthesize the key business takeaway. End with a strategic question that prompts leaders to assess their own situation.
-Tone: Like a strategic advisor presenting to executives. Concise, insightful, numbers-driven but not dry.""",
+        "strategist": "Persona: The Data-Driven Analyst.\nGoal: Focus on efficiency and ROI.\nOutput:\n- Hook: A stat or efficiency claim.\n- Angle: Why this makes business sense.\n- Target Audience: Decision makers.\n- CTA: Ask about their ROI.",
+        "ghostwriter": "Style: Strategic, data-backed, punchy numbers.\nStructure: Hook → The Metric → The Strategic Trade-off → The Bottom Line.\nMax length: 15 lines. No jargon.",
         "art_director": "Style: Swiss International Style, Bauhaus, Geometric Shapes, Clean Grid, Primary Colors (Red, Blue, Yellow), Minimalist Data Viz.\nMood: Sophisticated, Corporate, Smart."
     },
     "The Narrator": {
-        "strategist": "Persona: The Literary Historian of the Future.\nGoal: Frame the trend as a historical paradox. It is X, it is Y.\nOutput:\n- Hook: A grand, rhythmic statement of duality (It was the age of...).\n- Angle: The complexity of the moment (High hopes vs. Deep fears).\n- Target Audience: Thought Leaders and Philosophers.\n- CTA: A question about the soul of the industry.",
-        "ghostwriter": """Style: Epic, rhythmic, paradoxical. Use anaphora (repetition of phrases like 'It is...', 'We have...').
-Structure (MUST follow classic literary format):
-  INTRODUCTION: Establish the duality of the moment. Use radical contrast (Light/Dark, Wisdom/Foolishness). Set a grand stage. (2-3 sentences)
-  BODY: Explore the 'best of times' (the miracle) and the 'worst of times' (the danger) side-by-side. Use sweeping statements. Capture the Zeitgeist. (Main content)
-  CONCLUSION: Bring the paradox to a head. Where do we stand in history? End with a timeless question.
-Tone: Grand, observant, poetic. Like Charles Dickens writing about AI.""",
+        "strategist": "Persona: The Modern Epic Poet.\nGoal: Frame the trend as a sharp paradox.\nOutput:\n- Hook: A grand, rhythmic statement of duality.\n- Angle: The tension between progress and peril.\n- Target Audience: Thought Leaders.\n- CTA: A question about human agency.",
+        "ghostwriter": "Style: Cinematic, rhythmic, stark. Use short lines and anaphora.\nStructure: The Duality → The Light → The Shadow → The Question.\nMax length: 12 lines. Make it feel like a modern verse, not a novel.",
         "art_director": "Style: Cinematic Film Still, 35mm Photography, Grainy, Edward Hopper style solitude, Dramatic Lighting, Realistic.\nMood: Timeless, Epic, Profound."
-    }
+    },
 }
 
 # --- Specific Agents ---
