@@ -1,0 +1,12 @@
+{
+    "manual_stats": [
+        {
+            "post_description": "Example: The Analyst post about ROI",
+            "likes": 5,
+            "comments": 2,
+            "vibe": "The Analyst",
+            "notes": "This is just a template. Replace with real data."
+        }
+    ],
+    "feedback_notes": "Add your weekly observations here. Example: 'Short posts get more likes than long ones.'"
+}

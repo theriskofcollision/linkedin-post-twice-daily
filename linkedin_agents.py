@@ -106,6 +106,38 @@ class Memory:
         self._save(data)
         print("🧠 Memory Updated: Saved latest Comment Pack.")
 
+    def get_manual_feedback(self) -> str:
+        """Read manual feedback from user-editable JSON file (Plan B)."""
+        feedback_path = os.path.join(os.path.dirname(self.file_path), "manual_feedback.json")
+        try:
+            with open(feedback_path, "r") as f:
+                data = json.load(f)
+            
+            stats = data.get("manual_stats", [])
+            notes = data.get("feedback_notes", "")
+            
+            if not stats and not notes:
+                return ""
+            
+            # Build insights from manual data
+            insights = []
+            if stats:
+                # Find best performing vibe from manual stats
+                best = max(stats, key=lambda x: x.get("likes", 0), default=None)
+                if best and best.get("likes", 0) > 0:
+                    insights.append(f"📊 MANUAL DATA: Best vibe is '{best.get('vibe', 'Unknown')}' with {best.get('likes')} likes.")
+            
+            if notes and notes != "Add your weekly observations here. Example: 'Short posts get more likes than long ones.'":
+                insights.append(f"📝 USER NOTES: {notes}")
+            
+            return " | ".join(insights) if insights else ""
+        except FileNotFoundError:
+            return ""
+        except Exception as e:
+            print(f"⚠️ Could not read manual feedback: {e}")
+            return ""
+
+
 # --- Base Agent ---
 
 class Agent:
@@ -732,6 +764,13 @@ class Orchestrator:
         # Step 0: Review Past Performance (The Feedback Loop)
         self.review_past_performance()
         performance_insights = self.memory.get_performance_insights()
+        
+        # Step 0.1: Check for Manual Feedback (Plan B)
+        manual_feedback = self.memory.get_manual_feedback()
+        if manual_feedback:
+            print(f"\n📊 Manual Feedback Detected: {manual_feedback}")
+            performance_insights = f"{performance_insights} | {manual_feedback}"
+        
         print(f"\n💡 Performance Insight: {performance_insights}")
         
         # 0.5. Select Vibe
