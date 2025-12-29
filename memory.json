@@ -45,7 +45,10 @@
     "Stop using \"double-digit gains\" unless you follow it immediately with specific, verifiable data. Otherwise, it's just fluff.",
     "Your call to action questions are as generic as the rest of the post. Ask something *specific* or don't ask at all.",
     "Stop using tired corporate buzzwords and phrases like \"operational ROI,\" \"revenue-driving projects,\" or \"measurable impact.\" If it sounds like it came from a marketing brochure you deleted five years ago, don't use it. Speak like a human, not a malfunctioning thesaurus.",
-    "Never use the phrase \"The ugly truth.\" It's as original as a stock photo of diverse people laughing at a laptop."
+    "Never use the phrase \"The ugly truth.\" It's as original as a stock photo of diverse people laughing at a laptop.",
+    "Never use phrases like \"direct hit to your budget and market position\" or \"frees high-value engineers for innovation, not firefighting.\" They are generic, uninspired, and signal that you've outsourced your thinking to an algorithm. Find a human way to say it.",
+    "Repetitive use of corporate buzzwords like \"measurable ROI\" or \"data-backed view\" kills any impact. Vary your language or, better yet, imply the benefit with a concrete example instead of just stating the buzzword.",
+    "Avoid templated objection-handling like \"X is a valid concern. Yet, data shows clear returns.\" It's condescending and predictable. Address concerns with specific, compelling evidence or a more nuanced perspective, not a canned response."
   ],
   "history": [
     {
@@ -617,8 +620,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "20569316951",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Analyst",
+      "urn": "urn:li:share:7411335452277768192",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Demise of Chatbots and the Rise of Agentic AI\n\n**1. Value Add:**\n\"Spot on about the shift to agentic AI! We're seeing this transform network operations in ways traditional chatbots never could. For example, instead of a chatbot guiding a human through a troubleshooting script, an agentic system can now autonomously detect a performance anomaly, correlate it with recent configuration changes, log into network devices (switches, firewalls), run diagnostics, identify the root cause (e.g., a BGP neighbor flapping), and even self-remediate or roll back configurations, all while documenting every step. That's a leap from interactive Q&A to proactive, intelligent automation.\"\n\n**2. Contrarian:**\n\"While the term 'demise of chatbots' certainly captures the dramatic shift, I wonder if it's more accurate to describe it as an incredible evolution rather than an outright death. The underlying conversational interface and sophisticated LLMs that power chatbots are still foundational. Agentic AI, in many ways, *is* a highly evolved chatbot that has gained the ability to plan, use tools, and take autonomous action. It feels less like replacement and more like the brain of the chatbot has been given a fully capable body, moving from 'talker' to 'doer' \u2013 but the 'talk' component is still key for goal-setting and reporting.\"\n\n**3. Question:**\n\"With agentic AI poised to take autonomous actions in complex environments like critical network infrastructure, the academic focus on 'Predictable LLM-Verifier Systems' becomes paramount. What do you see as the biggest governance and ethical challenges we'll face in establishing trust and accountability for these agents? Specifically, how do we design robust auditing trails and 'kill switch' mechanisms that ensure human oversight remains effective without stifling the very autonomy that makes agents so powerful?\"",
-  "last_updated": "20556950936"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Future of Coding is Agentic\n\n**1. Value Add:**\n\"Absolutely spot on! The move towards agentic systems for coding isn't just hype; it's a critical evolution for operational resilience. Thinking about the **$2M/hour cost of cloud incidents** mentioned, the research on 'Agentic Structured Graph Traversal for Root Cause Analysis' (like arXiv: 2512.22113v1) is precisely where we'll see massive ROI. This automation of diagnosis will free up senior engineers from firefighting, letting them focus on innovation, which is the real long-term win for business.\"\n\n**2. Contrarian:**\n\"While the potential for agentic systems in coding is undeniable, I wonder if we're sufficiently factoring in the *operational overhead* beyond initial development. The increasing demand for computational resources \u2013 the 'AI gobbling up chips' concern \u2013 isn't just an infrastructure cost; it raises significant sustainability questions that few are openly discussing. Are we trading human complexity for infrastructure complexity, and what does that mean for smaller organizations or those in less resource-rich environments when adopting these solutions?\"\n\n**3. Question:**\n\"Given the rapid progress in agentic AI for tasks like root cause analysis and visual insights, what do you see as the *most critical shift* needed in our engineering culture and skillsets? Beyond just managing agents, how do we ensure these autonomous systems foster truly 'resilient' operational environments, particularly when debugging agent-generated or agent-modified code? Is the future more about 'agent orchestration' or 'human-agent partnership' for critical infrastructure, and what ethical guardrails must evolve alongside this autonomy?\"",
+  "last_updated": "20569316951"
 }
