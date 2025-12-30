@@ -555,20 +555,36 @@ class ImageGenerator(Agent):
         
         print(f"Generating image for cleaned prompt: {clean_prompt[:50]}...")
 
+        # Primary: Pollinations.ai with retry
+        encoded_prompt = urllib.parse.quote(clean_prompt)
+        url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?width=1200&height=628&nologo=true"
+        
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                print(f"  Attempt {attempt + 1}/{max_retries}: Pollinations.ai...")
+                response = requests.get(url, timeout=60)  # 60s timeout
+                response.raise_for_status()
+                print("✅ Image generated successfully (via Pollinations)!")
+                return response.content
+            except requests.exceptions.RequestException as e:
+                print(f"  ⚠️ Pollinations attempt {attempt + 1} failed: {e}")
+                if attempt < max_retries - 1:
+                    import time
+                    wait_time = (attempt + 1) * 5  # 5s, 10s, 15s
+                    print(f"  Waiting {wait_time}s before retry...")
+                    time.sleep(wait_time)
+        
+        # Fallback: Try alternative model on Pollinations
+        print("  Trying fallback: Pollinations Flux model...")
         try:
-            # Use Pollinations.ai (Free, No Key)
-            encoded_prompt = urllib.parse.quote(clean_prompt)
-            # Request a landscape image (1200x628 is standard for LinkedIn)
-            url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?width=1200&height=628&nologo=true"
-            
-            response = requests.get(url)
+            fallback_url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?width=1200&height=628&model=flux&nologo=true"
+            response = requests.get(fallback_url, timeout=90)
             response.raise_for_status()
-            
-            print("✅ Image generated successfully (via Pollinations)!")
+            print("✅ Image generated successfully (via Pollinations Flux fallback)!")
             return response.content
-            
         except Exception as e:
-            print(f"❌ Image Generation Error: {e}")
+            print(f"❌ All image generation attempts failed: {e}")
             return None
 
 # --- LinkedIn Connector ---
