@@ -56,7 +56,10 @@
     "Do not use vague, feel-good adjectives (e.g., \"boldest,\" \"amplified,\" \"strategic,\" \"innovative\") without attaching them to something concrete and demonstrable. Show, don't tell, especially when \"telling\" means using more buzzwords.",
     "Eradicate generic business jargon like \"low-value, repetitive tasks\" or \"higher-impact strategic work.\" Show, don't tell, with specific, impactful scenarios.",
     "Your opening must shock, challenge, or provoke. A dry statistic followed by corporate buzzwords is the fast track to being scrolled past.",
-    "Stop asking generic engagement questions at the end. Make a definitive statement, issue a challenge, or offer a unique insight. Don't beg for comments."
+    "Stop asking generic engagement questions at the end. Make a definitive statement, issue a challenge, or offer a unique insight. Don't beg for comments.",
+    "Never use phrases like \"Actionable Takeaway.\" It's the hallmark of generic, AI-assisted content that adds no actual value.",
+    "Stop using subheadings like \"The Misconception\" or \"The 3-Step Reality.\" You're writing a LinkedIn post, not a white paper outline from 2005. It's painfully predictable.",
+    "Don't end your post with a lazy, generic engagement question like \"What specific challenge are you facing...?\" It's a transparent plea for comments, not a genuine attempt to spark conversation."
   ],
   "history": [
     {
@@ -678,8 +681,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "20615972212",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Educator",
+      "urn": "urn:li:share:7412059076592828416",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Why Chatbots Are Dead \u2013 The Rise of Agentic AI\n\n**1. Value Add:**\n\"Absolutely agree. The shift from reactive chatbots to proactive agentic AI isn't just an upgrade; it's a paradigm shift for IT operations. We've seen traditional chatbots falter when a user asks for 'diagnose and fix my VPN issue,' which requires multiple steps and context awareness. An agentic AI, however, could autonomously query logs, check firewalls, verify tunnel status, and even initiate remediation steps, saving hours in incident resolution. This moves us from 'conversational interface' to 'autonomous IT assistant' \u2013 a crucial leap for network resilience and operational efficiency.\"\n\n**2. Contrarian:**\n\"While the capabilities of agentic AI are undeniably groundbreaking, I'd respectfully push back on the notion that 'chatbots are dead.' I see this more as an evolution and a segmentation of the market. For highly structured, single-intent queries (e.g., 'What's the status of ticket #12345?'), a lightweight, traditional chatbot can still offer rapid, cost-effective responses without the overhead of agentic orchestration. The real nuance might be that *ineffective* chatbots are dead, while purpose-built, simpler conversational interfaces will continue to serve specific, constrained use cases where full autonomy isn't required or justified by complexity/cost.\"\n\n**3. Question:**\n\"This shift brings incredible potential, especially for automating complex network operations. However, it also raises a critical question for networking professionals: As agentic AI gains more autonomy in planning and executing tasks, how do we establish robust guardrails, auditing mechanisms, and accountability frameworks to ensure operational integrity and prevent unintended consequences, especially in dynamic, mission-critical network environments?\"",
-  "last_updated": "20601882030"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic AI - Prompt Engineering Replaced by Flow Engineering\n\n**1. Value Add:**\nThis evolution is inevitable. From a networking perspective, it's akin to moving from simple API calls to orchestrating complex, event-driven microservice workflows. We're seeing this play out in real-time within highly distributed IoT environments, where edge agents need to dynamically adapt data processing and action sequences based on sensor feedback and network conditions, rather than executing pre-defined, static instructions. Flow engineering provides that crucial adaptive backbone for resilient, intelligent operations.\n\n**2. Contrarian:**\nWhile \"superseding\" is a strong word, I'd argue prompt engineering isn't being *replaced* but rather *elevated* and *encapsulated*. Think of it like a programming language vs. a build system. You still need to write effective code (prompts for individual agent steps), but now you have a sophisticated framework (flow engineering) to compile, link, and orchestrate those pieces into a coherent application. The nuance is that robust prompt design for each sub-task becomes even *more* critical for the overall flow's reliability and success, especially when agents interact across various network endpoints with differing latencies or data formats.\n\n**3. Question:**\nThis brings up critical questions about the operationalization of these agentic flows. From a network and security architect's perspective, how do we effectively implement robust observability, monitoring, and granular access control for these multi-step, potentially distributed AI agents? Especially when an agent's 'decision' at one step dictates the network resources or external API calls it makes in subsequent steps \u2013 how do we prevent malicious or erroneous flows from spiraling out of control while maintaining performance and ensuring compliance with 'human-in-the-loop' policies?",
+  "last_updated": "20615972212"
 }
