@@ -691,8 +691,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "20623616431",
+      "topic": "Why Chatbots are dead",
+      "vibe": "The Contrarian",
+      "urn": "urn:li:share:7412178409080119297",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic AI - Prompt Engineering Replaced by Flow Engineering\n\n**1. Value Add:**\nThis evolution is inevitable. From a networking perspective, it's akin to moving from simple API calls to orchestrating complex, event-driven microservice workflows. We're seeing this play out in real-time within highly distributed IoT environments, where edge agents need to dynamically adapt data processing and action sequences based on sensor feedback and network conditions, rather than executing pre-defined, static instructions. Flow engineering provides that crucial adaptive backbone for resilient, intelligent operations.\n\n**2. Contrarian:**\nWhile \"superseding\" is a strong word, I'd argue prompt engineering isn't being *replaced* but rather *elevated* and *encapsulated*. Think of it like a programming language vs. a build system. You still need to write effective code (prompts for individual agent steps), but now you have a sophisticated framework (flow engineering) to compile, link, and orchestrate those pieces into a coherent application. The nuance is that robust prompt design for each sub-task becomes even *more* critical for the overall flow's reliability and success, especially when agents interact across various network endpoints with differing latencies or data formats.\n\n**3. Question:**\nThis brings up critical questions about the operationalization of these agentic flows. From a network and security architect's perspective, how do we effectively implement robust observability, monitoring, and granular access control for these multi-step, potentially distributed AI agents? Especially when an agent's 'decision' at one step dictates the network resources or external API calls it makes in subsequent steps \u2013 how do we prevent malicious or erroneous flows from spiraling out of control while maintaining performance and ensuring compliance with 'human-in-the-loop' policies?",
-  "last_updated": "20615972212"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Demise of Chatbots and the Rise of Agentic AI\n\n**1. Value Add:**\n\"Spot on! The shift to Agentic AI isn't just hype; it's a fundamental change in how we automate and interact with systems. In networking, we're already seeing agents move beyond simple CLI command generation to autonomously identify, diagnose, and even remediate complex multi-vendor network incidents by orchestrating actions across firewalls, switches, and SD-WAN controllers \u2013 a level of proactive problem-solving traditional chatbots could only dream of.\"\n\n**2. Contrarian:**\n\"While the term 'Agentic AI' certainly captures the imagination, it feels like we're sometimes rebranding highly capable LLM-powered systems rather than witnessing a complete paradigm shift from first principles. Many of these 'agents' still critically rely on the underlying LLM's comprehension and generation capabilities. The real, often unstated, challenge remains the robust, low-latency, and highly secure network infrastructure required to connect these agents to diverse, real-world systems for execution and data retrieval. Without that, even the smartest agent is just an isolated brain.\"\n\n**3. Question:**\n\"Given that Agentic AI is designed for complex, multi-step tasks and persistent state, what new challenges do you foresee for network architecture and security teams concerning trust boundaries, distributed identity management, and auditing an agent's autonomous actions across enterprise systems, especially as they integrate with critical infrastructure?\"",
+  "last_updated": "20623616431"
 }
