@@ -65,7 +65,8 @@
     "Stop using generic corporate buzzwords like \"autonomy,\" \"efficiency,\" \"redeployment of talent,\" and \"productivity engine\" without providing *specific, tangible, non-obvious* examples or data that couldn't be found in a press release from 2018.",
     "Hooks must be provocative, counter-intuitive, or intensely specific to cut through the noise. A rhetorical question about an abstract percentage is none of these.",
     "Your \"call to action\" (\"What's the cost of waiting?\") sounds less like a challenge and more like a sad puppy asking for scraps. Give it teeth or make it actionable.",
-    "Never use \"significant\" or \"drastically\" to describe an impact; use numbers or stronger, more specific verbs."
+    "Never use \"significant\" or \"drastically\" to describe an impact; use numbers or stronger, more specific verbs.",
+    "Your core thesis should be clear, but avoid over-indexing on a single academic term that might alienate a broader audience if overused. Sometimes a simpler, equally impactful phrase gets the job done without feeling like you're correcting a philosophy paper."
   ],
   "history": [
     {
@@ -747,8 +748,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "20675235694",
+      "topic": "LLMs as Operating Systems",
+      "vibe": "The Contrarian",
+      "urn": "urn:li:share:7413145198555324416",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Future of Coding is Agentic\n\n**1. Value Add:**\n\"Absolutely, the shift to agentic systems autonomously initiating transactions, as mentioned, isn't just a coding paradigm change; it fundamentally redefines network security and identity management. We're moving beyond user-based IAM to 'Agent-Centric IAM,' where securing the network means validating the intent and identity of an AI agent and its associated transactions in real-time. This demands a whole new layer of policy enforcement and deep packet inspection, not just for human users but for autonomous entities operating across the network fabric. It's a huge undertaking for network architecture teams.\"\n\n**2. Contrarian:**\n\"While the promise of agentic AI for coding is compelling for efficiency, I'd respectfully argue that the operationalization of these agents in live, production networks faces significant, often underestimated, challenges beyond just coding prowess. The network itself isn't a frictionless environment; it introduces latency, potential choke points, and distributed security attack surfaces that even the most advanced 'choice policy' agents must navigate. True, robust autonomous operation will depend less on the agent's ability to code and more on the network's capacity for real-time self-healing, intelligent traffic management, and resilience against AI-generated anomalies \u2013 capabilities that are still nascent and require massive human oversight to build and maintain.\"\n\n**3. Question:**\n\"Given that agentic AI is expected to autonomously write, deploy, and even initiate transactions on a network, what fundamentally changes about our concept of 'network governance' and 'auditing'? If the vast majority of network activity and resource consumption originates from agentic processes with 'open-ended reasoning,' how do we establish clear accountability, maintain regulatory compliance, and ensure transparent oversight when the 'operator' is an autonomous AI system rather than a human or a predefined application?\"",
-  "last_updated": "20662741424"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems in Agentic AI\n\n**1. Value Add:**\nAbsolutely, the comparison of LLMs to operating systems for agentic AI is spot on. We're seeing this play out in areas like hyper-personalization engines, where an LLM isn't just generating content but orchestrating data pipelines, model calls, and user interactions across multiple services to deliver a truly dynamic experience. Think beyond a single prompt; it's managing long-term user state, external tool calls, and even fallback mechanisms, much like an OS manages processes and resources. This unlocks entirely new levels of automation in customer engagement and complex workflow management.\n\n**2. Contrarian:**\nWhile the vision of LLMs as \"operating systems\" for agentic AI is compelling, I think we need to temper expectations regarding their current capabilities for true OS-level reliability and security. An actual OS manages hardware resources, ensures process isolation, and guarantees deterministic execution \u2013 areas where probabilistic LLMs still fall short. They're phenomenal at high-level orchestration and reasoning, but for critical enterprise deployments, we still rely heavily on robust engineering frameworks and traditional software components for state management, error handling, and security. We're building a powerful new *application layer* on top of traditional OSes, rather than replacing them entirely, at least for now.\n\n**3. Question:**\nIf we truly envision LLMs as \"operating systems\" for agentic AI, how do we begin to standardize the \"kernel\" \u2013 not just in terms of API calls, but crucially, in defining robust, auditable mechanisms for state persistence, rollback capabilities, and secure sandboxing of diverse agentic \"processes\"? The 78% deployment failure rate for lack of state management suggests a deeper architectural challenge than simply prompting better, and addressing it requires foundational solutions akin to traditional OS design.",
+  "last_updated": "20675235694"
 }
