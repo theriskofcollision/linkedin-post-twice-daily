@@ -1,0 +1,51 @@
+# LinkedIn Growth Workflow Configuration
+# Edit this file to customize the workflow behavior
+
+# AI Model Configuration
+model:
+  name: "gemini-2.5-flash"
+  max_retries: 3
+  base_delay_seconds: 5
+
+# Content Topics (randomly selected if no topic provided)
+topics:
+  - "The rise of Multi-Agent Systems"
+  - "Why Chatbots are dead"
+  - "The future of coding is Agentic"
+  - "LLMs as Operating Systems"
+  - "Prompt Engineering is replaced by Flow Engineering"
+
+# Data Source Limits
+sources:
+  hackernews:
+    scan_limit: 15  # Number of top stories to scan (reduced from 50)
+    ai_results: 5   # Max AI-related stories to return
+  newsapi:
+    limit: 5
+  arxiv:
+    limit: 3
+  tavily:
+    max_results: 3
+
+# Memory Settings
+memory:
+  file_path: "memory.json"
+  archive_days: 90  # Archive posts older than this
+  archive_file: "memory_archive.json"
+
+# Image Generation
+image:
+  width: 1200
+  height: 628
+  max_retries: 3
+  timeout_seconds: 60
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+
+# Feature Flags
+features:
+  enable_healer: false  # Disabled for personal profiles (no stats API access)
+  enable_networker: true
+  enable_image_generation: true

@@ -3,7 +3,7 @@ import json
 import os
 import pandas as pd
 import plotly.express as px
-from linkedin_agents import Orchestrator, Memory
+# Note: Orchestrator is imported lazily when needed to avoid loading on every page view
 
 # Page Config
 st.set_page_config(
@@ -95,14 +95,24 @@ c_left, c_right = st.columns([1, 2])
 
 with c_left:
     st.header("🤖 Controls")
-    if st.button("Run Workflow Now (Manual Trigger)"):
-        with st.spinner("Agents are working... check terminal..."):
+    
+    # Warning about running manually
+    st.warning("⚠️ Running manually may conflict with scheduled GitHub Actions runs.")
+    
+    # Confirmation checkbox
+    confirm = st.checkbox("I understand the risks")
+    
+    if st.button("Run Workflow Now (Manual Trigger)", disabled=not confirm):
+        with st.spinner("Agents are working... this may take several minutes..."):
             try:
+                # Lazy import to avoid loading on every page view
+                from linkedin_agents import Orchestrator
                 orch = Orchestrator()
                 orch.run_workflow()
-                st.success("Workflow completed! Refresh page to see results.")
+                st.success("✅ Workflow completed! Refresh page to see results.")
+                st.balloons()
             except Exception as e:
-                st.error(f"Workflow failed: {e}")
+                st.error(f"❌ Workflow failed: {e}")
 
 with c_right:
     st.header("🧠 Critic Memory")

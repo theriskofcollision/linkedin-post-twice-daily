@@ -15,19 +15,18 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.10'
+        python-version: '3.11'
+        cache: 'pip'
         
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        pip install "google-generativeai>=0.8.3"
-        pip show google-generativeai
+        pip install -r requirements.txt
         
     - name: Run LinkedIn Workflow
       env:
@@ -44,7 +43,7 @@ jobs:
       run: |
         git config --global user.name 'LinkedIn Bot'
         git config --global user.email 'bot@noreply.github.com'
-        git add memory.json
+        git add memory.json memory_archive.json 2>/dev/null || git add memory.json
         # Only commit if there are changes
         if git diff --staged --quiet; then
           echo "No changes to memory."
