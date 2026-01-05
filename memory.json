@@ -67,20 +67,21 @@
     "Your \"call to action\" (\"What's the cost of waiting?\") sounds less like a challenge and more like a sad puppy asking for scraps. Give it teeth or make it actionable.",
     "Never use \"significant\" or \"drastically\" to describe an impact; use numbers or stronger, more specific verbs.",
     "Your core thesis should be clear, but avoid over-indexing on a single academic term that might alienate a broader audience if overused. Sometimes a simpler, equally impactful phrase gets the job done without feeling like you're correcting a philosophy paper.",
-    "Never dump a dense paragraph of generic adjectives as your \"visual concept.\" If you can't describe your *own* vision in concise, evocative terms, you have no vision."
+    "Never dump a dense paragraph of generic adjectives as your \"visual concept.\" If you can't describe your *own* vision in concise, evocative terms, you have no vision.",
+    "Don't just define; disrupt. Your post should spark a thought, not just provide a Wikipedia entry. Give us *your* opinion, *your* unique struggle, or *your* audacious prediction, not just the universally agreed-upon facts."
   ],
   "history": [
     {
-      "date": "20710740691",
-      "topic": "Prompt Engineering is replaced by Flow Engineering",
-      "vibe": "The Contrarian",
-      "urn": "urn:li:share:7413872671651721216",
+      "date": "20723185118",
+      "topic": "Why Chatbots are dead",
+      "vibe": "The Educator",
+      "urn": "urn:li:share:7413991669156544512",
       "stats": {
         "likes": 0,
         "comments": 0
       }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Shift from Prompt Engineering to Flow Engineering in Agentic AI\n\n**1. Value Add:**\n\"Absolutely spot on about the critical shift to Flow Engineering. We're seeing this play out dramatically in enterprise network automation, where an agent needs to do more than just execute a single command. It must autonomously detect anomalies, correlate data across multiple systems, trigger diagnostic workflows, and then initiate pre-approved remediation scripts, reflecting on intermediate outcomes. A purely prompt-based approach simply can't orchestrate that level of adaptive, multi-stage intelligence required for true operational resilience.\"\n\n**2. Contrarian:**\n\"While I wholeheartedly agree that Flow Engineering is the defining paradigm for sophisticated agentic systems, I'd respectfully push back on the notion that 'prompt engineering' is 'dead.' Instead, I see it evolving into a highly specialized skill *within* flow design. Crafting precise, unambiguous prompts for each node or decision point within a complex workflow becomes even more critical. It's less about standalone interaction and more about mastering the atomic units of communication that form the backbone of a robust, reliable agentic flow.\"\n\n**3. Question:**\n\"This transition to Flow Engineering is undoubtedly the path forward, but it introduces fascinating new challenges. As we design increasingly autonomous workflows with conditional logic and iterative reflection, how do we best approach robust observability, debugging, and validation? What new tooling and architectural patterns will be essential to effectively trace, audit, and secure the 'geometry of reason' within these multi-step agentic flows, especially when a failure isn't just a bad prompt, but a breakdown in a complex internal decision sequence?\"",
-  "last_updated": "20710740691"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Dawn of Agentic AI and the Demise of Traditional Chatbots\n\n**1. Value Add:**\n\"Absolutely spot on! The shift from 'AI that talks' to 'AI that does' is monumental. We're already seeing this in network automation and security, where agentic AI isn't just flagging anomalies but proactively isolating threats or dynamically reconfiguring firewall rules. This capability to *act* autonomously, especially in rapid response scenarios, is where the real value\u2014and challenge\u2014for 2026 lies, far beyond what traditional chatbots could offer.\"\n\n**2. Contrarian:**\n\"While Agentic AI represents a massive leap, calling it the 'demise' of traditional chatbots might be an overstatement. For many routine, informational queries or initial customer touchpoints, a well-designed conversational chatbot remains highly efficient and cost-effective. The real evolution isn't necessarily a replacement but a segmentation: chatbots will likely continue to own the 'talking' layer, while agentic systems take on the complex 'doing.' The challenge then becomes orchestrating this layered AI ecosystem effectively, not just eliminating one part.\"\n\n**3. Question:**\n\"As Agentic AI shifts from 'talking' to 'doing' and gains significant autonomy, what are the most critical networking and infrastructure design considerations we need to implement to ensure not just performance and scalability, but also robust 'explainability' and 'reversibility' mechanisms for agent actions, especially when operating on complex, interconnected systems?\"",
+  "last_updated": "20723185118"
 }
