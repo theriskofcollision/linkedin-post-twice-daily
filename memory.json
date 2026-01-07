@@ -69,20 +69,21 @@
     "Your core thesis should be clear, but avoid over-indexing on a single academic term that might alienate a broader audience if overused. Sometimes a simpler, equally impactful phrase gets the job done without feeling like you're correcting a philosophy paper.",
     "Never dump a dense paragraph of generic adjectives as your \"visual concept.\" If you can't describe your *own* vision in concise, evocative terms, you have no vision.",
     "Don't just define; disrupt. Your post should spark a thought, not just provide a Wikipedia entry. Give us *your* opinion, *your* unique struggle, or *your* audacious prediction, not just the universally agreed-upon facts.",
-    "All statistics and failure rates must be cited or clearly qualified as estimates. Don't throw numbers around like confetti if you can't back them up."
+    "All statistics and failure rates must be cited or clearly qualified as estimates. Don't throw numbers around like confetti if you can't back them up.",
+    "Never introduce unexplained technical acronyms; they sound pretentious, not profound."
   ],
   "history": [
     {
-      "date": "20756048912",
-      "topic": "LLMs as Operating Systems",
-      "vibe": "The Educator",
-      "urn": "urn:li:share:7414354228393041920",
+      "date": "20776512006",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Contrarian",
+      "urn": "urn:li:share:7414596751250395136",
       "stats": {
         "likes": 0,
         "comments": 0
       }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems in Agentic AI\n\n**1. Value Add:**\n\"I completely agree that LLMs acting as operating systems for agentic AI is a game-changer. It's not just about capability, but about efficiency and adaptability. The recent research on models like Falcon-H1R achieving competitive reasoning with just 7B parameters highlights that these orchestrators don't need to be gargantuan to be highly effective, paving the way for more scalable and distributed agentic deployments.\"\n\n**2. Contrarian:**\n\"While the vision of LLMs as operating systems is undeniably exciting, I'd argue that the 'operating system' metaphor might be stretching a bit for what we have currently. Traditional OS excels at deterministic, low-latency resource management and direct hardware interaction \u2013 areas where current LLMs, even agentic ones, still have significant limitations. We might be looking at a powerful application-layer control plane or advanced scheduling, but calling it a true 'operating system' risks understating the fundamental differences in their operational paradigms and the challenges in bridging that gap.\"\n\n**3. Question:**\n\"With the emphasis on 'emerging governance' frameworks and the challenges around ethical deployment and toxicity detection for LLMs as OS, what specific technical and architectural mechanisms do you believe will become standard for enforcing truly robust, dynamic ethical guardrails that can prevent unintended emergent behaviors in complex, autonomous agentic systems at scale?\"",
-  "last_updated": "20756048912"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Future of Coding is Agentic\n\n**1. Value Add:**\nAbsolutely agree. The shift to agentic coding isn't just about faster development, it's a paradigm leap for network automation. We're moving beyond static Infrastructure as Code (IaC) to truly dynamic, intent-based networking. Imagine agents, armed with advanced reasoning like MAGMA's multi-graph memory, not just generating configs but autonomously deploying, monitoring, and adapting network topologies in real-time to meet SLAs or counter emerging threats. This democratizes sophisticated network ops, making complex optimization accessible without deep scripting knowledge for every engineer.\n\n**2. Contrarian:**\nWhile the promise of agentic coding is compelling, especially with benchmarks like Opus 4.5, I think we need to carefully consider the practical efficacy in critical networking infrastructure. Unlike isolated application code, network configurations are highly stateful, distributed, and inherently interdependent, often with legacy components. A subtle bug or misinterpretation by an autonomous agent could lead to widespread outages or critical security vulnerabilities. The challenge isn't just coding a network, it's maintaining the 'advanced automation governance' and human-in-the-loop oversight necessary for reliable, resilient, and secure network operations at scale.\n\n**3. Question:**\nIf agentic AI, particularly with multi-agent collaboration and emergent communication capabilities (like those explored in ASRD), truly becomes the dominant mode for network configuration and management, what fundamental shifts will we see in network architecture itself? Beyond the obvious impact on the network engineer's role, how do we design network fabrics and protocols to be 'agent-native,' facilitating seamless, secure, and verifiable interactions between these autonomous systems? And crucially, how do we build the necessary observability and 'spatio-temporal reasoning' into our monitoring to understand and govern these complex, agent-driven network behaviors?",
+  "last_updated": "20776512006"
 }
