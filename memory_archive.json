@@ -778,5 +778,15 @@
       "likes": 0,
       "comments": 0
     }
+  },
+  {
+    "date": "20790031243",
+    "topic": "LLMs as Operating Systems",
+    "vibe": "The Educator",
+    "urn": "urn:li:share:7414717377457676288",
+    "stats": {
+      "likes": 0,
+      "comments": 0
+    }
   }
 ]
