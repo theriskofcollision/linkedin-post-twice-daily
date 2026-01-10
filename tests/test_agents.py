@@ -11,7 +11,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from linkedin_agents import (
     Agent, Strategist, Ghostwriter, ArtDirector, Critic,
-    Networker, ImageGenerator, VIBES
+    Networker, VIBES
 )
 
 
@@ -141,81 +141,25 @@ class TestNetworker:
         assert "Question" in networker.system_prompt
 
 
-class TestImageGenerator:
-    """Test the ImageGenerator agent."""
-    
-    @patch('requests.get')
-    def test_generate_image_success(self, mock_get):
-        """Should generate image via Pollinations."""
-        mock_response = MagicMock()
-        mock_response.content = b'fake_image_binary_data'
-        mock_response.raise_for_status = MagicMock()
-        mock_get.return_value = mock_response
-        
-        generator = ImageGenerator()
-        result = generator.generate_image("A beautiful sunset")
-        
-        assert result == b'fake_image_binary_data'
-        mock_get.assert_called()
-    
-    @patch('requests.get')
-    def test_generate_image_cleans_prompt(self, mock_get):
-        """Should clean prompt of metadata."""
-        mock_response = MagicMock()
-        mock_response.content = b'image_data'
-        mock_response.raise_for_status = MagicMock()
-        mock_get.return_value = mock_response
-        
-        generator = ImageGenerator()
-        
-        # Prompt with metadata
-        dirty_prompt = "Visual Format: Square\nPrompt: A sunset\nText Overlay: Hello"
-        generator.generate_image(dirty_prompt)
-        
-        # Verify the cleaned prompt was used (just verify it was called)
-        mock_get.assert_called()
-    
-    @patch('requests.get')
-    def test_generate_image_retry_on_failure(self, mock_get):
-        """Should retry on failure."""
-        # Create proper mock responses
-        success_response = MagicMock()
-        success_response.content = b'image'
-        success_response.raise_for_status = MagicMock()
-        
-        # First 2 calls fail with RequestException, 3rd succeeds
-        import requests
-        mock_get.side_effect = [
-            requests.exceptions.RequestException("Timeout"),
-            requests.exceptions.RequestException("Timeout"),
-            success_response
-        ]
-        
-        generator = ImageGenerator()
-        result = generator.generate_image("Test")
-        
-        # Result should be the image from successful call
-        assert result == b'image'
-
-
 class TestVibes:
     """Test the VIBES configuration."""
     
     def test_all_vibes_have_required_keys(self):
-        """Each vibe should have strategist, ghostwriter, art_director keys."""
-        required_keys = ['strategist', 'ghostwriter', 'art_director']
+        """Each vibe should have strategist, ghostwriter, is_organic keys."""
+        # art_director removed from VIBES, handled dynamically
+        required_keys = ['strategist', 'ghostwriter', 'is_organic']
         
         for vibe_name, vibe_config in VIBES.items():
             for key in required_keys:
                 assert key in vibe_config, f"{vibe_name} missing {key}"
     
     def test_vibe_count(self):
-        """Should have 5 vibes."""
-        assert len(VIBES) == 5
+        """Should have 21 vibes."""
+        assert len(VIBES) >= 21
         
         expected_vibes = [
             "The Contrarian", "The Visionary", "The Educator",
-            "The Analyst", "The Narrator"
+            "The Analyst", "The Narrator", "The Oracle", "The Satirist"
         ]
         for vibe in expected_vibes:
             assert vibe in VIBES

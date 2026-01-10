@@ -44,8 +44,16 @@ image:
 logging:
   level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
 
+# Variety & Entropy Settings
+variety:
+  entropy_level: "high"  # low, medium, high
+  enabled_personas: "all"  # "all" or list of specific vibes
+  image_mode_preference: "hybrid"  # always_ai, always_real, hybrid
+  organic_vibe_threshold: 0.5  # Probability of picking organic image if vibe allows
+
 # Feature Flags
 features:
   enable_healer: false  # Disabled for personal profiles (no stats API access)
   enable_networker: true
   enable_image_generation: true
+  enable_organic_visuals: true

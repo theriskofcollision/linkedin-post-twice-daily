@@ -124,36 +124,39 @@ class Memory:
         return data.get("rules", [])
 
     def add_rule(self, rule: str):
-        data = self._load()
-        if rule not in data["rules"]:
-            data["rules"].append(rule)
-            self._save(data)
-            logger.info(f"🧠 Memory Updated: Added rule '{rule}'")
+        with self.lock:
+            data = self._load()
+            if rule not in data["rules"]:
+                data["rules"].append(rule)
+                self._save(data)
+                logger.info(f"🧠 Memory Updated: Added rule '{rule}'")
 
     def add_post_history(self, topic: str, vibe: str, urn: str):
-        data = self._load()
-        if "history" not in data:
-            data["history"] = []
-        
-        entry = {
-            "date": str(os.environ.get("GITHUB_RUN_ID", "manual")), # Use run ID or manual
-            "topic": topic,
-            "vibe": vibe,
-            "urn": urn,
-            "stats": {"likes": 0, "comments": 0} # Init stats
-        }
-        data["history"].append(entry)
-        self._save(data)
-        logger.info(f"🧠 Memory Updated: Logged post '{topic}' ({vibe})")
+        with self.lock:
+            data = self._load()
+            if "history" not in data:
+                data["history"] = []
+            
+            entry = {
+                "date": datetime.now().isoformat(),
+                "topic": topic,
+                "vibe": vibe,
+                "urn": urn,
+                "stats": {"likes": 0, "comments": 0}
+            }
+            data["history"].append(entry)
+            self._save(data)
+            logger.info(f"📝 Memory Updated: Added post history for {topic}")
 
     def update_post_stats(self, urn: str, likes: int, comments: int):
-        data = self._load()
-        for post in data.get("history", []):
-            if post["urn"] == urn:
-                post["stats"] = {"likes": likes, "comments": comments}
-                self._save(data)
-                logger.info(f"🧠 Stats Updated for {urn}: {likes} likes, {comments} comments")
-                return
+        with self.lock:
+            data = self._load()
+            for post in data.get("history", []):
+                if post.get("urn") == urn:
+                    post["stats"] = {"likes": likes, "comments": comments}
+                    break
+            self._save(data)
+            logger.info(f"🧠 Stats Updated for {urn}: {likes} likes, {comments} comments")
 
     def get_performance_insights(self) -> str:
         data = self._load()
@@ -452,12 +455,12 @@ class ArxivConnector:
             return "Error fetching arXiv data."
 
 class TavilyConnector:
-    def search(self, query: str) -> str:
-        logger.info("--- Tavily Connector Working ---")
+    def search(self, query: str, include_images: bool = False) -> Dict[str, Any]:
+        logger.info(f"--- Tavily Connector Working (Images={include_images}) ---")
         api_key = os.environ.get("TAVILY_API_KEY")
         if not api_key:
             logger.warning("Missing TAVILY_API_KEY. Skipping Tavily.")
-            return ""
+            return {"text": "", "images": []}
 
         try:
             url = "https://api.tavily.com/search"
@@ -466,31 +469,31 @@ class TavilyConnector:
                 "query": query,
                 "search_depth": "basic",
                 "include_answer": True,
+                "include_images": include_images,
                 "max_results": 3
             }
             response = requests.post(url, json=payload)
             data = response.json()
             
             results = []
-            # Check for direct answer
             if data.get("answer"):
                 results.append(f"💡 Direct Answer: {data['answer']}")
             
-            # Check for search results
             for result in data.get("results", []):
                 title = result.get("title", "")
                 url = result.get("url", "")
                 content = result.get("content", "")[:200] + "..."
                 results.append(f"- {title} ({url}): {content}")
-                
-            if not results:
-                return "No Tavily results found."
-                
-            return "\n\n".join(results)
+            
+            images = data.get("images", [])
+            return {
+                "text": "\n\n".join(results) if results else "No Tavily results found.",
+                "images": images
+            }
             
         except Exception as e:
             logger.error(f"Tavily Error: {e}")
-            return "Error fetching Tavily data."
+            return {"text": "Error fetching Tavily data.", "images": []}
 
 class ResearchManager(Agent):
     def __init__(self):
@@ -502,16 +505,20 @@ class ResearchManager(Agent):
             name="ResearchManager",
             role="Chief Intelligence Officer",
             system_prompt="""You are the Chief Intelligence Officer (CIO) for a LinkedIn Influencer.
-Your goal is to aggregate data from multiple sources (HackerNews, NewsAPI, arXiv, Tavily) and synthesize it into a comprehensive "Trend Brief".
+Your goal is to aggregate data and conceptualize unique content angles.
 
 Input: A raw topic or search query.
 Output: A structured report containing:
 1. THE CORE NEWS: What is actually happening? (Cite sources)
 2. THE CONTEXT: Why does this matter now?
-3. THE CONTROVERSY: What are people arguing about? (HackerNews comments/Tavily results)
-4. THE ACADEMIC ANGLE: Is there new research? (arXiv)
+3. CONCEPTUAL ANGLES: Provide 5 unique 'hooks' or perspectives on this news.
+   - Example 1: Technical (The architecture)
+   - Example 2: Story (The human impact)
+   - Example 3: Controversy (The debate)
+   - Example 4: Future (The prediction)
+   - Example 5: Minimalist (The core truth)
 
-Make it dense, factual, and high-signal. No fluff."""
+Make it dense, factual, and high-signal."""
         )
     
     def run(self, input_data: str) -> str:
@@ -521,38 +528,167 @@ Make it dense, factual, and high-signal. No fluff."""
         arxiv_data = self.arxiv_connector.get_latest_papers()
         
         # Use Tavily to verify/expand on the input topic or general trends
-        tavily_data = self.tavily_connector.search(f"latest critical discussions in {input_data} technology")
+        tavily_resp = self.tavily_connector.search(f"latest critical discussions in {input_data} technology")
+        tavily_data = tavily_resp["text"]
         
         full_input = f"{input_data}\n\nREAL-TIME HACKERNEWS DATA:\n{hn_data}\n\nREAL-TIME NEWSAPI DATA:\n{news_data}\n\nLATEST ACADEMIC PAPERS (ARXIV):\n{arxiv_data}\n\nDEEP WEB SEARCH (TAVILY):\n{tavily_data}"
         return super().run(full_input)
 
-# --- Variety Engine ---
+# --- Style & Variety Engine ---
+
+STYLE_MATRIX = {
+    "mediums": [
+        "Cyberpunk Digital Art", "Vaporwave Aesthetic", "Minimalist Bauhaus Print", "Claymation / Stop-Motion",
+        "Double Exposure Photography", "Ukiyo-e Woodblock Print", "Vintage Polaroid", "19th Century Lithograph",
+        "Technical Blueprint / Schematic", "Macro Macro Photography", "8-bit Pixel Art", "Oil Painting on Canvas",
+        "Street Art / Graffiti", "Architectural Render", "Pencil Sketch", "Watercolor Illustration",
+        "Glassmorphism UI", "Brutalist Graphic Design", "Surrealist Collage", "Neon-Noir Photography",
+        "Low Poly 3D Model", "Infographic Paper Cutout", "Mid-Century Modern Poster", "Cinematic Film Still",
+        "Anatomical Drawing", "Satellite Imagery", "Microscopic View", "Retro-Futurism Illustration",
+        "Cybernetic Organism Art", "Pop Art", "Impressionist Landscape", "Dadaist Photomontage",
+        "Stark Black and White Noir", "Hyper-Realistic 3D", "Glitch Art", "Paper Quilling Architecture",
+        "Art Deco Geometric", "Charcoal Portrait", "Abstract Expressionism", "Voxel Art"
+    ],
+    "lighting": [
+        "God Rays / Volumetric Sunlight", "Neon Cyber-Glow", "Soft Golden Hour", "Dramatic Chiaroscuro",
+        "Studio High-Key", "Noire Hard Shadows", "Bioluminescent Glow", "Natural Overcast Light",
+        "Cinematic Rim Lighting", "Harsh Midday Sun", "Muted Twilight", "Flickering Candlelight",
+        "Ultraviolet / Blacklight", "Prismatic Refraction", "Soft Bokeh / Out of Focus",
+        "Dramatic Silhouette", "Subsurface Scattering", "Moonlit Mist", "Fairy Light Sparkle", "Static Noise Texture"
+    ],
+    "palettes": [
+        "Monochrome (Black, White, Grey)", "Earthy Tones (Forest Green, Brown, Ochre)", "Acidic Neon (Lime, Magenta, Cyan)",
+        "Soft Pastel (Lilac, Mint, Peach)", "Primary Colors (Red, Blue, Yellow)", "Cyberpunk (Purple, Teal, Pink)",
+        "Vintage Sepia", "High Contrast B&W with one accent color", "Deep Ocean Blues and Greens",
+        "Sunset Fire (Orange, Red, Violet)", "Metallic (Silver, Gold, Copper)", "Nordic Cold (White, Blue, Grey)"
+    ]
+}
+
+POST_FORMATS = [
+    "The Paradox: Start with two conflicting truths.",
+    "The 3-Step Guide: Direct, actionable value.",
+    "The Manifesto: A bold declaration of beliefs.",
+    "The Day-in-a-life: A narrative story of a specific moment.",
+    "The Open Letter: Addressing a specific group or concept.",
+    "The Satirical Rant: Using humor to highlight a problem.",
+    "The Zero-to-One Story: How something was built from nothing.",
+    "The Q&A: Addressing a common but misunderstood question.",
+    "The Contrarian Take: Why the popular opinion is wrong.",
+    "The Research Deep Dive: Synthesizing complex data into insight.",
+    "The Tool Review: A sharp look at a specific piece of tech.",
+    "The Productivity Audit: How to optimize a specific workflow.",
+    "The Future Timeline: Steps to a specific future state.",
+    "The Philosophical Prompt: Asking a question that lingers.",
+    "The Comparison: Post-A vs Post-B framework.",
+    "The 'Unpopular Opinion': Highlighting a hidden truth.",
+    "The Technical Teardown: How it actually works under the hood."
+]
 
 VIBES = {
     "The Contrarian": {
-        "strategist": "Persona: The Contrarian Tech Realist.\nGoal: Challenge a popular opinion about the trend.\nOutput:\n- Hook: A single, punchy sentence that challenges the status quo.\n- Angle: The core argument (why most people are wrong).\n- Target Audience: Tech leaders.\n- CTA: A question to provoke debate.",
-        "ghostwriter": "Style: Sharp, confident, direct. No filler.\nStructure: Hook → The 'Ugly Truth' → Specific Evidence → Call to Debate.\nMax length: 15 lines. Use whitespace for impact.",
-        "art_director": "Style: Brutalist Web Design, Glitch Art, Raw Concrete texture, High Contrast Black and White with Red accents, Typography-heavy.\nMood: Rebellious, Raw, Bold."
+        "strategist": "Persona: The Contrarian Tech Realist.\nGoal: Challenge a popular opinion about the trend.",
+        "ghostwriter": "Style: Sharp, confident, direct. No filler.",
+        "is_organic": False
     },
     "The Visionary": {
-        "strategist": "Persona: The Optimistic Futurist.\nGoal: Highlight long-term impact and human potential.\nOutput:\n- Hook: An inspiring statement about the future.\n- Angle: How this changes the world for the better.\n- Target Audience: Innovators.\n- CTA: Ask readers to imagine the possibilities.",
-        "ghostwriter": "Style: Flowing, evocative, but concise. Use metaphors sparingly.\nStructure: The Hook → The Shift → The Human Impact → The Call to Imagine.\nMax length: 15 lines. No fluff.",
-        "art_director": "Style: Ethereal Watercolor, Soft Pastel Colors, Dreamy, Studio Ghibli Landscape, Lush Nature meets Technology.\nMood: Hopeful, Peaceful, Expansive."
+        "strategist": "Persona: The Optimistic Futurist.\nGoal: Highlight long-term impact and human potential.",
+        "ghostwriter": "Style: Flowing, evocative, but concise.",
+        "is_organic": False
     },
     "The Educator": {
-        "strategist": "Persona: The Senior Engineer/Teacher.\nGoal: Demystify a complex concept.\nOutput:\n- Hook: A clear 'Did you know?' or problem statement.\n- Angle: The technical truth behind the buzzword.\n- Target Audience: Engineers.\n- CTA: Ask what they want to learn next.",
-        "ghostwriter": "Style: Clear, methodical, step-by-step. Use bullet points.\nStructure: Hook → The Misconception → The 3-Step Reality → Actionable Takeaway.\nMax length: 18 lines. Get direct.",
-        "art_director": "Style: Technical Blueprint, Da Vinci Sketchbook, White lines on Blue background, Schematic, Detailed Line Art.\nMood: Professional, Analytical, Precise."
+        "strategist": "Persona: The Senior Engineer/Teacher.\nGoal: Demystify a complex concept.",
+        "ghostwriter": "Style: Clear, methodical, step-by-step. Use bullet points.",
+        "is_organic": False
     },
     "The Analyst": {
-        "strategist": "Persona: The Data-Driven Analyst.\nGoal: Focus on efficiency and ROI.\nOutput:\n- Hook: A stat or efficiency claim.\n- Angle: Why this makes business sense.\n- Target Audience: Decision makers.\n- CTA: Ask about their ROI.",
-        "ghostwriter": "Style: Strategic, data-backed, punchy numbers.\nStructure: Hook → The Metric → The Strategic Trade-off → The Bottom Line.\nMax length: 15 lines. No jargon.",
-        "art_director": "Style: Swiss International Style, Bauhaus, Geometric Shapes, Clean Grid, Primary Colors (Red, Blue, Yellow), Minimalist Data Viz.\nMood: Sophisticated, Corporate, Smart."
+        "strategist": "Persona: The Data-Driven Analyst.\nGoal: Focus on efficiency and ROI.",
+        "ghostwriter": "Style: Strategic, data-backed, punchy numbers.",
+        "is_organic": False
     },
     "The Narrator": {
-        "strategist": "Persona: The Modern Epic Poet.\nGoal: Frame the trend as a sharp paradox.\nOutput:\n- Hook: A grand, rhythmic statement of duality.\n- Angle: The tension between progress and peril.\n- Target Audience: Thought Leaders.\n- CTA: A question about human agency.",
-        "ghostwriter": "Style: Cinematic, rhythmic, stark. Use short lines and anaphora.\nStructure: The Duality → The Light → The Shadow → The Question.\nMax length: 12 lines. Make it feel like a modern verse, not a novel.",
-        "art_director": "Style: Cinematic Film Still, 35mm Photography, Grainy, Edward Hopper style solitude, Dramatic Lighting, Realistic.\nMood: Timeless, Epic, Profound."
+        "strategist": "Persona: The Modern Epic Poet.\nGoal: Frame the trend as a sharp paradox.",
+        "ghostwriter": "Style: Cinematic, rhythmic, stark.",
+        "is_organic": False
+    },
+    "The Storyteller": {
+        "strategist": "Persona: The Narrative Architect.\nGoal: Tell a human-centric story about the technology.",
+        "ghostwriter": "Style: Personal, warm, descriptive. Focus on a character or specific scenario.",
+        "is_organic": True
+    },
+    "The Provocateur": {
+        "strategist": "Persona: The Digital Firebrand.\nGoal: Spark a heated debate by taking an extreme stance.",
+        "ghostwriter": "Style: Bold, aggressive, questioning. Use short sentences.",
+        "is_organic": False
+    },
+    "The Minimalist": {
+        "strategist": "Persona: The Zen Architect.\nGoal: Extract the absolute core essence of a topic.",
+        "ghostwriter": "Style: Ultra-concise, profound. Max 5-7 lines. Plenty of white space.",
+        "is_organic": False
+    },
+    "The Oracle": {
+        "strategist": "Persona: The Predictive Sage.\nGoal: Project current trends into the year 2035.",
+        "ghostwriter": "Style: Cryptic but authoritative. Use 'When... then...' structures.",
+        "is_organic": False
+    },
+    "The Pragmatist": {
+        "strategist": "Persona: The Execution Specialist.\nGoal: Focus on immediate implementation and 'how-to'.",
+        "ghostwriter": "Style: No-nonsense, tactical, instructional.",
+        "is_organic": True
+    },
+    "The Anthropologist": {
+        "strategist": "Persona: The Tech Sociologist.\nGoal: Observe how tech changes human behavior and culture.",
+        "ghostwriter": "Style: Observational, curious, analytical about societies.",
+        "is_organic": True
+    },
+    "The Debunker": {
+        "strategist": "Persona: The Hype-Slayer.\nGoal: Dismantle a trending but flawed AI claim.",
+        "ghostwriter": "Style: Skeptical, evidence-based, logical.",
+        "is_organic": False
+    },
+    "The Curator": {
+        "strategist": "Persona: The Synthesis Artist.\nGoal: Connect 3 unrelated news items into a single insight.",
+        "ghostwriter": "Style: Connection-focused, broad, insightful.",
+        "is_organic": True
+    },
+    "The Architect": {
+        "strategist": "Persona: The System Designer.\nGoal: Focus on the 'plumbing' and infrastructure of AI.",
+        "ghostwriter": "Style: Structural, detailed, engineering-focused.",
+        "is_organic": False
+    },
+    "The Rebel": {
+        "strategist": "Persona: The Open-Source Advocate.\nGoal: Champion decentralization and anti-corporate tech.",
+        "ghostwriter": "Style: Passionate, anti-gatekeeping, raw.",
+        "is_organic": True
+    },
+    "The Zen Coder": {
+        "strategist": "Persona: The Deep Work Master.\nGoal: Focus on the mental state and philosophy of building.",
+        "ghostwriter": "Style: Calm, rhythmic, focusing on clarity over features.",
+        "is_organic": True
+    },
+    "The Data Detective": {
+        "strategist": "Persona: The Pattern Matcher.\nGoal: Find a hidden truth in recent benchmarks or datasets.",
+        "ghostwriter": "Style: Investigative, meticulous, revealing.",
+        "is_organic": False
+    },
+    "The Satirist": {
+        "strategist": "Persona: The Cynical Insider.\nGoal: Use irony to highlight the absurdity of modern 'Hype'.",
+        "ghostwriter": "Style: Sarcastic, funny, bitingly honest.",
+        "is_organic": False
+    },
+    "The Archivist": {
+        "strategist": "Persona: The Tech Historian.\nGoal: Compare today's AI to historically similar tech shifts.",
+        "ghostwriter": "Style: Nostalgic but relevant, educational, comparative.",
+        "is_organic": True
+    },
+    "The Fresh Eye": {
+        "strategist": "Persona: The Profound Beginner.\nGoal: Ask simple questions that reveal complex truths.",
+        "ghostwriter": "Style: Naive but insightful, questioning, clear.",
+        "is_organic": True
+    },
+    "The Maxer": {
+        "strategist": "Persona: The Efficiency Maximalist.\nGoal: Optimize every second of the AI workflow.",
+        "ghostwriter": "Style: High-energy, speed-focused, condensed.",
+        "is_organic": False
     },
 }
 
@@ -582,10 +718,13 @@ class Ghostwriter(Agent):
             system_prompt="You are a viral LinkedIn Creator." # Placeholder
         )
 
-    def set_vibe(self, vibe_name: str, vibe_prompt: str):
+    def set_vibe(self, vibe_name: str, vibe_prompt: str, post_format: str = ""):
         self.system_prompt = f"""You are a viral LinkedIn Creator.
 Current Persona: {vibe_name}
 {vibe_prompt}
+
+Post Format to Enforce: {post_format}
+
 Rules:
 1. NO 'In conclusion', 'In summary', 'Delve', 'Crucial', 'Landscape'.
 2. Write like a human, not an AI.
@@ -606,17 +745,66 @@ class ArtDirector(Agent):
         super().__init__(
             name="ArtDirector",
             role="Visual Creator",
-            system_prompt="You are a Midjourney/DALL-E Prompt Engineer." # Placeholder
+            system_prompt="You are a Midjourney/DALL-E Prompt Engineer."
         )
+        self.current_medium = "Photography"
+        self.current_lighting = "Natural"
+        self.current_palette = "Vibrant"
 
     def set_vibe(self, vibe_name: str, vibe_prompt: str):
+        # Randomize style matrix
+        self.current_medium = random.choice(STYLE_MATRIX["mediums"])
+        self.current_lighting = random.choice(STYLE_MATRIX["lighting"])
+        self.current_palette = random.choice(STYLE_MATRIX["palettes"])
+        
         self.system_prompt = f"""You are a Midjourney/DALL-E Prompt Engineer.
 Current Style: {vibe_name}
-{vibe_prompt}
+Assigned Artistic Medium: {self.current_medium}
+Assigned Lighting: {self.current_lighting}
+Assigned Color Palette: {self.current_palette}
+
+Rules:
+1. Generate ONE extremely high-quality, creative prompt.
+2. Incorporate the medium, lighting, and palette explicitly.
+3. OUTPUT ONLY the final structured format.
+
 STRICT OUTPUT FORMAT (NO CHAT):
 Visual Format: [Format]
 Prompt: [The Prompt]
-Text Overlay: [The Text]"""
+Text Overlay: [Brief headline if appropriate]"""
+
+    def generate_image(self, prompt: str) -> Optional[bytes]:
+        logger.info(f"--- {self.name} ({self.role}) Working ---")
+        
+        # Robust Cleaning
+        clean_prompt = prompt
+        if "Prompt:" in prompt:
+            clean_prompt = prompt.split("Prompt:", 1)[1]
+            if "Text Overlay:" in clean_prompt:
+                clean_prompt = clean_prompt.split("Text Overlay:", 1)[0]
+        
+        clean_prompt = clean_prompt.replace("Generate image:", "").strip()
+        clean_prompt = clean_prompt[:800]
+        
+        logger.info(f"Generating image with style: {self.current_medium}...")
+
+        encoded_prompt = urllib.parse.quote(clean_prompt)
+        url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?width=1200&height=628&nologo=true"
+        
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                logger.info(f"Attempt {attempt + 1}/{max_retries}: Pollinations.ai...")
+                response = requests.get(url, timeout=60)
+                response.raise_for_status()
+                return response.content
+            except Exception as e:
+                logger.warning(f"Pollinations attempt {attempt + 1} failed: {e}")
+                if attempt < max_retries - 1:
+                    import time
+                    time.sleep((attempt + 1) * 5)
+        
+        return None
 
 class Critic(Agent):
     def __init__(self):
@@ -671,64 +859,34 @@ Format:
 
 # --- Image Generator Agent ---
 
-class ImageGenerator(Agent):
+
+class OrganicImageSearcher:
+    """Finds real photography via Tavily."""
     def __init__(self):
-        super().__init__(
-            name="ImageGenerator",
-            role="Visual Artist",
-            system_prompt="You are an AI Artist. Generate a high-quality image based on the prompt."
-        )
+        self.tavily = TavilyConnector()
 
-    def generate_image(self, prompt: str) -> Optional[bytes]:
-        logger.info(f"--- {self.name} ({self.role}) Working ---")
-        
-        # Robust Cleaning
-        clean_prompt = prompt
-        if "Prompt:" in prompt:
-            # Extract everything after "Prompt:"
-            clean_prompt = prompt.split("Prompt:", 1)[1]
-            # If there is a "Text Overlay:", stop there
-            if "Text Overlay:" in clean_prompt:
-                clean_prompt = clean_prompt.split("Text Overlay:", 1)[0]
-        
-        # Remove common prefixes/suffixes
-        clean_prompt = clean_prompt.replace("Generate a high quality image:", "").strip()
-        
-        # Truncate to avoid URL length limits
-        clean_prompt = clean_prompt[:800]
-        
-        logger.info(f"Generating image for: {clean_prompt[:50]}...")
-
-        # Primary: Pollinations.ai with retry
-        encoded_prompt = urllib.parse.quote(clean_prompt)
-        url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?width=1200&height=628&nologo=true"
-        
-        max_retries = 3
-        for attempt in range(max_retries):
-            try:
-                logger.info(f"Attempt {attempt + 1}/{max_retries}: Pollinations.ai...")
-                response = requests.get(url, timeout=60)  # 60s timeout
-                response.raise_for_status()
-                logger.info("✅ Image generated successfully (via Pollinations)!")
-                return response.content
-            except requests.exceptions.RequestException as e:
-                logger.warning(f"Pollinations attempt {attempt + 1} failed: {e}")
-                if attempt < max_retries - 1:
-                    import time
-                    wait_time = (attempt + 1) * 5  # 5s, 10s, 15s
-                    logger.info(f"Waiting {wait_time}s before retry...")
-                    time.sleep(wait_time)
-        
-        # Fallback: Try alternative model on Pollinations
-        logger.info("Trying fallback: Pollinations Flux model...")
+    def get_organic_image(self, topic: str) -> Optional[bytes]:
+        logger.info(f"--- Organic Image Searcher Working for: {topic} ---")
         try:
-            fallback_url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?width=1200&height=628&model=flux&nologo=true"
-            response = requests.get(fallback_url, timeout=90)
-            response.raise_for_status()
-            logger.info("✅ Image generated successfully (Pollinations Flux)!")
-            return response.content
+            # Search specifically for high quality photography
+            query = f"high quality photography {topic} unsplash pexels"
+            resp = self.tavily.search(query, include_images=True)
+            
+            image_urls = resp.get("images", [])
+            if not image_urls:
+                logger.warning("No organic images found.")
+                return None
+            
+            # Pick a random one from top 3
+            lucky_url = random.choice(image_urls[:3])
+            logger.info(f"Found organic image: {lucky_url}")
+            
+            img_resp = requests.get(lucky_url, timeout=30)
+            img_resp.raise_for_status()
+            return img_resp.content
+            
         except Exception as e:
-            logger.error(f"All image generation attempts failed: {e}")
+            logger.error(f"Organic search failed: {e}")
             return None
 
 # --- LinkedIn Connector ---
@@ -890,11 +1048,13 @@ class Orchestrator:
         self.strategist = Strategist()
         self.ghostwriter = Ghostwriter()
         self.art_director = ArtDirector()
+        self.organic_searcher = OrganicImageSearcher()
         self.critic = Critic()
-        self.image_gen = ImageGenerator()
+        self.image_gen = ArtDirector() # Using ArtDirector as the image gen manager
         self.linkedin = LinkedInConnector()
         self.memory = Memory() # Direct access to memory for orchestrator
         self.networker = Networker()
+        self.config = CONFIG # Global config from top of file
 
     def review_past_performance(self):
         logger.info("📊 Reviewing Past Performance...")
@@ -922,100 +1082,111 @@ class Orchestrator:
         logger.info("🚀 Starting LinkedIn Growth Workflow")
         
         # Step 0: Review Past Performance (The Feedback Loop)
+        logger.info("🚀 Starting LinkedIn Growth Workflow (V2: Variety Engine)")
+        
+        # Step 0: Review Past Performance
         self.review_past_performance()
         performance_insights = self.memory.get_performance_insights()
         
-        # Step 0.1: Check for Manual Feedback (Plan B)
-        manual_feedback = self.memory.get_manual_feedback()
-        if manual_feedback:
-            logger.info(f"📊 Manual Feedback Detected: {manual_feedback}")
-            performance_insights = f"{performance_insights} | {manual_feedback}"
-        
-        logger.info(f"💡 Performance Insight: {performance_insights}")
+        # Step 0.1: entropy and Config
+        variety_cfg = self.config.get("variety", {})
+        image_pref = variety_cfg.get("image_mode_preference", "hybrid")
         
         # 0.5. Select Vibe
         forced_vibe = os.getenv("FORCED_VIBE")
         if forced_vibe and forced_vibe in VIBES:
             vibe_name = forced_vibe
-            logger.info(f"📌 Vibe FORCED: {vibe_name}")
         else:
-            vibe_name = random.choice(list(VIBES.keys()))
-            logger.info(f"🎲 Vibe Selected: {vibe_name}")
-            
+            enabled = variety_cfg.get("enabled_personas", "all")
+            if enabled == "all":
+                vibe_name = random.choice(list(VIBES.keys()))
+            else:
+                vibe_name = random.choice(enabled)
+        
+        logger.info(f"🎲 Vibe Selected: {vibe_name}")
         vibe_config = VIBES[vibe_name]
         
+        # 0.6 Select Format
+        post_format = random.choice(POST_FORMATS)
+        logger.info(f"📋 Format Selected: {post_format.split(':')[0]}")
+
         # Apply Vibe to Agents
-        # Append performance insights to Strategist's prompt
-        strategist_prompt = f"{vibe_config['strategist']}\n\nDATA FEEDBACK: {performance_insights}"
+        strategist_prompt = f"{vibe_config['strategist']}\n\nDATA FEEDBACK: {performance_insights}\n\nConstraint: Focus on the perspective of {vibe_name}."
         self.strategist.set_vibe(vibe_name, strategist_prompt)
         
-        self.ghostwriter.set_vibe(vibe_name, vibe_config["ghostwriter"])
-        self.art_director.set_vibe(vibe_name, vibe_config["art_director"])
+        self.ghostwriter.set_vibe(vibe_name, vibe_config["ghostwriter"], post_format=post_format)
+        self.art_director.set_vibe(vibe_name, "") # Prompt is generated dynamically in set_vibe's new version
         
-        # Step 1: Research
+        # Step 1: Research & Conceptualization
         if initial_topic:
-            logger.info(f"Topic provided by user: {initial_topic}")
-            trend_data = f"User Topic: {initial_topic}"
+            topic_query = initial_topic
         else:
-            # Add randomness to prevent duplicate posts during testing
-            topics = [
-                "The rise of Multi-Agent Systems",
-                "Why Chatbots are dead",
-                "The future of coding is Agentic",
-                "LLMs as Operating Systems",
-                "Prompt Engineering is replaced by Flow Engineering"
-            ]
-            selected_topic = random.choice(topics)
-            trend_data = self.research_manager.run(f"Find current hot topics in Agentic AI. Selected: {selected_topic}")
+            raw_topics = self.config.get("topics", ["AI agents"])
+            topic_query = random.choice(raw_topics)
+            
+        logger.info(f"🔍 Researching & Conceptualizing: {topic_query}")
+        trend_brief = self.research_manager.run(topic_query)
         
-        # Abort if research failed (API Error)
-        if not trend_data:
-            logger.error("Workflow Aborted: Research failed (likely quota exceeded).")
+        if not trend_brief:
+            logger.error("Workflow Aborted: Research failed.")
             return
-        
-        # Step 1.5: Generate Comment Pack (The Networker) - Non-critical, continue if fails
-        comment_pack = self.networker.run(trend_data)
+
+        # Step 1.5: Networker
+        comment_pack = self.networker.run(trend_brief)
         if comment_pack:
-            logger.info(f"Comment Pack generated:\n{comment_pack}")
             self.memory.save_comment_pack(comment_pack)
-        else:
-            logger.warning("Networker failed (non-critical). Continuing.")
-        
-        # Step 2: Strategy
-        strategy = self.strategist.run(trend_data)
-        
-        # Abort if strategy failed
+
+        # Step 2: Strategy (Picking an Angle)
+        logger.info("🧠 Strategizing...")
+        strategy = self.strategist.run(trend_brief)
         if not strategy:
-            logger.error("Workflow Aborted: Strategy generation failed.")
+            logger.error("Workflow Aborted: Strategy failed.")
             return
-        
+
         # Step 3: Content Creation
+        logger.info("✍️ Drafting Post...")
         draft_text = self.ghostwriter.run(strategy)
+        
+        logger.info("🎨 Designing Visuals...")
         visual_concept = self.art_director.run(strategy)
 
-        if not draft_text or not visual_concept:
-            logger.error("Workflow Aborted: Content generation failed.")
+        if not draft_text:
+            logger.error("Workflow Aborted: Ghostwriting failed.")
             return
         
-        # Step 4: Image Generation
-        # Extract prompt from visual_concept (simplified for now, just use the whole output)
-        image_prompt = f"Generate a high quality image: {visual_concept}"
-        image_data = self.image_gen.generate_image(image_prompt)
+        # Step 4: Visual Sourcing (AI vs Organic)
+        image_data = None
+        use_organic = False
+        
+        if vibe_config.get("is_organic") and self.config.get("features", {}).get("enable_organic_visuals"):
+            # Check probability or preference
+            if image_pref == "always_real":
+                use_organic = True
+            elif image_pref == "hybrid":
+                if random.random() < variety_cfg.get("organic_vibe_threshold", 0.5):
+                    use_organic = True
+        
+        if use_organic:
+            logger.info("🌿 Sourcing Organic Visual...")
+            image_data = self.organic_searcher.get_organic_image(topic_query)
+        
+        if not image_data and self.config.get("features", {}).get("enable_image_generation"):
+            logger.info("🤖 Generating AI Visual...")
+            image_prompt = f"Generate image: {visual_concept}"
+            image_data = self.art_director.generate_image(image_prompt)
         
         # Step 5: Review
-        full_package = f"{draft_text}\n\n(Visual Concept: {visual_concept})"
+        full_package = f"{draft_text}\n\n(Visual: {visual_concept})"
         feedback = self.critic.run(full_package)
         
-        logger.info("✅ Workflow Complete. Preparing to Post...")
-        
         # Step 6: Publish
+        logger.info("✅ Preparing to Post...")
         post_urn = self.linkedin.post_content(draft_text, image_data)
         
         # Step 7: Save to Memory
         if post_urn:
-            # Extract topic from trend_data (simplified)
-            topic_summary = initial_topic if initial_topic else selected_topic
-            self.memory.add_post_history(topic_summary, vibe_name, post_urn)
+            self.memory.add_post_history(topic_query, vibe_name, post_urn)
+            return post_urn
 
 if __name__ == "__main__":
     exit_code = 0
