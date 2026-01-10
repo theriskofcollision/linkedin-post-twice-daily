@@ -597,7 +597,7 @@ VIBES = {
     },
     "The Educator": {
         "strategist": "Persona: The Senior Engineer/Teacher.\nGoal: Demystify a complex concept.",
-        "ghostwriter": "Style: Clear, methodical, step-by-step. Use bullet points.",
+        "ghostwriter": "Style: Clear, methodical, narrative steps. No listicles.",
         "is_organic": False
     },
     "The Analyst": {
@@ -726,9 +726,11 @@ Current Persona: {vibe_name}
 Post Format to Enforce: {post_format}
 
 Rules:
-1. NO 'In conclusion', 'In summary', 'Delve', 'Crucial', 'Landscape'.
-2. Write like a human, not an AI.
-3. Max 1500 chars."""
+1. MAX 500 characters. Be ultra-concise.
+2. NO 'In conclusion', 'In summary', 'Delve', 'Crucial', 'Landscape'.
+3. NO robotic numbering like '**1.**', '**2.**' or '1)', '2)'.
+4. NO markdown asterisks ('*') for bullet points. Use soft line breaks or single emojis if needed.
+5. Write like a human sharing a thought, not an AI writing a blog post."""
 
     def run(self, input_data: str) -> str:
         # Inject Memory into the prompt
@@ -813,14 +815,14 @@ class Critic(Agent):
             name="Critic",
             role="Quality Control",
             system_prompt="""You are a harsh LinkedIn Critic. Review the draft post.
-If it sounds like ChatGPT, say so.
 Checklist: 
-- Is the hook boring? 
-- Are there too many adjectives? 
-- Is the formatting scannable?
+1. LENGTH: Is it over 500 characters? (Reject immediately if so)
+2. BOT FORMATTING: Does it use **1.**, **2.** or similar robotic numbering?
+3. BULLETS: Does it use markdown asterisks (*)?
+4. AI TONE: Does it sound like a ChatGPT template?
 
 If you find a recurring mistake, output a line starting with "RULE:" to save it to memory.
-Example: "RULE: Never use the word 'unleash'." """
+Example: "RULE: Never use markdown asterisks for bullets." """
         )
 
     def run(self, input_data: str) -> str:

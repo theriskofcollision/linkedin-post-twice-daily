@@ -58,9 +58,9 @@ def test_orchestrator_selects_format_and_vibe():
                         orch.run_workflow()
                         
                         # Verify vibe and format were selected
-                        # We check if ghostwriter was set up with a format
                         assert orch.ghostwriter.system_prompt is not None
                         assert "Post Format to Enforce:" in orch.ghostwriter.system_prompt
+                        assert "MAX 500 characters" in orch.ghostwriter.system_prompt
 
 def test_vibes_structure():
     for vibe, config in VIBES.items():
