@@ -3,7 +3,7 @@
 
 # AI Model Configuration
 model:
-  name: "gemini-2.5-flash"
+  name: "gemini-1.5-flash"
   max_retries: 3
   base_delay_seconds: 5
 

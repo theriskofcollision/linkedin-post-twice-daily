@@ -831,6 +831,10 @@ Example: "RULE: Never use markdown asterisks for bullets." """
     def run(self, input_data: str) -> str:
         feedback = super().run(input_data)
         
+        # Handle case where API call failed
+        if not feedback:
+            return None
+        
         # Parse for new rules
         for line in feedback.split('\n'):
             if line.strip().startswith("RULE:"):
