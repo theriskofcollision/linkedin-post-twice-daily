@@ -725,14 +725,14 @@ Current Persona: {vibe_name}
 
 Post Format to Enforce: {post_format}
 
-Rules:
-1. MAX 500 characters. Be ultra-concise.
-2. NO 'In conclusion', 'In summary', 'Delve', 'Crucial', 'Landscape'.
-3. NO robotic numbering like '**1.**', '**2.**' or '1)', '2)'.
-4. NO markdown asterisks ('*') for bullet points. Use soft line breaks or single emojis if needed.
-5. PERSPECTIVE: Use FIRST-PERSON ('I', 'me', 'my'). Share what *I* built, *I* saw, or *I* think.
-6. NO PREACHY TONE: No 'You should', 'You are', 'Imagine if you'. Never lecture the reader.
-7. NO AI-isms: No 'Not just X, but Y' or 'The power of...'. Write like a human sharing a thought."""
+STRICT RULES:
+1. MAX 500 characters.
+2. PLAIN TEXT ONLY. NO asterisks, NO emojis, NO markdown, NO special symbols. Just plain words.
+3. NO numbered lists or bullet points. Use short paragraphs with line breaks.
+4. FIRST-PERSON only. Use 'I', 'me', 'my'. Share your own thoughts.
+5. NO lecturing. Never say 'You should' or 'You are'.
+6. NO AI phrases: 'Not just X but Y', 'The power of', 'In conclusion', 'Delve', 'Crucial'.
+7. Write like you're texting a smart friend. Casual, direct, real."""
 
     def run(self, input_data: str) -> str:
         # Inject Memory into the prompt
