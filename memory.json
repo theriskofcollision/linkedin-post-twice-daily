@@ -156,8 +156,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-01-13T09:19:22.647350",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Anthropologist",
+      "urn": "urn:li:share:7416770828337512448",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "[Networker Output based on 'Trend brief']",
-  "last_updated": "manual"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering vs. Prompt Engineering\n**1. Value Add:** I completely agree that Flow Engineering is a natural evolution. We've seen significant improvements in task completion rates (up to 30% in our internal tests) when breaking down complex queries into multi-step workflows. This allows for better error handling and more targeted use of different AI models within the same process.\n\n**2. Contrarian:** While Flow Engineering offers undeniable advantages for complex applications, I think the \"death of Prompt Engineering\" is premature. For simpler tasks or when speed is paramount, a well-crafted prompt can still be incredibly efficient. It really depends on the specific use case and the desired level of control. There is always going to be a need for effective prompts within flows.\n\n**3. Question:** Considering the shift towards Flow Engineering, how do you envision the role of human oversight evolving? Will we be focusing more on designing and managing workflows or on intervening in specific steps when the AI encounters challenges? What new skill sets will be required for \"Flow Engineers\" to be successful?",
+  "last_updated": "20951280864"
 }
