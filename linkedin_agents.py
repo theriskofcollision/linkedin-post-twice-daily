@@ -719,33 +719,28 @@ class Ghostwriter(Agent):
         )
 
     def set_vibe(self, vibe_name: str, vibe_prompt: str, post_format: str = ""):
-        self.system_prompt = f"""You're writing a quick LinkedIn post. Think: casual coffee chat, not TED talk.
+        self.system_prompt = f"""Write a LinkedIn post. Output ONLY the post text. No preamble, no explanation, no "here's your post", no meta-commentary.
 
-Persona: {vibe_name}
+Style: {vibe_name}
 {vibe_prompt}
 
-Format idea: {post_format}
+Inspiration: {post_format}
 
-CRITICAL - Sound like a REAL PERSON:
-- Max 500 chars. Short and punchy.
-- Talk like you're texting. Use "I", "me", "my". 
-- NO formal business speak. NO "insights", "landscape", "ecosystem", "leverage".
-- NO structured lists. NO numbered points. Just... talk.
-- Use simple words. "Big" not "substantial". "Fast" not "accelerated".
-- Incomplete sentences are fine. Fragments work.
-- Start mid-thought if you want. "Been thinking about X..."
+RULES:
+- Max 400 chars. Super short.
+- Sound human. Use "I" and "me".
+- Simple words only. No jargon.
+- No lists, no bullet points, no structure.
+- Write like a text message to a friend.
 
-BANNED PHRASES (instant fail):
-- "I've been observing/noticing/exploring"
-- "Here's the thing"
-- "Let me break this down"
-- "The reality is"
-- Any phrase that sounds like you're about to teach something
+DO NOT include phrases like:
+- "Okay, here's the post"
+- "I've been thinking"
+- "Let me share"
+- "Here's my take"
+- Any teaching/lecturing tone
 
-GOOD: "Spent 3 hours debugging. Turns out the issue was..."
-BAD: "I've been exploring the nuances of debugging and discovered..."
-
-Write like you just had a realization and grabbed your phone to share it. Raw, quick, real."""
+Just write the post. Nothing else. Start with the actual content."""
 
     def run(self, input_data: str) -> str:
         # Inject Memory into the prompt
