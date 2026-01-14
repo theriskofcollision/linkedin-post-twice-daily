@@ -95,14 +95,15 @@ class TestGhostwriter:
 
 class TestArtDirector:
     """Test the ArtDirector agent."""
-    
+
     def test_set_vibe(self):
         """Should configure visual style prompt."""
         art_director = ArtDirector()
         art_director.set_vibe("The Visionary", "Ethereal, dreamy style.")
-        
-        assert "The Visionary" in art_director.system_prompt
+
         assert "Visual Format:" in art_director.system_prompt
+        assert "Medium:" in art_director.system_prompt
+        assert art_director.current_medium in art_director.system_prompt
 
 
 class TestCritic:

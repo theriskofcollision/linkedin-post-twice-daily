@@ -586,29 +586,40 @@ Make it dense, factual, and high-signal."""
 
 STYLE_MATRIX = {
     "mediums": [
-        "Cyberpunk Digital Art", "Vaporwave Aesthetic", "Minimalist Bauhaus Print", "Claymation / Stop-Motion",
-        "Double Exposure Photography", "Ukiyo-e Woodblock Print", "Vintage Polaroid", "19th Century Lithograph",
-        "Technical Blueprint / Schematic", "Macro Macro Photography", "8-bit Pixel Art", "Oil Painting on Canvas",
-        "Street Art / Graffiti", "Architectural Render", "Pencil Sketch", "Watercolor Illustration",
-        "Glassmorphism UI", "Brutalist Graphic Design", "Surrealist Collage", "Neon-Noir Photography",
-        "Low Poly 3D Model", "Infographic Paper Cutout", "Mid-Century Modern Poster", "Cinematic Film Still",
-        "Anatomical Drawing", "Satellite Imagery", "Microscopic View", "Retro-Futurism Illustration",
-        "Cybernetic Organism Art", "Pop Art", "Impressionist Landscape", "Dadaist Photomontage",
-        "Stark Black and White Noir", "Hyper-Realistic 3D", "Glitch Art", "Paper Quilling Architecture",
-        "Art Deco Geometric", "Charcoal Portrait", "Abstract Expressionism", "Voxel Art"
+        # Photography styles (professional, editorial)
+        "Editorial magazine photography", "Documentary photography", "Portrait photography with shallow depth of field",
+        "Street photography candid shot", "Product photography on white background", "Architectural photography",
+        "Lifestyle photography natural moment", "Corporate headshot style", "Photojournalism style",
+        # Clean design styles
+        "Minimalist flat design illustration", "Isometric technical illustration", "Infographic style clean vectors",
+        "Whiteboard sketch hand-drawn", "Simple line art illustration", "Geometric abstract shapes",
+        # Artistic but professional
+        "Watercolor soft illustration", "Charcoal sketch on paper", "Vintage film photography 35mm",
+        "Black and white fine art photography", "Double exposure artistic portrait", "Aerial drone photography",
+        # Unique but tasteful
+        "Paper cut-out layered art", "Woodblock print Japanese style", "Risograph print texture",
+        "Vintage poster 1960s style", "Blueprint technical drawing", "Botanical scientific illustration"
     ],
     "lighting": [
-        "God Rays / Volumetric Sunlight", "Neon Cyber-Glow", "Soft Golden Hour", "Dramatic Chiaroscuro",
-        "Studio High-Key", "Noire Hard Shadows", "Bioluminescent Glow", "Natural Overcast Light",
-        "Cinematic Rim Lighting", "Harsh Midday Sun", "Muted Twilight", "Flickering Candlelight",
-        "Ultraviolet / Blacklight", "Prismatic Refraction", "Soft Bokeh / Out of Focus",
-        "Dramatic Silhouette", "Subsurface Scattering", "Moonlit Mist", "Fairy Light Sparkle", "Static Noise Texture"
+        # Natural lighting (most professional)
+        "Soft natural window light", "Golden hour warm sunlight", "Overcast diffused daylight",
+        "Morning blue hour soft light", "Dappled sunlight through trees", "Clean studio softbox lighting",
+        # Professional studio
+        "High-key bright and airy", "Low-key dramatic shadows", "Rembrandt portrait lighting",
+        "Backlit silhouette rim light", "Soft fill light minimal shadows", "Side lighting texture emphasis",
+        # Atmospheric
+        "Foggy atmospheric haze", "Warm tungsten indoor glow", "Cool shade open shadow"
     ],
     "palettes": [
-        "Monochrome (Black, White, Grey)", "Earthy Tones (Forest Green, Brown, Ochre)", "Acidic Neon (Lime, Magenta, Cyan)",
-        "Soft Pastel (Lilac, Mint, Peach)", "Primary Colors (Red, Blue, Yellow)", "Cyberpunk (Purple, Teal, Pink)",
-        "Vintage Sepia", "High Contrast B&W with one accent color", "Deep Ocean Blues and Greens",
-        "Sunset Fire (Orange, Red, Violet)", "Metallic (Silver, Gold, Copper)", "Nordic Cold (White, Blue, Grey)"
+        # Professional and clean
+        "Clean white with navy accents", "Warm neutrals (beige, cream, tan)", "Cool greys with teal accent",
+        "Black and white high contrast", "Muted earth tones (sage, terracotta, sand)",
+        # Modern professional
+        "Soft blue and white minimal", "Warm wood tones and white", "Charcoal grey with gold accent",
+        "Forest green and cream", "Deep navy and warm brass",
+        # Subtle and sophisticated
+        "Dusty rose and grey", "Ocean blues gradient", "Sunset warm oranges and coral",
+        "Vintage faded film tones", "Coffee browns and cream"
     ]
 }
 
@@ -830,22 +841,36 @@ class ArtDirector(Agent):
         self.current_medium = random.choice(STYLE_MATRIX["mediums"])
         self.current_lighting = random.choice(STYLE_MATRIX["lighting"])
         self.current_palette = random.choice(STYLE_MATRIX["palettes"])
-        
-        self.system_prompt = f"""You are a Midjourney/DALL-E Prompt Engineer.
-Current Style: {vibe_name}
-Assigned Artistic Medium: {self.current_medium}
-Assigned Lighting: {self.current_lighting}
-Assigned Color Palette: {self.current_palette}
 
-Rules:
-1. Generate ONE extremely high-quality, creative prompt.
-2. Incorporate the medium, lighting, and palette explicitly.
-3. OUTPUT ONLY the final structured format.
+        self.system_prompt = f"""You are a visual director creating LinkedIn-appropriate imagery.
 
-STRICT OUTPUT FORMAT (NO CHAT):
+Assigned Style:
+- Medium: {self.current_medium}
+- Lighting: {self.current_lighting}
+- Palette: {self.current_palette}
+
+CRITICAL RULES:
+1. Create professional, editorial-quality visuals suitable for LinkedIn
+2. Focus on REAL subjects: people working, objects, spaces, nature - NOT abstract sci-fi
+3. Incorporate the assigned medium, lighting, and palette
+
+ABSOLUTELY BANNED (will look like generic AI art):
+- Purple/pink/cyan neon colors
+- Cyberpunk aesthetics
+- Glowing eyes or circuits
+- Robots shaking hands with humans
+- Futuristic cityscapes
+- Holographic interfaces
+- Matrix-style code rain
+- Any "tech bro" clichés
+
+AIM FOR: Something that could be a stock photo, magazine editorial, or clean illustration.
+Think: Apple marketing, NYT editorial, Unsplash photography - clean, professional, human.
+
+OUTPUT FORMAT (nothing else):
 Visual Format: [Format]
-Prompt: [The Prompt]
-Text Overlay: [Brief headline if appropriate]"""
+Prompt: [The detailed prompt - include "professional, editorial quality, clean composition"]
+Text Overlay: [Optional - only if truly needed]"""
 
     def generate_image(self, prompt: str) -> Optional[bytes]:
         logger.info(f"--- {self.name} ({self.role}) Working ---")
