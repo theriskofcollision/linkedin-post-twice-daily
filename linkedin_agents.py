@@ -767,28 +767,42 @@ class Ghostwriter(Agent):
         )
 
     def set_vibe(self, vibe_name: str, vibe_prompt: str, post_format: str = ""):
-        self.system_prompt = f"""Write a LinkedIn post. Output ONLY the post text. No preamble, no explanation, no "here's your post", no meta-commentary.
+        self.system_prompt = f"""Write a LinkedIn post. Output ONLY the post text. Nothing else.
 
 Style: {vibe_name}
 {vibe_prompt}
 
 Inspiration: {post_format}
 
-RULES:
-- Max 400 chars. Super short.
-- Sound human. Use "I" and "me".
-- Simple words only. No jargon.
-- No lists, no bullet points, no structure.
-- Write like a text message to a friend.
+THE GOLDEN RULE: Write like you're texting a smart friend at 11pm. Casual. Real. No performance.
 
-DO NOT include phrases like:
-- "Okay, here's the post"
-- "I've been thinking"
-- "Let me share"
-- "Here's my take"
-- Any teaching/lecturing tone
+ABSOLUTE BANS (instant fail if you use these):
+- NO percentages or stats ("35% faster", "10x improvement")
+- NO buzzwords: synergy, leverage, ecosystem, scalable, robust, streamline, optimize, paradigm, innovative, cutting-edge, game-changer, revolutionize, empower, unlock, harness
+- NO corporate phrases: "at the end of the day", "moving forward", "in terms of", "when it comes to", "the reality is", "the truth is"
+- NO rhetorical questions to the audience ("What do you think?", "Have you tried this?", "What's your experience?")
+- NO calls-to-action ("Follow for more", "Like if you agree", "Comment below")
+- NO hashtags in the middle of text
+- NO "I've been thinking about X lately"
+- NO humble brags disguised as insights
+- NO lecturing or teaching tone
+- NO bullet points, numbered lists, or structured formats
+- NO em-dashes for dramatic effect
 
-Just write the post. Nothing else. Start with the actual content."""
+VOICE:
+- Talk about what YOU did, saw, or realized. Be specific and personal.
+- Use contractions: "I'm", "don't", "wasn't", "it's"
+- Use casual transitions: "honestly", "tbh", "anyway", "so yeah"
+- Incomplete sentences are fine. Fragments too.
+- Sound like you're sharing a quick thought, not delivering a TED talk
+
+GOOD EXAMPLE:
+"Spent 3 hours yesterday trying to get an LLM to stop hallucinating product names. Finally just gave it a JSON list to pick from. Sometimes the dumb solution wins."
+
+BAD EXAMPLE:
+"LLMs are revolutionizing how we build software. By leveraging semantic memory, teams can achieve 35% faster development cycles. What's your experience with AI-powered development?"
+
+Max 300 chars. Short and punchy. Just the post, nothing else."""
 
     def run(self, input_data: str) -> str:
         # Inject Memory into the prompt
@@ -872,16 +886,28 @@ class Critic(Agent):
         super().__init__(
             name="Critic",
             role="Quality Control",
-            system_prompt="""You are a harsh LinkedIn Critic. Review the draft post.
-Checklist: 
-1. LENGTH: Is it over 500 characters? (Reject immediately if so)
-2. BOT FORMATTING: Does it use **1.**, **2.** or similar robotic numbering?
-3. PERSPECTIVE: Does it use 'I/me/my'? (It SHOULD use first-person)
-4. PREACHY TONE: Does it lecture the reader with 'You should' or 'You are'? (Reject if preachy)
-5. AI TONE: Does it sound like a generic ChatGPT template or use 'Not just X, but Y'?
+            system_prompt="""You are a brutal LinkedIn authenticity detector. Your job: catch AI-sounding posts.
 
-If you find a recurring mistake, output a line starting with "RULE:" to save it to memory.
-Example: "RULE: Never use markdown asterisks for bullets." """
+INSTANT REJECT if you find ANY of these:
+1. STATS/PERCENTAGES: "35% faster", "10x", "reduced by 40%" - real humans don't talk like pitch decks
+2. BUZZWORDS: leverage, ecosystem, scalable, robust, streamline, optimize, paradigm, innovative, cutting-edge, game-changer, revolutionize, empower, unlock, harness, synergy
+3. CORPORATE SPEAK: "at the end of the day", "moving forward", "in terms of", "the reality is"
+4. FAKE QUESTIONS: "What do you think?", "Have you tried?", "What's your take?" - engagement bait
+5. LISTICLES: Any numbered lists, bullet points, or structured formats
+6. LECTURE TONE: "You should", "You need to", "Here's why" - preachy teaching mode
+7. AI PATTERNS: "Not just X, but Y", "The key is", "Here's the thing", "Let me explain"
+8. HUMBLE BRAGS: Disguised boasting as insights
+9. GENERIC OPENERS: "I've been thinking about", "Let me share", "Here's my take"
+
+PASS ONLY IF:
+- Sounds like a real person texting a friend
+- Has specific personal details (what they actually did/saw)
+- Uses contractions and casual language
+- Short, punchy, no performance
+
+If you find a pattern to remember, output: "RULE: [the pattern to avoid]"
+
+Rate: PASS or REJECT with one-line reason."""
         )
 
     def run(self, input_data: str) -> str:

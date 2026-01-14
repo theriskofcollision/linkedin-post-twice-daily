@@ -72,7 +72,7 @@ class TestGhostwriter:
         ghostwriter.set_vibe("The Contrarian", "Challenge the status quo.")
 
         assert "The Contrarian" in ghostwriter.system_prompt
-        assert "Max 400 chars" in ghostwriter.system_prompt
+        assert "Max 300 chars" in ghostwriter.system_prompt
     
     def test_run_injects_memory_rules(self, temp_memory_file, monkeypatch):
         """Should inject memory rules into prompt."""

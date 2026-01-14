@@ -60,7 +60,7 @@ def test_orchestrator_selects_format_and_vibe():
                         # Verify vibe and format were selected
                         assert orch.ghostwriter.system_prompt is not None
                         assert "Inspiration:" in orch.ghostwriter.system_prompt
-                        assert "Max 400 chars" in orch.ghostwriter.system_prompt
+                        assert "Max 300 chars" in orch.ghostwriter.system_prompt
 
 def test_vibes_structure():
     for vibe, config in VIBES.items():
