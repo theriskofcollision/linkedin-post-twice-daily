@@ -14,10 +14,20 @@ st.set_page_config(
 
 # --- Helper Functions ---
 def load_memory():
+    """Load memory data with comprehensive error handling."""
     try:
         with open("memory.json", "r") as f:
             return json.load(f)
     except FileNotFoundError:
+        return {"rules": [], "history": []}
+    except json.JSONDecodeError as e:
+        st.warning(f"Memory file is corrupted: {e}. Starting fresh.")
+        return {"rules": [], "history": []}
+    except PermissionError:
+        st.error("Cannot read memory.json - permission denied.")
+        return {"rules": [], "history": []}
+    except Exception as e:
+        st.error(f"Unexpected error loading memory: {e}")
         return {"rules": [], "history": []}
 
 # --- Main Layout ---

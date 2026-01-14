@@ -4,6 +4,7 @@ import random
 import requests
 import urllib.parse
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from typing import List, Optional, Dict, Any
 from datetime import datetime, timedelta
@@ -328,7 +329,9 @@ class Agent:
 
 
 class HackerNewsConnector:
-    def get_top_ai_stories(self, limit: int = None) -> str:
+    """Connector for fetching AI-related stories from Hacker News."""
+
+    def get_top_ai_stories(self, limit: Optional[int] = None) -> str:
         if limit is None:
             limit = CONFIG.get("sources", {}).get("hackernews", {}).get("ai_results", 5)
         scan_limit = CONFIG.get("sources", {}).get("hackernews", {}).get("scan_limit", 15)
@@ -378,6 +381,8 @@ class HackerNewsConnector:
             return "Error fetching HackerNews data."
 
 class NewsAPIConnector:
+    """Connector for fetching technology headlines from NewsAPI."""
+
     def get_tech_headlines(self, limit: int = 5) -> str:
         logger.info("--- NewsAPI Connector Working ---")
         api_key = os.environ.get("NEWS_API_KEY")
@@ -386,9 +391,11 @@ class NewsAPIConnector:
             return ""
 
         try:
-            # Fetch top tech headlines
-            url = f"https://newsapi.org/v2/top-headlines?category=technology&language=en&pageSize=10&apiKey={api_key}"
-            response = requests.get(url)
+            # Fetch top tech headlines (API key in header for security)
+            url = "https://newsapi.org/v2/top-headlines?category=technology&language=en&pageSize=10"
+            headers = {"X-Api-Key": api_key}
+            response = requests.get(url, headers=headers, timeout=10)
+            response.raise_for_status()
             data = response.json()
             
             articles = []
@@ -412,6 +419,8 @@ class NewsAPIConnector:
             return "Error fetching NewsAPI data."
 
 class ArxivConnector:
+    """Connector for fetching latest AI/ML papers from arXiv."""
+
     def get_latest_papers(self, limit: int = 3) -> str:
         logger.info("--- arXiv Connector Working ---")
         try:
@@ -421,9 +430,8 @@ class ArxivConnector:
             url = "http://export.arxiv.org/api/query?search_query=cat:cs.AI+OR+cat:cs.CL&start=0&max_results=5&sortBy=submittedDate&sortOrder=descending"
             response = requests.get(url)
             
-            # Simple string parsing to avoid heavy XML dependencies if possible, 
-            # but standard xml.etree is safer.
-            import xml.etree.ElementTree as ET
+            # Use defusedxml to prevent XML entity attacks (billion laughs, XXE)
+            import defusedxml.ElementTree as ET
             root = ET.fromstring(response.content)
             
             # Namespace map
@@ -455,6 +463,8 @@ class ArxivConnector:
             return "Error fetching arXiv data."
 
 class TavilyConnector:
+    """Connector for deep web search using Tavily API."""
+
     def search(self, query: str, include_images: bool = False) -> Dict[str, Any]:
         logger.info(f"--- Tavily Connector Working (Images={include_images}) ---")
         api_key = os.environ.get("TAVILY_API_KEY")
@@ -521,17 +531,55 @@ Output: A structured report containing:
 Make it dense, factual, and high-signal."""
         )
     
-    def run(self, input_data: str) -> str:
-        # Fetch real data from all sources
-        hn_data = self.hn_connector.get_top_ai_stories()
-        news_data = self.news_connector.get_tech_headlines()
-        arxiv_data = self.arxiv_connector.get_latest_papers()
-        
-        # Use Tavily to verify/expand on the input topic or general trends
-        tavily_resp = self.tavily_connector.search(f"latest critical discussions in {input_data} technology")
-        tavily_data = tavily_resp["text"]
-        
-        full_input = f"{input_data}\n\nREAL-TIME HACKERNEWS DATA:\n{hn_data}\n\nREAL-TIME NEWSAPI DATA:\n{news_data}\n\nLATEST ACADEMIC PAPERS (ARXIV):\n{arxiv_data}\n\nDEEP WEB SEARCH (TAVILY):\n{tavily_data}"
+    def run(self, input_data: str) -> Optional[str]:
+        """Fetch research data from all sources in parallel and generate report."""
+        # Define data fetching tasks
+        def fetch_hackernews() -> tuple:
+            return ("hackernews", self.hn_connector.get_top_ai_stories())
+
+        def fetch_newsapi() -> tuple:
+            return ("newsapi", self.news_connector.get_tech_headlines())
+
+        def fetch_arxiv() -> tuple:
+            return ("arxiv", self.arxiv_connector.get_latest_papers())
+
+        def fetch_tavily() -> tuple:
+            resp = self.tavily_connector.search(f"latest critical discussions in {input_data} technology")
+            return ("tavily", resp["text"])
+
+        # Execute all fetches in parallel
+        results = {}
+        logger.info("📡 Fetching research data from all sources in parallel...")
+
+        with ThreadPoolExecutor(max_workers=4) as executor:
+            futures = [
+                executor.submit(fetch_hackernews),
+                executor.submit(fetch_newsapi),
+                executor.submit(fetch_arxiv),
+                executor.submit(fetch_tavily),
+            ]
+
+            for future in as_completed(futures):
+                try:
+                    source, data = future.result(timeout=30)
+                    results[source] = data
+                    logger.debug(f"✓ {source} data fetched")
+                except Exception as e:
+                    logger.warning(f"Failed to fetch from a source: {e}")
+
+        # Extract results with fallbacks
+        hn_data = results.get("hackernews", "HackerNews data unavailable.")
+        news_data = results.get("newsapi", "NewsAPI data unavailable.")
+        arxiv_data = results.get("arxiv", "arXiv data unavailable.")
+        tavily_data = results.get("tavily", "Tavily data unavailable.")
+
+        full_input = (
+            f"{input_data}\n\n"
+            f"REAL-TIME HACKERNEWS DATA:\n{hn_data}\n\n"
+            f"REAL-TIME NEWSAPI DATA:\n{news_data}\n\n"
+            f"LATEST ACADEMIC PAPERS (ARXIV):\n{arxiv_data}\n\n"
+            f"DEEP WEB SEARCH (TAVILY):\n{tavily_data}"
+        )
         return super().run(full_input)
 
 # --- Style & Variety Engine ---
@@ -1000,7 +1048,7 @@ class LinkedInConnector:
                 # Try parsing body if header is missing
                 try:
                     post_urn = response.json().get("id")
-                except:
+                except (json.JSONDecodeError, ValueError):
                     pass
             
             logger.info(f"🆔 New Post URN: {post_urn}")
@@ -1031,7 +1079,7 @@ class LinkedInConnector:
         }
         
         try:
-            response = requests.get(url, headers=headers)
+            response = requests.get(url, headers=headers, timeout=30)
             if response.status_code == 404:
                 logger.warning(f"Stats not found for {urn}")
                 return {"likes": 0, "comments": 0}
@@ -1073,43 +1121,20 @@ class Orchestrator:
         self.networker = Networker()
         self.config = CONFIG # Global config from top of file
 
-    def review_past_performance(self):
+    def review_past_performance(self) -> None:
+        """Review past post performance (disabled for personal profile mode)."""
         logger.info("📊 Reviewing Past Performance...")
         logger.info("ℹ️ Healer disabled (Personal Profile Mode). Using manual feedback.")
-        return
 
-        # data = self.memory._load()
-        # history = data.get("history", [])
-        # 
-        # updated_count = 0
-        # for post in history:
-        #     urn = post.get("urn")
-        #     if urn:
-        #         stats = self.linkedin.get_social_actions(urn)
-        #         if stats:
-        #             self.memory.update_post_stats(urn, stats["likes"], stats["comments"])
-        #             updated_count += 1
-        # 
-        # if updated_count > 0:
-        #     print(f"✅ Updated stats for {updated_count} past posts.")
-        # else:
-        #     print("ℹ️ No past posts to update or API unavailable.")
+    def _select_vibe_and_format(self) -> tuple:
+        """Select vibe and post format for this run.
 
-    def run_workflow(self, initial_topic: str = None):
-        logger.info("🚀 Starting LinkedIn Growth Workflow")
-        
-        # Step 0: Review Past Performance (The Feedback Loop)
-        logger.info("🚀 Starting LinkedIn Growth Workflow (V2: Variety Engine)")
-        
-        # Step 0: Review Past Performance
-        self.review_past_performance()
-        performance_insights = self.memory.get_performance_insights()
-        
-        # Step 0.1: entropy and Config
+        Returns:
+            Tuple of (vibe_name, vibe_config, post_format, variety_cfg)
+        """
         variety_cfg = self.config.get("variety", {})
-        image_pref = variety_cfg.get("image_mode_preference", "hybrid")
-        
-        # 0.5. Select Vibe
+
+        # Select Vibe
         forced_vibe = os.getenv("FORCED_VIBE")
         if forced_vibe and forced_vibe in VIBES:
             vibe_name = forced_vibe
@@ -1119,91 +1144,176 @@ class Orchestrator:
                 vibe_name = random.choice(list(VIBES.keys()))
             else:
                 vibe_name = random.choice(enabled)
-        
+
         logger.info(f"🎲 Vibe Selected: {vibe_name}")
         vibe_config = VIBES[vibe_name]
-        
-        # 0.6 Select Format
+
+        # Select Format
         post_format = random.choice(POST_FORMATS)
         logger.info(f"📋 Format Selected: {post_format.split(':')[0]}")
 
-        # Apply Vibe to Agents
-        strategist_prompt = f"{vibe_config['strategist']}\n\nDATA FEEDBACK: {performance_insights}\n\nConstraint: Focus on the perspective of {vibe_name}."
+        return vibe_name, vibe_config, post_format, variety_cfg
+
+    def _configure_agents(self, vibe_name: str, vibe_config: Dict[str, Any],
+                          post_format: str, performance_insights: str) -> None:
+        """Apply vibe configuration to all agents."""
+        strategist_prompt = (
+            f"{vibe_config['strategist']}\n\n"
+            f"DATA FEEDBACK: {performance_insights}\n\n"
+            f"Constraint: Focus on the perspective of {vibe_name}."
+        )
         self.strategist.set_vibe(vibe_name, strategist_prompt)
-        
         self.ghostwriter.set_vibe(vibe_name, vibe_config["ghostwriter"], post_format=post_format)
-        self.art_director.set_vibe(vibe_name, "") # Prompt is generated dynamically in set_vibe's new version
-        
-        # Step 1: Research & Conceptualization
+        self.art_director.set_vibe(vibe_name, "")
+
+    def _research_phase(self, initial_topic: Optional[str]) -> tuple:
+        """Execute research phase.
+
+        Returns:
+            Tuple of (topic_query, trend_brief) or (None, None) on failure
+        """
         if initial_topic:
             topic_query = initial_topic
         else:
             raw_topics = self.config.get("topics", ["AI agents"])
             topic_query = random.choice(raw_topics)
-            
+
         logger.info(f"🔍 Researching & Conceptualizing: {topic_query}")
         trend_brief = self.research_manager.run(topic_query)
-        
+
         if not trend_brief:
             logger.error("Workflow Aborted: Research failed.")
-            return
+            return None, None
 
-        # Step 1.5: Networker
+        # Generate comment pack for networking
         comment_pack = self.networker.run(trend_brief)
         if comment_pack:
             self.memory.save_comment_pack(comment_pack)
 
-        # Step 2: Strategy (Picking an Angle)
+        return topic_query, trend_brief
+
+    def _strategy_phase(self, trend_brief: str) -> Optional[str]:
+        """Execute strategy phase.
+
+        Returns:
+            Strategy string or None on failure
+        """
         logger.info("🧠 Strategizing...")
         strategy = self.strategist.run(trend_brief)
         if not strategy:
             logger.error("Workflow Aborted: Strategy failed.")
-            return
+        return strategy
 
-        # Step 3: Content Creation
+    def _content_phase(self, strategy: str) -> tuple:
+        """Execute content creation phase.
+
+        Returns:
+            Tuple of (draft_text, visual_concept) or (None, None) on failure
+        """
         logger.info("✍️ Drafting Post...")
         draft_text = self.ghostwriter.run(strategy)
-        
+
         logger.info("🎨 Designing Visuals...")
         visual_concept = self.art_director.run(strategy)
 
         if not draft_text:
             logger.error("Workflow Aborted: Ghostwriting failed.")
-            return
-        
-        # Step 4: Visual Sourcing (AI vs Organic)
+            return None, None
+
+        return draft_text, visual_concept
+
+    def _visual_phase(self, vibe_config: Dict[str, Any], variety_cfg: Dict[str, Any],
+                      topic_query: str, visual_concept: str) -> Optional[bytes]:
+        """Source or generate visual content.
+
+        Returns:
+            Image data bytes or None
+        """
         image_data = None
         use_organic = False
-        
+        image_pref = variety_cfg.get("image_mode_preference", "hybrid")
+
         if vibe_config.get("is_organic") and self.config.get("features", {}).get("enable_organic_visuals"):
-            # Check probability or preference
             if image_pref == "always_real":
                 use_organic = True
             elif image_pref == "hybrid":
                 if random.random() < variety_cfg.get("organic_vibe_threshold", 0.5):
                     use_organic = True
-        
+
         if use_organic:
             logger.info("🌿 Sourcing Organic Visual...")
             image_data = self.organic_searcher.get_organic_image(topic_query)
-        
+
         if not image_data and self.config.get("features", {}).get("enable_image_generation"):
             logger.info("🤖 Generating AI Visual...")
             image_prompt = f"Generate image: {visual_concept}"
             image_data = self.art_director.generate_image(image_prompt)
-        
-        # Step 5: Review
+
+        return image_data
+
+    def _publish_phase(self, draft_text: str, visual_concept: str,
+                       image_data: Optional[bytes], topic_query: str,
+                       vibe_name: str) -> Optional[str]:
+        """Review and publish content.
+
+        Returns:
+            Post URN or None
+        """
+        # Review
         full_package = f"{draft_text}\n\n(Visual: {visual_concept})"
-        feedback = self.critic.run(full_package)
-        
-        # Step 6: Publish
+        self.critic.run(full_package)
+
+        # Publish
         logger.info("✅ Preparing to Post...")
         post_urn = self.linkedin.post_content(draft_text, image_data)
-        
-        # Step 7: Save to Memory
+
+        # Save to Memory
         if post_urn:
             self.memory.add_post_history(topic_query, vibe_name, post_urn)
-            return post_urn
+
+        return post_urn
+
+    def run_workflow(self, initial_topic: str = None) -> Optional[str]:
+        """Execute the full LinkedIn content workflow.
+
+        Args:
+            initial_topic: Optional topic to use instead of random selection
+
+        Returns:
+            Post URN if successful, None otherwise
+        """
+        logger.info("🚀 Starting LinkedIn Growth Workflow (V2: Variety Engine)")
+
+        # Step 0: Review past performance
+        self.review_past_performance()
+        performance_insights = self.memory.get_performance_insights()
+
+        # Step 1: Select vibe and format
+        vibe_name, vibe_config, post_format, variety_cfg = self._select_vibe_and_format()
+
+        # Step 2: Configure agents with selected vibe
+        self._configure_agents(vibe_name, vibe_config, post_format, performance_insights)
+
+        # Step 3: Research phase
+        topic_query, trend_brief = self._research_phase(initial_topic)
+        if not trend_brief:
+            return None
+
+        # Step 4: Strategy phase
+        strategy = self._strategy_phase(trend_brief)
+        if not strategy:
+            return None
+
+        # Step 5: Content creation phase
+        draft_text, visual_concept = self._content_phase(strategy)
+        if not draft_text:
+            return None
+
+        # Step 6: Visual sourcing phase
+        image_data = self._visual_phase(vibe_config, variety_cfg, topic_query, visual_concept)
+
+        # Step 7: Publish phase
+        return self._publish_phase(draft_text, visual_concept, image_data, topic_query, vibe_name)
 
 if __name__ == "__main__":
     exit_code = 0

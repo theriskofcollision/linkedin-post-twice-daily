@@ -2,22 +2,25 @@
 # Pinned versions for reproducibility
 
 # Core
-requests==2.31.0
-google-generativeai>=0.8.3
+requests==2.32.3
+google-generativeai==0.8.3
 
 # Configuration
-pyyaml==6.0.1
-python-dotenv==1.0.0
+pyyaml==6.0.2
+python-dotenv==1.0.1
 
 # File locking for concurrent access
-filelock==3.13.1
+filelock==3.16.1
+
+# Security - XML parsing protection
+defusedxml==0.7.1
 
 # Dashboard
-streamlit==1.29.0
-pandas==2.1.4
-plotly==5.18.0
+streamlit==1.40.2
+pandas==2.2.3
+plotly==5.24.1
 
 # Testing (dev dependencies)
-pytest==7.4.3
-pytest-mock==3.12.0
-pytest-cov==4.1.0
+pytest==8.3.4
+pytest-mock==3.14.0
+pytest-cov==6.0.0
