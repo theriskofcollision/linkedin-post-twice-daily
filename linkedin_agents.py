@@ -1020,7 +1020,7 @@ class LinkedInConnector:
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json",
             "X-Restli-Protocol-Version": "2.0.0",
-            "LinkedIn-Version": "202501"
+            "LinkedIn-Version": "202512"
         }
         payload = {
             "initializeUploadRequest": {
@@ -1065,7 +1065,7 @@ class LinkedInConnector:
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json",
             "X-Restli-Protocol-Version": "2.0.0",
-            "LinkedIn-Version": "202501"
+            "LinkedIn-Version": "202512"
         }
 
         post_data = {
@@ -1126,7 +1126,7 @@ class LinkedInConnector:
         headers = {
             "Authorization": f"Bearer {self.access_token}",
             "X-Restli-Protocol-Version": "2.0.0",
-            "LinkedIn-Version": "202501"
+            "LinkedIn-Version": "202512"
         }
         
         try:
