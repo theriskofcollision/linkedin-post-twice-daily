@@ -1012,29 +1012,33 @@ class LinkedInConnector:
         self.access_token = os.environ.get("LINKEDIN_ACCESS_TOKEN")
         self.author_urn = os.environ.get("LINKEDIN_PERSON_URN") # e.g., "urn:li:person:12345"
 
-    def register_upload(self):
-        """Step 1: Register the image upload with LinkedIn"""
-        # Use the new Images API which is compatible with /rest/posts
-        url = "https://api.linkedin.com/rest/images?action=initializeUpload"
+    def register_upload_v2(self):
+        """Register image upload using v2 API"""
+        url = "https://api.linkedin.com/v2/assets?action=registerUpload"
         headers = {
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json",
-            "X-Restli-Protocol-Version": "2.0.0",
-            "LinkedIn-Version": "202512"
+            "X-Restli-Protocol-Version": "2.0.0"
         }
         payload = {
-            "initializeUploadRequest": {
-                "owner": self.author_urn
+            "registerUploadRequest": {
+                "recipes": ["urn:li:digitalmediaRecipe:feedshare-image"],
+                "owner": self.author_urn,
+                "serviceRelationships": [
+                    {
+                        "relationshipType": "OWNER",
+                        "identifier": "urn:li:userGeneratedContent"
+                    }
+                ]
             }
         }
         response = requests.post(url, headers=headers, json=payload)
         response.raise_for_status()
         data = response.json()
         
-        # The response structure is different for rest/images
-        upload_url = data['value']['uploadUrl']
-        image_urn = data['value']['image']
-        return upload_url, image_urn
+        upload_url = data['value']['uploadMechanism']['com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest']['uploadUrl']
+        asset_urn = data['value']['asset']
+        return upload_url, asset_urn
 
     def upload_image(self, upload_url, image_data):
         """Step 2: Upload the binary image data"""
@@ -1048,7 +1052,17 @@ class LinkedInConnector:
             logger.warning("Missing LinkedIn Credentials. Skipping API call.")
             return None
 
-        # Try v2 API first (more compatible), fall back to rest API if needed
+        asset_urn = None
+        if image_data:
+            try:
+                logger.info("Step 1/2: Registering image upload...")
+                upload_url, asset_urn = self.register_upload_v2()
+                logger.info("Step 2/2: Uploading image binary...")
+                self.upload_image(upload_url, image_data)
+            except Exception as e:
+                logger.error(f"Image upload failed: {e}. Falling back to text-only.")
+                asset_urn = None
+
         url = "https://api.linkedin.com/v2/ugcPosts"
         headers = {
             "Authorization": f"Bearer {self.access_token}",
@@ -1056,28 +1070,52 @@ class LinkedInConnector:
             "X-Restli-Protocol-Version": "2.0.0"
         }
 
-        post_data = {
-            "author": self.author_urn,
-            "lifecycleState": "PUBLISHED",
-            "specificContent": {
-                "com.linkedin.ugc.ShareContent": {
-                    "shareCommentary": {
-                        "text": text
-                    },
-                    "shareMediaCategory": "NONE"
+        if asset_urn:
+            # Post with image
+            post_data = {
+                "author": self.author_urn,
+                "lifecycleState": "PUBLISHED",
+                "specificContent": {
+                    "com.linkedin.ugc.ShareContent": {
+                        "shareCommentary": {
+                            "text": text
+                        },
+                        "shareMediaCategory": "IMAGE",
+                        "media": [
+                            {
+                                "status": "READY",
+                                "media": asset_urn
+                            }
+                        ]
+                    }
+                },
+                "visibility": {
+                    "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
                 }
-            },
-            "visibility": {
-                "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
             }
-        }
+        else:
+            # Text-only post
+            post_data = {
+                "author": self.author_urn,
+                "lifecycleState": "PUBLISHED",
+                "specificContent": {
+                    "com.linkedin.ugc.ShareContent": {
+                        "shareCommentary": {
+                            "text": text
+                        },
+                        "shareMediaCategory": "NONE"
+                    }
+                },
+                "visibility": {
+                    "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
+                }
+            }
 
         try:
             response = requests.post(url, headers=headers, json=post_data)
             response.raise_for_status()
             logger.info(f"✅ Successfully posted to LinkedIn! Status: {response.status_code}")
             
-            # Extract URN
             post_urn = response.json().get("id")
             logger.info(f"🆔 New Post URN: {post_urn}")
             return post_urn
