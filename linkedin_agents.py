@@ -1048,45 +1048,29 @@ class LinkedInConnector:
             logger.warning("Missing LinkedIn Credentials. Skipping API call.")
             return None
 
-        asset_urn = None
-        if image_data:
-            try:
-                logger.info("Step 1/3: Registering image upload...")
-                upload_url, asset = self.register_upload()
-                logger.info("Step 2/3: Uploading image binary...")
-                self.upload_image(upload_url, image_data)
-                asset_urn = asset
-                logger.info(f"Step 3/3: Creating post with asset")
-            except Exception as e:
-                logger.error(f"Image upload failed: {e}. Falling back to text-only.")
-
-        url = "https://api.linkedin.com/rest/posts"
+        # Try v2 API first (more compatible), fall back to rest API if needed
+        url = "https://api.linkedin.com/v2/ugcPosts"
         headers = {
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json",
-            "X-Restli-Protocol-Version": "2.0.0",
-            "LinkedIn-Version": "202512"
+            "X-Restli-Protocol-Version": "2.0.0"
         }
 
         post_data = {
             "author": self.author_urn,
-            "commentary": text,
-            "visibility": "PUBLIC",
-            "distribution": {
-                "feedDistribution": "MAIN_FEED",
-                "targetEntities": [],
-                "thirdPartyDistributionChannels": []
-            },
             "lifecycleState": "PUBLISHED",
-            "isReshareDisabledByAuthor": False
-        }
-
-        if asset_urn:
-            post_data["content"] = {
-                "media": {
-                    "id": asset_urn
+            "specificContent": {
+                "com.linkedin.ugc.ShareContent": {
+                    "shareCommentary": {
+                        "text": text
+                    },
+                    "shareMediaCategory": "NONE"
                 }
+            },
+            "visibility": {
+                "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
             }
+        }
 
         try:
             response = requests.post(url, headers=headers, json=post_data)
@@ -1094,14 +1078,7 @@ class LinkedInConnector:
             logger.info(f"✅ Successfully posted to LinkedIn! Status: {response.status_code}")
             
             # Extract URN
-            post_urn = response.headers.get("x-restli-id")
-            if not post_urn:
-                # Try parsing body if header is missing
-                try:
-                    post_urn = response.json().get("id")
-                except (json.JSONDecodeError, ValueError):
-                    pass
-            
+            post_urn = response.json().get("id")
             logger.info(f"🆔 New Post URN: {post_urn}")
             return post_urn
 
