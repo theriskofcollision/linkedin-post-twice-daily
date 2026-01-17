@@ -227,8 +227,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-01-17T19:35:57.529024",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Provocateur",
+      "urn": "urn:li:share:7418375547912794114",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Multi-Agent Systems\n**1. Value Add:** Ravish Saini's article is spot on! One area where I'm seeing MAS make a huge difference is in fraud detection for financial institutions. By having multiple agents analyze transactions from different angles (location, purchase history, time of day, etc.), they can flag suspicious activity far more effectively than traditional rule-based systems.\n\n**2. Contrarian:** While the potential of MAS is undeniable, the \"unforeseen chaos\" angle is worth considering. Coordination and communication overhead between agents can quickly become a bottleneck, especially in highly dynamic environments. We need robust frameworks for managing agent interactions to avoid gridlock.\n\n**3. Question:** Given the complexity of MAS architectures and the potential for emergent behavior, how do we ensure auditability and accountability when these systems are making critical decisions? What mechanisms can be built in to trace the decision-making process back to individual agents and understand their reasoning?",
-  "last_updated": "21097903797"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering vs. Prompt Engineering\n**1. Value Add:** I agree that Flow Engineering is the next step. We've seen amazing results at [Your Company/Project] by chaining together LLM tasks with Zapier integrations. Specifically, we automated our customer onboarding by using a flow that summarizes customer data, generates personalized welcome messages, and schedules follow-up tasks in our CRM. The key is in the orchestration!\n**2. Contrarian:** While Flow Engineering offers clear advantages for complex tasks, let's not completely dismiss Prompt Engineering. A well-crafted prompt can still be incredibly efficient for simpler applications and rapid prototyping. The key is understanding when each approach is most appropriate \u2013 perhaps a hybrid model will emerge?\n**3. Question:** How do you see the role of the citizen developer evolving with the rise of Flow Engineering? Will no-code/low-code platforms democratize the creation of complex AI workflows, or will specialized expertise still be required to design and maintain them effectively?",
+  "last_updated": "21099770688"
 }
