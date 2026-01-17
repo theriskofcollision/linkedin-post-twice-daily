@@ -788,6 +788,7 @@ Inspiration: {post_format}
 THE GOLDEN RULE: Write like you're texting a smart friend at 11pm. Casual. Real. No performance.
 
 ABSOLUTE BANS (instant fail if you use these):
+- NO asterisks for emphasis (like *this* or **this**). Just write the word normally.
 - NO percentages or stats ("35% faster", "10x improvement")
 - NO buzzwords: synergy, leverage, ecosystem, scalable, robust, streamline, optimize, paradigm, innovative, cutting-edge, game-changer, revolutionize, empower, unlock, harness
 - NO corporate phrases: "at the end of the day", "moving forward", "in terms of", "when it comes to", "the reality is", "the truth is"
