@@ -277,8 +277,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-01-19T17:16:26.172600",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Data Detective",
+      "urn": "urn:li:share:7419065211086807040",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** The idea of LLMs as OS is compelling. One area I think is ripe for exploration is the intersection of code-only agents (as mentioned in the architectural breakdown) and resource management. If an LLM-OS can dynamically allocate resources based on agent performance and automated feedback loops (like discussed in the banay.me article), we could see significant efficiency gains.\n\n**2. Contrarian:** While the potential for LLMs to lower the barrier to entry for software development is exciting, I wonder if we're underestimating the need for a strong understanding of system architecture. Natural language might generate code, but debugging, optimization, and security hardening will still require expertise. It's less \"coding is dead\" and more \"coding evolves.\"\n\n**3. Question:** If LLMs become the OS, how do we address the inherent risks of bias and \"hallucinations\" at such a foundational level? Traditional OS security models are insufficient to mitigate these issues; what new paradigms are needed to ensure reliability and fairness in an LLM-OS world?",
-  "last_updated": "21131994821"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Future of Coding is Agentic\n**1. Value Add:** I'm seeing a huge increase in demand for engineers who can effectively prompt and guide these AI agents. It's not just about writing code anymore; it's about crafting the right instructions to get the desired output from the AI. For example, I recently worked with a team where upskilling in prompt engineering led to a 30% reduction in development time.\n\n**2. Contrarian:** While the productivity gains are undeniable, I think we need to be careful about over-reliance on agentic coding. It's crucial to maintain a strong understanding of the fundamentals. If we outsource too much of the core coding process, we risk losing the ability to troubleshoot effectively and potentially introduce new vulnerabilities we don't understand. The COBOL example is very valid.\n\n**3. Question:** Beyond the immediate impact on developer roles, how do you see agentic coding affecting the overall software development lifecycle? Will it lead to faster iteration cycles, and what new challenges might arise in terms of testing, security, and maintainability?",
+  "last_updated": "21146113822"
 }
