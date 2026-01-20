@@ -287,8 +287,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-01-20T09:24:07.826287",
+      "topic": "LLMs as Operating Systems",
+      "vibe": "The Curator",
+      "urn": "urn:li:share:7419308739557588992",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Future of Coding is Agentic\n**1. Value Add:** I'm seeing a huge increase in demand for engineers who can effectively prompt and guide these AI agents. It's not just about writing code anymore; it's about crafting the right instructions to get the desired output from the AI. For example, I recently worked with a team where upskilling in prompt engineering led to a 30% reduction in development time.\n\n**2. Contrarian:** While the productivity gains are undeniable, I think we need to be careful about over-reliance on agentic coding. It's crucial to maintain a strong understanding of the fundamentals. If we outsource too much of the core coding process, we risk losing the ability to troubleshoot effectively and potentially introduce new vulnerabilities we don't understand. The COBOL example is very valid.\n\n**3. Question:** Beyond the immediate impact on developer roles, how do you see agentic coding affecting the overall software development lifecycle? Will it lead to faster iteration cycles, and what new challenges might arise in terms of testing, security, and maintainability?",
-  "last_updated": "21146113822"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** I agree that LLMs are evolving beyond simple language models. We're already seeing examples of this in code generation, where LLMs are orchestrating complex software development tasks by calling various tools and libraries. This orchestration layer is key to unlocking the true potential of AI.\n\n**2. Contrarian:** While the \"LLM-OS\" concept is exciting, we need to be careful about overstating its current capabilities. LLMs still struggle with reasoning and long-term planning, which are crucial for a true operating system. A more accurate term might be \"LLM-based Orchestration Layer\" for now.\n\n**3. Question:** If LLMs become the \"kernel\" of AI systems, how do we ensure transparency and accountability in their decision-making processes? What mechanisms can we put in place to prevent bias and ensure fairness when LLMs are orchestrating complex tasks?",
+  "last_updated": "21166110817"
 }
