@@ -317,8 +317,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-01-21T17:45:59.053904",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Fresh Eye",
+      "urn": "urn:li:share:7419797422874378240",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "Okay, here's a Comment Pack you can use on relevant influencer posts about LLMs as Operating Systems:\n\n### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** I agree that LLMs are poised to revolutionize how we interact with tech! A compelling example is their potential in supply chain management. Imagine an LLM-OS dynamically re-routing shipments based on real-time weather patterns and inventory levels, optimizing for both speed and cost without human intervention. We're already seeing early versions of this, but the true potential is enormous.\n\n**2. Contrarian:** While the idea of LLMs as operating systems is exciting, I think we need to be realistic about the current limitations. LLMs still struggle with explainability and robustness. Entrusting core operational functions to a system that can hallucinate or make biased decisions could lead to significant risks. We need robust safety nets and auditability before widespread adoption.\n\n**3. Question:** If LLMs become the new OS, how will we address the challenge of \"vendor lock-in\"? Will there be open standards and interoperability, or will we become dependent on a handful of tech giants who control these LLM-OS platforms? What does a truly decentralized and permissionless LLM-OS look like, and how can we foster its development?",
-  "last_updated": "21204010136"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** I'm seeing similar trends in the data science world. While tools like AutoML have been around, the rise of agentic workflows is allowing data scientists to focus more on problem definition and validation, and less on the rote aspects of model building. This shift is also pushing data governance and explainability to the forefront, which is crucial for responsible AI adoption.\n\n**2. Contrarian:** While the productivity gains are undeniable, let's not overlook the potential for increased technical debt. If AI-generated code isn't carefully reviewed and maintained, we could end up with a legacy of brittle systems that are difficult to understand and modify in the future. We need to think about maintainability *before* chasing pure output.\n\n**3. Question:** With AI agents taking on more coding tasks, how do we ensure that the next generation of software engineers develops a deep understanding of fundamental programming principles? Is there a risk that relying too heavily on these tools will lead to a decline in core coding skills, and if so, how can we mitigate that?",
+  "last_updated": "21219783938"
 }
