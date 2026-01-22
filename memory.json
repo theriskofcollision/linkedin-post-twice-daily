@@ -327,8 +327,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-01-22T09:23:12.848084",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Narrator",
+      "urn": "urn:li:share:7420033284677505024",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** I'm seeing similar trends in the data science world. While tools like AutoML have been around, the rise of agentic workflows is allowing data scientists to focus more on problem definition and validation, and less on the rote aspects of model building. This shift is also pushing data governance and explainability to the forefront, which is crucial for responsible AI adoption.\n\n**2. Contrarian:** While the productivity gains are undeniable, let's not overlook the potential for increased technical debt. If AI-generated code isn't carefully reviewed and maintained, we could end up with a legacy of brittle systems that are difficult to understand and modify in the future. We need to think about maintainability *before* chasing pure output.\n\n**3. Question:** With AI agents taking on more coding tasks, how do we ensure that the next generation of software engineers develops a deep understanding of fundamental programming principles? Is there a risk that relying too heavily on these tools will lead to a decline in core coding skills, and if so, how can we mitigate that?",
-  "last_updated": "21219783938"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding: The Future of Software Development\n**1. Value Add:** I agree that orchestration is key. We're seeing a parallel in DevOps, where infrastructure-as-code and automated deployment pipelines became crucial as teams adopted microservices. Agentic coding will require similar orchestration tools to manage the complexity of multiple AI agents working together and ensure code quality.\n\n**2. Contrarian:** While the productivity boost from AI coding assistants is undeniable, let's not overlook the importance of debugging skills. If AI generates code with subtle errors, developers still need the expertise to diagnose and fix them, potentially requiring a deeper understanding than if they'd written the code themselves.\n\n**3. Question:** Given the increasing reliance on agentic coding, how do we ensure that the AI models used are trained on diverse datasets and free from biases, to prevent the perpetuation of existing inequalities in software development and its applications?",
+  "last_updated": "21242946403"
 }
