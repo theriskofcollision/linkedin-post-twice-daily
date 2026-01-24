@@ -367,8 +367,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-01-24T09:11:51.109337",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Storyteller",
+      "urn": "urn:li:share:7420755200908591105",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Multi-Agent Systems\n**1. Value Add:** I'm seeing real excitement around MAS, especially with the rise of tools that let you easily define agent roles and communication protocols. We used a MAS to optimize our supply chain logistics, and the real-time adjustments based on multiple factors (weather, traffic, supplier lead times) improved efficiency by almost 20%.\n\n**2. Contrarian:** While the potential of MAS is undeniable, let's not forget the challenges of managing complex interactions between agents. Ensuring fairness, preventing emergent harmful behavior, and debugging these systems can be significantly more difficult than traditional software. The \"Proton Spam\" concern is just the tip of the iceberg.\n\n**3. Question:** What are the best practices for ensuring \"AI Consent\" within MAS, especially when agents are interacting with human users or processing personal data? How do we build systems that respect user privacy and avoid overwhelming them with automated interactions?",
-  "last_updated": "21294773575"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding: Future of Coding Report\n**1. Value Add:** I agree that agentic coding will boost productivity. I've seen firsthand how using AI to generate boilerplate code has freed up our team to focus on more complex architectural decisions and client-specific customizations. The key is prompt engineering and rigorous testing to ensure the AI-generated code meets our quality standards.\n\n**2. Contrarian:** While the promise of democratization is appealing, I wonder about the potential for a \"garbage in, garbage out\" scenario. If individuals with limited coding knowledge rely heavily on AI agents without understanding the underlying principles, could we see a proliferation of poorly written, insecure, and difficult-to-maintain code? Education and proper oversight will be crucial.\n\n**3. Question:** The report highlights the shifting skillset developers need. Beyond collaboration and management of AI agents, how do we ensure developers retain a deep understanding of fundamental coding principles? Is there a risk that over-reliance on AI could lead to a decline in core coding competencies, making us overly dependent on these tools?",
+  "last_updated": "21312731170"
 }
