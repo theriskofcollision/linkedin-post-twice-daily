@@ -377,8 +377,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-01-24T17:10:10.831658",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Satirist",
+      "urn": "urn:li:share:7420875576023863297",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding: Future of Coding Report\n**1. Value Add:** I agree that agentic coding will boost productivity. I've seen firsthand how using AI to generate boilerplate code has freed up our team to focus on more complex architectural decisions and client-specific customizations. The key is prompt engineering and rigorous testing to ensure the AI-generated code meets our quality standards.\n\n**2. Contrarian:** While the promise of democratization is appealing, I wonder about the potential for a \"garbage in, garbage out\" scenario. If individuals with limited coding knowledge rely heavily on AI agents without understanding the underlying principles, could we see a proliferation of poorly written, insecure, and difficult-to-maintain code? Education and proper oversight will be crucial.\n\n**3. Question:** The report highlights the shifting skillset developers need. Beyond collaboration and management of AI agents, how do we ensure developers retain a deep understanding of fundamental coding principles? Is there a risk that over-reliance on AI could lead to a decline in core coding competencies, making us overly dependent on these tools?",
-  "last_updated": "21312731170"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering: The New Frontier of AI\n**1. Value Add:** I agree that Flow Engineering is the next step. A great example of its power is in complex data analysis. Instead of just asking an LLM to summarize a report, you can use Flow Engineering to chain prompts: first, extract key metrics; second, compare them to historical data via API; third, identify anomalies; and finally, generate a prioritized list of insights for a human analyst. This is far more valuable than a single prompt.\n\n**2. Contrarian:** While Flow Engineering is undoubtedly powerful, let's not write off prompt engineering entirely. A well-crafted initial prompt can still dramatically improve the efficiency of a flow. Think of it as providing a strong foundation upon which the more complex workflow is built. Effective prompt engineering remains a crucial skill within the broader Flow Engineering framework.\n\n**3. Question:** If Flow Engineering is about orchestrating complex workflows, how do we ensure these flows are auditable and explainable? Especially in regulated industries, understanding the reasoning behind an AI's output is paramount. What methodologies or tools are emerging to address the \"black box\" concern in Flow Engineering?",
+  "last_updated": "21318595000"
 }
