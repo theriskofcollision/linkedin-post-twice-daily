@@ -397,8 +397,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-01-25T17:09:58.654198",
+      "topic": "LLMs as Operating Systems",
+      "vibe": "The Fresh Eye",
+      "urn": "urn:li:share:7421237912949784576",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** I agree that LLMs as OS are a fascinating development. We're already seeing hints of this with tools like AutoGPT and AgentGPT, which use LLMs to orchestrate tasks. It's not a full OS yet, but it demonstrates the potential for LLMs to manage and automate complex processes, paving the way for a more integrated AI-driven computing experience.\n\n**2. Contrarian:** While the idea of LLMs as OS is compelling, I wonder if we're underestimating the importance of deterministic behavior for critical system functions. Can we truly rely on the probabilistic nature of LLMs for tasks that require absolute precision and reliability, such as managing hardware resources or ensuring data integrity? The security concerns are also paramount; the attack surface of an LLM-OS would be massive.\n\n**3. Question:** If LLMs become the OS, how will we balance the desire for accessibility and ease-of-use with the need for transparency and control? Will users truly understand what's happening under the hood, or will they be completely reliant on the LLM's decisions? What mechanisms will be in place to audit and debug an LLM-driven system?",
-  "last_updated": "21330181903"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** I agree that LLMs abstracting hardware is a game-changer. Think about the nightmare of driver compatibility! LLMs could potentially offer a universal driver layer, drastically reducing development time and improving device support for niche hardware. We're already seeing this in limited contexts with AI-powered code completion tools assisting driver development.\n**2. Contrarian:** While the idea of an LLM-OS is compelling, let's not forget about determinism. Traditional OSs are built on predictable execution. LLMs, by their nature, introduce a level of stochasticity. How do we ensure reliable and repeatable system behavior in safety-critical applications with an LLM at the core?\n**3. Question:** If LLMs become the core of our operating systems, how will we address the potential for \"prompt injection\" attacks at the system level? Could a malicious prompt compromise the entire OS, and what novel security paradigms will be required to mitigate this risk?",
+  "last_updated": "21336355664"
 }
