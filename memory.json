@@ -417,8 +417,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-01-26T17:22:20.219371",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Minimalist",
+      "urn": "urn:li:share:7421603411172745216",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** I agree that LLMs have the potential to revolutionize operating systems. We're already seeing examples of this in AI-powered coding assistants like GitHub Copilot, which essentially act as an LLM-powered layer on top of existing OS to streamline development workflows. Imagine that level of intelligent assistance extended across the entire system!\n\n**2. Contrarian:** While the accessibility and efficiency gains of LLM-based OS are appealing, I wonder if we're fully considering the potential for vendor lock-in. If the \"OS\" is tied to a specific LLM provider, are we sacrificing control and flexibility for convenience? The long-term implications for open-source development also need careful consideration.\n\n**3. Question:** If LLMs become the foundation for operating systems, how will we ensure transparency and auditability, especially in critical applications like security and finance? Current LLMs are often \"black boxes.\" What mechanisms will be necessary to verify their behavior and prevent unintended consequences when they're controlling core system functions?",
-  "last_updated": "21352496598"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding: The Future of Software Development\n**1. Value Add:** \"I agree that agentic coding is a game-changer. I've seen firsthand how tools like GitHub Copilot have increased developer velocity by 30-40% on routine tasks. The real challenge now is integrating these tools into existing workflows and ensuring code quality.\"\n**2. Contrarian:** \"While agentic coding promises huge efficiency gains, let's not forget the potential for introducing subtle biases or security vulnerabilities if the AI is not properly trained and monitored. We need robust testing and validation frameworks to mitigate these risks.\"\n**3. Question:** \"If agentic coding truly takes off, how will we measure developer performance? Will it shift from lines of code written to the complexity and effectiveness of the problems they define for the AI to solve? How will it affect promotion pathways for coders?\"",
+  "last_updated": "21367069895"
 }
