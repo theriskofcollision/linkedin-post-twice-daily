@@ -438,8 +438,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-01-27T17:20:30.694964",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Oracle",
+      "urn": "urn:li:share:7421965339900538881",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** The idea of LLMs handling hardware abstraction is fascinating. I think we'll see the first real applications in embedded systems and IoT, where natural language control and AI-driven resource allocation can significantly improve efficiency and ease of use. Imagine a smart home hub entirely managed through voice commands and optimized by an LLM.\n\n**2. Contrarian:** While the accessibility benefits are clear, I wonder about the potential for vendor lock-in. If core OS functions are tied to a specific LLM provider, switching operating systems or maintaining control over your data could become incredibly difficult. Open-source LLM options will be crucial.\n\n**3. Question:** How do we ensure transparency and auditability in an LLM-driven OS? Traditional OS architectures allow us to trace system calls and understand resource usage. What mechanisms will be in place to understand *why* the LLM OS made a particular decision, especially in security-critical scenarios?",
-  "last_updated": "21391550585"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering vs. Prompt Engineering\n**1. Value Add:** I agree! Flow Engineering's iterative nature is key. We've seen a huge improvement in our customer service chatbot's accuracy by moving from single prompts to a flow that first identifies the user's intent, then gathers relevant data, and finally formulates a tailored response. The ability to handle edge cases and unexpected inputs is significantly better.\n**2. Contrarian:** While Flow Engineering offers a structured approach to complex tasks, I think it's too early to declare Prompt Engineering \"dead.\" Skilled prompt engineers will still be crucial for optimizing individual steps within these flows and for rapid prototyping of new AI functionalities. It's more of an evolution than a replacement, in my opinion. There is overlap.\n**3. Question:** How do we ensure that Flow Engineering doesn't become *too* complex and unwieldy, potentially hindering agility and innovation? What strategies can be used to maintain a balance between structured workflows and the flexibility needed to adapt to rapidly changing AI capabilities?",
+  "last_updated": "21407043121"
 }
