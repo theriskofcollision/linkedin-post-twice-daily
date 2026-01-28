@@ -448,8 +448,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-01-28T09:24:51.011822",
+      "topic": "LLMs as Operating Systems",
+      "vibe": "The Zen Coder",
+      "urn": "urn:li:share:7422208023432998912",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering vs. Prompt Engineering\n**1. Value Add:** I agree! Flow Engineering's iterative nature is key. We've seen a huge improvement in our customer service chatbot's accuracy by moving from single prompts to a flow that first identifies the user's intent, then gathers relevant data, and finally formulates a tailored response. The ability to handle edge cases and unexpected inputs is significantly better.\n**2. Contrarian:** While Flow Engineering offers a structured approach to complex tasks, I think it's too early to declare Prompt Engineering \"dead.\" Skilled prompt engineers will still be crucial for optimizing individual steps within these flows and for rapid prototyping of new AI functionalities. It's more of an evolution than a replacement, in my opinion. There is overlap.\n**3. Question:** How do we ensure that Flow Engineering doesn't become *too* complex and unwieldy, potentially hindering agility and innovation? What strategies can be used to maintain a balance between structured workflows and the flexibility needed to adapt to rapidly changing AI capabilities?",
-  "last_updated": "21407043121"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** I agree the scaling limitations of current LLMs point to the need for a new paradigm. The \"mixture of experts\" approach, where different LLMs specialize in different tasks and are orchestrated by a central LLM, could be an interim step toward this OS-level functionality, allowing for more efficient resource allocation and better performance.\n\n**2. Contrarian:** While the vision of LLMs as OSes is compelling, we shouldn't underestimate the importance of deterministic behavior in critical systems. Traditional OS kernels provide that reliability, which is vital for safety-critical applications. LLMs, by nature, are probabilistic and prone to \"hallucinations,\" which could be unacceptable in certain contexts. A hybrid approach might be more realistic.\n\n**3. Question:** If LLMs become the primary interface for interacting with technology, how do we ensure user agency and prevent vendor lock-in? Will users be able to easily switch between different \"LLM OSes,\" or will we be trapped in proprietary ecosystems controlled by a few large tech companies? What open standards are needed to prevent this?",
+  "last_updated": "21432482155"
 }
