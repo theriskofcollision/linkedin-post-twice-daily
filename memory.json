@@ -478,8 +478,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-01-29T17:29:38.362376",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Analyst",
+      "urn": "urn:li:share:7422692412780695552",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for \"Why Chatbots are Dead\"\n\n**1. Value Add:** I agree that the days of basic, rule-based chatbots are numbered. A great example is in e-commerce: initially, chatbots handled simple order tracking. Now, AI-powered assistants can proactively suggest products based on browsing history, handle complex return scenarios, and even offer personalized styling advice, vastly improving the customer experience and driving sales.\n\n**2. Contrarian:** While the shift towards AI-powered assistants is undeniable, let's not completely write off simpler chatbots. For very specific, frequently asked questions (like opening hours or basic pricing), a well-designed chatbot can still provide instant, cost-effective support without requiring the overhead of a complex AI. It's about choosing the right tool for the job.\n\n**3. Question:** If the future of customer interaction lies in these advanced AI agents, how do we ensure these systems are designed with ethical considerations and avoid perpetuating biases, especially when dealing with sensitive customer data and complex problem-solving scenarios? What safeguards need to be built in?",
-  "last_updated": "21472838340"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding: The Future is Now (But Risky)\n**1. Value Add:** I agree that orchestration is key. We're seeing a shift from line-by-line AI assistance to AI handling entire modules. A recent project I worked on involved an agent handling all the data validation logic, freeing up senior devs to focus on the core business logic. The key was defining crystal-clear goals and constraints for the agent upfront.\n**2. Contrarian:** While the productivity gains are undeniable, I think we're underestimating the cognitive load shift. Developers now need to be proficient in prompt engineering, threat modeling, and AI output verification - all very different skillsets than traditional coding. This requires a major re-skilling effort.\n**3. Question:** If agentic coding becomes ubiquitous, how do we ensure diversity of thought and prevent a monoculture in software development, where AI-driven biases become baked into the codebase at scale? How do we audit the AI's \"thought process\" to ensure fairness and prevent unwanted side-effects?",
+  "last_updated": "21488200826"
 }
