@@ -548,8 +548,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-02-02T09:36:05.230509",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Analyst",
+      "urn": "urn:li:share:7424022790858653696",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "Okay, I've analyzed the LinkedIn content report on the \"Chatbots are Dead\" narrative and crafted a Comment Pack with three distinct comment styles. Here it is:\n\n### \ud83e\udd1d Comment Pack for Chatbots: Alive and Evolving\n**1. Value Add:** I agree that \"chatbots are dead\" is an oversimplification. We're seeing a rise in specialized AI assistants. For example, I've noticed a significant increase in the use of AI-powered coding assistants within developer communities, showcasing how conversational AI is evolving beyond simple customer service applications.\n\n**2. Contrarian:** While LLMs are definitely improving conversational AI, let's not forget the importance of well-defined use cases. A powerful LLM powering a chatbot that *doesn't* solve a real user need is still just a fancy, frustrating experience. Are we focusing enough on aligning chatbot capabilities with tangible user problems?\n\n**3. Question:** If the future of chatbots is indeed virtual assistants handling complex tasks, what are the key ethical considerations we need to address now to prevent bias and ensure responsible implementation, especially regarding data privacy and job displacement?",
-  "last_updated": "21566950432"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering Replacing Prompt Engineering\n**1. Value Add:** I completely agree that flow engineering is the next step. We've seen significant improvements in our data extraction accuracy \u2013 upwards of 20% \u2013 by breaking down the process into discrete steps with validation checks between each LLM call. It's not just about crafting the perfect prompt, it's about architecting the whole process.\n\n**2. Contrarian:** While flow engineering definitely offers more control and reliability for complex tasks, I wonder if we're prematurely dismissing the power of highly optimized, few-shot prompts for simpler use cases. There's still a significant cost-benefit trade-off to consider. Is the increased complexity always worth it, especially when speed of deployment is critical?\n\n**3. Question:** What are the key skill sets that separate a good prompt engineer from a great flow engineer? Is it primarily about systems thinking and workflow design, or are there specific technical skills related to managing API calls and data orchestration that are becoming increasingly important?",
+  "last_updated": "21584728749"
 }
