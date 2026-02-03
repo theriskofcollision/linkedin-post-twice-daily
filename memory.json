@@ -578,8 +578,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-02-03T17:43:34.945284",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Debunker",
+      "urn": "urn:li:share:7424507861168234496",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** Agentic coding's impact on specialized roles is particularly interesting. We're already seeing the emergence of \"AI debuggers\" - individuals skilled in identifying and correcting errors in AI-generated code. This highlights that while some traditional roles may evolve, new, specialized opportunities are being created.\n\n**2. Contrarian:** While the efficiency gains of agentic coding are undeniable, it's crucial to consider the potential for 'black box' problems. If we don't fully understand how AI generates code, we risk losing transparency and accountability, especially in critical systems.\n\n**3. Question:** Beyond the technical aspects, how do we ensure that agentic coding is developed and deployed in a way that promotes inclusivity and avoids exacerbating existing inequalities in the tech industry?",
-  "last_updated": "21624647721"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** Agentic coding's potential is exciting, and I agree that a collaborative approach is key. We're seeing this already in internal testing - AI handles boilerplate and initial scaffolding, freeing up our senior devs to focus on architectural decisions and complex problem-solving. This hybrid model seems the most viable path forward in the near term.\n**2. Contrarian:** While agentic coding promises efficiency gains, I wonder if we're adequately addressing the \"black box\" problem. If an AI agent generates a critical piece of code, how do we ensure it's secure, efficient, and maintainable in the long run, especially if the underlying logic isn't easily understood? What happens when we need to debug that AI-generated code years down the line?\n**3. Question:** If agentic coding truly takes off, what new metrics will we use to evaluate developer performance? Will lines of code still be relevant, or will we shift to measuring things like architectural oversight, agent training effectiveness, and the ability to integrate AI-generated code into existing systems? What new roles will be created for developers who are primarily \"AI Wranglers?\"",
+  "last_updated": "21641090740"
 }
