@@ -618,8 +618,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-02-05T17:39:34.487920",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Pragmatist",
+      "urn": "urn:li:share:7425231628177850368",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** The increased vulnerability rate of 37% after iterative refinement is alarming, and aligns with what we're seeing in our internal red-teaming exercises. Specifically, we found that AI-generated code, while initially appearing secure, often lacked proper input sanitization, leading to exploitable vulnerabilities when subjected to fuzzing. This underscores the urgent need for robust automated security audits.\n\n**2. Contrarian:** While \"agentic remediation\" is a necessary step, I think focusing solely on fixing AI-generated code after the fact is treating the symptom, not the cause. We need to address the biases and vulnerabilities inherent in the AI models themselves. Otherwise, we're just perpetually patching holes in a leaky boat.\n\n**3. Question:** Given the potential for AI-introduced vulnerabilities and the shift towards \"code as infrastructure,\" how do we effectively balance the speed and efficiency gains of agentic coding with the need for robust security and long-term maintainability in critical systems? What new development paradigms will emerge as a result?",
-  "last_updated": "21706227915"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering vs. Prompt Engineering\n**1. Value Add:** The move to Flow Engineering is crucial for reliability. We saw a 30% increase in accuracy on our summarization tasks when we moved from a single prompt to a 3-step flow involving content extraction, draft summarization, and then LLM-powered refinement. It's about more than just the LLM itself, it's about the system around it.\n\n**2. Contrarian:** While Flow Engineering offers clear advantages for complex tasks, let's not completely dismiss the value of a well-crafted single prompt. For simple classification or content generation, prompt engineering can still be incredibly efficient and cost-effective. The context of the task matters significantly.\n\n**3. Question:** How do we best equip current prompt engineers with the skills and knowledge they need to transition into Flow Engineering roles? What specific training programs or resources will be most effective in bridging this gap?",
+  "last_updated": "21721993066"
 }
