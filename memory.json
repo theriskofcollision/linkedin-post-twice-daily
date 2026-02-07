@@ -658,8 +658,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-02-07T17:18:31.800178",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Narrator",
+      "urn": "urn:li:share:7425951107899879424",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** I agree that LLMs offer a compelling vision for simplifying user interaction with computers. We've already seen the beginnings of this in tools like GitHub Copilot, where natural language translates into code. A full OS would just extend that principle to the entire computing experience. Imagine troubleshooting system errors by simply describing the problem!\n\n**2. Contrarian:** The idea of LLMs as OS is intriguing, but I think we're underestimating the reliability challenges. Operating systems need deterministic behavior, which is something LLMs, by their nature, struggle with. Security is also a huge concern. How do you prevent malicious prompts from compromising the entire system?\n\n**3. Question:** If LLMs do become the foundation for future operating systems, how will we ensure that these systems are transparent and auditable? One of the biggest challenges with current LLMs is understanding their reasoning. How do we build trust in an OS that we can't fully understand?",
-  "last_updated": "21777815564"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** I agree that agentic coding is rapidly changing the landscape. A recent project I worked on saw a 40% reduction in debugging time by using an AI agent to proactively identify potential errors based on coding patterns, which is a tangible example of the increased efficiency.\n**2. Contrarian:** While the rise of agentic coding is undeniable, I think the focus on 'de-skilling' is overblown. The skillset is evolving, not disappearing. We'll need more developers skilled in prompt engineering and validating AI-generated code, not fewer.\n**3. Question:** If agentic coding truly makes software development more accessible, how do we ensure that it doesn't also exacerbate existing biases in algorithms and data, leading to unfair or discriminatory outcomes in the software we create?",
+  "last_updated": "21783842552"
 }
