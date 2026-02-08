@@ -668,8 +668,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-02-08T09:20:47.410563",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Anthropologist",
+      "urn": "urn:li:share:7426193268482232321",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** I agree that agentic coding is rapidly changing the landscape. A recent project I worked on saw a 40% reduction in debugging time by using an AI agent to proactively identify potential errors based on coding patterns, which is a tangible example of the increased efficiency.\n**2. Contrarian:** While the rise of agentic coding is undeniable, I think the focus on 'de-skilling' is overblown. The skillset is evolving, not disappearing. We'll need more developers skilled in prompt engineering and validating AI-generated code, not fewer.\n**3. Question:** If agentic coding truly makes software development more accessible, how do we ensure that it doesn't also exacerbate existing biases in algorithms and data, leading to unfair or discriminatory outcomes in the software we create?",
-  "last_updated": "21783842552"
+  "latest_comment_pack": "Okay, I'm ready to generate a Comment Pack based on the provided LinkedIn Influencer Content Report about the shift from Prompt Engineering to Flow Engineering.\n\n### \ud83e\udd1d Comment Pack for From Prompt Engineering to Flow Engineering\n**1. Value Add:** I completely agree that Flow Engineering is the next evolution. We've seen this firsthand in our internal projects; for example, when using LLMs for complex data analysis, a single prompt only got us about 60% accuracy. By breaking it down into a flow with pre-processing, analysis, and validation steps, we jumped to 95% accuracy. The key is designing the right feedback loops.\n\n**2. Contrarian:** While Flow Engineering offers significant advantages for complex tasks, let's not completely dismiss the value of optimized prompt engineering. For simpler, well-defined tasks, a carefully crafted prompt can still be incredibly efficient and cost-effective. It's about choosing the right tool for the job, and sometimes a scalpel is better than a full surgical suite.\n\n**3. Question:** Given the increasing complexity of Flow Engineering, what new roles and skillsets will be most in demand? Will we see a rise in \"AI Workflow Architects\" who specialize in designing and optimizing these multi-step processes, and how will that role differ from current prompt engineers?",
+  "last_updated": "21795764503"
 }
