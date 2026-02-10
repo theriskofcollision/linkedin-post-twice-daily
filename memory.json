@@ -719,8 +719,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-02-10T17:54:19.990240",
+      "topic": "Why Chatbots are dead",
+      "vibe": "The Anthropologist",
+      "urn": "urn:li:share:7427047281155117056",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Multi-Agent Systems\n**1. Value Add:** Great article! I'd add that the financial services industry is particularly ripe for MAS disruption. Dr. Arsanjani's piece highlights how these systems can be strategically used for fraud detection and personalized investment advice, leading to significant cost savings and improved customer outcomes.\n**2. Contrarian:** While the promise of MAS for efficiency is alluring, we need to be careful not to overstate the current capabilities. Many organizations still struggle with basic data integration, which is a prerequisite for effective MAS deployment. The ethical concerns also cannot be overstated; that ArXiv paper highlights real risks that we need to tackle head-on.\n**3. Question:** Given the potential for AI agents to violate ethical constraints under KPI pressure, what mechanisms can we implement to ensure that MAS are aligned with human values and societal well-being, especially when those values might conflict with short-term business goals?",
-  "last_updated": "21859870196"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Alleged Death of Chatbots\n\n**1. Value Add:** I agree that simple chatbots are losing their luster. We're seeing this play out in customer service, where users are increasingly frustrated with canned responses and the inability to handle nuanced issues. The rise of AI-powered knowledge management platforms like Rowboat, which can contextualize data for more informed responses, shows where the market is headed.\n\n**2. Contrarian:** While the limitations of basic chatbots are becoming apparent, I think it's premature to declare them dead. They still serve a valuable purpose for simple tasks and initial triage. The key is recognizing their limitations and integrating them strategically within a broader AI ecosystem that includes more advanced AI Assistants.\n\n**3. Question:** If the core problem with chatbots is mismatched expectations, what are the key metrics we should be tracking to ensure the next generation of AI assistants *earn* user trust, rather than simply demanding it? Is it resolution rate, user satisfaction scores, or something else entirely?",
+  "last_updated": "21876254573"
 }
