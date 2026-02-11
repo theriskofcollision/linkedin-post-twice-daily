@@ -739,8 +739,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-02-11T17:51:03.890638",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Minimalist",
+      "urn": "urn:li:share:7427408846740062208",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** This is a huge paradigm shift. We're already seeing examples of LLMs handling tasks previously requiring dedicated software. For instance, customer service bots powered by LLMs are resolving issues end-to-end, effectively acting as a customer service operating system. Imagine that extended across all business functions!\n\n**2. Contrarian:** The \"LLM as OS\" analogy is compelling, but let's not forget the limitations. True operating systems manage hardware resources directly. LLMs, at least currently, rely on existing infrastructure. There's a significant difference between *application* and *fundamental system control.*\n\n**3. Question:** If LLMs truly become the dominant operating system, how will we ensure transparency and user control? Will users be able to \"see\" and modify the underlying logic of the LLM \"kernel,\" or will we be entirely reliant on black-box AI?",
-  "last_updated": "21899963012"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering vs. Prompt Engineering\n**1. Value Add:** Flow engineering is crucial for tasks requiring reasoning and iteration. Think of medical diagnosis: a single prompt can't replace a doctor's multi-step process of gathering symptoms, running tests, and analyzing results. Flow engineering allows AI to mimic this more complex, effective approach.\n\n**2. Contrarian:** While flow engineering addresses the limitations of single prompts, let's not completely dismiss prompt engineering. Well-crafted prompts are still essential for individual steps *within* a flow. The art of the prompt is evolving, not disappearing.\n\n**3. Question:** How do we ensure that the \"flows\" we engineer are transparent and explainable? If AI systems are making decisions based on complex workflows, how can we audit those processes and prevent unintended biases or errors from creeping in?",
+  "last_updated": "21916379180"
 }
