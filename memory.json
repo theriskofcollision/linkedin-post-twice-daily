@@ -899,8 +899,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-02-19T17:42:49.541972",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Satirist",
+      "urn": "urn:li:share:7430305876617494528",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** I agree that agentic coding is rapidly evolving. A key area to watch is the specialization of these agents. We're moving beyond general-purpose AI assistants to agents optimized for specific tasks like security auditing or front-end framework design. This specialization promises even greater efficiency gains.\n\n**2. Contrarian:** While the productivity boost of agentic coding is undeniable, we need to be cautious about its impact on architectural understanding. Over-reliance on AI for code generation could lead to developers lacking a deep grasp of the system's overall design, potentially hindering long-term maintainability and innovation.\n\n**3. Question:** How can educational institutions and training programs adapt their curricula to effectively prepare developers for a world where agentic coding is the norm? What new pedagogical approaches are needed to ensure that developers retain fundamental skills while leveraging AI tools effectively?",
-  "last_updated": "22176235212"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering vs. Prompt Engineering\n**1. Value Add:** I agree that Flow Engineering is the natural evolution. We're seeing this in the marketing automation space already. Instead of a single email prompt, we're building complex customer journeys triggered by specific behaviors and powered by AI content variations. This iterative approach yields far better results and allows for continuous optimization.\n\n**2. Contrarian:** While Flow Engineering offers clear advantages for complex tasks, let's not completely dismiss Prompt Engineering. For simpler, well-defined problems, a well-crafted prompt can still be incredibly efficient. The key is understanding the task's complexity and choosing the right tool for the job. Over-engineering can sometimes be as detrimental as under-engineering.\n\n**3. Question:** If Flow Engineering becomes the dominant paradigm, how will we ensure that these complex workflows are transparent and auditable? With single prompts, it's easier to understand the 'reasoning' behind the output. How can we maintain accountability and prevent unintended consequences when AI systems become increasingly intricate?",
+  "last_updated": "22193084449"
 }
