@@ -889,8 +889,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-02-19T09:34:35.104539",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Pragmatist",
+      "urn": "urn:li:share:7430183006503452673",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering vs. Prompt Engineering\n\n**1. Value Add:** I agree that Flow Engineering is the next step. We've seen significant improvements in our customer service automation by breaking down complex queries into a series of steps involving knowledge base retrieval, sentiment analysis, and personalized response generation, rather than relying on a single, all-encompassing prompt. This modularity has increased accuracy and reduced hallucination.\n\n**2. Contrarian:** While Flow Engineering offers improved control and reliability, let's not completely discount the value of prompt engineering. For rapid prototyping and simpler tasks, well-crafted prompts can still provide a quicker and more agile solution. The key is understanding the trade-offs and choosing the right approach for the specific application.\n\n**3. Question:** How do we best equip current prompt engineers with the software engineering and workflow design skills necessary to effectively transition into Flow Engineering roles? What specific training programs or resources are proving most beneficial in bridging this gap?",
-  "last_updated": "22150952228"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** I agree that agentic coding is rapidly evolving. A key area to watch is the specialization of these agents. We're moving beyond general-purpose AI assistants to agents optimized for specific tasks like security auditing or front-end framework design. This specialization promises even greater efficiency gains.\n\n**2. Contrarian:** While the productivity boost of agentic coding is undeniable, we need to be cautious about its impact on architectural understanding. Over-reliance on AI for code generation could lead to developers lacking a deep grasp of the system's overall design, potentially hindering long-term maintainability and innovation.\n\n**3. Question:** How can educational institutions and training programs adapt their curricula to effectively prepare developers for a world where agentic coding is the norm? What new pedagogical approaches are needed to ensure that developers retain fundamental skills while leveraging AI tools effectively?",
+  "last_updated": "22176235212"
 }
