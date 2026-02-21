@@ -939,8 +939,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-02-21T17:16:52.386439",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Pragmatist",
+      "urn": "urn:li:share:7431024120827437056",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering Replacing Prompt Engineering\n**1. Value Add:** I'm seeing this shift too! We've noticed that for complex data extraction tasks, a single prompt rarely cuts it. Chaining prompts together with careful parsing and feedback loops (a simple flow!) dramatically improved our accuracy on medical record processing. It's not just about the prompt, it's about the process.\n\n**2. Contrarian:** While Flow Engineering is definitely the direction for complex tasks, let's not completely bury Prompt Engineering. For simpler, well-defined problems, a well-crafted prompt can still be incredibly efficient and cost-effective. The key is knowing which approach to apply when.\n\n**3. Question:** If Flow Engineering becomes the standard, how do we ensure that the design of these complex workflows remains transparent and understandable, especially when dealing with sensitive applications like loan applications or medical diagnoses? What tools or methods can help maintain explainability and prevent unintended biases?",
-  "last_updated": "22254284578"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding: The Future is Now\n**1. Value Add:** I agree that agentic coding is a game-changer. We've seen a 30% increase in feature velocity in our team after implementing GitHub Copilot X, but the real win has been in freeing up developers to focus on architectural design and tackling more complex challenges. It's not just about writing code faster, it's about smarter allocation of human capital.\n**2. Contrarian:** While the potential for agentic coding is undeniable, I think we need to be cautious about over-reliance. The \"garbage in, garbage out\" principle still applies. If the underlying AI models are trained on biased or poorly written code, we risk perpetuating those issues at scale. Thorough code review and a strong understanding of the fundamentals remain crucial.\n**3. Question:** What strategies are companies employing to ensure that agentic coding tools are integrated ethically and responsibly, specifically addressing potential biases in AI models and ensuring transparency in the code generation process? How do we prevent the technology from creating a \"black box\" effect where developers no longer understand the underlying logic?",
+  "last_updated": "22260908512"
 }
