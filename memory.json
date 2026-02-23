@@ -970,8 +970,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-02-23T09:42:11.281360",
+      "topic": "LLMs as Operating Systems",
+      "vibe": "The Contrarian",
+      "urn": "urn:li:share:7431634471625383936",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "Okay, I'm ready to craft a Comment Pack designed to spark engagement on LinkedIn posts about Flow Engineering. Here it is:\n\n### \ud83e\udd1d Comment Pack for Flow Engineering\n**1. Value Add:** I'm seeing this shift firsthand. We moved from meticulously crafting prompts for sentiment analysis to a flow that incorporates real-time customer feedback and iterative refinement. The accuracy improvement has been significant \u2013 a 20% jump in correctly classified sentiment! It's not just about the prompt anymore; it's about the system around it.\n\n**2. Contrarian:** While \"Flow Engineering\" highlights the importance of system design, let's not completely dismiss prompt engineering. A well-crafted initial prompt *within* a flow can drastically reduce the computational resources required in subsequent steps. It's less about replacing and more about strategically *integrating* prompt engineering within a larger flow.\n\n**3. Question:** If Flow Engineering is about continuous learning and adaptation, what are the key metrics we should be tracking to ensure these flows are actually improving over time, and not just becoming more complex? What KPIs are people using beyond basic accuracy and efficiency?",
-  "last_updated": "22281650646"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** I agree that LLMs are showing potential as OS. Think about voice assistants like Siri and Alexa \u2013 they're already acting as a layer *above* the OS, handling tasks and interpreting natural language. LLMs just take that concept and apply it more broadly across the entire system. The challenge is to find ways to give the models the access they need without compromising on security.\n\n**2. Contrarian:** While the idea of LLMs as OS is intriguing, I think it overstates the current capabilities. LLMs excel at natural language, but lack the deterministic reliability and low-level control required for many OS functions. The 'CPU' analogy is interesting, but it risks ignoring the fundamental differences in how LLMs and traditional processors operate. We should be wary of seeing LLMs as a complete replacement for existing OS, but as a coprocessor with a very specific and powerful skillset.\n\n**3. Question:** If LLMs become the primary interface for our devices, how do we ensure accessibility for users with disabilities who rely on traditional input methods, and are there ways to incorporate this thinking into the design now?",
+  "last_updated": "22300568060"
 }
