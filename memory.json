@@ -980,8 +980,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-02-23T17:54:10.236436",
+      "topic": "Why Chatbots are dead",
+      "vibe": "The Narrator",
+      "urn": "urn:li:share:7431758282974904321",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** I agree that LLMs are showing potential as OS. Think about voice assistants like Siri and Alexa \u2013 they're already acting as a layer *above* the OS, handling tasks and interpreting natural language. LLMs just take that concept and apply it more broadly across the entire system. The challenge is to find ways to give the models the access they need without compromising on security.\n\n**2. Contrarian:** While the idea of LLMs as OS is intriguing, I think it overstates the current capabilities. LLMs excel at natural language, but lack the deterministic reliability and low-level control required for many OS functions. The 'CPU' analogy is interesting, but it risks ignoring the fundamental differences in how LLMs and traditional processors operate. We should be wary of seeing LLMs as a complete replacement for existing OS, but as a coprocessor with a very specific and powerful skillset.\n\n**3. Question:** If LLMs become the primary interface for our devices, how do we ensure accessibility for users with disabilities who rely on traditional input methods, and are there ways to incorporate this thinking into the design now?",
-  "last_updated": "22300568060"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Why Chatbots are Dead\n**1. Value Add:** I agree that the shift towards functional AI is inevitable. We're already seeing companies like Zapier and IFTTT integrate AI agents to automate workflows across different platforms, which significantly boosts productivity beyond simple question-answering. The key will be seamless integration and user-friendliness to drive mass adoption.\n\n**2. Contrarian:** While \"chatbots are dead\" makes for a catchy headline, I think it's more accurate to say their role is evolving. Simple chatbots will fade, but conversational interfaces as *part* of a larger AI agent system will still be crucial for guiding users and explaining complex actions. The \"chat\" aspect won't disappear entirely, just become more sophisticated and integrated.\n\n**3. Question:** If functional AI agents become ubiquitous, how do we ensure transparency and user control over their actions? What mechanisms will be in place to allow users to understand *why* an agent made a particular decision and to easily modify or reverse its actions if needed?",
+  "last_updated": "22318147657"
 }
