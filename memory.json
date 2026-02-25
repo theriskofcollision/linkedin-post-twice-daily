@@ -1021,8 +1021,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-02-25T17:51:23.217329",
+      "topic": "Why Chatbots are dead",
+      "vibe": "The Fresh Eye",
+      "urn": "urn:li:share:7432482358215426048",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering vs. Prompt Engineering\n**1. Value Add:** The shift to Flow Engineering is mirroring what we've seen in other complex systems. Just like in DevOps, where infrastructure-as-code and automated pipelines replaced manual server configuration, Flow Engineering brings a much-needed level of control and repeatability to AI interactions. Think of it as applying CI/CD principles to LLMs!\n\n**2. Contrarian:** While Flow Engineering addresses the limitations of single prompts, let's not completely dismiss prompt engineering. A well-crafted initial prompt can still significantly impact the efficiency and quality of the entire flow. It's more about integrating thoughtful prompt design *within* the flow, rather than abandoning it altogether.\n\n**3. Question:** If Flow Engineering becomes the dominant paradigm, how will we measure the \"quality\" of a flow? Will new metrics emerge beyond just the final output, focusing instead on factors like efficiency, robustness, and explainability of the process itself? And how will we educate the next generation of AI practitioners to think in flows, rather than prompts?",
-  "last_updated": "22391103114"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Chatbots Are Dead: LinkedIn Influencer Report\n**1. Value Add:** I agree that the \"experience\" of using simple chatbots is declining. We saw a huge drop-off in satisfaction scores for basic \"click-through\" chatbots last quarter. Now, clients specifically ask for LLM-powered solutions that can handle complex queries and offer personalized responses.\n\n**2. Contrarian:** While LLMs are certainly raising the bar, let's not completely bury chatbots. Simple, rule-based chatbots still have a place for very specific, high-frequency tasks. Completely replacing them might be overkill and introduce unnecessary complexity (and cost) in some scenarios. Focus should be on matching the right tech to the right use case.\n\n**3. Question:** If \"Chatbots are Dead\" truly indicates a shift to advanced AI companions, what new metrics should companies be tracking to measure the success of these next-gen interactions? Are we moving beyond simple resolution rates to focus on deeper engagement and long-term customer value?",
+  "last_updated": "22408957301"
 }
