@@ -1041,8 +1041,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-02-26T17:51:21.703359",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Maxer",
+      "urn": "urn:li:share:7432844739865133056",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding: The Future is Now\n\n**1. Value Add:**\n> Interesting article! We're already seeing agentic coding significantly speed up our debugging process. Specifically, using AI to analyze stack traces and suggest solutions has cut down our mean time to resolution (MTTR) by about 30% in the last quarter. This is huge.\n\n**2. Contrarian:**\n> While agentic coding offers clear productivity gains, I think we need to be cautious about over-relying on AI, especially when it comes to complex system design. There's a risk of \"black box\" solutions where developers don't fully understand the underlying logic, which can be a real problem for maintainability and long-term innovation. And let's not forget code deanonymization.\n\n**3. Question:**\n> How do you see agentic coding impacting the skill sets of junior developers? Will it accelerate their learning by providing immediate feedback and examples, or will it hinder their ability to master the fundamentals of coding and problem-solving independently?",
-  "last_updated": "22436310025"
+  "latest_comment_pack": "Okay, here's a Comment Pack designed to engage with posts about the rise of agentic coding and its potential security flaws:\n\n### \ud83e\udd1d Comment Pack for Agentic Coding Security\n\n**1. Value Add:** I'm seeing similar trends in our internal tests. While agentic coding tools significantly cut down on boilerplate, we've had to implement stricter code review processes specifically targeting logic flaws and subtle injection vulnerabilities that the AI seems to miss. Our pre-AI static analysis tools flagged far fewer potential issues.\n\n**2. Contrarian:** The narrative is a little *too* focused on AI as the sole source of vulnerabilities. Humans still write the prompts and define the parameters. A rush to implement agentic coding without proper training and revised security protocols is likely a bigger factor than the AI itself. Garbage in, vulnerable code out, regardless of who or *what* wrote it.\n\n**3. Question:** Given the rapid evolution of both agentic coding and \"agentic remediation\" tools, how do we ensure that security practices and developer skillsets keep pace? Are traditional security certifications still relevant, or do we need a new standard that addresses the unique challenges of AI-assisted development?",
+  "last_updated": "22454242761"
 }
