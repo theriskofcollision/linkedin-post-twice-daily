@@ -1031,8 +1031,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-02-26T09:38:14.306249",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Pragmatist",
+      "urn": "urn:li:share:7432720640954241024",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Chatbots Are Dead: LinkedIn Influencer Report\n**1. Value Add:** I agree that the \"experience\" of using simple chatbots is declining. We saw a huge drop-off in satisfaction scores for basic \"click-through\" chatbots last quarter. Now, clients specifically ask for LLM-powered solutions that can handle complex queries and offer personalized responses.\n\n**2. Contrarian:** While LLMs are certainly raising the bar, let's not completely bury chatbots. Simple, rule-based chatbots still have a place for very specific, high-frequency tasks. Completely replacing them might be overkill and introduce unnecessary complexity (and cost) in some scenarios. Focus should be on matching the right tech to the right use case.\n\n**3. Question:** If \"Chatbots are Dead\" truly indicates a shift to advanced AI companions, what new metrics should companies be tracking to measure the success of these next-gen interactions? Are we moving beyond simple resolution rates to focus on deeper engagement and long-term customer value?",
-  "last_updated": "22408957301"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding: The Future is Now\n\n**1. Value Add:**\n> Interesting article! We're already seeing agentic coding significantly speed up our debugging process. Specifically, using AI to analyze stack traces and suggest solutions has cut down our mean time to resolution (MTTR) by about 30% in the last quarter. This is huge.\n\n**2. Contrarian:**\n> While agentic coding offers clear productivity gains, I think we need to be cautious about over-relying on AI, especially when it comes to complex system design. There's a risk of \"black box\" solutions where developers don't fully understand the underlying logic, which can be a real problem for maintainability and long-term innovation. And let's not forget code deanonymization.\n\n**3. Question:**\n> How do you see agentic coding impacting the skill sets of junior developers? Will it accelerate their learning by providing immediate feedback and examples, or will it hinder their ability to master the fundamentals of coding and problem-solving independently?",
+  "last_updated": "22436310025"
 }
