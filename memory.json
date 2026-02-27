@@ -89,7 +89,8 @@
     "Avoid vague optimism about the future.",
     "Avoid clich\u00e9s and lack of personal anecdotes.",
     "Avoid phrases like \"Not just X, but Y\".",
-    "Avoid corporate speak and academic jargon."
+    "Avoid corporate speak and academic jargon.",
+    "Avoid boastful language and conversational setups."
   ],
   "history": [
     {
@@ -1051,8 +1052,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-02-27T09:30:55.223997",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Pragmatist",
+      "urn": "urn:li:share:7433081187109306368",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "Okay, here's a Comment Pack designed to engage with posts about the rise of agentic coding and its potential security flaws:\n\n### \ud83e\udd1d Comment Pack for Agentic Coding Security\n\n**1. Value Add:** I'm seeing similar trends in our internal tests. While agentic coding tools significantly cut down on boilerplate, we've had to implement stricter code review processes specifically targeting logic flaws and subtle injection vulnerabilities that the AI seems to miss. Our pre-AI static analysis tools flagged far fewer potential issues.\n\n**2. Contrarian:** The narrative is a little *too* focused on AI as the sole source of vulnerabilities. Humans still write the prompts and define the parameters. A rush to implement agentic coding without proper training and revised security protocols is likely a bigger factor than the AI itself. Garbage in, vulnerable code out, regardless of who or *what* wrote it.\n\n**3. Question:** Given the rapid evolution of both agentic coding and \"agentic remediation\" tools, how do we ensure that security practices and developer skillsets keep pace? Are traditional security certifications still relevant, or do we need a new standard that addresses the unique challenges of AI-assisted development?",
-  "last_updated": "22454242761"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering\n**1. Value Add:** I'm seeing flow engineering really take off in [Specific Industry, e.g., customer service automation]. We moved from single-prompt chatbots to multi-stage flows that handle complex inquiries, resulting in a 30% increase in resolution rate. The key was breaking down the user journey into distinct steps.\n\n**2. Contrarian:** While flow engineering offers clear advantages for complex tasks, let's not completely discount the power of a well-crafted prompt for simpler applications. There's still a place for prompt engineering, especially when speed and efficiency are paramount. The real trick is knowing which approach to use when.\n\n**3. Question:** With the rise of flow engineering, how do we ensure these complex AI workflows are transparent and auditable? What strategies can we implement to understand and debug these systems, especially as they become more autonomous?",
+  "last_updated": "22480634719"
 }
