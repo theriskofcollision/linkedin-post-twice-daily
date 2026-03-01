@@ -1103,8 +1103,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-01T17:14:23.794375",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Curator",
+      "urn": "urn:li:share:7433922600944422912",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Multi-Agent Systems\n**1. Value Add:** I agree that MAS will be crucial for business agility. I've seen companies achieve a 15-20% improvement in supply chain efficiency by implementing MAS for real-time demand forecasting and automated inventory management. This highlights the practical benefits beyond theoretical improvements.\n**2. Contrarian:** While the potential of MAS is undeniable, we need to address the complexities of ensuring seamless agent interoperability across different platforms and environments. The lack of standardized communication protocols could become a significant barrier to widespread adoption.\n**3. Question:** Given the potential for complex interactions within MAS, how can we best develop robust testing and validation methodologies to ensure predictable and safe behavior, especially in safety-critical applications?",
-  "last_updated": "22540318002"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering vs. Prompt Engineering\n**1. Value Add:** I've seen firsthand the benefits of flow engineering in our project to automate customer support ticket triage. Moving away from complex, single prompts and building a multi-step flow that categorizes, prioritizes, and drafts initial responses has improved resolution times by 30%. The modularity makes it so much easier to debug too!\n\n**2. Contrarian:** While flow engineering offers significant advantages for complex tasks, it's important to remember that prompt engineering still has a crucial role, especially for simpler, ad-hoc queries. Over-engineering a flow for tasks that can be handled with a well-crafted prompt can actually reduce efficiency. It's about choosing the right tool for the job.\n\n**3. Question:** With flow engineering emphasizing modularity and iterative processes, how do we ensure these complex AI workflows remain transparent and auditable? What frameworks or best practices are emerging to address the potential for \"black box\" behavior within these systems, especially in high-stakes applications?",
+  "last_updated": "22548350032"
 }
