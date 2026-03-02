@@ -1113,8 +1113,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-02T09:37:22.877650",
+      "topic": "Why Chatbots are dead",
+      "vibe": "The Oracle",
+      "urn": "urn:li:share:7434169977013932032",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering vs. Prompt Engineering\n**1. Value Add:** I've seen firsthand the benefits of flow engineering in our project to automate customer support ticket triage. Moving away from complex, single prompts and building a multi-step flow that categorizes, prioritizes, and drafts initial responses has improved resolution times by 30%. The modularity makes it so much easier to debug too!\n\n**2. Contrarian:** While flow engineering offers significant advantages for complex tasks, it's important to remember that prompt engineering still has a crucial role, especially for simpler, ad-hoc queries. Over-engineering a flow for tasks that can be handled with a well-crafted prompt can actually reduce efficiency. It's about choosing the right tool for the job.\n\n**3. Question:** With flow engineering emphasizing modularity and iterative processes, how do we ensure these complex AI workflows remain transparent and auditable? What frameworks or best practices are emerging to address the potential for \"black box\" behavior within these systems, especially in high-stakes applications?",
-  "last_updated": "22548350032"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for \"Why Chatbots are Dead (Or Dying)\"\n\n**1. Value Add:** I agree that the limitations of basic chatbots are becoming glaring. I've seen firsthand how frustrating it is for users when a chatbot can't handle even slightly complex queries. A key differentiator for AI agents will be their ability to learn from past interactions and adapt their responses over time, something most chatbots struggle with even now.\n\n**2. Contrarian:** While \"death\" might be an exaggeration, the *role* of chatbots is definitely evolving. There's still a strong case for chatbots in highly specific, low-stakes scenarios like initial customer support triage or simple information retrieval. It's more about right tool, right job, not total replacement.\n\n**3. Question:** If AI agents are truly poised to replace chatbots, what's the biggest obstacle to widespread adoption beyond just the technological advancements? Is it user trust, data privacy concerns, or the cost of implementation that will ultimately determine the speed of this transition?",
+  "last_updated": "22569950031"
 }
