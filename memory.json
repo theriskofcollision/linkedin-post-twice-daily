@@ -1144,8 +1144,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-03T17:34:56.621527",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Analyst",
+      "urn": "urn:li:share:7434652547308490752",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** I agree that LLMs are moving towards becoming orchestrators. A great example is the emergence of tools like Langchain and AutoGPT, which are specifically designed to manage and connect different AI models and data sources, further enabling this \"LLM OS\" paradigm.\n**2. Contrarian:** While the \"invisible interface\" is an appealing vision, we need to be cautious about over-relying on LLMs. The lack of transparency in their decision-making processes could erode user trust and create a black box effect, hindering true understanding and control.\n**3. Question:** If LLMs become the primary interface, how do we ensure they don't become a single point of failure or a bottleneck in the entire system? What architectural redundancies and safeguards are necessary to maintain resilience and prevent service disruptions?",
-  "last_updated": "22616744110"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering vs. Prompt Engineering\n**1. Value Add:** I completely agree that Flow Engineering is the future, especially for enterprise applications. We've seen a massive improvement in efficiency (around 30%) in our supply chain optimization by moving from single prompts to a flow that incorporates real-time inventory data and predictive analytics in a looped process.\n\n**2. Contrarian:** While Flow Engineering is definitely the direction for complex AI, let's not completely write off Prompt Engineering. For rapid prototyping and quick experiments, a well-crafted prompt can still be incredibly valuable and save significant development time. It's about choosing the right tool for the job.\n\n**3. Question:** With the rise of Flow Engineering and the need for more complex AI workflows, how are we ensuring these systems are auditable and explainable? What frameworks or best practices are emerging to address the potential for \"black box\" decision-making in these intricate flows?",
+  "last_updated": "22635151466"
 }
