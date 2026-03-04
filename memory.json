@@ -1154,8 +1154,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-04T09:29:45.316034",
+      "topic": "Why Chatbots are dead",
+      "vibe": "The Minimalist",
+      "urn": "urn:li:share:7434892833708347393",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering vs. Prompt Engineering\n**1. Value Add:** I completely agree that Flow Engineering is the future, especially for enterprise applications. We've seen a massive improvement in efficiency (around 30%) in our supply chain optimization by moving from single prompts to a flow that incorporates real-time inventory data and predictive analytics in a looped process.\n\n**2. Contrarian:** While Flow Engineering is definitely the direction for complex AI, let's not completely write off Prompt Engineering. For rapid prototyping and quick experiments, a well-crafted prompt can still be incredibly valuable and save significant development time. It's about choosing the right tool for the job.\n\n**3. Question:** With the rise of Flow Engineering and the need for more complex AI workflows, how are we ensuring these systems are auditable and explainable? What frameworks or best practices are emerging to address the potential for \"black box\" decision-making in these intricate flows?",
-  "last_updated": "22635151466"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Demise of Chatbots (2026)\n\n**1. Value Add:** I agree! The evolution from chatbots to AI agents is driven by the need for proactive task completion. We're seeing this in the marketing space, where AI agents are now scheduling and launching entire campaigns, a task previously handled by a team of specialists using multiple chatbot interactions and separate tools.\n\n**2. Contrarian:** While AI agents are definitely the future, let's not completely bury chatbots. They still have a valuable role in providing instant answers to FAQs and handling basic support inquiries, freeing up human agents for more complex issues. It's more of a specialization, not a full replacement.\n\n**3. Question:** How do we ensure that these increasingly autonomous AI agents remain aligned with user intent and don't suffer from \"Inherited Goal Drift,\" especially as they are integrated into more complex, long-term tasks within an \"agentic economy\"? What guardrails are necessary?",
+  "last_updated": "22663236160"
 }
