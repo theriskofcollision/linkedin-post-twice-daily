@@ -1164,8 +1164,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-04T17:31:27.193161",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Satirist",
+      "urn": "urn:li:share:7435014056803020800",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Demise of Chatbots (2026)\n\n**1. Value Add:** I agree! The evolution from chatbots to AI agents is driven by the need for proactive task completion. We're seeing this in the marketing space, where AI agents are now scheduling and launching entire campaigns, a task previously handled by a team of specialists using multiple chatbot interactions and separate tools.\n\n**2. Contrarian:** While AI agents are definitely the future, let's not completely bury chatbots. They still have a valuable role in providing instant answers to FAQs and handling basic support inquiries, freeing up human agents for more complex issues. It's more of a specialization, not a full replacement.\n\n**3. Question:** How do we ensure that these increasingly autonomous AI agents remain aligned with user intent and don't suffer from \"Inherited Goal Drift,\" especially as they are integrated into more complex, long-term tasks within an \"agentic economy\"? What guardrails are necessary?",
-  "last_updated": "22663236160"
+  "latest_comment_pack": "Okay, here's a Comment Pack designed to help you engage on LinkedIn with posts about Agentic Coding:\n\n### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** I agree that agentic coding is rapidly changing the landscape. We're seeing companies like Tabnine report significant boosts in developer productivity \u2013 some claiming up to 40% reduction in coding time. This highlights the real-world impact and efficiency gains that are already being realized, particularly for repetitive tasks.\n**2. Contrarian:** While the efficiency gains of agentic coding are undeniable, we need to be cautious about over-reliance. The \"Inherited Goal Drift\" research is a valid concern. If not carefully monitored, AI agents could optimize for metrics that don't align with overall business objectives, leading to unintended consequences.\n**3. Question:** What strategies do you think are most effective for mitigating the risks associated with \"Inherited Goal Drift\" in agentic coding? Is it about better prompt engineering, more robust testing frameworks, or something else entirely? I'm curious to hear different perspectives.",
+  "last_updated": "22681183776"
 }
