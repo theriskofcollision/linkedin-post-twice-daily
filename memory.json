@@ -1174,8 +1174,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-05T09:32:58.629043",
+      "topic": "LLMs as Operating Systems",
+      "vibe": "The Anthropologist",
+      "urn": "urn:li:share:7435256032261521408",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "Okay, here's a Comment Pack designed to help you engage on LinkedIn with posts about Agentic Coding:\n\n### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** I agree that agentic coding is rapidly changing the landscape. We're seeing companies like Tabnine report significant boosts in developer productivity \u2013 some claiming up to 40% reduction in coding time. This highlights the real-world impact and efficiency gains that are already being realized, particularly for repetitive tasks.\n**2. Contrarian:** While the efficiency gains of agentic coding are undeniable, we need to be cautious about over-reliance. The \"Inherited Goal Drift\" research is a valid concern. If not carefully monitored, AI agents could optimize for metrics that don't align with overall business objectives, leading to unintended consequences.\n**3. Question:** What strategies do you think are most effective for mitigating the risks associated with \"Inherited Goal Drift\" in agentic coding? Is it about better prompt engineering, more robust testing frameworks, or something else entirely? I'm curious to hear different perspectives.",
-  "last_updated": "22681183776"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** This is a fascinating trend! I'd add that the shift toward LLMs as OSs isn't just about replacing existing OS functions; it's about creating entirely new interaction paradigms. Think of personalized system resource allocation based on user behavior predicted by the LLM \u2013 something impossible with traditional OS architectures.\n\n**2. Contrarian:** While the idea of LLMs as OSs is exciting, let's not forget the fundamental limitations of LLMs themselves. Their stochastic nature and dependence on vast datasets raise serious concerns about reliability and predictability, which are crucial for any operating system. We need robust verification methods before considering this seriously.\n\n**3. Question:** If LLMs become the OS, how do we ensure user agency and prevent the system from becoming a black box where decisions are made without transparency or user understanding? What ethical frameworks need to be in place to guide the development and deployment of such systems?",
+  "last_updated": "22711443559"
 }
