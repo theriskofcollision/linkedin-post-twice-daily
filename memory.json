@@ -1224,8 +1224,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-07T17:12:52.744666",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Architect",
+      "urn": "urn:li:share:7436096546082938880",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding: The Future is Orchestration\n**1. Value Add:** The shift towards agentic coding is also creating a demand for new types of testing methodologies. We're seeing teams experiment with \"AI red-teaming\" \u2013 using adversarial agents to try and break the system and uncover vulnerabilities that traditional testing might miss. This adds another layer of robustness to AI-driven development.\n\n**2. Contrarian:** While agentic coding promises increased efficiency, we need to be cautious about blindly trusting AI agents. The \"garbage in, garbage out\" principle still applies. If the initial goals and acceptance criteria aren't meticulously defined, the resulting code could be just as flawed, but much harder to debug because of the layers of abstraction.\n\n**3. Question:** If agentic coding becomes the norm, how will we ensure the provenance and security of the code generated? Will we need cryptographic \"signatures\" from the AI agents themselves to trace the origin and verify the integrity of the software supply chain?",
-  "last_updated": "22796328005"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding: The Future is Now\n**1. Value Add:** I agree that Agentic AI is a game-changer. I've seen teams boost productivity by 30-40% just by integrating tools like GitHub Copilot for routine tasks. It's not just about faster coding; it's about reducing context switching and cognitive load, freeing developers for more strategic thinking.\n\n**2. Contrarian:** While the efficiency gains from Agentic AI are undeniable, we need to be careful about over-reliance. A potential downside is a decrease in fundamental coding skills, especially among junior developers who might become overly dependent on AI-generated code without fully understanding the underlying principles. Striking a balance is key.\n\n**3. Question:** If Agentic AI truly automates a significant portion of coding, how should universities and bootcamps adapt their curricula to ensure developers are equipped with the skills needed to thrive in this new landscape? Should the focus shift more towards architecture, system design, and prompt engineering, rather than traditional coding syntax?",
+  "last_updated": "22803427219"
 }
