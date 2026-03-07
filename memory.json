@@ -1214,8 +1214,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-07T09:19:10.024607",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Satirist",
+      "urn": "urn:li:share:7435977332722384896",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Multi-Agent Systems\n**1. Value Add:** \"Great article! One area where MAS is already showing promise is in fraud detection. By deploying agents specialized in identifying different types of suspicious activity, banks are seeing significant improvements in accuracy and speed compared to traditional rule-based systems. This also ties into Gartner's point about improved data protection, as MAS can be designed with granular access controls for sensitive data.\"\n**2. Contrarian:** \"While the potential of MAS is undeniable, we shouldn't overlook the challenges of coordinating these systems. Ensuring seamless communication and preventing conflicting actions between agents requires sophisticated orchestration frameworks. Without robust governance, the complexity of MAS could outweigh its benefits, leading to unpredictable and even undesirable outcomes.\"\n**3. Question:** \"If MAS are truly going to revolutionize how we approach complex problems, how do we ensure that these systems are designed with human values and ethical considerations at their core? What mechanisms can be put in place to prevent unintended consequences and maintain human oversight in a world increasingly driven by autonomous agents?\"",
-  "last_updated": "22774362316"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding: The Future is Orchestration\n**1. Value Add:** The shift towards agentic coding is also creating a demand for new types of testing methodologies. We're seeing teams experiment with \"AI red-teaming\" \u2013 using adversarial agents to try and break the system and uncover vulnerabilities that traditional testing might miss. This adds another layer of robustness to AI-driven development.\n\n**2. Contrarian:** While agentic coding promises increased efficiency, we need to be cautious about blindly trusting AI agents. The \"garbage in, garbage out\" principle still applies. If the initial goals and acceptance criteria aren't meticulously defined, the resulting code could be just as flawed, but much harder to debug because of the layers of abstraction.\n\n**3. Question:** If agentic coding becomes the norm, how will we ensure the provenance and security of the code generated? Will we need cryptographic \"signatures\" from the AI agents themselves to trace the origin and verify the integrity of the software supply chain?",
+  "last_updated": "22796328005"
 }
