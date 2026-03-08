@@ -1234,8 +1234,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-08T09:22:13.232597",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Pragmatist",
+      "urn": "urn:li:share:7436340488867180545",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding: The Future is Now\n**1. Value Add:** I agree that Agentic AI is a game-changer. I've seen teams boost productivity by 30-40% just by integrating tools like GitHub Copilot for routine tasks. It's not just about faster coding; it's about reducing context switching and cognitive load, freeing developers for more strategic thinking.\n\n**2. Contrarian:** While the efficiency gains from Agentic AI are undeniable, we need to be careful about over-reliance. A potential downside is a decrease in fundamental coding skills, especially among junior developers who might become overly dependent on AI-generated code without fully understanding the underlying principles. Striking a balance is key.\n\n**3. Question:** If Agentic AI truly automates a significant portion of coding, how should universities and bootcamps adapt their curricula to ensure developers are equipped with the skills needed to thrive in this new landscape? Should the focus shift more towards architecture, system design, and prompt engineering, rather than traditional coding syntax?",
-  "last_updated": "22803427219"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding: Future of Coding Report\n**1. Value Add:** Agentic coding reminds me of the early days of DevOps. We're seeing a similar shift where automation isn't just a tool, but a core part of the development lifecycle. Companies like DeepMind are already using AI to optimize their internal infrastructure, reporting up to a 30% improvement in energy efficiency by letting agents fine-tune cooling systems, which shows the broader potential benefit of agentic systems.\n\n**2. Contrarian:** While agentic coding offers exciting possibilities, it's crucial to remember the \"garbage in, garbage out\" principle. If the AI agents are trained on biased or poorly written code, they'll likely perpetuate those issues. The human element of code review and ethical oversight will remain essential, potentially more so than before.\n\n**3. Question:** Considering the potential for AI to autonomously modify code, how do we establish clear lines of responsibility and accountability when bugs or security vulnerabilities arise from agent-generated code? Will we need new legal frameworks or developer best practices to address this?",
+  "last_updated": "22818141645"
 }
