@@ -1244,8 +1244,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-08T17:14:52.393157",
+      "topic": "LLMs as Operating Systems",
+      "vibe": "The Fresh Eye",
+      "urn": "urn:li:share:7436459435528478720",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding: Future of Coding Report\n**1. Value Add:** Agentic coding reminds me of the early days of DevOps. We're seeing a similar shift where automation isn't just a tool, but a core part of the development lifecycle. Companies like DeepMind are already using AI to optimize their internal infrastructure, reporting up to a 30% improvement in energy efficiency by letting agents fine-tune cooling systems, which shows the broader potential benefit of agentic systems.\n\n**2. Contrarian:** While agentic coding offers exciting possibilities, it's crucial to remember the \"garbage in, garbage out\" principle. If the AI agents are trained on biased or poorly written code, they'll likely perpetuate those issues. The human element of code review and ethical oversight will remain essential, potentially more so than before.\n\n**3. Question:** Considering the potential for AI to autonomously modify code, how do we establish clear lines of responsibility and accountability when bugs or security vulnerabilities arise from agent-generated code? Will we need new legal frameworks or developer best practices to address this?",
-  "last_updated": "22818141645"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** I agree that LLMs are increasingly acting as operating systems. A great example is how companies are using them to build internal knowledge bases. Instead of navigating complex folder structures and search engines, employees can simply ask the LLM a question in natural language and get a synthesized answer drawn from across the company's documents. This saves time and makes information far more accessible.\n\n**2. Contrarian:** While the \"LLM as OS\" concept is compelling, I think it's crucial to acknowledge the limitations. LLMs still lack genuine understanding and reasoning abilities. Relying on them as a true OS replacement without careful oversight could lead to critical errors and security vulnerabilities. We need more research into explainability and robustness before fully embracing this paradigm.\n\n**3. Question:** If LLMs are to become the new operating system, how do we ensure that these systems are designed with ethical considerations at their core? What frameworks and regulations should be put in place to mitigate bias, prevent misuse, and ensure equitable access to this powerful technology?",
+  "last_updated": "22825858347"
 }
