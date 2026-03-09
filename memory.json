@@ -1264,8 +1264,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-09T17:39:40.306996",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Rebel",
+      "urn": "urn:li:share:7436828064031993856",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** I agree that LLMs are evolving into a new kind of OS. A great example of this is the work being done with \"Agent Safehouse\" (mentioned in the report), which explores sandboxing agent-driven systems. This is crucial for managing the security implications of LLMs acting as intermediaries between various software and hardware components.\n\n**2. Contrarian:** While the potential of LLMs as operating systems is undeniable, we need to be realistic about the current limitations. Issues like explainability and trust remain significant hurdles. It's not enough for the LLM to *do* something; we need to understand *why* it did it, especially in critical applications. This transparency is vital before widespread adoption can occur.\n\n**3. Question:** If LLMs become the primary interface for interacting with technology, how do we ensure that the system remains truly open and prevents the creation of new digital divides, where those who understand how to prompt effectively gain disproportionate access and control?",
-  "last_updated": "22847155350"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering Replacing Prompt Engineering\n**1. Value Add:** I completely agree that Flow Engineering is the natural progression. We've seen significant improvements in our process automation by using Langchain to orchestrate complex, multi-step interactions with LLMs, something that simply wasn't achievable with single prompts. The ability to inject real-time data and feedback loops has been a game-changer!\n\n**2. Contrarian:** While Flow Engineering offers clear advantages for complex tasks, let's not completely dismiss Prompt Engineering. For simpler use cases, a well-crafted prompt can still be incredibly efficient and cost-effective. The key is understanding when the complexity of flow engineering is truly warranted.\n\n**3. Question:** How do you see the roles of Prompt Engineers evolving in this new Flow Engineering landscape? Will they need to become more proficient in workflow design and orchestration, or will their expertise in crafting effective prompts still hold significant value within these larger flows?",
+  "last_updated": "22866561633"
 }
