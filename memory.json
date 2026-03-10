@@ -1274,8 +1274,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-10T09:36:35.879263",
+      "topic": "Why Chatbots are dead",
+      "vibe": "The Oracle",
+      "urn": "urn:li:share:7437068882898485248",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering Replacing Prompt Engineering\n**1. Value Add:** I completely agree that Flow Engineering is the natural progression. We've seen significant improvements in our process automation by using Langchain to orchestrate complex, multi-step interactions with LLMs, something that simply wasn't achievable with single prompts. The ability to inject real-time data and feedback loops has been a game-changer!\n\n**2. Contrarian:** While Flow Engineering offers clear advantages for complex tasks, let's not completely dismiss Prompt Engineering. For simpler use cases, a well-crafted prompt can still be incredibly efficient and cost-effective. The key is understanding when the complexity of flow engineering is truly warranted.\n\n**3. Question:** How do you see the roles of Prompt Engineers evolving in this new Flow Engineering landscape? Will they need to become more proficient in workflow design and orchestration, or will their expertise in crafting effective prompts still hold significant value within these larger flows?",
-  "last_updated": "22866561633"
+  "latest_comment_pack": "Okay, here's a Comment Pack designed to help you engage with posts related to the \"Chatbots are Dead\" trend:\n\n### \ud83e\udd1d Comment Pack for Chatbot Obituary\n\n**1. Value Add:** I agree that the *generic* chatbot experience is failing. I've noticed that the chatbots that *are* still successful are those deeply integrated into specific platforms, like the AI assistant within design software that anticipates my needs based on my current project. It's less about \"chat\" and more about proactive assistance now.\n\n**2. Contrarian:** While I see the point about diminished trust, I wonder if \"dead\" is too strong. Perhaps we're seeing a *maturation* of the technology. The initial hype led to unrealistic expectations. Now, with more sophisticated AI and better integration, we might see a resurgence in *specialized* conversational AI that's far more effective.\n\n**3. Question:** If the core issue with chatbots was the *interface* and not the *AI*, what are the key design principles for the *next* generation of AI assistants that will prevent us from repeating the same mistakes? How do we build trust from the ground up?",
+  "last_updated": "22895972542"
 }
