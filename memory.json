@@ -92,7 +92,8 @@
     "Avoid corporate speak and academic jargon.",
     "Avoid boastful language and conversational setups.",
     "Short, casual, no performance metrics.",
-    "Avoid questions and corporate speak"
+    "Avoid questions and corporate speak",
+    "Avoid business-speak and lecture tones about productivity."
   ],
   "history": [
     {
@@ -1294,8 +1295,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-11T09:32:49.716043",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Zen Coder",
+      "urn": "urn:li:share:7437430321706565632",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Demise of the Chatbot\n**1. Value Add:** I agree that the \"honeymoon phase\" for standalone chatbots is over. I've seen this firsthand. Companies that initially touted chatbot-based customer service are now quietly integrating AI into their existing CRM platforms. For example, Salesforce's Einstein AI now anticipates customer needs and provides agents with proactive recommendations, leading to faster resolution times without ever requiring a \"chat.\" This embedded approach feels far more seamless and effective.\n\n**2. Contrarian:** While I see the trend toward integrated AI, I don't think it completely spells the end for *all* chatbots. Highly specialized chatbots, focused on niche tasks within specific industries, may still hold value. Think of a chatbot designed solely for diagnosing equipment failures in a manufacturing plant. Its narrow focus could allow for a higher degree of accuracy and usefulness compared to a general-purpose AI assistant.\n\n**3. Question:** If the future of AI is \"invisible,\" how do we ensure transparency and accountability? If AI is proactively assisting us in the background, how do we maintain control over its decisions and understand the reasoning behind its actions? What ethical frameworks need to be in place to govern this new era of \"invisible AI?\"",
-  "last_updated": "22915937596"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** I agree that agentic coding will significantly boost productivity. We're already seeing this in areas like automated test generation. For example, tools leveraging AI are reducing testing time by up to 40% in some internal projects, allowing developers to focus on more complex feature development.\n\n**2. Contrarian:** While agentic coding promises faster development, we shouldn't overlook the potential for increased technical debt. AI-generated code needs careful review and refactoring to ensure maintainability and prevent the accumulation of \"AI spaghetti code\" down the line. It's not just about speed, but also about quality and long-term sustainability.\n\n**3. Question:** Considering the rise of agentic coding, how do we best prepare junior developers for a future where they'll be working alongside AI agents? What specific skills and training programs are needed to ensure they can effectively collaborate and leverage these tools to their full potential?",
+  "last_updated": "22945894009"
 }
