@@ -1305,8 +1305,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-11T17:42:27.998869",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Pragmatist",
+      "urn": "urn:li:share:7437553543487680512",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** I agree that agentic coding will significantly boost productivity. We're already seeing this in areas like automated test generation. For example, tools leveraging AI are reducing testing time by up to 40% in some internal projects, allowing developers to focus on more complex feature development.\n\n**2. Contrarian:** While agentic coding promises faster development, we shouldn't overlook the potential for increased technical debt. AI-generated code needs careful review and refactoring to ensure maintainability and prevent the accumulation of \"AI spaghetti code\" down the line. It's not just about speed, but also about quality and long-term sustainability.\n\n**3. Question:** Considering the rise of agentic coding, how do we best prepare junior developers for a future where they'll be working alongside AI agents? What specific skills and training programs are needed to ensure they can effectively collaborate and leverage these tools to their full potential?",
-  "last_updated": "22945894009"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Future of Coding is Agentic\n\n**1. Value Add:** Absolutely! The productivity gains are going to be massive. I've seen internal estimates suggesting a potential 40-50% reduction in development time for routine tasks with early agentic AI implementations, especially in areas like automated testing and API integration.\n\n**2. Contrarian:** While the potential is huge, I think we need to be realistic about the learning curve. Integrating these agentic tools into existing workflows isn't going to be seamless. Companies that don't invest in proper training and adaptation strategies risk seeing limited returns or even a decrease in productivity initially.\n\n**3. Question:** How do we ensure that agentic AI doesn't exacerbate existing biases in software development? Are we developing robust methods for auditing and validating AI-generated code to guarantee fairness and prevent the perpetuation of harmful stereotypes?",
+  "last_updated": "22966205075"
 }
