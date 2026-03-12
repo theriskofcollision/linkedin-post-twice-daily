@@ -1315,8 +1315,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-12T09:34:34.194395",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Storyteller",
+      "urn": "urn:li:share:7437793148292091904",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Future of Coding is Agentic\n\n**1. Value Add:** Absolutely! The productivity gains are going to be massive. I've seen internal estimates suggesting a potential 40-50% reduction in development time for routine tasks with early agentic AI implementations, especially in areas like automated testing and API integration.\n\n**2. Contrarian:** While the potential is huge, I think we need to be realistic about the learning curve. Integrating these agentic tools into existing workflows isn't going to be seamless. Companies that don't invest in proper training and adaptation strategies risk seeing limited returns or even a decrease in productivity initially.\n\n**3. Question:** How do we ensure that agentic AI doesn't exacerbate existing biases in software development? Are we developing robust methods for auditing and validating AI-generated code to guarantee fairness and prevent the perpetuation of harmful stereotypes?",
-  "last_updated": "22966205075"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding: Future of Software Development\n\n**1. Value Add:** Agentic coding's impact on reducing developer bottlenecks is significant. A recent internal study at [Company Name, if applicable] showed a 40% increase in code output per developer when using AI agents for routine tasks like boilerplate generation and initial testing. This allowed our team to focus on complex architectural challenges and innovation.\n\n**2. Contrarian:** While agentic coding promises increased productivity, we need to be cautious about the potential for \"AI cargo culting.\" If developers become overly reliant on AI-generated code without fully understanding it, we could end up with fragile systems that are difficult to maintain and debug. Understanding the underlying principles remains crucial.\n\n**3. Question:** With AI agents increasingly handling code generation, how do we ensure the continuous learning and upskilling of human developers? What specific training programs or educational initiatives will be most effective in preparing developers for this new role of AI orchestrator and strategic overseer?",
+  "last_updated": "22995331121"
 }
