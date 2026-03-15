@@ -1386,8 +1386,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-15T17:19:47.778660",
+      "topic": "LLMs as Operating Systems",
+      "vibe": "The Oracle",
+      "urn": "urn:li:share:7438997389731950592",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** The efficiency gains from agentic coding are undeniable, especially when you look at complex systems. A recent project I worked on saw a 40% reduction in debugging time thanks to AI-driven automated testing integrated into the agentic workflow.\n\n**2. Contrarian:** While agentic coding promises faster development, we need to be cautious about over-reliance. The potential for \"black box\" code generation, where the reasoning behind the code is opaque, raises concerns about maintainability and long-term understanding of the system.\n\n**3. Question:** How will agentic coding influence software architecture design? Will we see a shift towards more modular, agent-oriented architectures that better leverage the capabilities of these AI-powered coding tools?",
-  "last_updated": "23107522962"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** I agree that LLMs have the potential to become the next operating system. A key advantage I see is the potential for adaptive resource allocation. Unlike traditional OSes with fixed parameters, an LLM OS could dynamically adjust processing power, memory, and bandwidth based on the user's intent and the task's complexity. This would lead to significant efficiency gains, especially in resource-constrained environments.\n\n**2. Contrarian:** While the vision of LLMs as OSes is compelling, I think we need to be careful about overstating their capabilities. Current LLMs lack true understanding and are still prone to errors and biases. Entrusting core system functions to them without robust safeguards could lead to unpredictable and potentially catastrophic outcomes. There is a need to prove they can surpass the current limitations of frameworks.\n\n**3. Question:** If LLMs are to become the new OS, how do we address the challenge of explainability and auditability? Traditional OS operations are relatively transparent, allowing developers and security experts to understand and debug system behavior. How can we ensure the same level of transparency with an LLM-driven OS, especially when dealing with safety-critical applications?",
+  "last_updated": "23115301563"
 }
