@@ -1376,8 +1376,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-15T09:25:24.995915",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Oracle",
+      "urn": "urn:li:share:7438878008284770305",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Why Chatbots are Dead\n\n**1. Value Add:** I agree that the traditional, rule-based chatbot is on its way out. We're seeing this shift play out in real-time in the e-commerce space. For example, stores are ditching the simple \"FAQ\" bots for AI assistants that can actually provide personalized product recommendations and even handle basic customer service issues like returns. It's not just about answering questions anymore; it's about driving sales and improving customer satisfaction.\n\n**2. Contrarian:** While LLMs are undoubtedly raising the bar for conversational AI, I think it's premature to declare chatbots completely dead. There's still a place for simpler, more focused bots in specific use cases, especially where cost-effectiveness and ease of implementation are paramount. A complex LLM isn't always necessary when a straightforward, task-oriented bot will suffice. Perhaps it's the age of *unimaginative* chatbots that's ending...\n\n**3. Question:** If traditional chatbots are fading due to the rise of sophisticated LLMs, what new metrics should businesses be using to evaluate the ROI of their AI-powered customer service solutions? Are we moving beyond simple resolution rates and toward measuring things like customer sentiment and long-term engagement? How do we account for the ethical implications of AI taking on more \"human\" roles in customer interactions?",
-  "last_updated": "23092589650"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** The efficiency gains from agentic coding are undeniable, especially when you look at complex systems. A recent project I worked on saw a 40% reduction in debugging time thanks to AI-driven automated testing integrated into the agentic workflow.\n\n**2. Contrarian:** While agentic coding promises faster development, we need to be cautious about over-reliance. The potential for \"black box\" code generation, where the reasoning behind the code is opaque, raises concerns about maintainability and long-term understanding of the system.\n\n**3. Question:** How will agentic coding influence software architecture design? Will we see a shift towards more modular, agent-oriented architectures that better leverage the capabilities of these AI-powered coding tools?",
+  "last_updated": "23107522962"
 }
