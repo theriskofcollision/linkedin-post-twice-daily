@@ -884,26 +884,51 @@ Text Overlay: [Optional - only if truly needed]"""
                 clean_prompt = clean_prompt.split("Text Overlay:", 1)[0]
         
         clean_prompt = clean_prompt.replace("Generate image:", "").strip()
-        clean_prompt = clean_prompt[:800]
+        
+        # Keep prompts SHORT - Pollinations fails on long prompts
+        # Take only the first 100 chars to avoid 500 errors
+        clean_prompt = clean_prompt[:100].strip()
         
         logger.info(f"Generating image with style: {self.current_medium}...")
+        logger.info(f"Image prompt ({len(clean_prompt)} chars): {clean_prompt[:60]}...")
 
+        import time, random
+        seed = random.randint(1, 999999)
         encoded_prompt = urllib.parse.quote(clean_prompt)
-        url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?width=1200&height=628&nologo=true"
+        url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?width=1200&height=628&nologo=true&seed={seed}"
         
         max_retries = 3
         for attempt in range(max_retries):
             try:
-                logger.info(f"Attempt {attempt + 1}/{max_retries}: Pollinations.ai...")
-                response = requests.get(url, timeout=60)
+                logger.info(f"Attempt {attempt + 1}/{max_retries}: Pollinations.ai (seed={seed})...")
+                response = requests.get(url, timeout=90)
+                
+                if response.status_code == 429:
+                    wait = (attempt + 1) * 10
+                    logger.warning(f"Rate limited (429). Waiting {wait}s...")
+                    time.sleep(wait)
+                    seed = random.randint(1, 999999)
+                    url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?width=1200&height=628&nologo=true&seed={seed}"
+                    continue
+                
                 response.raise_for_status()
-                return response.content
+                
+                content_type = response.headers.get("content-type", "")
+                if "image" in content_type and len(response.content) > 5000:
+                    logger.info(f"✅ Image generated: {len(response.content)} bytes")
+                    return response.content
+                else:
+                    logger.warning(f"Invalid response: type={content_type}, size={len(response.content)}")
+                    
             except Exception as e:
                 logger.warning(f"Pollinations attempt {attempt + 1} failed: {e}")
-                if attempt < max_retries - 1:
-                    import time
-                    time.sleep((attempt + 1) * 5)
+            
+            if attempt < max_retries - 1:
+                wait = (attempt + 1) * 8
+                logger.info(f"Waiting {wait}s before retry...")
+                time.sleep(wait)
         
+        logger.error("❌ All image generation attempts failed. Post will be text-only.")
         return None
 
 class Critic(Agent):
@@ -1132,23 +1157,18 @@ class LinkedInConnector:
         if not self.access_token:
             return None
             
-        # Extract the ID part if it's a full URN (urn:li:share:123 -> 123)
-        # The socialActions API expects the full URN usually, but let's be safe.
-        # Endpoint: https://api.linkedin.com/rest/socialActions/{urn}
-        
         encoded_urn = urllib.parse.quote(urn)
-        url = f"https://api.linkedin.com/rest/socialActions/{encoded_urn}"
+        url = f"https://api.linkedin.com/v2/socialActions/{encoded_urn}"
         
         headers = {
             "Authorization": f"Bearer {self.access_token}",
-            "X-Restli-Protocol-Version": "2.0.0",
-            "LinkedIn-Version": "202512"
+            "X-Restli-Protocol-Version": "2.0.0"
         }
         
         try:
             response = requests.get(url, headers=headers, timeout=30)
-            if response.status_code == 404:
-                logger.warning(f"Stats not found for {urn}")
+            if response.status_code in (404, 426):
+                logger.warning(f"Stats not available for {urn} (status={response.status_code})")
                 return {"likes": 0, "comments": 0}
                 
             response.raise_for_status()
@@ -1160,9 +1180,8 @@ class LinkedInConnector:
             return {"likes": likes, "comments": comments}
             
         except requests.exceptions.HTTPError as e:
-            if e.response.status_code == 403:
+            if hasattr(e, 'response') and e.response is not None and e.response.status_code == 403:
                 logger.warning(f"Permission Denied (403). Consider applying for Marketing Developer Platform.")
-                # Hint moved to warning above
                 return {"likes": 0, "comments": 0}
             else:
                 logger.error(f"Failed to fetch stats: {e}")
