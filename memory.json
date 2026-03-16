@@ -1396,8 +1396,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-16T09:56:15.246035",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Provocateur",
+      "urn": "urn:li:share:7439248156598644736",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** I agree that LLMs have the potential to become the next operating system. A key advantage I see is the potential for adaptive resource allocation. Unlike traditional OSes with fixed parameters, an LLM OS could dynamically adjust processing power, memory, and bandwidth based on the user's intent and the task's complexity. This would lead to significant efficiency gains, especially in resource-constrained environments.\n\n**2. Contrarian:** While the vision of LLMs as OSes is compelling, I think we need to be careful about overstating their capabilities. Current LLMs lack true understanding and are still prone to errors and biases. Entrusting core system functions to them without robust safeguards could lead to unpredictable and potentially catastrophic outcomes. There is a need to prove they can surpass the current limitations of frameworks.\n\n**3. Question:** If LLMs are to become the new OS, how do we address the challenge of explainability and auditability? Traditional OS operations are relatively transparent, allowing developers and security experts to understand and debug system behavior. How can we ensure the same level of transparency with an LLM-driven OS, especially when dealing with safety-critical applications?",
-  "last_updated": "23115301563"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering vs. Prompt Engineering\n**1. Value Add:** I'm seeing this shift to Flow Engineering echoed in the DevOps world. Just like we moved from individual server configuration to infrastructure-as-code and automated pipelines, AI is moving from isolated prompts to orchestrated workflows. The architectural perspective is critical for long-term success.\n\n**2. Contrarian:** While Flow Engineering offers a valuable framework for scalability, let's not completely dismiss the art of prompt engineering. For rapid prototyping and creative explorations, a well-crafted prompt can still be incredibly powerful. The ideal approach may be a hybrid, leveraging prompt engineering within the larger flow.\n\n**3. Question:** If Flow Engineering emphasizes system design, how do we ensure that ethical considerations, like bias detection and fairness, are built into the flow from the outset, rather than being addressed as an afterthought at the prompt level?",
+  "last_updated": "23137723353"
 }
