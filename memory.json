@@ -1406,8 +1406,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-03-16T17:55:50.443721",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Contrarian",
+      "urn": "urn:li:share:7439368848438472704",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering vs. Prompt Engineering\n**1. Value Add:** I'm seeing this shift to Flow Engineering echoed in the DevOps world. Just like we moved from individual server configuration to infrastructure-as-code and automated pipelines, AI is moving from isolated prompts to orchestrated workflows. The architectural perspective is critical for long-term success.\n\n**2. Contrarian:** While Flow Engineering offers a valuable framework for scalability, let's not completely dismiss the art of prompt engineering. For rapid prototyping and creative explorations, a well-crafted prompt can still be incredibly powerful. The ideal approach may be a hybrid, leveraging prompt engineering within the larger flow.\n\n**3. Question:** If Flow Engineering emphasizes system design, how do we ensure that ethical considerations, like bias detection and fairness, are built into the flow from the outset, rather than being addressed as an afterthought at the prompt level?",
-  "last_updated": "23137723353"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** I agree that agentic coding is the future. We're already seeing significant gains in specific areas like automated testing. Studies show that AI-powered testing tools can reduce testing time by up to 40% while also improving code coverage, which perfectly showcases the near-term benefits.\n\n**2. Contrarian:** While the potential productivity gains are undeniable, let's not forget the initial investment required. Companies need to invest in infrastructure, train their developers, and carefully monitor the agents to avoid unintended consequences. It's not a plug-and-play solution, and smaller teams may struggle to adopt it effectively.\n\n**3. Question:** If agentic coding truly shifts the developer role towards orchestration, how will we ensure that developers maintain a deep understanding of the underlying code and avoid becoming overly reliant on AI-generated solutions, which could lead to knowledge atrophy in the long run?",
+  "last_updated": "23158097139"
 }
