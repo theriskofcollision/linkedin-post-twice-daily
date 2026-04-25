@@ -1044,7 +1044,8 @@ class LinkedInConnector:
         headers = {
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json",
-            "X-Restli-Protocol-Version": "2.0.0"
+            "X-Restli-Protocol-Version": "2.0.0",
+            "LinkedIn-Version": "202401"
         }
         payload = {
             "registerUploadRequest": {
@@ -1093,7 +1094,8 @@ class LinkedInConnector:
         headers = {
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json",
-            "X-Restli-Protocol-Version": "2.0.0"
+            "X-Restli-Protocol-Version": "2.0.0",
+            "LinkedIn-Version": "202401"
         }
 
         if asset_urn:
@@ -1162,7 +1164,8 @@ class LinkedInConnector:
         
         headers = {
             "Authorization": f"Bearer {self.access_token}",
-            "X-Restli-Protocol-Version": "2.0.0"
+            "X-Restli-Protocol-Version": "2.0.0",
+            "LinkedIn-Version": "202401"
         }
         
         try:
@@ -1422,9 +1425,13 @@ if __name__ == "__main__":
             logger.warning(warning)
         
         # Run the main workflow
-        orch.run_workflow()
+        post_urn = orch.run_workflow()
         
-        logger.info("✅ Script completed successfully.")
+        if not post_urn:
+            logger.error("❌ Workflow failed to post.")
+            exit_code = 1
+        else:
+            logger.info("✅ Script completed successfully.")
         
     except KeyboardInterrupt:
         logger.info("Workflow interrupted by user.")

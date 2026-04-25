@@ -44,15 +44,19 @@ class TestLinkedInImageUpload:
         mock_response = MagicMock()
         mock_response.json.return_value = {
             'value': {
-                'uploadUrl': 'https://upload.linkedin.com/test',
-                'image': 'urn:li:image:123'
+                'uploadMechanism': {
+                    'com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest': {
+                        'uploadUrl': 'https://upload.linkedin.com/test'
+                    }
+                },
+                'asset': 'urn:li:image:123'
             }
         }
         mock_response.raise_for_status = MagicMock()
         mock_post.return_value = mock_response
         
         connector = LinkedInConnector()
-        upload_url, image_urn = connector.register_upload()
+        upload_url, image_urn = connector.register_upload_v2()
         
         assert upload_url == 'https://upload.linkedin.com/test'
         assert image_urn == 'urn:li:image:123'
@@ -88,7 +92,7 @@ class TestLinkedInPosting:
         """Should post text-only content successfully."""
         mock_response = MagicMock()
         mock_response.status_code = 201
-        mock_response.headers = {'x-restli-id': 'urn:li:share:999'}
+        mock_response.json.return_value = {'id': 'urn:li:share:999'}
         mock_response.raise_for_status = MagicMock()
         mock_post.return_value = mock_response
         
