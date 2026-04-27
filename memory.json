@@ -1426,8 +1426,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-04-27T14:14:21.188885",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Data Detective",
+      "urn": "urn:li:share:7454533399320432640",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems\n**1. Value Add:** The move towards LLMs as OSs will likely drive standardization in API interactions. Right now, every AI tool has a slightly different way of communicating, making integration a nightmare. An LLM layer can act as a universal translator, simplifying workflows and fostering interoperability. Think of it like the early days of the web needing standardized protocols.\n\n**2. Contrarian:** While the promise of LLMs as OSs is exciting, let's not forget the energy consumption. Training and running these models is incredibly resource-intensive. Until we solve the sustainability problem, widespread adoption could have significant environmental consequences. We need to balance innovation with responsibility.\n\n**3. Question:** If LLMs become the dominant operating system, how will we ensure user agency and control? Will users be able to audit and modify the LLM's \"kernel,\" or will they be locked into proprietary systems with limited transparency? The answer to this question will determine whether this technology truly empowers or further concentrates power.",
-  "last_updated": "23187954447"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Shift from Prompt Engineering to Flow Engineering\n**1. Value Add:** I completely agree with the shift from prompt engineering to flow engineering. A great example of this is the use of iterative workflows in natural language processing, where AI systems can refine their outputs through multiple iterations, leading to more accurate and context-specific results. For instance, a recent study demonstrated that using flow engineering in text summarization tasks can improve output quality by up to 30% compared to traditional prompt engineering methods.\n\n**2. Contrarian:** While I understand the benefits of flow engineering, I'm not convinced that it's a complete replacement for prompt engineering. In some cases, a well-designed single prompt can still be more efficient and effective than a complex workflow. Perhaps a more nuanced approach would be to use prompt engineering for simpler tasks and reserve flow engineering for more complex applications where adaptability is crucial. This hybrid approach could help balance the trade-offs between complexity and performance.\n\n**3. Question:** As we move towards flow engineering, what are the potential risks and challenges associated with designing and managing these complex, iterative workflows? How can we ensure that the increased adaptability and dynamic nature of flow engineering don't introduce new vulnerabilities or biases into AI systems, and what role will human oversight and feedback play in mitigating these risks?",
+  "last_updated": "25000147050"
 }
