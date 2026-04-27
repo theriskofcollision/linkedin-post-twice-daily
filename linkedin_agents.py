@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from typing import List, Optional, Dict, Any
 from datetime import datetime, timedelta
 
-import google.generativeai as genai
+from groq import Groq
 import yaml
 from filelock import FileLock
 from dotenv import load_dotenv
@@ -26,7 +26,7 @@ from logging_config import logger
 def load_config(config_path: str = "config.yaml") -> Dict[str, Any]:
     """Load configuration from YAML file with defaults."""
     defaults = {
-        "model": {"name": "gemini-2.5-flash", "max_retries": 3, "base_delay_seconds": 5},
+        "model": {"name": "llama-3.3-70b-versatile", "max_retries": 3, "base_delay_seconds": 5},
         "sources": {
             "hackernews": {"scan_limit": 15, "ai_results": 5},
             "newsapi": {"limit": 5},
@@ -279,9 +279,9 @@ class Agent:
         self.system_prompt = system_prompt
 
     def run(self, input_data: str) -> Optional[str]:
-        api_key = os.environ.get("GEMINI_API_KEY")
+        api_key = os.environ.get("GROQ_API_KEY")
         if not api_key:
-            logger.warning(f"Missing GEMINI_API_KEY. Returning mock data for {self.name}.")
+            logger.warning(f"Missing GROQ_API_KEY. Returning mock data for {self.name}.")
             return f"[{self.name} Output based on '{input_data}']"
 
         logger.info(f"--- {self.name} ({self.role}) Working ---")
@@ -289,22 +289,26 @@ class Agent:
         
         max_retries = CONFIG.get("model", {}).get("max_retries", 3)
         base_delay = CONFIG.get("model", {}).get("base_delay_seconds", 5)
-        model_name = CONFIG.get("model", {}).get("name", "gemini-2.5-flash")
+        model_name = CONFIG.get("model", {}).get("name", "llama-3.3-70b-versatile")
         
         for attempt in range(max_retries):
             try:
-                genai.configure(api_key=api_key)
+                client = Groq(api_key=api_key)
                 if attempt == 0:
                     logger.info(f"Using model: {model_name}")
                 else:
                     logger.warning(f"Retry attempt {attempt + 1}/{max_retries}")
                 
-                model = genai.GenerativeModel(model_name)
+                response = client.chat.completions.create(
+                    messages=[
+                        {"role": "system", "content": self.system_prompt},
+                        {"role": "user", "content": input_data}
+                    ],
+                    model=model_name,
+                    max_tokens=2048,
+                )
                 
-                full_prompt = f"{self.system_prompt}\n\nTask Input: {input_data}"
-                response = model.generate_content(full_prompt)
-                
-                result = response.text.strip()
+                result = response.choices[0].message.content.strip()
                 logger.info(f"OUTPUT: {result[:100]}...")
                 return result
                 
@@ -317,14 +321,14 @@ class Agent:
                 return None
             except Exception as e:
                 error_str = str(e)
-                if "429" in error_str or "Resource exhausted" in error_str:
+                if "429" in error_str or "rate_limit" in error_str.lower():
                     if attempt < max_retries - 1:
                         wait_time = base_delay * (2 ** attempt) + random.uniform(0, 1)
                         logger.warning(f"Rate limit hit (429). Waiting {wait_time:.1f}s before retry...")
                         time.sleep(wait_time)
                         continue
                 
-                logger.error(f"Gemini API Error: {e}")
+                logger.error(f"Groq API Error: {e}")
                 return None
 
 

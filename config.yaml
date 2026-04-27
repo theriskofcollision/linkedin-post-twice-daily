@@ -3,7 +3,7 @@
 
 # AI Model Configuration
 model:
-  name: "gemini-2.0-flash"
+  name: "llama-3.3-70b-versatile"
   max_retries: 3
   base_delay_seconds: 5
 

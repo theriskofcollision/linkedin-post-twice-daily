@@ -3,7 +3,7 @@
 
 # Core
 requests==2.32.3
-google-generativeai==0.8.3
+groq==0.25.0
 
 # Configuration
 pyyaml==6.0.2
