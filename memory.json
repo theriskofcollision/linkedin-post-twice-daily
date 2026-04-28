@@ -1456,8 +1456,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-04-28T18:18:28.876007",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Data Detective",
+      "urn": "urn:li:share:7454957222591156224",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Shift from Prompt Engineering to Flow Engineering\n**1. Value Add:** I completely agree that the shift from Prompt Engineering to Flow Engineering is a significant development in the field of AI. A great example of this is the use of Chain-of-Thought (CoT) supervision, which has shown promising results in improving AI outcomes. For instance, the paper \"Learning to Think from Multiple Thinkers\" demonstrates how CoT supervision from multiple thinkers can be integrated into Flow Engineering to achieve better results. This is a clear indication that Flow Engineering is the future of AI interaction.\n\n**2. Contrarian:** While I understand the excitement around Flow Engineering, I'm not convinced that it's a complete replacement for Prompt Engineering. In some cases, single-shot prompts can still be effective and efficient, especially for simple tasks. We should be cautious not to over-engineer our AI systems and instead focus on finding the right balance between simplicity and complexity. Perhaps a hybrid approach that combines the strengths of both Prompt Engineering and Flow Engineering could be the way forward.\n\n**3. Question:** As we move towards Flow Engineering, what are the potential risks and challenges associated with designing multi-step workflows that can adapt to different scenarios? How can we ensure that these workflows are transparent, explainable, and aligned with human values and goals? What role will human oversight and feedback play in the development and deployment of Flow Engineering-based AI systems, and how can we mitigate the potential risks of over-reliance on complex AI workflows?",
-  "last_updated": "25049192046"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Shift from Prompt Engineering to Flow Engineering\n**1. Value Add:** I completely agree with the shift towards Flow Engineering, and a great example of this in action is the development of voice assistants like Amazon's Alexa, which can understand and respond to follow-up questions without needing explicit prompts. This technology has the potential to revolutionize the way we interact with AI systems, making them more user-friendly and accessible to a broader audience.\n\n**2. Contrarian:** While I understand the benefits of Flow Engineering, I'm concerned that it may lead to a lack of transparency and control over AI outputs. With Prompt Engineering, developers had more explicit control over the inputs and outputs, whereas Flow Engineering's emphasis on seamless conversation flow may make it more challenging to identify and address potential biases or errors. Don't you think that's a trade-off we should carefully consider before fully embracing Flow Engineering?\n\n**3. Question:** As we move towards Flow Engineering, how do you think we can balance the need for more natural and intuitive AI interactions with the need for explainability and transparency in AI decision-making? Are there any existing frameworks or techniques that can help us achieve this balance, or do we need to develop new methodologies to ensure that Flow Engineering-based AI systems are both effective and trustworthy?",
+  "last_updated": "25070094375"
 }
