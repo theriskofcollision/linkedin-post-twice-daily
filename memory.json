@@ -1446,8 +1446,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-04-28T11:06:33.503502",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Educator",
+      "urn": "urn:li:share:7454848527152648192",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Death of Chatbots\n**1. Value Add:** I agree that traditional chatbots are becoming obsolete, and the recent developments in AI architecture, such as Decoupled DiLoCo, are driving this shift. For instance, a study by DeepMind found that Decoupled DiLoCo enables resilient and distributed AI training at scale, making it a more efficient and effective solution. This is evident in the way companies like Microsoft and OpenAI are ending their exclusive deals and focusing on more advanced AI solutions.\n\n**2. Contrarian:** While I understand the point that traditional chatbots are limited, I'm not convinced that they're entirely dead. In fact, experts like Leon Furze argue that chatbots still have a place in the AI landscape, particularly in education. Chatbots can still provide value in specific contexts where simple, rule-based interactions are sufficient. Perhaps the industry is not shifting away from chatbots, but rather, it's evolving to include more advanced AI solutions that can coexist with traditional chatbots.\n\n**3. Question:** As we move towards more advanced AI solutions, what are the potential risks and challenges associated with replacing traditional chatbots? For example, how will we ensure that these new solutions are transparent, explainable, and fair, especially in high-stakes applications like customer service or healthcare? How will we address the potential job displacement of chatbot developers and maintain the trust of users in these new AI systems?",
-  "last_updated": "25011380839"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Shift from Prompt Engineering to Flow Engineering\n**1. Value Add:** I completely agree that the shift from Prompt Engineering to Flow Engineering is a significant development in the field of AI. A great example of this is the use of Chain-of-Thought (CoT) supervision, which has shown promising results in improving AI outcomes. For instance, the paper \"Learning to Think from Multiple Thinkers\" demonstrates how CoT supervision from multiple thinkers can be integrated into Flow Engineering to achieve better results. This is a clear indication that Flow Engineering is the future of AI interaction.\n\n**2. Contrarian:** While I understand the excitement around Flow Engineering, I'm not convinced that it's a complete replacement for Prompt Engineering. In some cases, single-shot prompts can still be effective and efficient, especially for simple tasks. We should be cautious not to over-engineer our AI systems and instead focus on finding the right balance between simplicity and complexity. Perhaps a hybrid approach that combines the strengths of both Prompt Engineering and Flow Engineering could be the way forward.\n\n**3. Question:** As we move towards Flow Engineering, what are the potential risks and challenges associated with designing multi-step workflows that can adapt to different scenarios? How can we ensure that these workflows are transparent, explainable, and aligned with human values and goals? What role will human oversight and feedback play in the development and deployment of Flow Engineering-based AI systems, and how can we mitigate the potential risks of over-reliance on complex AI workflows?",
+  "last_updated": "25049192046"
 }
