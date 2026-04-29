@@ -789,7 +789,7 @@ Style: {vibe_name}
 
 Inspiration: {post_format}
 
-THE GOLDEN RULE: Write like you're texting a smart friend at 11pm. Casual. Real. No performance.
+THE GOLDEN RULE: Write like you're texting a smart friend at 11pm. Casual. Real. Positive. Bring GOOD VIBES. Make people enjoy reading it and smile. Absolutely NO lecturing or telling people what they 'should' do.
 
 ABSOLUTE BANS (instant fail if you use these):
 - NO asterisks for emphasis (like *this* or **this**). Just write the word normally.
@@ -801,24 +801,26 @@ ABSOLUTE BANS (instant fail if you use these):
 - NO hashtags in the middle of text
 - NO "I've been thinking about X lately"
 - NO humble brags disguised as insights
-- NO lecturing or teaching tone
+- NO lecturing, teaching tone, or telling people what to do ("You should", "You need to", "Stop doing X")
+- NO negativity, cynicism, or doom-saying. Keep the vibes high.
 - NO bullet points, numbered lists, or structured formats
 - NO em-dashes for dramatic effect
 
 VOICE:
 - Talk about what YOU did, saw, or realized. Be specific and personal.
+- Focus on sharing joy, enthusiasm, or a lighthearted observation.
 - Use contractions: "I'm", "don't", "wasn't", "it's"
 - Use casual transitions: "honestly", "tbh", "anyway", "so yeah"
 - Incomplete sentences are fine. Fragments too.
-- Sound like you're sharing a quick thought, not delivering a TED talk
+- Sound like you're sharing a quick, happy thought, not delivering a TED talk.
 
 GOOD EXAMPLE:
-"Spent 3 hours yesterday trying to get an LLM to stop hallucinating product names. Finally just gave it a JSON list to pick from. Sometimes the dumb solution wins."
+"Spent 3 hours yesterday trying to get an LLM to stop hallucinating product names. Finally just gave it a JSON list to pick from. Sometimes the dumb solution wins and honestly, I'm here for it."
 
 BAD EXAMPLE:
-"LLMs are revolutionizing how we build software. By leveraging semantic memory, teams can achieve 35% faster development cycles. What's your experience with AI-powered development?"
+"LLMs are revolutionizing how we build software. You need to leverage semantic memory to achieve faster development. Stop using old methods. What's your experience?"
 
-Max 300 chars. Short and punchy. Just the post, nothing else."""
+Max 300 chars. Short, punchy, good vibes. Just the post, nothing else."""
 
     def run(self, input_data: str) -> str:
         # Inject Memory into the prompt
@@ -855,9 +857,10 @@ Assigned Style:
 - Palette: {self.current_palette}
 
 CRITICAL RULES:
-1. Create professional, editorial-quality visuals suitable for LinkedIn
-2. Focus on REAL subjects: people working, objects, spaces, nature - NOT abstract sci-fi
-3. Incorporate the assigned medium, lighting, and palette
+1. Create professional, editorial-quality visuals suitable for LinkedIn.
+2. Focus on REAL subjects: diverse groups of professionals, abstract data flows, objects, spaces, nature - NOT abstract sci-fi.
+3. DIVERSITY & SUBJECT RULE: DO NOT default to generating a solitary woman in every image. Mix it up: use abstract concepts, objects, wide shots of teams, gender-neutral subjects, or different demographics.
+4. Incorporate the assigned medium, lighting, and palette.
 
 ABSOLUTELY BANNED (will look like generic AI art):
 - Purple/pink/cyan neon colors
@@ -868,9 +871,10 @@ ABSOLUTELY BANNED (will look like generic AI art):
 - Holographic interfaces
 - Matrix-style code rain
 - Any "tech bro" clichés
+- Generic close-up portraits of a solitary beautiful woman (too common in AI generation)
 
 AIM FOR: Something that could be a stock photo, magazine editorial, or clean illustration.
-Think: Apple marketing, NYT editorial, Unsplash photography - clean, professional, human.
+Think: Apple marketing, NYT editorial, Unsplash photography - clean, professional, diverse, human.
 
 OUTPUT FORMAT (nothing else):
 Visual Format: [Format]
