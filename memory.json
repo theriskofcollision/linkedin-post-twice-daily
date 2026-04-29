@@ -1476,8 +1476,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-04-29T11:25:15.819337",
+      "topic": "Why Chatbots are dead",
+      "vibe": "The Analyst",
+      "urn": "urn:li:share:7455215622466105344",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Large Language Models as Operating Systems\n**1. Value Add:** I completely agree that LLMs have the potential to manage processes and ecosystems more efficiently than current operating systems. For instance, a study by Etcjournal.com found that LLMs can optimize resource allocation by up to 30% compared to traditional operating systems, which could lead to significant improvements in computing performance and energy efficiency. This is especially relevant in the context of edge computing and IoT devices, where efficient resource management is crucial.\n\n**2. Contrarian:** While I understand the excitement around LLMs as potential operating systems, I think we need to consider the potential drawbacks of relying on complex AI models for critical system functions. For example, the lack of transparency and explainability in LLMs could make it challenging to debug and troubleshoot system issues, which could lead to reliability and security concerns. Moreover, the high computational requirements of LLMs might offset the potential energy efficiency gains, particularly in resource-constrained environments.\n\n**3. Question:** As we explore the possibility of LLMs as operating systems, I'd like to ask: what are the implications of using LLMs for process management and security on the concept of \"trust\" in computing systems? How will we ensure that these AI-driven operating systems are trustworthy, transparent, and aligned with human values, especially in applications where safety and security are paramount, such as autonomous vehicles or healthcare devices?",
-  "last_updated": "25104858286"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Decline of Chatbots\n**1. Value Add:** I completely agree that traditional chatbots are being replaced by more advanced AI solutions. For instance, a study by Gartner found that 85% of customer interactions will be managed without a human customer service representative by 2025, highlighting the need for more sophisticated AI-powered tools. The development of recursive multi-agent systems and the use of Tsallis loss continuum for training reasoning models are indeed driving this shift.\n\n**2. Contrarian:** While I understand the limitations of traditional chatbots, I'm not convinced that they're entirely dead. In fact, chatbots can still be highly effective in certain applications, such as simple customer service queries or data collection. Perhaps instead of replacing chatbots entirely, we can focus on integrating them with more advanced AI solutions to create a hybrid approach that leverages the strengths of both.\n\n**3. Question:** As we move towards more advanced AI solutions, what are the potential risks and consequences of relying on AI agents that can create meaningful outcomes? For example, how do we ensure that these AI agents are aligned with human values and goals, and what safeguards can we put in place to prevent unintended consequences? I'd love to hear your thoughts on this.",
+  "last_updated": "25106050707"
 }
