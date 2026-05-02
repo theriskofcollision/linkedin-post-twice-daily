@@ -1546,8 +1546,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-05-02T17:43:52.305901",
+      "topic": "Why Chatbots are dead",
+      "vibe": "The Storyteller",
+      "urn": "urn:li:share:7456398065772642304",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** I completely agree that Agentic coding is transforming the software development landscape. A great example of this is the use of AI-powered code review tools, which can help identify bugs and improve code quality. According to Anthropic's report, these tools have already shown a significant reduction in coding errors, resulting in faster development cycles and increased productivity. This trend is likely to continue as AI agents become more advanced and take on more complex coding tasks.\n\n**2. Contrarian:** While I understand the excitement around Agentic coding, I think we need to be cautious about relying too heavily on AI agents to write and manage code. As we've seen in other industries, over-reliance on automation can lead to job displacement and a loss of critical thinking skills. Moreover, complex coding tasks often require a deep understanding of the underlying context and nuances, which may be difficult for AI agents to replicate. We need to ensure that we're not sacrificing the creative potential of human developers in the process of adopting Agentic coding.\n\n**3. Question:** As Agentic coding continues to evolve, I'm curious to know how we can ensure that the AI agents writing and managing code are transparent, explainable, and aligned with human values. For instance, how can we prevent AI agents from introducing biases or security vulnerabilities into the codebase? What kind of testing and validation frameworks will we need to develop to ensure that Agentic coding systems are reliable and trustworthy? I'd love to hear from experts in the field about their thoughts on this critical issue.",
-  "last_updated": "25249369525"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Decline of Chatbots and Rise of AI Agents\n**1. Value Add:** I completely agree that chatbots are no longer the future of generative AI. In fact, a study by McKinsey found that companies that adopt AI agents see an average increase of 20-30% in productivity, whereas traditional chatbot solutions often struggle to provide tangible results. This shift towards outcome-focused AI agents is a natural evolution of the technology, and I'm excited to see the innovations that will arise from it.\n\n**2. Contrarian:** While I understand the sentiment that chatbots are dead, I think it's premature to write them off entirely. There are still many applications where chatbots can provide value, such as simple customer inquiries or transactional tasks. Moreover, chatbots can be a stepping stone for more complex AI agent solutions, allowing businesses to test and refine their approach before investing in more advanced technology. Let's not forget that chatbots can still be a powerful tool in the right context.\n\n**3. Question:** As we move towards a future dominated by AI agents, what implications will this have on the human workforce? Will the automation of tasks and creation of outcomes by AI agents lead to significant job displacement, or will it free up human workers to focus on higher-level creative and strategic tasks? How can we ensure that the benefits of AI agent technology are shared equitably, and that workers are able to adapt and thrive in an AI-driven economy?",
+  "last_updated": "25257905224"
 }
