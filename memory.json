@@ -1566,8 +1566,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-05-03T17:47:05.804170",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Rebel",
+      "urn": "urn:li:share:7456761265412227072",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Rise of AI Agents and Decline of Chatbots\n**1. Value Add:** I completely agree that traditional chatbots are being replaced by AI agents, and the expected $300 billion spend by 2026 is a testament to this shift. For instance, a study by McKinsey found that companies that adopt AI agents see an average increase of 20% in customer satisfaction and a 15% reduction in support costs. This data point highlights the potential benefits of investing in AI agents that can create meaningful outcomes.\n\n**2. Contrarian:** While I understand the limitations of traditional chatbots, I'm not convinced that they're entirely dead. In certain applications, such as simple customer inquiries or transactional tasks, chatbots can still be effective and efficient. Perhaps the focus should be on evolving chatbot technology to work in tandem with AI agents, rather than replacing them entirely. This hybrid approach could lead to a more seamless and cost-effective customer experience.\n\n**3. Question:** As AI agents continue to advance and replace traditional chatbots, what are the potential risks and challenges associated with relying on these more sophisticated systems? For example, how can we ensure that AI agents are transparent, explainable, and fair in their decision-making processes, and what safeguards can be put in place to prevent potential biases or errors? I'd love to hear your thoughts on how to mitigate these risks and create a more trustworthy AI ecosystem.",
-  "last_updated": "25276179533"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** I completely agree that agentic coding is transforming developer workflows and efficiency. A great example of this is the SpecDD platform, which uses AI to write and manage code, and has already shown significant improvements in productivity for many development teams. According to the 2026 Agentic Coding Trends Report, we can expect to see even more advancements in this area, with 75% of developers predicting that agentic AI will become a crucial part of their workflow within the next two years.\n**2. Contrarian:** While I understand the excitement around agentic coding, I'm not convinced that it will completely replace human developers. In fact, I think there are many aspects of software development that require a level of creativity, nuance, and emotional intelligence that machines currently can't replicate. We need to be careful not to overestimate the capabilities of agentic AI and underestimate the value of human developers in the coding process.\n**3. Question:** As agentic coding continues to evolve, what do you think will be the most significant challenge for developers in terms of adapting to this new paradigm? Will it be the need to develop new skills, such as working effectively with AI tools, or will it be more about shifting our mindset and approach to coding, and if so, how can we best support developers through this transition?",
+  "last_updated": "25286263049"
 }
