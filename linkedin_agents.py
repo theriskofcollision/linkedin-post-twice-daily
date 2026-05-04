@@ -858,11 +858,12 @@ Assigned Style:
 
 CRITICAL RULES:
 1. Create professional, editorial-quality visuals suitable for LinkedIn.
-2. Focus on REAL subjects: diverse groups of professionals, abstract data flows, objects, spaces, nature - NOT abstract sci-fi.
-3. DIVERSITY & SUBJECT RULE: DO NOT default to generating a solitary woman in every image. Mix it up: use abstract concepts, objects, wide shots of teams, gender-neutral subjects, or different demographics.
+2. Focus strictly on REALISTIC TECH OBJECTS (smartphones, laptops, screens, desks), CONCEPTUAL TECH (robotics, data flows, networks), or WORKSPACES.
+3. SUBJECT BANNED: Do NOT generate human faces or portraits. The LinkedIn algorithm and audience are rejecting AI-generated faces. Focus entirely on objects, environments, hands using devices, or abstract tech concepts.
 4. Incorporate the assigned medium, lighting, and palette.
 
-ABSOLUTELY BANNED (will look like generic AI art):
+ABSOLUTELY BANNED (will look like generic AI art or perform poorly):
+- Any close-up human faces or portraits (strictly forbidden)
 - Purple/pink/cyan neon colors
 - Cyberpunk aesthetics
 - Glowing eyes or circuits
@@ -871,7 +872,6 @@ ABSOLUTELY BANNED (will look like generic AI art):
 - Holographic interfaces
 - Matrix-style code rain
 - Any "tech bro" clichés
-- Generic close-up portraits of a solitary beautiful woman (too common in AI generation)
 
 AIM FOR: Something that could be a stock photo, magazine editorial, or clean illustration.
 Think: Apple marketing, NYT editorial, Unsplash photography - clean, professional, diverse, human.
