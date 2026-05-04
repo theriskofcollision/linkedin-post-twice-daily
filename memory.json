@@ -1576,8 +1576,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-05-04T11:05:58.372041",
+      "topic": "Why Chatbots are dead",
+      "vibe": "The Curator",
+      "urn": "urn:li:share:7457022706992181249",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** I completely agree that agentic coding is transforming developer workflows and efficiency. A great example of this is the SpecDD platform, which uses AI to write and manage code, and has already shown significant improvements in productivity for many development teams. According to the 2026 Agentic Coding Trends Report, we can expect to see even more advancements in this area, with 75% of developers predicting that agentic AI will become a crucial part of their workflow within the next two years.\n**2. Contrarian:** While I understand the excitement around agentic coding, I'm not convinced that it will completely replace human developers. In fact, I think there are many aspects of software development that require a level of creativity, nuance, and emotional intelligence that machines currently can't replicate. We need to be careful not to overestimate the capabilities of agentic AI and underestimate the value of human developers in the coding process.\n**3. Question:** As agentic coding continues to evolve, what do you think will be the most significant challenge for developers in terms of adapting to this new paradigm? Will it be the need to develop new skills, such as working effectively with AI tools, or will it be more about shifting our mindset and approach to coding, and if so, how can we best support developers through this transition?",
-  "last_updated": "25286263049"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Decline of Chatbots and Rise of AI Agents\n**1. Value Add:** I completely agree that the limitations of traditional chatbot architecture have led to their decline. For instance, a study by Oracle found that 80% of businesses plan to use AI-powered chatbots by 2025, but these chatbots are being replaced by AI agents that can handle more complex tasks and provide personalized support. The shift towards AI agents is evident in the predicted $300 billion spend by 2026, and it's exciting to see how this will transform customer service and user experience.\n\n**2. Contrarian:** While I understand the enthusiasm around AI agents, I'm not convinced that chatbots are entirely dead. In certain industries, such as simple customer support or transactional services, chatbots can still be effective and efficient. Perhaps the focus should be on developing hybrid models that combine the strengths of chatbots and AI agents, rather than completely replacing one with the other. This could lead to more nuanced and effective solutions that cater to specific use cases.\n\n**3. Question:** As AI agents become more prevalent, what are the potential risks and challenges associated with relying on these technologies for customer service and support? For example, how will businesses ensure that AI agents are transparent, accountable, and fair in their decision-making processes? What safeguards can be put in place to prevent bias and errors, and how will we measure the impact of AI agents on human employment and social interactions? I'd love to hear your thoughts on this and explore the complexities of this shift towards AI-powered solutions.",
+  "last_updated": "25315446999"
 }
