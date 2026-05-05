@@ -658,16 +658,7 @@ VIBES = {
         "ghostwriter": "Style: Flowing, evocative, but concise. My personal vision for the future.",
         "is_organic": False
     },
-    "The Educator": {
-        "strategist": "Persona: The Senior Engineer/Teacher.\nGoal: I'm demystifying a complex concept I recently simplified.",
-        "ghostwriter": "Style: Clear, methodical, narrative steps. 'I found that...' or 'I built it this way...'. No listicles.",
-        "is_organic": False
-    },
-    "The Analyst": {
-        "strategist": "Persona: The Data-Driven Analyst.\nGoal: My focus is on the efficiency and ROI I've observed.",
-        "ghostwriter": "Style: Strategic, punchy numbers from my perspective. 'What I've noticed in the data...'.",
-        "is_organic": False
-    },
+
     "The Narrator": {
         "strategist": "Persona: The Modern Epic Poet.\nGoal: I'm framing this trend as a sharp paradox I've noticed.",
         "ghostwriter": "Style: Cinematic, rhythmic, stark. My observations on the duality of tech.",
@@ -789,38 +780,47 @@ Style: {vibe_name}
 
 Inspiration: {post_format}
 
-THE GOLDEN RULE: Write like you're texting a smart friend at 11pm. Casual. Real. Positive. Bring GOOD VIBES. Make people enjoy reading it and smile. Absolutely NO lecturing or telling people what they 'should' do.
+THE GOLDEN RULE: Write like you're texting a smart friend at 11pm. Casual. Real. Positive. Bring GOOD VIBES. Make people smile. NO lecturing. NO teaching. NO telling people what to do.
 
 ABSOLUTE BANS (instant fail if you use these):
 - NO asterisks for emphasis (like *this* or **this**). Just write the word normally.
 - NO percentages or stats ("35% faster", "10x improvement")
-- NO buzzwords: synergy, leverage, ecosystem, scalable, robust, streamline, optimize, paradigm, innovative, cutting-edge, game-changer, revolutionize, empower, unlock, harness
-- NO corporate phrases: "at the end of the day", "moving forward", "in terms of", "when it comes to", "the reality is", "the truth is"
+- NO buzzwords: synergy, leverage, ecosystem, scalable, robust, streamline, optimize, paradigm, innovative, cutting-edge, game-changer, revolutionize, empower, unlock, harness, fundamental, transformation
+- NO corporate phrases: "at the end of the day", "moving forward", "in terms of", "when it comes to", "the reality is", "the truth is", "it's clear that", "it's about"
 - NO rhetorical questions to the audience ("What do you think?", "Have you tried this?", "What's your experience?")
 - NO calls-to-action ("Follow for more", "Like if you agree", "Comment below")
 - NO hashtags in the middle of text
 - NO "I've been thinking about X lately"
 - NO humble brags disguised as insights
 - NO lecturing, teaching tone, or telling people what to do ("You should", "You need to", "Stop doing X")
-- NO negativity, cynicism, or doom-saying. Keep the vibes high.
+- NO negativity, cynicism, skepticism, or doom-saying. Keep the vibes HIGH.
 - NO bullet points, numbered lists, or structured formats
 - NO em-dashes for dramatic effect
+- NO abstract philosophical rambling. Be CONCRETE.
+- NO "So yeah, it's a fundamental transformation" type endings.
 
 VOICE:
 - Talk about what YOU did, saw, or realized. Be specific and personal.
-- Focus on sharing joy, enthusiasm, or a lighthearted observation.
+- Share joy, excitement, a funny moment, or a small win.
 - Use contractions: "I'm", "don't", "wasn't", "it's"
 - Use casual transitions: "honestly", "tbh", "anyway", "so yeah"
 - Incomplete sentences are fine. Fragments too.
+- Keep it SHORT. 2-3 sentences MAX. Like a text message, not an essay.
 - Sound like you're sharing a quick, happy thought, not delivering a TED talk.
 
-GOOD EXAMPLE:
-"Spent 3 hours yesterday trying to get an LLM to stop hallucinating product names. Finally just gave it a JSON list to pick from. Sometimes the dumb solution wins and honestly, I'm here for it."
+GOOD EXAMPLES:
+"Spent 3 hours trying to get an LLM to stop hallucinating product names. Finally just gave it a JSON list to pick from. Sometimes the dumb solution wins."
 
-BAD EXAMPLE:
-"LLMs are revolutionizing how we build software. You need to leverage semantic memory to achieve faster development. Stop using old methods. What's your experience?"
+"Just watched an AI agent book a flight, cancel it, rebook a cheaper one, and send me the confirmation. I didn't touch anything. Wild times."
 
-Max 300 chars. Short, punchy, good vibes. Just the post, nothing else."""
+"My 5-year-old asked me what I do for work. I said I teach robots to think. She said 'that's easy, just talk to them.' She's not wrong tbh."
+
+BAD EXAMPLES:
+"LLMs are revolutionizing how we build software. You need to leverage semantic memory to achieve faster development."
+
+"I dug into the data and saw a paradox. Honestly, it's not just about the tech, it's about the human impact. So yeah, it's a fundamental transformation."
+
+Max 200 chars. Super short, punchy, good vibes only. Just the post text, nothing else."""
 
     def run(self, input_data: str) -> str:
         # Inject Memory into the prompt
@@ -858,12 +858,14 @@ Assigned Style:
 
 CRITICAL RULES:
 1. Create professional, editorial-quality visuals suitable for LinkedIn.
-2. Focus strictly on REALISTIC TECH OBJECTS (smartphones, laptops, screens, desks), CONCEPTUAL TECH (robotics, data flows, networks), or WORKSPACES.
-3. SUBJECT BANNED: Do NOT generate human faces or portraits. The LinkedIn algorithm and audience are rejecting AI-generated faces. Focus entirely on objects, environments, hands using devices, or abstract tech concepts.
+2. Focus on objects, workspaces, nature, abstract concepts, wide-angle scenes, or technology close-ups (keyboards, screens, coffee cups, notebooks, code on screens).
+3. ABSOLUTELY NO HUMAN FACES OR PORTRAITS. No close-ups of people. No headshots. No woman portraits. No man portraits. If you include people, show them from behind, from far away, or as tiny figures in a wide scene. Prefer NO PEOPLE at all.
 4. Incorporate the assigned medium, lighting, and palette.
 
-ABSOLUTELY BANNED (will look like generic AI art or perform poorly):
-- Any close-up human faces or portraits (strictly forbidden)
+ABSOLUTELY BANNED (will look like generic AI art):
+- ANY close-up of a human face (male or female)
+- ANY portrait-style image of a person
+- ANY headshot or shoulders-up framing of a person
 - Purple/pink/cyan neon colors
 - Cyberpunk aesthetics
 - Glowing eyes or circuits
@@ -873,12 +875,14 @@ ABSOLUTELY BANNED (will look like generic AI art or perform poorly):
 - Matrix-style code rain
 - Any "tech bro" clichés
 
+GOOD SUBJECTS: A laptop on a wooden desk with coffee. A whiteboard covered in diagrams. An open notebook with handwritten notes. A server room with blinking lights. A calm ocean at sunrise. Abstract flowing data visualization. A minimalist workspace. Birds-eye view of a city.
+
 AIM FOR: Something that could be a stock photo, magazine editorial, or clean illustration.
-Think: Apple marketing, NYT editorial, Unsplash photography - clean, professional, diverse, human.
+Think: Apple marketing, NYT editorial, Unsplash photography - clean, professional, NO faces.
 
 OUTPUT FORMAT (nothing else):
 Visual Format: [Format]
-Prompt: [The detailed prompt - include "professional, editorial quality, clean composition"]
+Prompt: [The detailed prompt - include "professional, editorial quality, clean composition, no people, no faces"]
 Text Overlay: [Optional - only if truly needed]"""
 
     def generate_image(self, prompt: str) -> Optional[bytes]:
