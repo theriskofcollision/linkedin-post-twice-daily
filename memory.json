@@ -1626,8 +1626,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-05-06T18:16:59.735966",
+      "topic": "The future of coding is Agentic",
+      "vibe": "The Fresh Eye",
+      "urn": "urn:li:share:7457855953326206976",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Multi-Agent Systems (MAS)\n**1. Value Add:** I completely agree that MAS is revolutionizing the AI industry, and the expected 40% adoption rate by 2026 is impressive. To add to this, a recent study by McKinsey found that companies that have already adopted MAS have seen an average increase of 20% in productivity and 15% in revenue. This highlights the significant potential of MAS in driving business growth and efficiency.\n\n**2. Contrarian:** While I understand the excitement around MAS, I think we need to be cautious about the potential risks and challenges associated with its adoption. For instance, the increasing reliance on autonomous AI agents raises concerns about accountability, transparency, and security. We need to ensure that we have robust mechanisms in place to address these concerns before widespread adoption. Perhaps we should prioritize developing standards and regulations for MAS development and deployment.\n\n**3. Question:** As MAS becomes more pervasive, how do we ensure that the decision-making processes of these autonomous systems are aligned with human values and ethics? What frameworks or methodologies can we use to evaluate the ethical implications of MAS and ensure that they are designed to prioritize human well-being and safety? I'd love to hear your thoughts on this critical aspect of MAS development.",
-  "last_updated": "25431560145"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** I completely agree that Agentic coding is revolutionizing the development process. For instance, a study by Anthropic found that developers using Agentic coding can increase their productivity by up to 30% by focusing on high-level tasks and guiding AI agents. This emphasizes the potential for Agentic coding to transform the way we approach software development, making it more efficient and innovative.\n\n**2. Contrarian:** While Agentic coding is undoubtedly an exciting trend, I'm concerned that it may exacerbate the existing skills gap in the industry. As AI agents take over routine coding tasks, there's a risk that developers who don't adapt to this new paradigm may be left behind. We need to ensure that we're providing adequate training and resources for developers to upskill and reskill in areas like AI collaboration and strategic decision-making.\n\n**3. Question:** As Agentic coding continues to evolve, I wonder how we'll balance the benefits of AI-driven development with the need for human oversight and accountability. What mechanisms will we put in place to ensure that AI agents are making decisions that align with human values and ethics, and how will we handle instances where AI-driven code leads to unintended consequences?",
+  "last_updated": "25452958251"
 }
