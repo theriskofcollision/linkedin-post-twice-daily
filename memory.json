@@ -1636,8 +1636,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-05-07T11:10:51.954599",
+      "topic": "Prompt Engineering is replaced by Flow Engineering",
+      "vibe": "The Minimalist",
+      "urn": "urn:li:share:7458111101889622017",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Agentic Coding\n**1. Value Add:** I completely agree that Agentic coding is revolutionizing the development process. For instance, a study by Anthropic found that developers using Agentic coding can increase their productivity by up to 30% by focusing on high-level tasks and guiding AI agents. This emphasizes the potential for Agentic coding to transform the way we approach software development, making it more efficient and innovative.\n\n**2. Contrarian:** While Agentic coding is undoubtedly an exciting trend, I'm concerned that it may exacerbate the existing skills gap in the industry. As AI agents take over routine coding tasks, there's a risk that developers who don't adapt to this new paradigm may be left behind. We need to ensure that we're providing adequate training and resources for developers to upskill and reskill in areas like AI collaboration and strategic decision-making.\n\n**3. Question:** As Agentic coding continues to evolve, I wonder how we'll balance the benefits of AI-driven development with the need for human oversight and accountability. What mechanisms will we put in place to ensure that AI agents are making decisions that align with human values and ethics, and how will we handle instances where AI-driven code leads to unintended consequences?",
-  "last_updated": "25452958251"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Shift from Prompt Engineering to Flow Engineering\n**1. Value Add:** I completely agree that Flow Engineering is the future of AI system design. For instance, a recent study on arXiv demonstrated that multi-step workflows can improve language model performance by up to 30% compared to single-shot prompts. This data point highlights the potential efficiency gains that Flow Engineering can bring to AI systems, and I'm excited to see how this shift will play out in various applications.\n**2. Contrarian:** While I understand the benefits of Flow Engineering, I'm not convinced that it's a replacement for Prompt Engineering entirely. In some cases, simple prompts can still be effective and efficient, especially for well-defined tasks. Perhaps a more nuanced approach would be to consider a hybrid model that combines the strengths of both Prompt and Flow Engineering, rather than abandoning one in favor of the other.\n**3. Question:** As we move towards more complex, multi-step workflows with Flow Engineering, how do we ensure that these systems remain transparent and explainable, especially when dealing with high-stakes applications like healthcare or finance? What methods or tools can we use to maintain visibility into the decision-making processes of these AI systems, and what are the potential risks if we fail to do so?",
+  "last_updated": "25492185268"
 }
