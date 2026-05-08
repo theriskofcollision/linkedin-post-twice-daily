@@ -791,6 +791,8 @@ ABSOLUTE BANS (instant fail if you use these):
 - NO calls-to-action ("Follow for more", "Like if you agree", "Comment below")
 - NO hashtags in the middle of text
 - NO "I've been thinking about X lately"
+- NO "Just spent [time] doing X" openings ("Just spent 3 hours", "Just spent the morning", "Spent the weekend"). These are DEAD GIVEAWAYS of AI content.
+- NO "Just watched/saw/tried X and..." openings. These are templated AI patterns.
 - NO humble brags disguised as insights
 - NO lecturing, teaching tone, or telling people what to do ("You should", "You need to", "Stop doing X")
 - NO negativity, cynicism, skepticism, or doom-saying. Keep the vibes HIGH.
@@ -809,11 +811,11 @@ VOICE:
 - Sound like you're sharing a quick, happy thought, not delivering a TED talk.
 
 GOOD EXAMPLES:
-"Spent 3 hours trying to get an LLM to stop hallucinating product names. Finally just gave it a JSON list to pick from. Sometimes the dumb solution wins."
+"LLM kept hallucinating product names. Gave it a JSON list. Problem solved. Sometimes the dumb fix wins."
 
-"Just watched an AI agent book a flight, cancel it, rebook a cheaper one, and send me the confirmation. I didn't touch anything. Wild times."
+"An AI agent just booked my flight, cancelled it, found a cheaper one, rebooked. I touched nothing. We're living in the future."
 
-"My 5-year-old asked me what I do for work. I said I teach robots to think. She said 'that's easy, just talk to them.' She's not wrong tbh."
+"My kid asked what I do. 'I teach robots to think.' She goes 'just talk to them.' Honestly she's not wrong."
 
 BAD EXAMPLES:
 "LLMs are revolutionizing how we build software. You need to leverage semantic memory to achieve faster development."
@@ -897,12 +899,32 @@ Text Overlay: [Optional - only if truly needed]"""
         
         clean_prompt = clean_prompt.replace("Generate image:", "").strip()
         
+        # FORCIBLY strip people/face/portrait words from prompt
+        # This is the nuclear option - the AI keeps ignoring instructions
+        import re
+        people_words = [
+            r'\bwoman\b', r'\bman\b', r'\bperson\b', r'\bpeople\b',
+            r'\bface\b', r'\bfaces\b', r'\bportrait\b', r'\bportraits\b',
+            r'\bheadshot\b', r'\bheadshots\b', r'\bclose-up of a\b',
+            r'\bsmiling\b', r'\blooking at\b', r'\bgazing\b',
+            r'\bfemale\b', r'\bmale\b', r'\bgirl\b', r'\bboy\b',
+            r'\bprofessional woman\b', r'\bprofessional man\b',
+            r'\byoung woman\b', r'\byoung man\b',
+            r'\bbusinesswoman\b', r'\bbusinessman\b',
+            r'\bteam of\b', r'\bgroup of\b', r'\bdiverse\b',
+        ]
+        for word in people_words:
+            clean_prompt = re.sub(word, '', clean_prompt, flags=re.IGNORECASE)
+        clean_prompt = re.sub(r'\s+', ' ', clean_prompt).strip()
+        
         # Keep prompts SHORT - Pollinations fails on long prompts
-        # Take only the first 100 chars to avoid 500 errors
-        clean_prompt = clean_prompt[:100].strip()
+        clean_prompt = clean_prompt[:80].strip()
+        
+        # ALWAYS append anti-face keywords
+        clean_prompt += ", no people, no faces, no portraits, objects only"
         
         logger.info(f"Generating image with style: {self.current_medium}...")
-        logger.info(f"Image prompt ({len(clean_prompt)} chars): {clean_prompt[:60]}...")
+        logger.info(f"Image prompt ({len(clean_prompt)} chars): {clean_prompt[:80]}...")
 
         import time, random
         seed = random.randint(1, 999999)
@@ -961,6 +983,9 @@ INSTANT REJECT if you find ANY of these:
 7. AI PATTERNS: "Not just X, but Y", "The key is", "Here's the thing", "Let me explain"
 8. HUMBLE BRAGS: Disguised boasting as insights
 9. GENERIC OPENERS: "I've been thinking about", "Let me share", "Here's my take"
+10. TEMPLATED STORY OPENERS: "Just spent [time]", "Spent the morning/weekend/afternoon", "Just watched", "Just saw", "Just tried" - these are the #1 AI giveaway pattern
+11. ASTERISK EMPHASIS: Using *word* or **word** for emphasis - dead giveaway of AI writing
+12. PERSPECTIVE: Must be first-person. No lecturing. No "you should".
 
 PASS ONLY IF:
 - Sounds like a real person texting a friend
@@ -1364,6 +1389,13 @@ class Orchestrator:
         full_package = f"{draft_text}\n\n(Visual: {visual_concept})"
         self.critic.run(full_package)
 
+        # HARD-CODED SANITIZER: Strip any AI artifacts that slip through
+        import re
+        # Remove asterisk emphasis (*word* or **word**)
+        draft_text = re.sub(r'\*{1,2}([^*]+)\*{1,2}', r'\1', draft_text)
+        # Remove any remaining stray asterisks
+        draft_text = draft_text.replace('*', '')
+        
         # Publish
         logger.info("✅ Preparing to Post...")
         post_urn = self.linkedin.post_content(draft_text, image_data)
