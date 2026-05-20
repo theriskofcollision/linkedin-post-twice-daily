@@ -8,12 +8,41 @@ model:
   base_delay_seconds: 5
 
 # Content Topics (randomly selected if no topic provided)
+# 20+ topics for maximum variety and "topic DNA" breadth
 topics:
-  - "The rise of Multi-Agent Systems"
-  - "Why Chatbots are dead"
-  - "The future of coding is Agentic"
-  - "LLMs as Operating Systems"
-  - "Prompt Engineering is replaced by Flow Engineering"
+  # Core expertise: Agentic AI
+  - "Multi-Agent Systems and how they actually work"
+  - "Building AI agents that collaborate autonomously"
+  - "Why single chatbots are becoming obsolete"
+  - "Flow Engineering replacing Prompt Engineering"
+  - "LLMs as operating systems for AI agents"
+  - "The rise of autonomous AI workflows"
+  
+  # Practical & hands-on
+  - "Tools I use to build AI agents"
+  - "Real-world AI automation that saves hours"
+  - "Debugging AI agents and what I learned"
+  - "Open source AI tools worth trying today"
+  - "My daily workflow with AI assistants"
+  
+  # Industry trends
+  - "How AI is changing software engineering"
+  - "The future of coding in an AI-first world"
+  - "AI startups disrupting traditional software"
+  - "Enterprise AI adoption mistakes to avoid"
+  - "Small businesses using AI to compete with giants"
+  
+  # Career & personal growth
+  - "Skills that matter in the age of AI"
+  - "How to stay relevant when AI writes code"
+  - "Career paths in AI and machine learning"
+  - "Learning AI development from scratch"
+  
+  # Big picture / thought leadership
+  - "AI ethics and what developers should care about"
+  - "The gap between AI hype and AI reality"
+  - "What AI still cannot do well"
+  - "Predictions for AI in the next 5 years"
 
 # Data Source Limits
 sources:

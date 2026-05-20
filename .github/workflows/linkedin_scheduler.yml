@@ -2,8 +2,9 @@ name: LinkedIn Growth Bot
 
 on:
   schedule:
-    # Run at 09:00 and 17:00 UTC everyday
-    - cron: '0 9,17 * * *'
+    # Post at 07:00 UTC (10:00 Istanbul) and 14:00 UTC (17:00 Istanbul)
+    # Peak engagement: morning scroll + end-of-workday
+    - cron: '0 7,14 * * *'
   # Allow manual trigger for testing
   workflow_dispatch:
 

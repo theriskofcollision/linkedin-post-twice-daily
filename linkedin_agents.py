@@ -647,6 +647,64 @@ POST_FORMATS = [
     "The Technical Teardown: How it actually works under the hood."
 ]
 
+# --- Hashtag Strategy ---
+# Curated pools mixed by category. 3-5 are randomly picked per post.
+HASHTAG_POOLS = {
+    "broad": [
+        "#AI", "#ArtificialIntelligence", "#MachineLearning", "#DeepLearning",
+        "#Tech", "#Technology", "#Innovation", "#FutureOfWork",
+        "#DataScience", "#Automation"
+    ],
+    "agentic": [
+        "#AgenticAI", "#MultiAgentSystems", "#AIAgents", "#AutonomousAI",
+        "#FlowEngineering", "#AIOrchestration", "#LLMAgents"
+    ],
+    "developer": [
+        "#SoftwareEngineering", "#Coding", "#DevTools", "#OpenSource",
+        "#Programming", "#BuildInPublic", "#TechCommunity"
+    ],
+    "business": [
+        "#DigitalTransformation", "#Startups", "#Entrepreneurship",
+        "#ProductManagement", "#Leadership", "#BusinessStrategy"
+    ],
+    "career": [
+        "#CareerGrowth", "#TechCareers", "#Upskilling", "#FutureSkills",
+        "#PersonalDevelopment", "#LifelongLearning"
+    ]
+}
+
+
+def pick_hashtags(topic: str = "", count: int = 4) -> str:
+    """Pick a smart mix of hashtags based on topic."""
+    import random
+    tags = set()
+    
+    # Always 1 broad tag
+    tags.add(random.choice(HASHTAG_POOLS["broad"]))
+    
+    # 1-2 niche tags based on topic keywords
+    topic_lower = topic.lower()
+    if any(w in topic_lower for w in ["agent", "multi-agent", "agentic", "orchestr", "flow"]):
+        tags.update(random.sample(HASHTAG_POOLS["agentic"], min(2, len(HASHTAG_POOLS["agentic"]))))
+    elif any(w in topic_lower for w in ["code", "engineer", "developer", "tool", "open source"]):
+        tags.update(random.sample(HASHTAG_POOLS["developer"], min(2, len(HASHTAG_POOLS["developer"]))))
+    elif any(w in topic_lower for w in ["business", "startup", "transform", "product", "enterprise"]):
+        tags.update(random.sample(HASHTAG_POOLS["business"], min(2, len(HASHTAG_POOLS["business"]))))
+    elif any(w in topic_lower for w in ["career", "skill", "learn", "job", "future of work"]):
+        tags.update(random.sample(HASHTAG_POOLS["career"], min(2, len(HASHTAG_POOLS["career"]))))
+    else:
+        # Default: mix agentic + developer
+        tags.add(random.choice(HASHTAG_POOLS["agentic"]))
+        tags.add(random.choice(HASHTAG_POOLS["developer"]))
+    
+    # Fill remaining with random picks from any pool
+    all_tags = [t for pool in HASHTAG_POOLS.values() for t in pool]
+    while len(tags) < count:
+        tags.add(random.choice(all_tags))
+    
+    return "\n\n" + " ".join(list(tags)[:count])
+
+
 VIBES = {
     "The Contrarian": {
         "strategist": "Persona: The Contrarian Tech Realist.\nGoal: I'm challenging a popular opinion I see about this trend.",
@@ -782,6 +840,13 @@ Inspiration: {post_format}
 
 THE GOLDEN RULE: Write like you're texting a smart friend at 11pm. Casual. Real. Positive. Bring GOOD VIBES. Make people smile. NO lecturing. NO teaching. NO telling people what to do.
 
+VARIETY RULE: Every post must feel DIFFERENT. Pick ONE of these formats randomly:
+- HOT TAKE: A bold, surprising opinion in 1-2 sentences. "Honestly, [contrarian view]."
+- OBSERVATION: Something you noticed. "Funny thing about [X]..." or "Nobody talks about [Y]."
+- QUICK STORY: A micro-moment from your day/week. Set the scene in one line, punchline in the next.
+- BEHIND THE SCENES: What you're building/testing right now. "Currently [doing X]. [Surprising result]."
+- SURPRISE: Something that caught you off guard. "Didn't expect [X] to [Y]. But here we are."
+
 ABSOLUTE BANS (instant fail if you use these):
 - NO asterisks for emphasis (like *this* or **this**). Just write the word normally.
 - NO percentages or stats ("35% faster", "10x improvement")
@@ -791,8 +856,10 @@ ABSOLUTE BANS (instant fail if you use these):
 - NO calls-to-action ("Follow for more", "Like if you agree", "Comment below")
 - NO hashtags in the middle of text
 - NO "I've been thinking about X lately"
-- NO "Just spent [time] doing X" openings ("Just spent 3 hours", "Just spent the morning", "Spent the weekend"). These are DEAD GIVEAWAYS of AI content.
-- NO "Just watched/saw/tried X and..." openings. These are templated AI patterns.
+- NO "Just spent [time] doing X" openings. DEAD GIVEAWAY of AI.
+- NO "Just watched/saw/tried X and..." openings. Templated AI pattern.
+- NO "I dug into..." openings. Another AI pattern.
+- NO "Honestly, it's kinda..." endings. Repetitive.
 - NO humble brags disguised as insights
 - NO lecturing, teaching tone, or telling people what to do ("You should", "You need to", "Stop doing X")
 - NO negativity, cynicism, skepticism, or doom-saying. Keep the vibes HIGH.
@@ -805,24 +872,31 @@ VOICE:
 - Talk about what YOU did, saw, or realized. Be specific and personal.
 - Share joy, excitement, a funny moment, or a small win.
 - Use contractions: "I'm", "don't", "wasn't", "it's"
-- Use casual transitions: "honestly", "tbh", "anyway", "so yeah"
+- Vary your transitions: "honestly", "tbh", "anyway", "wild", "ngl", "haha", "okay so", "update:"
 - Incomplete sentences are fine. Fragments too.
-- Keep it SHORT. 2-3 sentences MAX. Like a text message, not an essay.
+- Keep it SHORT. 2-4 sentences MAX. Like a text message, not an essay.
 - Sound like you're sharing a quick, happy thought, not delivering a TED talk.
+- NEVER start with the same first word as recent posts. Vary your openings.
 
 GOOD EXAMPLES:
 "LLM kept hallucinating product names. Gave it a JSON list. Problem solved. Sometimes the dumb fix wins."
 
-"An AI agent just booked my flight, cancelled it, found a cheaper one, rebooked. I touched nothing. We're living in the future."
+"Okay so I let an AI agent handle my calendar for a week. It cancelled two meetings I was dreading. Might keep it."
 
 "My kid asked what I do. 'I teach robots to think.' She goes 'just talk to them.' Honestly she's not wrong."
+
+"Funny thing about multi-agent systems: the more agents you add, the more it feels like managing actual coworkers."
+
+"Update: the AI I built to write emails now writes better emails than I do. Not sure how to feel about that."
 
 BAD EXAMPLES:
 "LLMs are revolutionizing how we build software. You need to leverage semantic memory to achieve faster development."
 
 "I dug into the data and saw a paradox. Honestly, it's not just about the tech, it's about the human impact. So yeah, it's a fundamental transformation."
 
-Max 200 chars. Super short, punchy, good vibes only. Just the post text, nothing else."""
+"Just spent 3 hours debugging an agent workflow. The fix was one line of code. Honestly, it's kinda funny."
+
+Vary length between 80-250 chars. Super short OR medium, never long. Good vibes only. Just the post text, nothing else."""
 
     def run(self, input_data: str) -> str:
         # Inject Memory into the prompt
@@ -1400,6 +1474,11 @@ class Orchestrator:
         draft_text = re.sub(r'\*{1,2}([^*]+)\*{1,2}', r'\1', draft_text)
         # Remove any remaining stray asterisks
         draft_text = draft_text.replace('*', '')
+        
+        # AUTO-APPEND HASHTAGS
+        hashtags = pick_hashtags(topic_query)
+        draft_text += hashtags
+        logger.info(f"📌 Hashtags appended: {hashtags.strip()}")
         
         # Publish
         logger.info("✅ Preparing to Post...")
