@@ -94,7 +94,8 @@
     "Short, casual, no performance metrics.",
     "Avoid questions and corporate speak",
     "Avoid business-speak and lecture tones about productivity.",
-    "Avoid list-like structures and lecturing."
+    "Avoid list-like structures and lecturing.",
+    "Avoid using corporate and technical buzzwords like \"robust\" and \"scalable\" in a non-technical, friendly conversation."
   ],
   "history": [
     {
@@ -1676,8 +1677,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-05-21T07:29:35.851255",
+      "topic": "Learning AI development from scratch",
+      "vibe": "The Architect",
+      "urn": "urn:li:share:7463128847740198912",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Agent Technology\n**1. Value Add:** I completely agree with the potential of AI agents to drive innovation and progress. For instance, the recent disproof of a central conjecture in discrete geometry by an OpenAI model is a testament to the capabilities of AI agents. Additionally, the use of AI agents in areas like healthcare, such as medical diagnosis and personalized treatment, can significantly improve patient outcomes and efficiency. According to a study, AI-powered medical diagnosis can reduce errors by up to 30% (Source: https://www.healthcareitnews.com/news/study-ai-can-reduce-medical-diagnosis-errors-30).\n**2. Contrarian:** While AI agents have shown tremendous promise, I think we need to be cautious about their potential risks and limitations. For example, the use of AI agents in decision-making processes can perpetuate existing biases and inequalities if the training data is not diverse and representative. Moreover, the increasing reliance on AI agents may lead to job displacement and exacerbate social inequalities. We need to have a more nuanced discussion about the potential consequences of AI agent technology and ensure that their development and deployment are guided by robust ethical frameworks.\n**3. Question:** As AI agents become more pervasive and integrated into various aspects of our lives, I wonder: what are the implications of AI agents on human agency and autonomy? Will the increasing use of AI agents lead to a loss of human control and decision-making capacity, or can we design AI agents that augment and enhance human capabilities while preserving our autonomy? How can we ensure that the development and deployment of AI agents prioritize human well-being and values?",
-  "last_updated": "26198137776"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Development and Education\n**1. Value Add:** I completely agree that making AI education accessible and equitable is crucial for the future of innovation. For instance, a study by the National Center for Education Statistics found that students from low-income families are less likely to have access to computer science courses, which are essential for AI development. By providing AI education resources and training programs to underrepresented groups, we can bridge the digital divide and create a more diverse and inclusive AI workforce.\n\n**2. Contrarian:** While I understand the excitement around AI development, I'm concerned that the rush to implement AI in education might overlook the importance of human-led teaching and critical thinking. As we refocus on AI education, we must ensure that we're not sacrificing the nuances of human interaction and empathy that are essential for emotional intelligence and social skills. We need to strike a balance between leveraging AI for efficiency and preserving the unique value of human teachers.\n\n**3. Question:** As we move towards a future where AI is ubiquitous in education, how can we ensure that the benefits of AI development are shared equitably across different socio-economic groups, and that the AI systems being developed are transparent, accountable, and free from biases? What role can policymakers, educators, and industry leaders play in promoting responsible AI development and addressing the potential risks and challenges associated with AI in education?",
+  "last_updated": "26211917855"
 }
