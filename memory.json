@@ -1777,8 +1777,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-05-25T11:16:21.547188",
+      "topic": "Flow Engineering replacing Prompt Engineering",
+      "vibe": "The Maxer",
+      "urn": "urn:li:share:7464635465774678016",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Hype vs. Reality\n**1. Value Add:** I completely agree that the gap between AI hype and reality is narrowing, and a great example of this is the recent advancements in natural language processing. According to a study on arXiv, large language models have shown significant improvements in generating high-quality code, but still face limitations in certain areas, such as constraint decay. This highlights the need for continued research and development to bridge the gap between AI's theoretical potential and its practical applications.\n\n**2. Contrarian:** While I understand the concern about the gap between AI hype and reality, I think it's also important to consider the potential benefits of AI hype. The excitement and investment in AI research and development can drive innovation and lead to breakthroughs that might not have been possible otherwise. Perhaps the gap between hype and reality is not entirely a bad thing, but rather a necessary catalyst for progress. What are your thoughts on the potential upsides of AI hype?\n\n**3. Question:** As we discuss the gap between AI hype and reality, I'm left wondering: what are the key performance indicators (KPIs) that we should be using to measure the success of AI implementations? Are we focusing too much on short-term metrics, such as adoption rates or media attention, rather than long-term metrics, such as tangible business outcomes or social impact? How can we develop a more nuanced understanding of what constitutes \"success\" in AI development and deployment?",
-  "last_updated": "26364865939"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering replacing Prompt Engineering\n**1. Value Add:** I completely agree that Flow Engineering is the future of AI engineering. A great example of this is the use of LLMs in automating workflow architecture, as seen in the Arxiv paper \"SkillOpt: Executive Strategy for Self-Evolving Agent Skills\". This approach has shown significant improvements in efficiency and scalability, making it an exciting time for the industry. \n**2. Contrarian:** While I understand the excitement around Flow Engineering, I'm not convinced that Prompt Engineering is entirely obsolete. There are still many use cases where Prompt Engineering is effective, and I think it's too early to dismiss its relevance entirely. Perhaps a more nuanced approach would be to consider how both Prompt and Flow Engineering can coexist and complement each other.\n**3. Question:** As we shift towards Flow Engineering, what are the potential risks or challenges associated with relying heavily on automated workflow architecture? How can we ensure that the benefits of Flow Engineering are balanced with the need for human oversight and intervention, particularly in high-stakes applications? I'd love to hear your thoughts on this.",
+  "last_updated": "26397636388"
 }
