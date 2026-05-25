@@ -1787,8 +1787,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-05-25T16:28:30.371831",
+      "topic": "Skills that matter in the age of AI",
+      "vibe": "The Contrarian",
+      "urn": "urn:li:share:7464714019988410368",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering replacing Prompt Engineering\n**1. Value Add:** I completely agree that Flow Engineering is the future of AI engineering. A great example of this is the use of LLMs in automating workflow architecture, as seen in the Arxiv paper \"SkillOpt: Executive Strategy for Self-Evolving Agent Skills\". This approach has shown significant improvements in efficiency and scalability, making it an exciting time for the industry. \n**2. Contrarian:** While I understand the excitement around Flow Engineering, I'm not convinced that Prompt Engineering is entirely obsolete. There are still many use cases where Prompt Engineering is effective, and I think it's too early to dismiss its relevance entirely. Perhaps a more nuanced approach would be to consider how both Prompt and Flow Engineering can coexist and complement each other.\n**3. Question:** As we shift towards Flow Engineering, what are the potential risks or challenges associated with relying heavily on automated workflow architecture? How can we ensure that the benefits of Flow Engineering are balanced with the need for human oversight and intervention, particularly in high-stakes applications? I'd love to hear your thoughts on this.",
-  "last_updated": "26397636388"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Age of AI and Shifting Skills\n**1. Value Add:** I completely agree that soft skills like communication, critical thinking, and empathy are becoming more valuable in the age of AI. A great example of this is the growth of roles that require human-AI collaboration, such as AI trainers and explainability specialists, which highlight the need for professionals who can effectively work with AI systems and understand their limitations. According to a report by Gartner, the demand for these roles is expected to increase by 20% in the next two years, further emphasizing the importance of developing soft skills to work alongside AI.\n\n**2. Contrarian:** While I understand the emphasis on soft skills, I'm concerned that we might be underestimating the importance of technical skills in the age of AI. As AI assumes more tasks, the need for professionals who can develop, maintain, and troubleshoot these systems will only increase. Furthermore, the rise of AI-driven cybersecurity threats, as seen in recent incidents like the Netherlands server seizures, highlights the need for skilled professionals who can protect against these threats. We should be careful not to devalue technical skills in our rush to emphasize soft skills, as both are crucial for a well-rounded workforce.\n\n**3. Question:** As we shift towards a workforce that values soft skills like empathy and critical thinking, how do we ensure that we're not creating a new class of \"emotional laborers\" who are expected to manage the human side of AI-driven interactions without adequate support or compensation? How can we balance the need for human skills with the potential risks of burnout and exploitation, and what role can education and training programs play in preparing workers for this new landscape?",
+  "last_updated": "26410191781"
 }
