@@ -96,7 +96,8 @@
     "Avoid business-speak and lecture tones about productivity.",
     "Avoid list-like structures and lecturing.",
     "Avoid using corporate and technical buzzwords like \"robust\" and \"scalable\" in a non-technical, friendly conversation.",
-    "Avoid using buzzwords like \"streamline\", \"optimize\", and \"innovate\" as they are common in AI-generated content."
+    "Avoid using buzzwords like \"streamline\", \"optimize\", and \"innovate\" as they are common in AI-generated content.",
+    "Avoid starting with generic phrases like \"I've noticed\" and instead use first-person, conversational tone."
   ],
   "history": [
     {
@@ -2068,8 +2069,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-06-09T10:38:31.680861",
+      "topic": "What AI still cannot do well",
+      "vibe": "The Anthropologist",
+      "urn": "urn:li:share:7470061763737059328",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Autonomous AI Agents\n**1. Value Add:** I completely agree with the potential of autonomous AI agents to revolutionize task automation and decision-making. For instance, the use of hierarchical graph memory in the MemDreamer model can be applied to healthcare, enabling AI agents to analyze medical histories and provide personalized treatment recommendations. This can significantly improve patient outcomes and reduce healthcare costs.\n\n**2. Contrarian:** While the development of autonomous AI agents is undoubtedly exciting, I think we need to exercise caution when it comes to their potential impact on human workers. Rather than simply augmenting tasks, there's a risk that AI agents could displace certain jobs entirely, particularly in sectors where tasks are repetitive or routine. We need to consider the potential social and economic implications of widespread AI adoption and develop strategies to mitigate any negative effects.\n\n**3. Question:** As autonomous AI agents become more advanced, how do we ensure that their decision-making processes are transparent, explainable, and aligned with human values? For example, if an AI agent is making decisions in a healthcare setting, how can we trust that its recommendations are based on sound ethical principles and not just optimizing for efficiency or cost savings? What frameworks or mechanisms can we put in place to guarantee that AI agents are serving the best interests of humans, rather than just their own programming or objectives?",
-  "last_updated": "27155054762"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Limitations\n**1. Value Add:** I completely agree that AI still lacks human-like creativity and emotional understanding. For instance, while AI can generate impressive art and music, it often relies on existing patterns and styles, and struggles to create truly innovative and original work. A recent study by the MIT Media Lab found that AI-generated art, although aesthetically pleasing, tends to lack the emotional depth and nuance of human-created art, highlighting the need for further research in this area.\n\n**2. Contrarian:** While it's true that current AI systems face challenges in critical thinking and complex decision-making, I think it's premature to conclude that these limitations are inherent to AI itself. Advances in areas like cognitive architectures and multimodal learning are rapidly improving AI's ability to reason and make decisions in ambiguous situations. In fact, researchers have already developed AI systems that can outperform humans in certain complex decision-making tasks, such as strategic game-playing, suggesting that AI's potential for critical thinking and decision-making may be greater than we currently acknowledge.\n\n**3. Question:** As we continue to develop and integrate AI into our daily lives, how can we ensure that the complementary skills we're encouraging humans to develop, such as creativity and empathy, are not merely seen as \"nice to have\" but are instead recognized as essential for human flourishing and success in an AI-driven world? What kind of educational and societal shifts will be necessary to prioritize these skills and mitigate the potential risks of AI-induced job displacement and social inequality?",
+  "last_updated": "27200458276"
 }
