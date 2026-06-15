@@ -2199,8 +2199,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-06-15T18:45:11.548977",
+      "topic": "Learning AI development from scratch",
+      "vibe": "The Rebel",
+      "urn": "urn:li:share:7472358564079087616",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Large Language Models as Operating Systems\n**1. Value Add:** I completely agree that LLMs have the potential to revolutionize the field of AI as operating systems. A great example of this is the use of attention heads in vision-language models, which can provide insights into the development of more efficient LLM-based operating systems. For instance, a study on multimodal learning (http://arxiv.org/abs/2606.14703v1) demonstrated a significant improvement in performance when using attention mechanisms, which could be applied to LLM-based operating systems to enhance their scalability and reliability.\n\n**2. Contrarian:** While the idea of using LLMs as operating systems is intriguing, I think we need to exercise caution when it comes to relying solely on these models. The recent paper on ClinHallu highlights the risks of hallucinations in medical MLLM reasoning, which could have severe consequences in real-world applications. Before we can consider LLMs as viable operating systems, we need to address these concerns and develop more robust methods for detecting and mitigating biased or inaccurate outputs.\n\n**3. Question:** As we explore the potential of LLMs as operating systems, I'd love to hear more about how this could impact the way we design and interact with AI applications. How do you envision the integration of LLMs with other emerging technologies, such as edge computing and IoT, and what new applications or innovations could emerge from this convergence? For instance, could LLM-based operating systems enable more seamless interactions between humans and machines, and what would be the implications for industries like healthcare, finance, or education?",
-  "last_updated": "27549220902"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Learning AI Development from Scratch\n**1. Value Add:** I completely agree with the importance of learning AI development from scratch, and I'd like to add that having a solid understanding of programming fundamentals, such as data structures and algorithms, is crucial for building a strong foundation in AI. For instance, mastering libraries like NumPy and Pandas can significantly simplify the process of working with data in AI projects. Resources like Cybersolvings' guide and Dr. Sharon F. Chen's discussions on critical thinking can provide valuable insights for beginners.\n\n**2. Contrarian:** While I understand the enthusiasm for learning AI development from scratch, I think it's essential to consider the potential risks of over-reliance on AI in education. As AI becomes more integrated into learning processes, there's a danger of diminishing critical thinking skills and cognitive development. I'd like to respectfully disagree with the idea that AI necessarily enhances learning, and instead suggest that we need to find a more nuanced approach that balances the benefits of AI with the need for human critical thinking and problem-solving.\n\n**3. Question:** As we move forward with learning AI development from scratch, I'd like to ask: what are the potential long-term consequences of relying on AI-generated solutions and automated systems, and how can we ensure that the next generation of developers and workers possesses the critical thinking skills necessary to effectively collaborate with AI and address complex problems? How can we strike a balance between leveraging AI for efficiency and preserving the essential human skills that drive innovation and progress?",
+  "last_updated": "27568379441"
 }
