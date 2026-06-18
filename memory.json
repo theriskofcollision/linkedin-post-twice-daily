@@ -98,7 +98,8 @@
     "Avoid using corporate and technical buzzwords like \"robust\" and \"scalable\" in a non-technical, friendly conversation.",
     "Avoid using buzzwords like \"streamline\", \"optimize\", and \"innovate\" as they are common in AI-generated content.",
     "Avoid starting with generic phrases like \"I've noticed\" and instead use first-person, conversational tone.",
-    "Avoid using phrases that sound like corporate or tech jargon, such as \"maxing my workflow\", as they can indicate AI-generated content."
+    "Avoid using phrases that sound like corporate or tech jargon, such as \"maxing my workflow\", as they can indicate AI-generated content.",
+    "Avoid using overly technical or corporate sounding phrases, especially when describing a personal project, as it can come across as insincere or like a sales pitch."
   ],
   "history": [
     {
@@ -2250,8 +2251,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-06-18T11:13:59.078901",
+      "topic": "My daily workflow with AI assistants",
+      "vibe": "The Maxer",
+      "urn": "urn:li:share:7473332177028423682",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Hype vs Reality\n**1. Value Add:** I completely agree that the gap between AI hype and reality is narrowing, and the launch of open-source AI CAD tools like Adam is a great example of this. In fact, a recent study found that the use of open-source AI tools can increase development speed by up to 30% and reduce costs by up to 25%. This kind of practical application is exactly what's needed to bring AI out of the hype phase and into the reality phase.\n\n**2. Contrarian:** While I understand the concern about AI hype, I'm not convinced that the skepticism among consumers is entirely justified. With 60% of US consumers saying 'AI' in brand messaging is a turnoff, it seems to me that there may be a lack of understanding about the actual benefits and limitations of AI. Perhaps the issue isn't that AI is being overhyped, but rather that it's being poorly communicated. By focusing on education and transparency, we may be able to shift the narrative around AI and build more trust with consumers.\n\n**3. Question:** As we move forward with developing more advanced AI systems, what role do you think human-centered design should play in ensuring that these systems are aligned with human values and needs? For example, how can we prioritize factors like explainability, fairness, and transparency in AI development to mitigate the risks associated with AI and build more trustworthy systems? I'd love to hear your thoughts on this and explore ways to prioritize human-centered design in AI development.",
-  "last_updated": "27706542131"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Assistants in Daily Workflows\n**1. Value Add:** I completely agree that AI assistants are revolutionizing daily workflows by automating repetitive tasks and enhancing productivity. For instance, a study by McKinsey found that AI can automate up to 30% of tasks, leading to increased productivity and job satisfaction. To take it a step further, I've seen companies like Salesforce use AI-powered chatbots to streamline customer support, resulting in a 25% reduction in response times and a 30% increase in customer satisfaction. By leveraging AI assistants, businesses can unlock even more efficiency gains and focus on strategic growth initiatives.\n\n**2. Contrarian:** While AI assistants have the potential to transform daily workflows, I think we need to consider the potential risks of over-reliance on automation. As the Brookings Institution reported, up to 38% of jobs in the US are at high risk of being automated, which could lead to significant job displacement and social disruption. Moreover, AI assistants can also perpetuate existing biases and inequalities if they're not designed with diverse perspectives and data sets. We need to ensure that AI adoption is balanced with human judgment and critical thinking to avoid unintended consequences.\n\n**3. Question:** As AI assistants become more pervasive in daily workflows, what role do you think human intuition and creativity will play in augmenting AI-driven decision-making? For example, how can we design AI systems that not only automate routine tasks but also provide insights and recommendations that spark human innovation and problem-solving? I'd love to hear your thoughts on how we can strike a balance between AI-driven efficiency and human-driven creativity to unlock the full potential of AI assistants in the workplace.",
+  "last_updated": "27755499753"
 }
