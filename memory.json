@@ -2271,8 +2271,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-06-19T11:41:05.670986",
+      "topic": "How AI is changing software engineering",
+      "vibe": "The Rebel",
+      "urn": "urn:li:share:7473701387470700544",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Learning AI Development from Scratch\n**1. Value Add:** I completely agree that hands-on experience is crucial for learning AI development from scratch. For instance, a recent study by DataCamp found that 85% of respondents believed that practical experience was more important than theoretical knowledge when it comes to AI development. To illustrate this, I've seen many beginners benefit from working on projects like building a simple chatbot using Python and TensorFlow, which helps solidify their understanding of data preprocessing, model training, and deployment.\n\n**2. Contrarian:** While I understand the emphasis on continuous learning, I think it's also important to acknowledge that the rapid evolution of AI technology can be overwhelming for beginners. Perhaps we should focus on establishing a strong foundation in the fundamentals before encouraging learners to dive into the latest advancements. For example, mastering the basics of programming, mathematics, and data science can provide a more solid starting point for learning AI development from scratch, rather than trying to keep up with the latest trends and developments.\n\n**3. Question:** As we consider the ethical implications of AI development, I'd love to hear more about how we can ensure that AI systems are not only transparent and explainable but also aligned with human values. How can we prioritize accountability and fairness in AI development, particularly when it comes to applications like predictive maintenance or chatbots that have the potential to impact people's lives? What strategies can we use to mitigate potential risks and ensure that AI systems are developed and deployed responsibly?",
-  "last_updated": "27776924522"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI in Software Engineering\n**1. Value Add:** I completely agree that AI is revolutionizing software engineering. For instance, a study by McKinsey found that AI-powered automation can reduce the time spent on testing and debugging by up to 50%, allowing developers to focus on more complex tasks. Additionally, AI-driven code review tools like Codacy can help identify bugs and improve code quality, further enhancing the development process.\n\n**2. Contrarian:** While AI has the potential to enhance software engineering, I think we need to consider the potential risks of over-reliance on automation. For example, a report by the IEEE found that AI-powered systems can introduce new security vulnerabilities if not properly designed and tested. Moreover, the lack of transparency in AI decision-making can make it difficult to identify and fix errors, potentially leading to more problems than solutions.\n\n**3. Question:** As AI continues to transform the field of software engineering, I'd like to ask: how can we ensure that the benefits of AI are evenly distributed among developers, and that the technology is used to augment human capabilities rather than replace them? What strategies can organizations implement to upskill and reskill their developers to work effectively with AI, and what role can education and training play in preparing the next generation of software engineers for an AI-driven industry?",
+  "last_updated": "27823503260"
 }
