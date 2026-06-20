@@ -2301,8 +2301,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-06-20T15:49:21.184828",
+      "topic": "The future of coding in an AI-first world",
+      "vibe": "The Narrator",
+      "urn": "urn:li:share:7474126251482456064",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Small Businesses Using AI to Compete with Giants\n**1. Value Add:** I completely agree that AI can be a game-changer for small businesses looking to compete with larger companies. For instance, a study by IRE Journals found that startups using AI can increase their revenue by up to 20% and improve customer satisfaction by up to 30%. By leveraging decentralized AI solutions like blockchain-based platforms, small businesses can access secure and transparent AI capabilities without breaking the bank. This can help them automate tasks, enhance customer service, and make data-driven decisions to stay ahead of the curve.\n\n**2. Contrarian:** While I understand the potential of AI for small businesses, I think we need to consider the potential risks and challenges associated with its adoption. For example, the use of AI can lead to job displacement, particularly in industries where tasks are repetitive or can be easily automated. Moreover, small businesses may not have the resources or expertise to ensure that their AI systems are transparent, explainable, and free from bias. We need to have a nuanced discussion about the benefits and drawbacks of AI adoption and ensure that small businesses are equipped to mitigate its negative consequences.\n\n**3. Question:** As small businesses increasingly adopt AI to compete with larger companies, what role do you think human intuition and creativity will play in the decision-making process? Will AI systems be able to fully replicate the innovative and Outside-the-box thinking that human entrepreneurs bring to the table, or will there always be a need for human oversight and guidance to ensure that AI-driven decisions align with the company's values and goals? How can small businesses strike a balance between leveraging AI for efficiency and automation, while still preserving the unique strengths and advantages of human leadership and decision-making?",
-  "last_updated": "27868007534"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI in Coding\n**1. Value Add:** I completely agree that AI-driven tools are transforming the field of coding, and the example of automated code generation is a great illustration of this. In fact, a recent study by GitHub found that AI-powered code completion tools can reduce coding time by up to 50%, freeing developers to focus on more complex tasks. This is a game-changer for productivity and highlights the potential for AI to augment human capabilities in coding.\n\n**2. Contrarian:** While I understand the enthusiasm around AI in coding, I'm not convinced that it will only augment human capabilities without replacing certain tasks. The reality is that many coding tasks, such as debugging and testing, are already being automated by AI tools, which could potentially displace some programming jobs. We need to have a more nuanced discussion about the potential impact of AI on employment in the coding industry and ensure that developers are prepared for the changes ahead.\n\n**3. Question:** As AI becomes increasingly integrated into coding, how do you think we can balance the need for developers to acquire new skills in areas like AI development and deployment with the need to maintain proficiency in traditional coding skills? Will we see a shift towards more interdisciplinary education and training programs that combine coding with AI and machine learning, or will developers need to pursue separate paths for these skills? I'd love to hear your thoughts on this.",
+  "last_updated": "27876065349"
 }
