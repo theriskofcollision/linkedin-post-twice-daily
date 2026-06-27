@@ -2422,8 +2422,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-06-27T08:43:55.569021",
+      "topic": "AI",
+      "vibe": "The Fresh Eye",
+      "urn": "urn:li:share:123",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI and ML Career Paths\n**1. Value Add:** I completely agree that machine learning engineering and data science are key AI and ML career paths. In fact, a recent survey by Glassdoor found that the average salary for a machine learning engineer in the US is over $141,000 per year, highlighting the high demand and rewards for professionals in this field. Additionally, the use of techniques like transfer learning and attention mechanisms is becoming increasingly important for machine learning engineers to master.\n\n**2. Contrarian:** While it's true that AI and ML career paths are emerging rapidly, I think we need to be cautious about the potential risks of automation and job displacement. According to a report by the McKinsey Global Institute, up to 800 million jobs could be lost worldwide due to automation by 2030. As we promote AI and ML career paths, we should also be discussing the need for upskilling and reskilling programs to support workers who may be displaced by these technologies.\n\n**3. Question:** How do you think the increasing demand for explainable AI and transparency in AI decision-making will impact the skills and mindset required for AI and ML professionals in the future? Will we see a shift towards more interdisciplinary approaches, combining technical expertise with social science and humanities perspectives to ensure that AI systems are developed and used responsibly?",
-  "last_updated": "28232287503"
+  "latest_comment_pack": "[Networker Output based on 'Trend brief']",
+  "last_updated": "manual"
 }

@@ -1171,7 +1171,7 @@ class LinkedInConnector:
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json",
             "X-Restli-Protocol-Version": "2.0.0",
-            "LinkedIn-Version": "202401"
+            "LinkedIn-Version": "202606"
         }
         payload = {
             "initializeUploadRequest": {
@@ -1213,7 +1213,7 @@ class LinkedInConnector:
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json",
             "X-Restli-Protocol-Version": "2.0.0",
-            "LinkedIn-Version": "202401"
+            "LinkedIn-Version": "202606"
         }
 
         if asset_urn:
@@ -1292,7 +1292,7 @@ class LinkedInConnector:
         headers = {
             "Authorization": f"Bearer {self.access_token}",
             "X-Restli-Protocol-Version": "2.0.0",
-            "LinkedIn-Version": "202401"
+            "LinkedIn-Version": "202606"
         }
         
         try:
