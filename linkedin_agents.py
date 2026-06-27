@@ -1162,11 +1162,11 @@ class OrganicImageSearcher:
 class LinkedInConnector:
     def __init__(self):
         self.access_token = os.environ.get("LINKEDIN_ACCESS_TOKEN")
-        self.author_urn = os.environ.get("LINKEDIN_PERSON_URN") # e.g., "urn:li:person:12345"
+        self.author_urn = os.environ.get("LINKEDIN_PERSON_URN") 
 
     def register_upload_v2(self):
-        """Register image upload using v2 API"""
-        url = "https://api.linkedin.com/v2/assets?action=registerUpload"
+        """Register image upload using modern REST API"""
+        url = "https://api.linkedin.com/rest/images?action=initializeUpload"
         headers = {
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json",
@@ -1174,23 +1174,16 @@ class LinkedInConnector:
             "LinkedIn-Version": "202401"
         }
         payload = {
-            "registerUploadRequest": {
-                "recipes": ["urn:li:digitalmediaRecipe:feedshare-image"],
-                "owner": self.author_urn,
-                "serviceRelationships": [
-                    {
-                        "relationshipType": "OWNER",
-                        "identifier": "urn:li:userGeneratedContent"
-                    }
-                ]
+            "initializeUploadRequest": {
+                "owner": self.author_urn
             }
         }
         response = requests.post(url, headers=headers, json=payload)
         response.raise_for_status()
         data = response.json()
         
-        upload_url = data['value']['uploadMechanism']['com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest']['uploadUrl']
-        asset_urn = data['value']['asset']
+        upload_url = data['value']['uploadUrl']
+        asset_urn = data['value']['image']
         return upload_url, asset_urn
 
     def upload_image(self, upload_url, image_data):
@@ -1198,7 +1191,6 @@ class LinkedInConnector:
         headers = {"Authorization": f"Bearer {self.access_token}"}
         response = requests.put(upload_url, headers=headers, data=image_data)
         response.raise_for_status()
-        logger.info("✅ Image uploaded to LinkedIn server.")
 
     def post_content(self, text: str, image_data: bytes = None) -> Optional[str]:
         if not self.access_token or not self.author_urn:
@@ -1216,7 +1208,7 @@ class LinkedInConnector:
                 logger.error(f"Image upload failed: {e}. Falling back to text-only.")
                 asset_urn = None
 
-        url = "https://api.linkedin.com/v2/ugcPosts"
+        url = "https://api.linkedin.com/rest/posts"
         headers = {
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json",
@@ -1228,41 +1220,28 @@ class LinkedInConnector:
             # Post with image
             post_data = {
                 "author": self.author_urn,
-                "lifecycleState": "PUBLISHED",
-                "specificContent": {
-                    "com.linkedin.ugc.ShareContent": {
-                        "shareCommentary": {
-                            "text": text
-                        },
-                        "shareMediaCategory": "IMAGE",
-                        "media": [
-                            {
-                                "status": "READY",
-                                "media": asset_urn
-                            }
-                        ]
+                "commentary": text,
+                "visibility": "PUBLIC",
+                "distribution": {
+                    "feedDistribution": "MAIN_FEED"
+                },
+                "content": {
+                    "media": {
+                        "id": asset_urn
                     }
                 },
-                "visibility": {
-                    "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
-                }
+                "lifecycleState": "PUBLISHED"
             }
         else:
             # Text-only post
             post_data = {
                 "author": self.author_urn,
-                "lifecycleState": "PUBLISHED",
-                "specificContent": {
-                    "com.linkedin.ugc.ShareContent": {
-                        "shareCommentary": {
-                            "text": text
-                        },
-                        "shareMediaCategory": "NONE"
-                    }
+                "commentary": text,
+                "visibility": "PUBLIC",
+                "distribution": {
+                    "feedDistribution": "MAIN_FEED"
                 },
-                "visibility": {
-                    "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
-                }
+                "lifecycleState": "PUBLISHED"
             }
 
         try:
@@ -1270,7 +1249,29 @@ class LinkedInConnector:
             response.raise_for_status()
             logger.info(f"✅ Successfully posted to LinkedIn! Status: {response.status_code}")
             
-            post_urn = response.json().get("id")
+            # Retrieve URN from x-restli-id header
+            post_urn = response.headers.get("x-restli-id")
+            if not post_urn:
+                for k, v in response.headers.items():
+                    if k.lower() == 'x-restli-id':
+                        post_urn = v
+                        break
+            
+            # Fallback to Location header
+            if not post_urn:
+                location = response.headers.get("Location") or response.headers.get("location")
+                if location:
+                    last_part = location.split("/")[-1]
+                    import urllib.parse
+                    post_urn = urllib.parse.unquote(last_part)
+            
+            # Fallback to body ID just in case
+            if not post_urn:
+                try:
+                    post_urn = response.json().get("id")
+                except Exception:
+                    pass
+
             logger.info(f"🆔 New Post URN: {post_urn}")
             return post_urn
 

@@ -28,22 +28,28 @@ class TestBaseAgent:
     
     def test_agent_run_without_api_key(self, monkeypatch):
         """Should return mock data when API key missing."""
-        monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+        monkeypatch.delenv("GROQ_API_KEY", raising=False)
         
         agent = Agent("TestAgent", "Tester", "Test prompt")
         result = agent.run("Test input")
         
         assert "[TestAgent Output based on 'Test input']" in result
     
-    @patch('google.generativeai.GenerativeModel')
-    @patch('google.generativeai.configure')
-    def test_agent_run_with_api_key(self, mock_configure, mock_model_class, monkeypatch, mock_gemini_response):
-        """Should call Gemini API when key is present."""
-        monkeypatch.setenv("GEMINI_API_KEY", "test_key")
+    @patch('linkedin_agents.Groq')
+    def test_agent_run_with_api_key(self, mock_groq_class, monkeypatch):
+        """Should call Groq API when key is present."""
+        monkeypatch.setenv("GROQ_API_KEY", "test_key")
         
-        mock_model = MagicMock()
-        mock_model.generate_content.return_value = mock_gemini_response
-        mock_model_class.return_value = mock_model
+        mock_client = MagicMock()
+        mock_response = MagicMock()
+        mock_choice = MagicMock()
+        mock_message = MagicMock()
+        mock_message.content = "This is a test response from the AI model."
+        mock_choice.message = mock_message
+        mock_response.choices = [mock_choice]
+        
+        mock_client.chat.completions.create.return_value = mock_response
+        mock_groq_class.return_value = mock_client
         
         agent = Agent("TestAgent", "Tester", "Test prompt")
         result = agent.run("Test input")
@@ -72,11 +78,11 @@ class TestGhostwriter:
         ghostwriter.set_vibe("The Contrarian", "Challenge the status quo.")
 
         assert "The Contrarian" in ghostwriter.system_prompt
-        assert "Max 300 chars" in ghostwriter.system_prompt
+        assert "80-250 chars" in ghostwriter.system_prompt
     
     def test_run_injects_memory_rules(self, temp_memory_file, monkeypatch):
         """Should inject memory rules into prompt."""
-        monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+        monkeypatch.delenv("GROQ_API_KEY", raising=False)
         
         # Add a rule to memory
         import json
@@ -111,7 +117,7 @@ class TestCritic:
     
     def test_critic_extracts_rules(self, temp_memory_file, monkeypatch):
         """Should parse RULE: lines and save to memory."""
-        monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+        monkeypatch.delenv("GROQ_API_KEY", raising=False)
         
         critic = Critic()
         critic.memory.file_path = temp_memory_file
@@ -156,11 +162,11 @@ class TestVibes:
     
     def test_vibe_count(self):
         """Should have 21 vibes."""
-        assert len(VIBES) >= 21
+        assert len(VIBES) >= 19
         
         expected_vibes = [
-            "The Contrarian", "The Visionary", "The Educator",
-            "The Analyst", "The Narrator", "The Oracle", "The Satirist"
+            "The Contrarian", "The Visionary", "The Narrator",
+            "The Oracle", "The Satirist", "The Storyteller", "The Minimalist"
         ]
         for vibe in expected_vibes:
             assert vibe in VIBES

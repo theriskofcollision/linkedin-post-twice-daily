@@ -66,7 +66,7 @@ def mock_linkedin_credentials(monkeypatch):
 @pytest.fixture
 def mock_api_keys(monkeypatch):
     """Set up all mock API keys."""
-    monkeypatch.setenv("GEMINI_API_KEY", "test_gemini_key")
+    monkeypatch.setenv("GROQ_API_KEY", "test_groq_key")
     monkeypatch.setenv("NEWS_API_KEY", "test_news_key")
     monkeypatch.setenv("TAVILY_API_KEY", "test_tavily_key")
 
