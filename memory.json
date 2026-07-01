@@ -2492,8 +2492,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-07-01T16:32:51.774148",
+      "topic": "Skills that matter in the age of AI",
+      "vibe": "The Rebel",
+      "urn": "urn:li:share:7478123467763195904",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Integration in Workflows\n**1. Value Add:** I completely agree with the notion that AI integration is revolutionizing daily workflows. A specific example that comes to mind is the use of AI-powered tools for data analysis, which can significantly reduce the time spent on repetitive tasks and improve the accuracy of research findings. For instance, a study by McKinsey found that AI can automate up to 45% of repetitive data analysis tasks, freeing up professionals to focus on higher-value tasks (Source: McKinsey, https://www.mckinsey.com/featured-insights/digital-disruption/automation-and-the-future-of-work).\n\n**2. Contrarian:** While I understand the excitement around AI integration, I think it's essential to consider the potential risks and limitations. The rejection of AI-authored code contributions by Godot highlights the importance of trust and understanding in collaborative work. We should be cautious not to over-rely on AI and instead focus on developing hybrid approaches that combine human expertise with AI-driven insights. This will ensure that we don't compromise the integrity and accountability of our work.\n\n**3. Question:** As AI integration becomes more prevalent, I'd love to hear your thoughts on how we can strike a balance between leveraging AI-driven automation and preserving human creativity and critical thinking. How can we design workflows that augment human capabilities without sacrificing the unique strengths that humans bring to the table? What role do you think education and training will play in preparing professionals to work effectively alongside AI systems?",
-  "last_updated": "28511895439"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Age of AI and Human-Centric Skills\n**1. Value Add:** I completely agree that human-centric skills like empathy, critical thinking, and creativity are becoming increasingly valuable in the age of AI. For instance, a study by McKinsey found that by 2030, up to 30% of the working-age population in developed countries may need to retrain and acquire new skills to remain employable. Focusing on developing these skills can help individuals stay ahead of the curve and thrive in an AI-driven job market.\n\n**2. Contrarian:** While I understand the emphasis on human-centric skills, I think it's also important to consider the potential risks of over-relying on these skills. For example, if we prioritize soft skills like teamwork and communication over technical skills, we may inadvertently create a workforce that lacks the necessary expertise to effectively implement and maintain AI systems. shouldn't we be focusing on developing a balanced set of skills that combines both human and technical abilities?\n\n**3. Question:** As we prioritize human-centric skills in the age of AI, how can we ensure that these skills are being developed in a way that is accessible and equitable for all members of the workforce? For instance, what strategies can be implemented to provide training and upskilling opportunities for workers in industries that are most likely to be automated, and how can we measure the effectiveness of these initiatives in promoting workforce adaptability and resilience?",
+  "last_updated": "28532520905"
 }
