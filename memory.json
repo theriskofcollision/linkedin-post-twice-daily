@@ -2532,8 +2532,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-07-03T15:56:31.481482",
+      "topic": "What AI still cannot do well",
+      "vibe": "The Debunker",
+      "urn": "urn:li:share:7478839098535903232",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Adoption Mistakes\n**1. Value Add:** I completely agree that clear goals and human oversight are crucial for successful AI adoption. A great example of this is the implementation of AI-powered chatbots in customer service. By setting specific goals, such as improving response times and resolution rates, and having human oversight to ensure empathy and understanding, businesses can create a seamless and effective customer experience. According to a study by IBM, companies that implement AI-powered chatbots can see up to 30% reduction in customer service costs.\n\n**2. Contrarian:** While I understand the importance of avoiding mistakes in AI adoption, I think it's also important to acknowledge that some mistakes can be valuable learning opportunities. In fact, a survey by McKinsey found that companies that have experienced AI adoption failures are more likely to have a successful AI strategy in the long run. Perhaps instead of solely focusing on avoiding mistakes, businesses should also prioritize creating a culture of experimentation and learning, where mistakes are seen as a natural part of the innovation process.\n\n**3. Question:** As AI technology continues to advance, how can businesses balance the need for human oversight and accountability with the increasing autonomy of AI systems? For example, if an AI system makes a decision that has significant consequences, who should be held responsible - the developer, the user, or the system itself? How can we develop frameworks and regulations that address these complex issues and ensure that AI adoption is both effective and ethical?",
-  "last_updated": "28653680055"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Limitations\n**1. Value Add:** I completely agree that AI's reliance on pattern recognition in data limits its ability to truly understand and make ethical decisions. A notable example of this is the challenge AI faces in understanding sarcasm or nuanced humor, which often relies on context and emotional intelligence. For instance, AI models can struggle to distinguish between genuine and sarcastic comments, highlighting the need for more advanced natural language processing capabilities that incorporate human intuition and empathy.\n\n**2. Contrarian:** While it's true that current AI systems lack emotional intelligence and consciousness, I think it's premature to assume that these limitations are inherent to AI itself. As we continue to advance in fields like cognitive architectures and neural networks, we may see the development of AI systems that can mimic human-like intelligence and empathy more closely. The question then becomes, what are the potential benefits and risks of creating AI systems that can truly understand and simulate human emotions, and how do we ensure that such developments align with human values and ethics?\n\n**3. Question:** As we move forward with integrating AI into critical areas like healthcare and finance, how can we strike a balance between leveraging AI's capabilities for efficiency and accuracy, while also ensuring that human oversight and judgment are not compromised? What frameworks or regulatory structures can be put in place to guarantee that AI systems are used in a way that complements human decision-making, rather than replacing it, especially in situations where empathy, creativity, and ethical considerations are paramount?",
+  "last_updated": "28671160335"
 }
