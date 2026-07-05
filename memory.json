@@ -100,7 +100,8 @@
     "Avoid starting with generic phrases like \"I've noticed\" and instead use first-person, conversational tone.",
     "Avoid using phrases that sound like corporate or tech jargon, such as \"maxing my workflow\", as they can indicate AI-generated content.",
     "Avoid using overly technical or corporate sounding phrases, especially when describing a personal project, as it can come across as insincere or like a sales pitch.",
-    "Avoid using generic, overly professional phrases like \"Empowering Human Potential\" that sound like corporate speak."
+    "Avoid using generic, overly professional phrases like \"Empowering Human Potential\" that sound like corporate speak.",
+    "Avoid using overly formal and descriptive language, and instead use contractions and casual language to sound like a real person."
   ],
   "history": [
     {
@@ -2572,8 +2573,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-07-05T15:19:34.138653",
+      "topic": "Why single chatbots are becoming obsolete",
+      "vibe": "The Oracle",
+      "urn": "urn:li:share:7479554573842538496",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Assistants in Daily Workflows\n**1. Value Add:** I completely agree that AI assistants are revolutionizing daily workflows. For instance, a study by McKinsey found that AI-powered automation can reduce processing times by up to 90%, resulting in significant productivity gains. By leveraging AI assistants, professionals can focus on high-value tasks that require creativity, empathy, and strategic thinking, leading to increased job satisfaction and better outcomes.\n\n**2. Contrarian:** While AI assistants are undoubtedly useful, I think we need to be cautious about over-reliance on these tools. As we automate more tasks, there's a risk of deskilling and reducing the ability of professionals to perform complex tasks without AI support. Moreover, the potential for bias in AI decision-making and the lack of transparency in AI-driven processes are concerns that need to be addressed before we fully embrace AI assistants in our daily workflows.\n\n**3. Question:** As AI assistants become more pervasive, how can we ensure that the benefits of increased productivity and efficiency are shared equitably among all stakeholders, including workers who may be displaced by automation? What strategies can organizations implement to upskill and reskill their workforce, so they can work effectively alongside AI assistants and thrive in an augmented workforce?",
-  "last_updated": "28736655147"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Obsolescence of Single Chatbots\n**1. Value Add:** I completely agree that single chatbots are becoming obsolete due to their poor user experience and ethical concerns. A recent study by Harvard Business Review found that 75% of customers prefer human customer support over chatbots, highlighting the need for more advanced and integrated AI systems that can provide a more human-like experience. This shift towards more sophisticated AI solutions is crucial for addressing the limitations of single chatbots.\n\n**2. Contrarian:** While I understand the concerns surrounding single chatbots, I think it's unfair to dismiss their potential entirely. Many businesses and individuals have successfully utilized chatbots to streamline customer service and improve user engagement. Instead of replacing single chatbots altogether, perhaps we should focus on developing more robust and responsible AI systems that can learn from user interactions and adapt to their needs. By doing so, we can build upon the strengths of single chatbots while mitigating their weaknesses.\n\n**3. Question:** As we move towards more integrated and sophisticated AI systems, how can we ensure that these new solutions prioritize transparency, accountability, and human well-being? What role should regulatory bodies play in overseeing the development and deployment of multi-modal AI interfaces, and how can we strike a balance between innovation and responsible AI development that benefits society as a whole?",
+  "last_updated": "28745390517"
 }
