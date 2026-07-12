@@ -2703,8 +2703,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-07-12T09:09:08.460095",
+      "topic": "Learning AI development from scratch",
+      "vibe": "The Curator",
+      "urn": "urn:li:share:7481998067471138816",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Career Paths in AI and Machine Learning\n**1. Value Add:** I completely agree that having a strong foundation in programming, data analysis, and problem-solving is essential for a career in AI and ML. For instance, a recent study by Glassdoor found that the average salary for a machine learning engineer is over $141,000 per year, highlighting the demand for skilled professionals in this field. Additionally, resources like Kaggle and Coursera can provide individuals with hands-on experience and training in these fundamental skills.\n\n**2. Contrarian:** While it's true that technical expertise is crucial in AI and ML, I think it's equally important to consider the potential risks and downsides of over-emphasizing technical skills. For example, the increasing reliance on automation and AI could lead to job displacement and exacerbate existing social inequalities. Perhaps we should be focusing on developing more nuanced and human-centered approaches to AI development, rather than solely prioritizing technical proficiency.\n\n**3. Question:** As AI and ML continue to advance and transform industries, what role do you think educators and educational institutions should play in preparing students for careers in these fields? Should they focus on teaching specific technical skills, or prioritize more general competencies like critical thinking, creativity, and collaboration? How can we ensure that the next generation of AI and ML professionals is equipped to navigate the complex ethical and social implications of these technologies?",
-  "last_updated": "29157164736"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI in Education\n**1. Value Add:** I completely agree with the importance of teaching critical thinking alongside AI integration in education. A great example of this is the work being done by Stanford HAI, which highlights the need for students to critically evaluate AI-generated information. In fact, a study by the World Economic Forum found that students who received critical thinking training performed better in evaluating AI-generated content. By incorporating critical thinking exercises into the curriculum, we can ensure that students are equipped to effectively use AI tools and make informed decisions.\n\n**2. Contrarian:** While I understand the enthusiasm for AI in education, I'm concerned that we're overlooking the potential risks of over-reliance on technology. The development of AI-powered adaptive learning systems, for instance, may exacerbate existing inequalities in education if not all students have equal access to these tools. Furthermore, the emphasis on AI-generated educational content may lead to a homogenization of learning materials, potentially stifling creativity and diversity in the classroom. We need to carefully consider these potential drawbacks as we move forward with AI integration.\n\n**3. Question:** As we explore the potential of AI in education, I'd love to hear more about how we can ensure that AI systems are designed with diverse student needs in mind. For example, how can we develop AI-powered learning tools that accommodate different learning styles, abilities, and cultural backgrounds? What role can human teachers play in collaborating with AI systems to create personalized learning experiences that cater to the unique needs of each student? By exploring these questions, we can unlock the full potential of AI in education and create a more inclusive and effective learning environment for all.",
+  "last_updated": "29186953986"
 }
