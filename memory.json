@@ -2713,8 +2713,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-07-12T15:05:01.096587",
+      "topic": "Skills that matter in the age of AI",
+      "vibe": "The Data Detective",
+      "urn": "urn:li:share:7482087627454803968",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI in Education\n**1. Value Add:** I completely agree with the importance of teaching critical thinking alongside AI integration in education. A great example of this is the work being done by Stanford HAI, which highlights the need for students to critically evaluate AI-generated information. In fact, a study by the World Economic Forum found that students who received critical thinking training performed better in evaluating AI-generated content. By incorporating critical thinking exercises into the curriculum, we can ensure that students are equipped to effectively use AI tools and make informed decisions.\n\n**2. Contrarian:** While I understand the enthusiasm for AI in education, I'm concerned that we're overlooking the potential risks of over-reliance on technology. The development of AI-powered adaptive learning systems, for instance, may exacerbate existing inequalities in education if not all students have equal access to these tools. Furthermore, the emphasis on AI-generated educational content may lead to a homogenization of learning materials, potentially stifling creativity and diversity in the classroom. We need to carefully consider these potential drawbacks as we move forward with AI integration.\n\n**3. Question:** As we explore the potential of AI in education, I'd love to hear more about how we can ensure that AI systems are designed with diverse student needs in mind. For example, how can we develop AI-powered learning tools that accommodate different learning styles, abilities, and cultural backgrounds? What role can human teachers play in collaborating with AI systems to create personalized learning experiences that cater to the unique needs of each student? By exploring these questions, we can unlock the full potential of AI in education and create a more inclusive and effective learning environment for all.",
-  "last_updated": "29186953986"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Age of AI and Evolving Job Market Skills\n**1. Value Add:** I completely agree that core skills like fluency, judgment, and interpersonal skills are crucial in the age of AI. For instance, a study by the World Economic Forum found that by 2025, creativity will be one of the top three skills required for workers, highlighting the importance of human skills in an AI-driven economy. By developing these skills, workers can complement AI capabilities and thrive in the evolving job market.\n\n**2. Contrarian:** While I understand the emphasis on soft skills like communication and emotional intelligence, I think we should also consider the potential risk of overemphasizing these skills at the expense of technical skills. As AI becomes increasingly integrated into various industries, workers will need to have a strong foundation in technical skills like programming and data science to effectively interface with AI systems. We should strive for a balance between human skills and technical skills to ensure workers are well-equipped for the future of work.\n\n**3. Question:** As we move towards an AI-driven economy, how can we ensure that the development of skills that complement AI capabilities is accessible and inclusive for all workers, particularly those in low-skilled or low-wage jobs? What strategies can be implemented to provide equal opportunities for upskilling and reskilling, and to prevent exacerbating existing social and economic inequalities? I'd love to hear your thoughts on this critical issue.",
+  "last_updated": "29197441649"
 }
