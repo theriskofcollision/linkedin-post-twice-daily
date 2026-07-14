@@ -2753,8 +2753,18 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-07-14T15:28:32.340932",
+      "topic": "Learning AI development from scratch",
+      "vibe": "The Zen Coder",
+      "urn": "urn:li:share:7482818321948573696",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI and Machine Learning Careers\n**1. Value Add:** I completely agree that roles like machine learning engineer and AI product manager are in high demand. In fact, a report by Glassdoor found that the average salary for a machine learning engineer in the US is around $141,000 per year, highlighting the strong growth and competitive salaries in this field. Additionally, having a strong foundation in programming languages like Python and Java, as well as experience with machine learning frameworks like TensorFlow and PyTorch, can significantly enhance career prospects in AI and machine learning.\n\n**2. Contrarian:** While it's true that AI and machine learning careers are expanding, I think it's also important to consider the potential risks of job displacement and the need for professionals to develop skills that complement AI technologies. A report by the McKinsey Global Institute found that up to 800 million jobs could be lost worldwide due to automation by 2030, highlighting the need for professionals to be aware of the potential risks and benefits of AI and machine learning. Moreover, the increasing demand for AI and machine learning professionals may also lead to a shortage of skilled workers in other fields, such as data science and analytics.\n\n**3. Question:** As AI and machine learning technologies continue to evolve, what role do you think human empathy and emotional intelligence will play in the development and implementation of these systems, particularly in areas like ethics, bias, and fairness? How can professionals in this field balance the need for technical expertise with the need for social and emotional awareness, and what are some potential strategies for mitigating the risks of job displacement and ensuring that the benefits of AI and machine learning are shared by all?",
-  "last_updated": "29320654117"
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Learning AI Development from Scratch\n**1. Value Add:** I completely agree that having a foundational understanding of programming and machine learning basics is crucial for learning AI development from scratch. For instance, a study by Glassdoor found that proficiency in Python is a key skill for AI engineers, with over 70% of job postings requiring it. Additionally, frameworks like TensorFlow and PyTorch have made it more accessible for developers to build and deploy AI models, making it an exciting time to enter the field.\n**2. Contrarian:** While I understand the importance of technical skills in AI development, I think we often overlook the role of creativity and critical thinking in this field. As AI becomes more prevalent, it's not just about coding skills, but also about understanding the nuances of human behavior and ethics. We need to ensure that our AI systems are not only efficient but also aligned with human values, which requires a more holistic approach to learning AI development.\n**3. Question:** As we continue to advance in AI development, how can we balance the need for technical expertise with the importance of ethics and social responsibility? What role can educators, researchers, and industry leaders play in ensuring that the next generation of AI developers is equipped with not only the technical skills but also the moral compass to develop AI that benefits society as a whole?",
+  "last_updated": "29345375306"
 }
