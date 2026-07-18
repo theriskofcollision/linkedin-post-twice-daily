@@ -1095,10 +1095,12 @@ Rate: PASS or REJECT with one-line reason."""
             return None
         
         # Parse for new rules
+        from learning import RuleManager
+        rule_manager = RuleManager(self.memory)
         for line in feedback.split('\n'):
             if line.strip().startswith("RULE:"):
                 new_rule = line.strip().replace("RULE:", "").strip()
-                self.memory.add_rule(new_rule)
+                rule_manager.add_rule_capped(new_rule)
                 
         return feedback
 
@@ -1356,10 +1358,9 @@ class Orchestrator:
             vibe_name = forced_vibe
         else:
             enabled = variety_cfg.get("enabled_personas", "all")
-            if enabled == "all":
-                vibe_name = random.choice(list(VIBES.keys()))
-            else:
-                vibe_name = random.choice(enabled)
+            candidates = list(VIBES.keys()) if enabled == "all" else list(enabled)
+            from learning import VibeBandit
+            vibe_name = VibeBandit().select(candidates)
 
         logger.info(f"🎲 Vibe Selected: {vibe_name}")
         vibe_config = VIBES[vibe_name]
