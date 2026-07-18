@@ -1,12 +1,131 @@
 {
-    "manual_stats": [
-        {
-            "post_description": "Example: The Analyst post about ROI",
-            "likes": 5,
-            "comments": 2,
-            "vibe": "The Analyst",
-            "notes": "This is just a template. Replace with real data."
-        }
-    ],
-    "feedback_notes": "Add your weekly observations here. Example: 'Short posts get more likes than long ones.'"
+  "manual_stats": [
+    {
+      "urn": "urn:li:share:7481631763627270144",
+      "date": "2026-07-11",
+      "vibe": "The Maxer",
+      "topic": "Building AI agents that collaborate autonomously",
+      "impressions": 0,
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "urn": "urn:li:share:7481724646577356800",
+      "date": "2026-07-11",
+      "vibe": "The Storyteller",
+      "topic": "Career paths in AI and machine learning",
+      "impressions": 0,
+      "likes": 1,
+      "comments": 0
+    },
+    {
+      "urn": "urn:li:share:7481998067471138816",
+      "date": "2026-07-12",
+      "vibe": "The Curator",
+      "topic": "Learning AI development from scratch",
+      "impressions": 0,
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "urn": "urn:li:share:7482087627454803968",
+      "date": "2026-07-12",
+      "vibe": "The Data Detective",
+      "topic": "Skills that matter in the age of AI",
+      "impressions": 0,
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "urn": "urn:li:share:7482381658818719745",
+      "date": "2026-07-13",
+      "vibe": "The Anthropologist",
+      "topic": "Multi-Agent Systems and how they actually work",
+      "impressions": 0,
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "urn": "urn:li:share:7482473875067494401",
+      "date": "2026-07-13",
+      "vibe": "The Maxer",
+      "topic": "Real-world AI automation that saves hours",
+      "impressions": 0,
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "urn": "urn:li:share:7482723176083513344",
+      "date": "2026-07-14",
+      "vibe": "The Curator",
+      "topic": "Career paths in AI and machine learning",
+      "impressions": 0,
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "urn": "urn:li:share:7482818321948573696",
+      "date": "2026-07-14",
+      "vibe": "The Zen Coder",
+      "topic": "Learning AI development from scratch",
+      "impressions": 0,
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "urn": "urn:li:share:7483086892402413568",
+      "date": "2026-07-15",
+      "vibe": "The Narrator",
+      "topic": "The rise of autonomous AI workflows",
+      "impressions": 0,
+      "likes": 1,
+      "comments": 0
+    },
+    {
+      "urn": "urn:li:share:7483183649795002368",
+      "date": "2026-07-15",
+      "vibe": "The Data Detective",
+      "topic": "Learning AI development from scratch",
+      "impressions": 0,
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "urn": "urn:li:share:7483450824724115456",
+      "date": "2026-07-16",
+      "vibe": "The Fresh Eye",
+      "topic": "The gap between AI hype and AI reality",
+      "impressions": 0,
+      "likes": 1,
+      "comments": 0
+    },
+    {
+      "urn": "urn:li:share:7483546606227623936",
+      "date": "2026-07-16",
+      "vibe": "The Archivist",
+      "topic": "Small businesses using AI to compete with giants",
+      "impressions": 0,
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "urn": "urn:li:share:7483811811834880000",
+      "date": "2026-07-17",
+      "vibe": "The Anthropologist",
+      "topic": "What AI still cannot do well",
+      "impressions": 0,
+      "likes": 0,
+      "comments": 0
+    },
+    {
+      "urn": "urn:li:share:7483903483725934592",
+      "date": "2026-07-17",
+      "vibe": "The Rebel",
+      "topic": "My daily workflow with AI assistants",
+      "impressions": 0,
+      "likes": 0,
+      "comments": 0
+    }
+  ],
+  "feedback_notes": "yes"
 }
