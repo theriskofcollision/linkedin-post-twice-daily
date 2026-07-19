@@ -11,7 +11,8 @@
     "Cut unnecessary adjectives",
     "Make opening lines provocative",
     "Avoid clich\u00e9s and jargon",
-    "End with a strong statement"
+    "End with a strong statement",
+    "Avoid starting with vague, open-ended questions or statements that sound like corporate introspections."
   ],
   "history": [
     {
@@ -2763,9 +2764,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-07-19T15:03:33.372242",
+      "topic": "My daily workflow with AI assistants",
+      "vibe": "The Provocateur",
+      "urn": "urn:li:share:7484623974585446401",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Gap Between AI Hype and Reality\n**1. Value Add:** I completely agree that the gap between AI hype and reality is a significant concern. A great example of this is the recent announcement of GPT-5.6's breakthrough in convex optimization, which highlights the potential for AI to drive real innovation. However, as you pointed out, the high cost of AI-powered tools and questionable performance of luxury AI agents underscore the need for more practical and affordable solutions. For instance, companies like Hugging Face are working to make AI more accessible through open-source models and affordable pricing plans, which could help bridge the gap between hype and reality.\n\n**2. Contrarian:** While I understand the concern about the gap between AI hype and reality, I think it's also important to consider the long-term potential of AI. Instead of focusing solely on the current limitations and high costs, we should be investing in research and development to drive innovation and make AI more accessible. The development of RoboTTT, for example, shows that significant breakthroughs are possible with the right investment and expertise. Perhaps the high cost of AI-powered tools is a necessary step towards creating more advanced and effective solutions that will pay off in the long run.\n\n**3. Question:** As we navigate the gap between AI hype and reality, what role do you think education and training will play in preparing teams and organizations for the adoption of AI solutions? Will the shift towards more practical and effective AI solutions require a fundamental change in how we approach AI education, or can we build on existing frameworks and methodologies? How can we balance the need for technical expertise with the need for business acumen and strategic thinking in AI adoption?",
-  "last_updated": "29681041975",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Integration in Daily Workflows\n**1. Value Add:** I completely agree that AI assistants are transforming daily workflows. For instance, a study by McKinsey found that AI can automate up to 45% of repetitive tasks, leading to significant productivity gains. The reduction in context size of OpenAI's Codex Model from 372k to 272k is a great example of how ongoing efforts to improve AI model efficiency can lead to faster processing times and improved accuracy.\n\n**2. Contrarian:** While AI assistants are certainly improving productivity, I think we need to consider the potential risks of over-reliance on these tools. As we automate more tasks, there's a danger that we'll lose critical thinking skills and become too dependent on AI-driven decision-making. Moreover, the EU's AI Act highlights the need for responsible AI development, but I'm not convinced that current regulations go far enough in addressing concerns around job displacement and bias.\n\n**3. Question:** As AI assistants become more integrated into our daily workflows, what role do you think human intuition and creativity will play in complementing AI-driven decision-making? Will we see a shift towards more hybrid models that combine the strengths of human and artificial intelligence, or will AI eventually become the primary driver of workflow optimization? I'd love to hear your thoughts on how we can strike a balance between the benefits of AI automation and the unique value that human professionals bring to the table.",
+  "last_updated": "29692036994",
   "rules_distilled_at": "2026-07-18T07:47:29.863126"
 }
