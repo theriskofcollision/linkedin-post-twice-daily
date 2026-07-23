@@ -12,7 +12,8 @@
     "Make opening lines provocative",
     "Avoid clich\u00e9s and jargon",
     "End with a strong statement",
-    "Avoid starting with vague, open-ended questions or statements that sound like corporate introspections."
+    "Avoid starting with vague, open-ended questions or statements that sound like corporate introspections.",
+    "Avoid using vague phrases that sound like marketing speak, and instead use personal, specific details to convey your thoughts and feelings."
   ],
   "history": [
     {
@@ -2844,9 +2845,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-07-23T15:58:26.206685",
+      "topic": "Career paths in AI and machine learning",
+      "vibe": "The Visionary",
+      "urn": "urn:li:share:7486087336657866752",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Transformations\n**1. Value Add:** I completely agree that the next 5 years will be transformative for AI, and the expected boost to global GDP is a testament to its potential. For instance, a recent study by McKinsey found that AI can increase productivity by up to 40% in certain industries, which aligns with PwC's prediction of trillions being added to the global economy by 2030. It will be exciting to see how industries like healthcare and education leverage AI to improve outcomes and efficiency.\n\n**2. Contrarian:** While the advancements in AI are undeniable, I think we need to be cautious about the potential job displacement and exacerbation of inequality. The alignment of AI with local societal values is crucial, but it's also important to consider the potential consequences of relying too heavily on AI in certain sectors. For example, the use of AI in education may widen the gap between those who have access to quality education and those who don't. We need to have a more nuanced discussion about the potential risks and mitigants.\n\n**3. Question:** As AI becomes increasingly integrated into our daily lives, how do we ensure that its development and deployment are aligned with human values and priorities? What role should governments, industries, and civil society play in shaping the future of AI, and what are the key trade-offs we need to make between innovation, efficiency, and social responsibility? I'd love to hear your thoughts on how we can create a future where AI enhances human capabilities while minimizing its negative consequences.",
-  "last_updated": "29995452238",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI and ML Career Trends\n**1. Value Add:** \"I completely agree that the demand for AI and ML professionals is on the rise. In fact, according to a recent report by Pluralsight, the number of job postings for machine learning engineers has increased by 30% in the past year alone. This trend is expected to continue, making it an exciting time for individuals looking to start or transition into a career in AI and ML. With the right skills and knowledge, the opportunities are endless, and resources like Calmu.edu's AI courses can provide a great starting point for those looking to get started.\"\n\n**2. Contrarian:** \"While I understand the excitement around AI and ML career opportunities, I think it's essential to acknowledge the potential risks of job displacement and the need for workers to develop new skills to remain relevant. The rapid advancement of automation and AI could lead to significant changes in the job market, and it's crucial to address these concerns through education and retraining programs. For instance, the article 'AI Companies Are Trying to Hide a Staggering Amount of Debt' highlights the importance of financial transparency and accountability in the AI industry, which could have a significant impact on the job market.\"\n\n**3. Question:** \"As the field of AI and ML continues to evolve, I'm curious to know: what role do you think human-centered design will play in the development of AI systems, and how can we ensure that these systems are aligned with human values and promote positive social outcomes? The paper 'SoftReason: A Fully Differentiable Neuro-Soft-Symbolic Deductive Reasoning Architecture' presents an interesting approach to reasoning in high-dimensional perceptual data, but how can we apply this knowledge to create more inclusive and beneficial AI solutions?\"",
+  "last_updated": "30022892214",
   "rules_distilled_at": "2026-07-18T07:47:29.863126"
 }
