@@ -1,4 +1,4 @@
-# Weekly Brief — 2026-07-19
+# Weekly Brief — 2026-07-26
 
 ## 📊 Performance (from your manual stats)
 | Vibe | Posts tracked | Mean impressions |
@@ -14,28 +14,28 @@
 | The Archivist | 1 | 0 |
 | The Rebel | 1 | 0 |
 ## 📝 Posts published this week: 14
-- 2026-07-12 · **The Curator** · Learning AI development from scratch
-- 2026-07-12 · **The Data Detective** · Skills that matter in the age of AI
-- 2026-07-13 · **The Anthropologist** · Multi-Agent Systems and how they actually work
-- 2026-07-13 · **The Maxer** · Real-world AI automation that saves hours
-- 2026-07-14 · **The Curator** · Career paths in AI and machine learning
-- 2026-07-14 · **The Zen Coder** · Learning AI development from scratch
-- 2026-07-15 · **The Narrator** · The rise of autonomous AI workflows
-- 2026-07-15 · **The Data Detective** · Learning AI development from scratch
-- 2026-07-16 · **The Fresh Eye** · The gap between AI hype and AI reality
-- 2026-07-16 · **The Archivist** · Small businesses using AI to compete with giants
-- 2026-07-17 · **The Anthropologist** · What AI still cannot do well
-- 2026-07-17 · **The Rebel** · My daily workflow with AI assistants
-- 2026-07-18 · **The Architect** · Debugging AI agents and what I learned
-- 2026-07-18 · **The Contrarian** · Enterprise AI adoption mistakes to avoid
+- 2026-07-19 · **The Satirist** · The gap between AI hype and AI reality
+- 2026-07-19 · **The Provocateur** · My daily workflow with AI assistants
+- 2026-07-20 · **The Satirist** · Debugging AI agents and what I learned
+- 2026-07-20 · **The Contrarian** · Small businesses using AI to compete with giants
+- 2026-07-21 · **The Visionary** · Enterprise AI adoption mistakes to avoid
+- 2026-07-21 · **The Architect** · Why single chatbots are becoming obsolete
+- 2026-07-22 · **The Oracle** · Learning AI development from scratch
+- 2026-07-22 · **The Pragmatist** · Why single chatbots are becoming obsolete
+- 2026-07-23 · **The Architect** · Predictions for AI in the next 5 years
+- 2026-07-23 · **The Visionary** · Career paths in AI and machine learning
+- 2026-07-24 · **The Pragmatist** · My daily workflow with AI assistants
+- 2026-07-24 · **The Pragmatist** · Learning AI development from scratch
+- 2026-07-25 · **The Architect** · Tools I use to build AI agents
+- 2026-07-25 · **The Architect** · AI startups disrupting traditional software
 
 ## 🤝 Comment pack (USE THESE — this is the growth lever)
-### 🤝 Comment Pack for Enterprise AI Adoption
-**1. Value Add:** I completely agree that poor data quality is a major contributor to the high failure rate of AI projects. In fact, a study by Gartner found that organizations that invest in data quality initiatives can see a significant increase in the success of their AI projects, with some reporting up to 25% improvement in AI model accuracy. By prioritizing data governance and ensuring high-quality data, businesses can set themselves up for success and minimize the risk of AI project failure.
+### 🤝 Comment Pack for AI Disruption in Software
+**1. Value Add:** I completely agree that AI startups are revolutionizing the software industry by automating tasks and offering subscription-based services. For instance, a study by McKinsey found that AI-powered automation can increase software development productivity by up to 30%. This trend is evident in the growing adoption of AI-powered tools such as GitHub's Copilot, which uses AI to assist with code completion and suggestions.
 
-**2. Contrarian:** While I understand the importance of addressing common mistakes in AI adoption, I think it's also important to consider the potential risks of over-emphasizing strategy and planning. In some cases, over-planning can lead to analysis paralysis, causing businesses to miss out on opportunities to innovate and experiment with AI. Perhaps a more balanced approach, one that allows for flexibility and adaptability, is needed to truly succeed in AI adoption.
+**2. Contrarian:** While I understand the enthusiasm around AI disruption in the software sector, I think it's essential to acknowledge the potential limitations and risks. For example, the concentration of AI capabilities in the hands of a few large tech companies can lead to vendor lock-in and stifle innovation. Moreover, the shift to subscription-based models may not be suitable for all types of software or industries, and companies must carefully consider the implications of such a transition.
 
-**3. Question:** As AI technology continues to advance and become more integrated into business operations, how can organizations ensure that they are not only mitigating the risks associated with AI adoption, but also creating a culture that encourages experimentation, learning, and innovation? What role do you think leadership plays in fostering this type of culture, and what strategies can be implemented to support the development of an AI-ready workforce?
+**3. Question:** As AI continues to transform the software industry, I'd love to hear your thoughts on how we can ensure that the benefits of AI are equitably distributed among stakeholders, including employees, customers, and society as a whole. How can we balance the need for automation and efficiency with the need to upskill and reskill workers, and what role can governments, educators, and industry leaders play in supporting this transition?
 
 ## ✅ Your daily 20-minute checklist (the bot cannot do these for you)
 1. Send **5 connection requests** with a personal note (search: SMB owners in

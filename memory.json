@@ -1,19 +1,17 @@
 {
   "rules": [
-    "Write in a conversational tone",
+    "Write conversationally",
     "Use bolding strategically",
-    "Avoid hyperbolic language",
+    "Avoid hyperbole",
     "Break up long paragraphs",
-    "Eliminate redundant words",
-    "Avoid corporate buzzwords",
+    "Eliminate redundancy",
+    "Avoid jargon",
     "Use specific examples",
-    "Write actively and directly",
+    "Write actively",
     "Cut unnecessary adjectives",
-    "Make opening lines provocative",
-    "Avoid clich\u00e9s and jargon",
-    "End with a strong statement",
-    "Avoid starting with vague, open-ended questions or statements that sound like corporate introspections.",
-    "Avoid using vague phrases that sound like marketing speak, and instead use personal, specific details to convey your thoughts and feelings."
+    "Start with provocative lines",
+    "End with strong statements",
+    "Write with personal details"
   ],
   "history": [
     {
@@ -2899,5 +2897,5 @@
   ],
   "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Disruption in Software\n**1. Value Add:** I completely agree that AI startups are revolutionizing the software industry by automating tasks and offering subscription-based services. For instance, a study by McKinsey found that AI-powered automation can increase software development productivity by up to 30%. This trend is evident in the growing adoption of AI-powered tools such as GitHub's Copilot, which uses AI to assist with code completion and suggestions.\n\n**2. Contrarian:** While I understand the enthusiasm around AI disruption in the software sector, I think it's essential to acknowledge the potential limitations and risks. For example, the concentration of AI capabilities in the hands of a few large tech companies can lead to vendor lock-in and stifle innovation. Moreover, the shift to subscription-based models may not be suitable for all types of software or industries, and companies must carefully consider the implications of such a transition.\n\n**3. Question:** As AI continues to transform the software industry, I'd love to hear your thoughts on how we can ensure that the benefits of AI are equitably distributed among stakeholders, including employees, customers, and society as a whole. How can we balance the need for automation and efficiency with the need to upskill and reskill workers, and what role can governments, educators, and industry leaders play in supporting this transition?",
   "last_updated": "30163067656",
-  "rules_distilled_at": "2026-07-18T07:47:29.863126"
+  "rules_distilled_at": "2026-07-26T07:33:56.599118"
 }
