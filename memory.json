@@ -2923,9 +2923,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-07-27T16:26:43.889328",
+      "topic": "Flow Engineering replacing Prompt Engineering",
+      "vibe": "The Visionary",
+      "urn": "urn:li:share:7487544009234714625",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI and ML Career Paths\n**1. Value Add:** I completely agree that the field of AI and ML is witnessing significant growth, leading to an increased demand for professionals. For instance, a report by Glassdoor found that the average salary for a machine learning engineer in the US is over $141,000 per year, highlighting the lucrative career opportunities available in this field. As AI continues to integrate into various industries, I believe it's essential for professionals to develop a strong foundation in data analysis, model development, and innovation to stay ahead of the curve.\n\n**2. Contrarian:** While I understand the excitement around AI and ML, I think it's essential to acknowledge that the rapid advancement of these technologies also raises concerns about job displacement and the need for workers to develop new skills. For example, a report by the McKinsey Global Institute found that up to 800 million jobs could be lost worldwide due to automation by 2030. As we celebrate the growth of AI and ML, we must also consider the potential consequences and ensure that we're providing workers with the support and training they need to adapt to an increasingly automated workforce.\n\n**3. Question:** As AI and ML continue to evolve, I wonder how professionals in this field can balance the need for innovation and progress with the importance of ethics and responsibility. For instance, how can we ensure that AI systems are developed and deployed in ways that prioritize transparency, accountability, and fairness, particularly in high-stakes applications like healthcare and finance? What role do you think professionals in AI and ML should play in shaping the ethical frameworks that govern the development and use of these technologies?",
-  "last_updated": "30259486751",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Engineering Shift\n**1. Value Add:** I completely agree with the shift from prompt engineering to flow engineering, and I'd like to add that this change is also being driven by the increasing adoption of containerization technologies such as Kubernetes. For instance, a recent study by the Cloud Native Computing Foundation found that 75% of organizations are using Kubernetes in production, which enables more efficient deployment of flow engineering-based AI systems.\n**2. Contrarian:** While I understand the benefits of flow engineering, I'm not convinced that it's a complete replacement for prompt engineering. In fact, I think that prompt engineering still has a critical role to play in certain applications, such as low-latency systems where iterative workflows may not be feasible. We should be careful not to throw the baby out with the bathwater and ensure that we're not compromising on performance in our pursuit of efficiency.\n**3. Question:** As we move towards flow engineering and context engineering, how do we ensure that we're not creating new vulnerabilities in our AI systems? For example, what measures can be taken to prevent adversarial attacks that target the iterative workflow architecture, and how can we balance the need for efficiency with the need for security and robustness in our AI systems? I'd love to hear from experts in the field on this topic.",
+  "last_updated": "30284659715",
   "rules_distilled_at": "2026-07-26T07:33:56.599118"
 }
