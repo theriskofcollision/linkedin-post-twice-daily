@@ -2933,9 +2933,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-07-28T09:41:04.247845",
+      "topic": "AI startups disrupting traditional software",
+      "vibe": "The Visionary",
+      "urn": "urn:li:share:7487804309024235520",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Engineering Shift\n**1. Value Add:** I completely agree with the shift from prompt engineering to flow engineering, and I'd like to add that this change is also being driven by the increasing adoption of containerization technologies such as Kubernetes. For instance, a recent study by the Cloud Native Computing Foundation found that 75% of organizations are using Kubernetes in production, which enables more efficient deployment of flow engineering-based AI systems.\n**2. Contrarian:** While I understand the benefits of flow engineering, I'm not convinced that it's a complete replacement for prompt engineering. In fact, I think that prompt engineering still has a critical role to play in certain applications, such as low-latency systems where iterative workflows may not be feasible. We should be careful not to throw the baby out with the bathwater and ensure that we're not compromising on performance in our pursuit of efficiency.\n**3. Question:** As we move towards flow engineering and context engineering, how do we ensure that we're not creating new vulnerabilities in our AI systems? For example, what measures can be taken to prevent adversarial attacks that target the iterative workflow architecture, and how can we balance the need for efficiency with the need for security and robustness in our AI systems? I'd love to hear from experts in the field on this topic.",
-  "last_updated": "30284659715",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Disruption in the Software Sector\n**1. Value Add:** I completely agree that AI is transforming the software sector, and a great example of this is the use of generative AI in automating tasks such as code generation and testing. According to a recent study, companies that have adopted AI-powered automation have seen a significant reduction in development time and costs. For instance, a company like GitHub has leveraged AI to improve code review and suggestion, making the development process more efficient.\n\n**2. Contrarian:** While AI is certainly disrupting the software sector, I'm not convinced that traditional software companies will become obsolete. Many of these companies have valuable domain expertise and complex workflows that AI startups may struggle to replicate. Moreover, as Morningstar suggests, these companies can still hold value by leveraging their expertise to develop and implement AI solutions. It's not necessarily a zero-sum game, and I think we'll see a more nuanced evolution of the industry.\n\n**3. Question:** As AI continues to disrupt the software sector, I wonder what role human judgment and critical thinking will play in the development and deployment of AI-powered products and services. Will we see a shift towards more hybrid approaches that combine the benefits of AI with human oversight and decision-making, or will AI systems become increasingly autonomous? How can we ensure that the benefits of AI are realized while mitigating the risks of job displacement and other negative consequences?",
+  "last_updated": "30347525022",
   "rules_distilled_at": "2026-07-26T07:33:56.599118"
 }
