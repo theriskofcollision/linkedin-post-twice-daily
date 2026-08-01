@@ -3023,9 +3023,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-08-01T15:07:06.070198",
+      "topic": "What AI still cannot do well",
+      "vibe": "The Provocateur",
+      "urn": "urn:li:share:7489335908501118976",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Flow Engineering in AI Workflows\n**1. Value Add:** \"I completely agree that flow engineering is becoming a crucial approach in designing and optimizing AI workflows. A great example of this is the use of ReToken in vision-language models for visual retrieval, which has shown significant improvements in efficiency and effectiveness. By emphasizing incremental complexity and robust state management, flow engineering can help unlock more complex and autonomous AI systems.\"\n\n**2. Contrarian:** \"While I understand the shift towards flow engineering, I'm not convinced that it's a complete replacement for prompt engineering. In some cases, prompt engineering can still be a valuable approach, especially when working with well-defined tasks and datasets. Perhaps a more nuanced approach would be to combine the strengths of both flow and prompt engineering to create more flexible and adaptable AI workflows.\"\n\n**3. Question:** \"As we move towards more complex AI workflows with flow engineering, how do we ensure that these systems remain transparent, explainable, and aligned with human values? What kinds of evaluation metrics and testing protocols should we develop to validate the performance and reliability of these workflows, and how can we balance the trade-offs between efficiency, effectiveness, and interpretability?\"",
-  "last_updated": "30693222334",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Limitations\n**1. Value Add:** I completely agree that AI's current architecture is a significant barrier to its ability to generalize knowledge across domains. A great example of this is the use of transfer learning in natural language processing, where models like BERT have shown impressive results in certain tasks but struggle to apply that knowledge to entirely new domains. By improving transfer learning capabilities, we could see substantial progress in overcoming this limitation.\n\n**2. Contrarian:** While it's true that AI lacks emotional intelligence and context understanding, I think it's unfair to say that it only detects sentiment cues and generates empathetic language without truly understanding human emotions. There are AI systems being developed that can recognize and respond to emotional nuances, such as affective computing and emotional AI. Perhaps the focus should be on integrating these capabilities into more AI systems rather than discounting the progress made so far.\n\n**3. Question:** As we continue to develop AI systems that can better understand human emotions and context, what are the potential risks of creating AI that can manipulate or exploit human emotions, and how can we ensure that these systems are designed with ethical considerations in mind to prioritize human well-being and safety?",
+  "last_updated": "30705179913",
   "rules_distilled_at": "2026-07-26T07:33:56.599118"
 }
