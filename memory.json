@@ -3053,9 +3053,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-08-03T10:49:59.289974",
+      "topic": "Flow Engineering replacing Prompt Engineering",
+      "vibe": "The Pragmatist",
+      "urn": "urn:li:share:7489995979660898304",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Multi-Agent Systems\n**1. Value Add:** \"I completely agree that multi-agent systems have the potential to transform enterprise AI. For instance, a study by McKinsey found that companies that implemented multi-agent systems saw a 20-30% increase in productivity and a 10-20% reduction in costs. This is a great example of how these systems can be used to automate complex and repetitive tasks, allowing humans to focus on higher-level tasks and decision-making.\"\n\n**2. Contrarian:** \"While I understand the excitement around multi-agent systems, I think we need to consider the potential risks and challenges associated with these systems. For example, what happens if one of the agents malfunctions or is compromised by a cyber attack? How can we ensure that these systems are secure and reliable? I think we need to have a more nuanced conversation about the potential downsides of multi-agent systems before we start implementing them widely.\"\n\n**3. Question:** \"As we continue to develop and implement multi-agent systems, I have to wonder: what are the potential implications for human employment and job displacement? Will these systems augment human capabilities or replace them entirely? How can we ensure that the benefits of multi-agent systems are shared equitably among all stakeholders, and that we're preparing workers for the changes that these systems will bring?\"",
-  "last_updated": "30753631790",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Shift from Prompt Engineering to Flow Engineering and Context Engineering\n**1. Value Add:** I completely agree that Flow Engineering and Context Engineering are crucial for achieving more reliable and efficient AI behavior. A great example of this is the use of graph-based models in Flow Engineering, which can effectively manage complex workflows and iterative processes, as seen in the work of researchers at Jane Street. This approach has significant potential for improving AI-assisted software development and data analysis.\n**2. Contrarian:** While I understand the limitations of Prompt Engineering, I'm not convinced that it's entirely replaced by Flow Engineering and Context Engineering. In certain scenarios, such as simple AI-powered chatbots, Prompt Engineering can still be a valuable skill. Perhaps a more nuanced approach would be to consider Prompt Engineering as a complementary technique, rather than a completely outdated one. It would be interesting to explore the intersection of these approaches and how they can be used in tandem to achieve optimal results.\n**3. Question:** As we move towards Flow Engineering and Context Engineering, how do you think we can balance the need for structured context and iterative processes with the potential risk of over-engineering AI systems? Are there any potential downsides to creating highly complex workflows, and how can we ensure that these systems remain transparent, explainable, and adaptable to changing requirements?",
+  "last_updated": "30807041932",
   "rules_distilled_at": "2026-07-26T07:33:56.599118"
 }
