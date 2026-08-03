@@ -3063,9 +3063,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-08-03T16:31:29.093090",
+      "topic": "What AI still cannot do well",
+      "vibe": "The Visionary",
+      "urn": "urn:li:share:7490081920115085313",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Shift from Prompt Engineering to Flow Engineering and Context Engineering\n**1. Value Add:** I completely agree that Flow Engineering and Context Engineering are crucial for achieving more reliable and efficient AI behavior. A great example of this is the use of graph-based models in Flow Engineering, which can effectively manage complex workflows and iterative processes, as seen in the work of researchers at Jane Street. This approach has significant potential for improving AI-assisted software development and data analysis.\n**2. Contrarian:** While I understand the limitations of Prompt Engineering, I'm not convinced that it's entirely replaced by Flow Engineering and Context Engineering. In certain scenarios, such as simple AI-powered chatbots, Prompt Engineering can still be a valuable skill. Perhaps a more nuanced approach would be to consider Prompt Engineering as a complementary technique, rather than a completely outdated one. It would be interesting to explore the intersection of these approaches and how they can be used in tandem to achieve optimal results.\n**3. Question:** As we move towards Flow Engineering and Context Engineering, how do you think we can balance the need for structured context and iterative processes with the potential risk of over-engineering AI systems? Are there any potential downsides to creating highly complex workflows, and how can we ensure that these systems remain transparent, explainable, and adaptable to changing requirements?",
-  "last_updated": "30807041932",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Limitations\n**1. Value Add:** I completely agree that AI's inability to truly understand human emotions is a significant limitation. For instance, a study by MIT Sloan found that AI-powered customer service chatbots often struggle to empathize with customers, leading to frustration and negative experiences. By acknowledging this limitation, we can design AI systems that complement human capabilities, such as pairing AI with human customer support agents to provide more effective and empathetic support.\n\n**2. Contrarian:** While it's true that current AI systems lack human-like qualities such as consciousness and empathy, I think it's overly pessimistic to assume that these limitations will persist indefinitely. Breakthroughs in fields like cognitive architectures and affective computing are rapidly advancing our understanding of human emotion and decision-making, which could potentially lead to more sophisticated AI systems that can mimic human-like intelligence and empathy. Perhaps we should be focusing on how to accelerate these advancements rather than emphasizing the limitations of current AI.\n\n**3. Question:** As we continue to develop and integrate AI into various aspects of life, what are the potential risks and consequences of creating AI systems that are increasingly adept at mimicking human emotions and decision-making processes? Could we inadvertently create AI systems that are not only more intelligent but also more prone to biases and errors, leading to unintended consequences? How can we ensure that the development of AI is guided by a deep understanding of human values and ethics to mitigate these risks?",
+  "last_updated": "30832471729",
   "rules_distilled_at": "2026-07-26T07:33:56.599118"
 }
