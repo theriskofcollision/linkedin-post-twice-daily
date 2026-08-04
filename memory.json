@@ -3073,9 +3073,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-08-04T09:43:09.325629",
+      "topic": "What AI still cannot do well",
+      "vibe": "The Pragmatist",
+      "urn": "urn:li:share:7490341548920922112",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Limitations\n**1. Value Add:** I completely agree that AI's inability to truly understand human emotions is a significant limitation. For instance, a study by MIT Sloan found that AI-powered customer service chatbots often struggle to empathize with customers, leading to frustration and negative experiences. By acknowledging this limitation, we can design AI systems that complement human capabilities, such as pairing AI with human customer support agents to provide more effective and empathetic support.\n\n**2. Contrarian:** While it's true that current AI systems lack human-like qualities such as consciousness and empathy, I think it's overly pessimistic to assume that these limitations will persist indefinitely. Breakthroughs in fields like cognitive architectures and affective computing are rapidly advancing our understanding of human emotion and decision-making, which could potentially lead to more sophisticated AI systems that can mimic human-like intelligence and empathy. Perhaps we should be focusing on how to accelerate these advancements rather than emphasizing the limitations of current AI.\n\n**3. Question:** As we continue to develop and integrate AI into various aspects of life, what are the potential risks and consequences of creating AI systems that are increasingly adept at mimicking human emotions and decision-making processes? Could we inadvertently create AI systems that are not only more intelligent but also more prone to biases and errors, leading to unintended consequences? How can we ensure that the development of AI is guided by a deep understanding of human values and ethics to mitigate these risks?",
-  "last_updated": "30832471729",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Limitations\n**1. Value Add:** I completely agree that AI's current limitations, such as managing itself and making subjective decisions, are significant hurdles. For instance, a study by McKinsey found that AI systems can reduce errors in data analysis by up to 90%, but they still require human oversight to ensure accuracy and context. This highlights the need for human-AI collaboration to achieve optimal results.\n\n**2. Contrarian:** While it's true that AI has limitations, I think it's also important to consider the potential benefits of developing more advanced AI systems. For example, AI-powered chatbots can help improve customer service and provide 24/7 support, which can be particularly beneficial for businesses and individuals with limited resources. Perhaps the focus should be on developing AI that complements human capabilities, rather than replacing them entirely.\n\n**3. Question:** As AI continues to evolve, what role do you think human emotions and empathy will play in the development of more advanced AI systems? Will we see a shift towards creating AI that can truly understand and replicate human emotions, or will the focus remain on developing AI that can perform specific tasks efficiently, even if it lacks emotional intelligence?",
+  "last_updated": "30897462482",
   "rules_distilled_at": "2026-07-26T07:33:56.599118"
 }
