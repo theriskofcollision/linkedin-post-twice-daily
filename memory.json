@@ -3133,9 +3133,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-08-07T15:00:21.534372",
+      "topic": "Skills that matter in the age of AI",
+      "vibe": "The Pragmatist",
+      "urn": "urn:li:share:7491508539006533633",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Limitations\n**1. Value Add:** I completely agree that AI still lacks original thinking and nuanced judgments. A great example of this is the difficulty AI systems face in understanding sarcasm or humor, which are essential components of human communication. According to a study on natural language processing, AI models struggle to recognize sarcasm, highlighting the need for further research in this area to improve AI's emotional intelligence and creativity.\n\n**2. Contrarian:** While it's true that current AI systems have limitations, I'm not convinced that they can't be overcome. With advancements in cognitive architectures and hybrid models, I believe we'll see significant improvements in AI's ability to think originally and make nuanced judgments. In fact, some researchers are already exploring the use of cognitive architectures to develop more human-like AI systems, which could potentially replicate human creativity and empathy.\n\n**3. Question:** As we continue to develop and deploy AI systems, what are the potential consequences of relying on AI for decision-making processes without addressing its limitations? How can we ensure that AI is used in a way that complements human abilities, rather than replacing them, and what role should human-AI collaboration play in mitigating the risks associated with AI's limitations?",
-  "last_updated": "31161129018",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Age of AI and the Future of Work\n**1. Value Add:** I completely agree that soft skills like communication, critical thinking, and cultural awareness are crucial in the age of AI. In fact, a study by the International Labour Organization found that workers who possess these skills are more likely to thrive in an AI-driven workforce. For example, a company like IBM has implemented AI-powered tools to enhance employee communication and collaboration, resulting in increased productivity and job satisfaction. This highlights the importance of investing in human skills to complement AI capabilities.\n\n**2. Contrarian:** While I understand the emphasis on developing new skills like AI literacy and ethical understanding, I'm not convinced that these skills will be universally essential. What about industries where AI adoption is slower, such as non-profit or social sectors? Don't we risk creating a skills gap between those who have access to AI training and those who don't? Perhaps we should focus on creating a more inclusive and adaptable workforce that can respond to changing technological demands, rather than solely focusing on AI-specific skills.\n\n**3. Question:** As we invest in developing skills that are complementary to AI, how can we ensure that we're not inadvertently creating a workforce that is too reliant on technology? What are the potential long-term consequences of prioritizing skills like AI literacy and machine learning over traditional skills like critical thinking and problem-solving? How can we strike a balance between embracing the benefits of AI and preserving the unique value that human workers bring to the table?",
+  "last_updated": "31190345836",
   "rules_distilled_at": "2026-07-26T07:33:56.599118"
 }
