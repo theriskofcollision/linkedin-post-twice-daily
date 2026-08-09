@@ -11,7 +11,8 @@
     "Cut unnecessary adjectives",
     "Start with provocative lines",
     "End with strong statements",
-    "Write with personal details"
+    "Write with personal details",
+    "Avoid using fake questions like \"Have you tried\" as they are often used by AI to simulate engagement."
   ],
   "history": [
     {
@@ -3173,9 +3174,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-08-09T14:41:40.199909",
+      "topic": "Flow Engineering replacing Prompt Engineering",
+      "vibe": "The Contrarian",
+      "urn": "urn:li:share:7492228611274518528",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Future of Work in the Age of AI\n**1. Value Add:** I completely agree that soft skills like communication, critical thinking, and teamwork are still crucial in the age of AI. In fact, a study by the International Labour Organization found that employees with strong soft skills are more likely to adapt to new technologies and workflows, making them more valuable to their organizations. For instance, a company like Google emphasizes the importance of soft skills in their hiring process, looking for candidates who can work effectively in teams and communicate complex ideas simply.\n\n**2. Contrarian:** While I understand the emphasis on developing skills that complement machines, I think we're overlooking the potential for AI to augment human capabilities in areas like creativity and critical thinking. Rather than focusing solely on skills that are uniquely human, perhaps we should explore ways to use AI to enhance our creative potential and analytical skills. This could involve using AI tools to generate new ideas or simulate complex scenarios, allowing humans to focus on higher-level thinking and decision-making.\n\n**3. Question:** As we invest in AI literacy programs and retraining initiatives, how can we ensure that these efforts are accessible and effective for workers in all industries and at all skill levels? What role can governments, educational institutions, and private organizations play in supporting workers who may be displaced by automation, and how can we balance the need for technological advancement with the need for social equity and economic stability?",
-  "last_updated": "31302288829",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Shift from Prompt to Flow and Context Engineering\n**1. Value Add:** I completely agree with the shift towards flow and context engineering in AI. A great example of this is in the healthcare industry, where context engineering can be used to create personalized treatment plans by integrating patient data, medical history, and real-time health monitoring. This approach can significantly improve diagnosis accuracy and patient outcomes, making it a promising application of flow and context engineering.\n\n**2. Contrarian:** While I understand the move towards flow and context engineering, I think we're overlooking the potential of hybrid approaches that combine the benefits of prompt engineering with the structure of flow and context engineering. By integrating the flexibility of prompt engineering with the governance and reliability of flow and context engineering, we might be able to create more adaptable and efficient AI systems that can handle a wider range of tasks and environments.\n\n**3. Question:** As we transition towards flow and context engineering, how do we ensure that the increased complexity of these new approaches doesn't lead to a lack of transparency and explainability in AI decision-making processes? Are there any potential risks or unintended consequences that we should be aware of when designing and deploying these more comprehensive AI management strategies, and how can we mitigate them to maintain public trust in AI technologies?",
+  "last_updated": "31319066641",
   "rules_distilled_at": "2026-07-26T07:33:56.599118"
 }
