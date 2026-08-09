@@ -1,4 +1,4 @@
-# Weekly Brief — 2026-08-02
+# Weekly Brief — 2026-08-09
 
 ## 📊 Performance (from your manual stats)
 | Vibe | Posts tracked | Mean impressions |
@@ -13,29 +13,28 @@
 | The Fresh Eye | 1 | 0 |
 | The Archivist | 1 | 0 |
 | The Rebel | 1 | 0 |
-## 📝 Posts published this week: 14
-- 2026-07-26 · **The Satirist** · Real-world AI automation that saves hours
-- 2026-07-26 · **The Satirist** · Building AI agents that collaborate autonomously
-- 2026-07-27 · **The Pragmatist** · Career paths in AI and machine learning
-- 2026-07-27 · **The Visionary** · Flow Engineering replacing Prompt Engineering
-- 2026-07-28 · **The Visionary** · AI startups disrupting traditional software
-- 2026-07-28 · **The Provocateur** · How AI is changing software engineering
-- 2026-07-29 · **The Satirist** · My daily workflow with AI assistants
-- 2026-07-29 · **The Visionary** · Career paths in AI and machine learning
-- 2026-07-30 · **The Contrarian** · AI ethics and what developers should care about
-- 2026-07-30 · **The Architect** · Open source AI tools worth trying today
-- 2026-07-31 · **The Minimalist** · My daily workflow with AI assistants
-- 2026-07-31 · **The Visionary** · LLMs as operating systems for AI agents
-- 2026-08-01 · **The Minimalist** · Flow Engineering replacing Prompt Engineering
-- 2026-08-01 · **The Provocateur** · What AI still cannot do well
+## 📝 Posts published this week: 13
+- 2026-08-02 · **The Debunker** · How AI is changing software engineering
+- 2026-08-02 · **The Architect** · Multi-Agent Systems and how they actually work
+- 2026-08-03 · **The Pragmatist** · Flow Engineering replacing Prompt Engineering
+- 2026-08-03 · **The Visionary** · What AI still cannot do well
+- 2026-08-04 · **The Pragmatist** · What AI still cannot do well
+- 2026-08-04 · **The Minimalist** · Tools I use to build AI agents
+- 2026-08-05 · **The Architect** · Why single chatbots are becoming obsolete
+- 2026-08-05 · **The Satirist** · Predictions for AI in the next 5 years
+- 2026-08-06 · **The Minimalist** · AI startups disrupting traditional software
+- 2026-08-07 · **The Architect** · What AI still cannot do well
+- 2026-08-07 · **The Pragmatist** · Skills that matter in the age of AI
+- 2026-08-08 · **The Contrarian** · Enterprise AI adoption mistakes to avoid
+- 2026-08-08 · **The Architect** · Open source AI tools worth trying today
 
 ## 🤝 Comment pack (USE THESE — this is the growth lever)
-### 🤝 Comment Pack for AI Limitations
-**1. Value Add:** I completely agree that AI's current architecture is a significant barrier to its ability to generalize knowledge across domains. A great example of this is the use of transfer learning in natural language processing, where models like BERT have shown impressive results in certain tasks but struggle to apply that knowledge to entirely new domains. By improving transfer learning capabilities, we could see substantial progress in overcoming this limitation.
+### 🤝 Comment Pack for Open-Source AI Tools
+**1. Value Add:** I completely agree that open-source AI tools are democratizing access to AI technology. For instance, a recent study found that companies using open-source AI tools like SonarQube Community Edition saw a 30% reduction in code review time, allowing them to focus on more complex tasks. This is a great example of how open-source AI tools can drive efficiency and productivity in the industry.
 
-**2. Contrarian:** While it's true that AI lacks emotional intelligence and context understanding, I think it's unfair to say that it only detects sentiment cues and generates empathetic language without truly understanding human emotions. There are AI systems being developed that can recognize and respond to emotional nuances, such as affective computing and emotional AI. Perhaps the focus should be on integrating these capabilities into more AI systems rather than discounting the progress made so far.
+**2. Contrarian:** While I understand the excitement around open-source AI tools, I think we need to consider the potential risks of relying on community-driven support. What happens when a critical security vulnerability is discovered in an open-source AI model, and the community is slow to respond? Don't we need more robust support structures in place before we can fully rely on open-source AI tools?
 
-**3. Question:** As we continue to develop AI systems that can better understand human emotions and context, what are the potential risks of creating AI that can manipulate or exploit human emotions, and how can we ensure that these systems are designed with ethical considerations in mind to prioritize human well-being and safety?
+**3. Question:** As open-source AI tools continue to gain traction, how do you think the relationship between open-source and proprietary AI solutions will evolve? Will we see a hybrid model emerge, where companies use open-source AI tools for certain tasks and proprietary solutions for others, or will the industry ultimately converge on one approach? I'd love to hear your thoughts on the future of AI adoption and the role of open-source tools.
 
 ## ✅ Your daily 20-minute checklist (the bot cannot do these for you)
 1. Send **5 connection requests** with a personal note (search: SMB owners in
