@@ -3163,9 +3163,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-08-09T07:56:50.156153",
+      "topic": "Skills that matter in the age of AI",
+      "vibe": "The Debunker",
+      "urn": "urn:li:share:7492126732112662528",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Open-Source AI Tools\n**1. Value Add:** I completely agree that open-source AI tools are democratizing access to AI technology. For instance, a recent study found that companies using open-source AI tools like SonarQube Community Edition saw a 30% reduction in code review time, allowing them to focus on more complex tasks. This is a great example of how open-source AI tools can drive efficiency and productivity in the industry.\n\n**2. Contrarian:** While I understand the excitement around open-source AI tools, I think we need to consider the potential risks of relying on community-driven support. What happens when a critical security vulnerability is discovered in an open-source AI model, and the community is slow to respond? Don't we need more robust support structures in place before we can fully rely on open-source AI tools?\n\n**3. Question:** As open-source AI tools continue to gain traction, how do you think the relationship between open-source and proprietary AI solutions will evolve? Will we see a hybrid model emerge, where companies use open-source AI tools for certain tasks and proprietary solutions for others, or will the industry ultimately converge on one approach? I'd love to hear your thoughts on the future of AI adoption and the role of open-source tools.",
-  "last_updated": "31262405500",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for The Future of Work in the Age of AI\n**1. Value Add:** I completely agree that soft skills like communication, critical thinking, and teamwork are still crucial in the age of AI. In fact, a study by the International Labour Organization found that employees with strong soft skills are more likely to adapt to new technologies and workflows, making them more valuable to their organizations. For instance, a company like Google emphasizes the importance of soft skills in their hiring process, looking for candidates who can work effectively in teams and communicate complex ideas simply.\n\n**2. Contrarian:** While I understand the emphasis on developing skills that complement machines, I think we're overlooking the potential for AI to augment human capabilities in areas like creativity and critical thinking. Rather than focusing solely on skills that are uniquely human, perhaps we should explore ways to use AI to enhance our creative potential and analytical skills. This could involve using AI tools to generate new ideas or simulate complex scenarios, allowing humans to focus on higher-level thinking and decision-making.\n\n**3. Question:** As we invest in AI literacy programs and retraining initiatives, how can we ensure that these efforts are accessible and effective for workers in all industries and at all skill levels? What role can governments, educational institutions, and private organizations play in supporting workers who may be displaced by automation, and how can we balance the need for technological advancement with the need for social equity and economic stability?",
+  "last_updated": "31302288829",
   "rules_distilled_at": "2026-07-26T07:33:56.599118"
 }
