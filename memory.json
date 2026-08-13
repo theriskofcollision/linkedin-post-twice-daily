@@ -3255,9 +3255,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-08-13T15:04:39.932672",
+      "topic": "What AI still cannot do well",
+      "vibe": "The Pragmatist",
+      "urn": "urn:li:share:7493683949748183041",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for LLMs as Operating Systems for AI Agents\n**1. Value Add:** I completely agree that LLMs have the potential to revolutionize the way AI systems interact with the physical world. For instance, a recent study on arXiv demonstrated how LLMs can be used to improve the efficiency and security of AI-powered robotics in manufacturing, leading to a 25% increase in production speed and a 30% reduction in errors. This highlights the significant benefits of adopting LLMs as operating systems for AI agents.\n\n**2. Contrarian:** While the idea of using LLMs as operating systems for AI agents is intriguing, I think we need to consider the potential risks and limitations. For example, relying on LLMs could lead to a lack of diversity in AI systems, as they may all be based on similar architectures and training data. This could make them more vulnerable to certain types of attacks or biases, and might stifle innovation in the field. We should be cautious and ensure that we're not sacrificing long-term progress for short-term gains.\n\n**3. Question:** As we explore the use of LLMs as operating systems for AI agents, I'd love to hear more about how we can ensure that these systems are transparent, explainable, and accountable. How can we design LLMs to provide insights into their decision-making processes, and what mechanisms can we put in place to prevent biased or unfair outcomes? What are the key challenges and opportunities in developing explanatory models for LLM-powered AI agents, and how can we address them?",
-  "last_updated": "31681987629",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Limitations\n**1. Value Add:** I completely agree that AI's inability to mimic human intuition and emotional intelligence is a significant challenge. A specific example that comes to mind is the use of AI in customer service, where AI agents often struggle to empathize with customers' frustrations, leading to further escalation of issues. Implementing more advanced NLP capabilities and machine learning algorithms that can learn from human interactions could help bridge this gap.\n\n**2. Contrarian:** While it's true that AI has limitations in understanding human emotions, I think it's also important to recognize that AI can sometimes provide more objective and unbiased support, unclouded by human emotions. For instance, in a healthcare setting, an AI system may be able to provide more consistent and reliable support to patients, even if it lacks emotional intelligence. Perhaps the goal shouldn't be to replicate human emotions in AI, but rather to find ways to complement human capabilities with AI's unique strengths.\n\n**3. Question:** As we continue to develop AI systems that can learn from human emotions and interactions, what are the potential risks of creating AI that can manipulate human emotions, and how can we ensure that these systems are designed with safeguards to prevent such manipulation? Should we be prioritizing the development of AI that can understand and respond to human emotions, or should we focus on creating AI that can provide more objective and data-driven support?",
+  "last_updated": "31713332212",
   "rules_distilled_at": "2026-07-26T07:33:56.599118"
 }
