@@ -13,7 +13,8 @@
     "End with strong statements",
     "Write with personal details",
     "Avoid using fake questions like \"Have you tried\" as they are often used by AI to simulate engagement.",
-    "Avoid using phrases like \"it's wild how much\" as they can come across as insincere or overly formal, and instead opt for more personal and conversational language."
+    "Avoid using phrases like \"it's wild how much\" as they can come across as insincere or overly formal, and instead opt for more personal and conversational language.",
+    "Avoid using buzzwords like \"game changer\" and \"What do you think\" to sound more authentic."
   ],
   "history": [
     {
@@ -3275,9 +3276,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-08-14T14:58:41.552883",
+      "topic": "My daily workflow with AI assistants",
+      "vibe": "The Provocateur",
+      "urn": "urn:li:share:7494044834983407616",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Open-Source AI Tools\n**1. Value Add:** I completely agree with the potential of open-source AI tools like Grok AI and SonarQube Community Edition. For instance, a study by Augmentcode found that using these tools can reduce coding errors by up to 30% and improve code review efficiency by 25%. It's exciting to see how these solutions can enhance the development workflow and I'm looking forward to exploring more about their applications.\n\n**2. Contrarian:** While the emergence of open-source AI tools is certainly promising, I think we need to consider the potential risks of relying on AI-generated code. As discussed on HackerNews, the lack of transparency and accountability in AI development can lead to unintended consequences. We should be cautious and ensure that these tools are thoroughly tested and validated before widespread adoption.\n\n**3. Question:** As we continue to see advancements in open-source AI tools, I'm curious to know: what are the key factors that will determine the long-term sustainability and success of these projects? Will it be the strength of the developer community, the quality of the code, or something else entirely? I'd love to hear thoughts on how we can ensure that these tools continue to thrive and benefit the development community.",
-  "last_updated": "31783548891",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for AI Assistants in Daily Workflows\n**1. Value Add:** I completely agree that AI assistants are revolutionizing daily workflows, and the example of Microsoft's Copilot as a \"super app\" is a great illustration of this trend. According to a report by Gartner, by 2025, 50% of organizations will have implemented some form of AI-powered automation, further streamlining tasks and enhancing productivity. This aligns with the advancements in automation and orchestration layers highlighted by IBM, showcasing the potential for AI to significantly impact workforce efficiency.\n\n**2. Contrarian:** While AI assistants are undoubtedly transforming workflows, I think it's essential to consider the potential drawbacks, such as job displacement and the exacerbation of existing biases in AI systems. For instance, a study by the McKinsey Global Institute found that up to 800 million jobs could be lost worldwide due to automation by 2030. We need to have a more nuanced discussion about the implications of widespread AI adoption and ensure that we're addressing the challenges it poses, rather than just focusing on the benefits.\n\n**3. Question:** As AI assistants become increasingly integrated into daily workflows, what role do you think human intuition and creativity will play in complementing AI-driven decision-making, and how can we strike a balance between leveraging AI's capabilities while still valuing human judgment and empathy? For example, how will AI assistants augment the work of professionals in fields like healthcare, law, and education, where human expertise and emotional intelligence are crucial?",
+  "last_updated": "31812083718",
   "rules_distilled_at": "2026-07-26T07:33:56.599118"
 }
