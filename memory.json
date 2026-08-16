@@ -5,16 +5,13 @@
     "Avoid hyperbole",
     "Break up long paragraphs",
     "Eliminate redundancy",
-    "Avoid jargon",
+    "Use clear language",
     "Use specific examples",
     "Write actively",
-    "Cut unnecessary adjectives",
-    "Start with provocative lines",
-    "End with strong statements",
-    "Write with personal details",
-    "Avoid using fake questions like \"Have you tried\" as they are often used by AI to simulate engagement.",
-    "Avoid using phrases like \"it's wild how much\" as they can come across as insincere or overly formal, and instead opt for more personal and conversational language.",
-    "Avoid using buzzwords like \"game changer\" and \"What do you think\" to sound more authentic."
+    "Be concise",
+    "Start strongly",
+    "End strongly",
+    "Be authentic"
   ],
   "history": [
     {
@@ -3310,5 +3307,5 @@
   ],
   "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Autonomous AI Workflows\n**1. Value Add:** I completely agree that autonomous AI workflows are revolutionizing business operations. A great example of this is the use of AI-powered recommendation systems in e-commerce, which have been shown to increase sales by up to 30% (Source: McKinsey, \"The impact of AI on business\"). As autonomous AI continues to advance, we can expect to see even more innovative applications across various industries.\n\n**2. Contrarian:** While I understand the excitement around autonomous AI workflows, I think we need to be cautious about the potential risks of over-reliance on these systems. For instance, if an AI model is biased or flawed, it can lead to poor decision-making and significant consequences. We need to ensure that we have robust testing and validation processes in place to mitigate these risks and guarantee that autonomous AI systems are aligned with human values.\n\n**3. Question:** As autonomous AI workflows become more prevalent, how do you think organizations will need to adapt their leadership structures and management practices to effectively oversee and guide these intelligent agents? Will we see a shift towards more decentralized decision-making, or will traditional hierarchical structures still dominate? I'd love to hear your thoughts on this and explore the potential implications for business operations and employee development.",
   "last_updated": "31890010420",
-  "rules_distilled_at": "2026-07-26T07:33:56.599118"
+  "rules_distilled_at": "2026-08-16T05:24:34.612616"
 }
