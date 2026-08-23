@@ -1,4 +1,4 @@
-# Weekly Brief — 2026-08-16
+# Weekly Brief — 2026-08-23
 
 ## 📊 Performance (from your manual stats)
 | Vibe | Posts tracked | Mean impressions |
@@ -13,29 +13,18 @@
 | The Fresh Eye | 1 | 0 |
 | The Archivist | 1 | 0 |
 | The Rebel | 1 | 0 |
-## 📝 Posts published this week: 14
-- 2026-08-09 · **The Debunker** · Skills that matter in the age of AI
-- 2026-08-09 · **The Contrarian** · Flow Engineering replacing Prompt Engineering
-- 2026-08-10 · **The Debunker** · Flow Engineering replacing Prompt Engineering
-- 2026-08-10 · **The Satirist** · AI startups disrupting traditional software
-- 2026-08-11 · **The Contrarian** · Open source AI tools worth trying today
-- 2026-08-11 · **The Visionary** · Predictions for AI in the next 5 years
-- 2026-08-12 · **The Contrarian** · Why single chatbots are becoming obsolete
-- 2026-08-12 · **The Visionary** · Small businesses using AI to compete with giants
-- 2026-08-13 · **The Architect** · LLMs as operating systems for AI agents
-- 2026-08-13 · **The Pragmatist** · What AI still cannot do well
-- 2026-08-14 · **The Provocateur** · Open source AI tools worth trying today
-- 2026-08-14 · **The Provocateur** · My daily workflow with AI assistants
-- 2026-08-15 · **The Visionary** · Predictions for AI in the next 5 years
-- 2026-08-15 · **The Minimalist** · The rise of autonomous AI workflows
+## 📝 Posts published this week: 3
+- 2026-08-16 · **The Architect** · AI ethics and what developers should care about
+- 2026-08-16 · **The Satirist** · Multi-Agent Systems and how they actually work
+- 2026-08-17 · **The Debunker** · AI startups disrupting traditional software
 
 ## 🤝 Comment pack (USE THESE — this is the growth lever)
-### 🤝 Comment Pack for Autonomous AI Workflows
-**1. Value Add:** I completely agree that autonomous AI workflows are revolutionizing business operations. A great example of this is the use of AI-powered recommendation systems in e-commerce, which have been shown to increase sales by up to 30% (Source: McKinsey, "The impact of AI on business"). As autonomous AI continues to advance, we can expect to see even more innovative applications across various industries.
+### 🤝 Comment Pack for AI Disruption in the Software Sector
+**1. Value Add:** I completely agree that AI startups are disrupting traditional software companies with more efficient coding and customer support solutions. For instance, a study by McKinsey found that AI-powered automation can reduce software development time by up to 30% and improve code quality by up to 25%. This data point highlights the significant impact AI can have on streamlining software development processes.
 
-**2. Contrarian:** While I understand the excitement around autonomous AI workflows, I think we need to be cautious about the potential risks of over-reliance on these systems. For instance, if an AI model is biased or flawed, it can lead to poor decision-making and significant consequences. We need to ensure that we have robust testing and validation processes in place to mitigate these risks and guarantee that autonomous AI systems are aligned with human values.
+**2. Contrarian:** While AI disruption is undoubtedly changing the software landscape, I think it's essential to consider the potential limitations of AI in certain areas, such as complex software development that requires human intuition and creativity. Additionally, the cost of implementing and integrating AI solutions can be prohibitively expensive for smaller traditional software companies, which may limit the extent of disruption in the short term.
 
-**3. Question:** As autonomous AI workflows become more prevalent, how do you think organizations will need to adapt their leadership structures and management practices to effectively oversee and guide these intelligent agents? Will we see a shift towards more decentralized decision-making, or will traditional hierarchical structures still dominate? I'd love to hear your thoughts on this and explore the potential implications for business operations and employee development.
+**3. Question:** As AI continues to advance and disrupt the software sector, what role do you think human developers will play in the future of software development, and how can traditional software companies effectively upskill their workforce to work alongside AI-powered tools and maintain a competitive edge in the market?
 
 ## ✅ Your daily 20-minute checklist (the bot cannot do these for you)
 1. Send **5 connection requests** with a personal note (search: SMB owners in
