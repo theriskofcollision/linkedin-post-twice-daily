@@ -1,4 +1,4 @@
-# Weekly Brief — 2026-08-23
+# Weekly Brief — 2026-08-30
 
 ## 📊 Performance (from your manual stats)
 | Vibe | Posts tracked | Mean impressions |
@@ -13,10 +13,8 @@
 | The Fresh Eye | 1 | 0 |
 | The Archivist | 1 | 0 |
 | The Rebel | 1 | 0 |
-## 📝 Posts published this week: 3
-- 2026-08-16 · **The Architect** · AI ethics and what developers should care about
-- 2026-08-16 · **The Satirist** · Multi-Agent Systems and how they actually work
-- 2026-08-17 · **The Debunker** · AI startups disrupting traditional software
+## 📝 Posts published this week: 0
+- none
 
 ## 🤝 Comment pack (USE THESE — this is the growth lever)
 ### 🤝 Comment Pack for AI Disruption in the Software Sector
