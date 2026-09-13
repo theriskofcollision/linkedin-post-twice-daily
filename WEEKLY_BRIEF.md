@@ -1,4 +1,4 @@
-# Weekly Brief — 2026-09-06
+# Weekly Brief — 2026-09-13
 
 ## 📊 Performance (from your manual stats)
 | Vibe | Posts tracked | Mean impressions |
