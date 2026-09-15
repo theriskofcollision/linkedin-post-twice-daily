@@ -87,7 +87,7 @@ A real-time command center built with Streamlit.
 
 ## How to Run
 
-1. Ensure `GEMINI_API_KEY`, `LINKEDIN_ACCESS_TOKEN`, `LINKEDIN_PERSON_URN`, `NEWS_API_KEY`, and `TAVILY_API_KEY` are set in GitHub Secrets.
-2. The workflow runs automatically on schedule (09:00 UTC).
+1. Ensure `GROQ_API_KEY`, `LINKEDIN_ACCESS_TOKEN`, `LINKEDIN_PERSON_URN`, `NEWS_API_KEY`, and `TAVILY_API_KEY` are set in GitHub Secrets.
+2. The workflow runs automatically on schedule (07:00 UTC / 10:00 Istanbul, once daily).
 3. To run manually: Go to GitHub Actions -> "Run LinkedIn Workflow".
 4. To view the Dashboard: Visit the [Streamlit App](https://linkedin-post-twice-daily-h9akrsza5xz5appdzxen99l.streamlit.app) or run `python3 -m streamlit run dashboard.py` locally.
