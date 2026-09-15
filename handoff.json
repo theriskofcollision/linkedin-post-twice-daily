@@ -1,0 +1,118 @@
+{
+  "repo": "theriskofcollision/linkedin-post-twice-daily",
+  "purpose": "Autonomous multi-agent pipeline for researching, drafting, visualizing, and publishing high-engagement LinkedIn posts on personal profile via GitHub Actions",
+  "runtime": {
+    "entry": "linkedin_agents.py",
+    "workflow": ".github/workflows/linkedin_scheduler.yml",
+    "schedule_cron": "0 7 * * *",
+    "timezone_note": "07:00 UTC = 10:00 Istanbul"
+  },
+  "llm": {
+    "provider": "groq",
+    "env_secret": "GROQ_API_KEY",
+    "model_config_path": "config.yaml",
+    "model_id": "openai/gpt-oss-120b",
+    "deprecated_models": [
+      "llama-3.3-70b-versatile"
+    ]
+  },
+  "linkedin": {
+    "posting_target": "member_profile",
+    "env_token_secret": "LINKEDIN_ACCESS_TOKEN",
+    "env_author_urn_secret": "LINKEDIN_PERSON_URN",
+    "author_urn_format": "urn:li:person:{id}",
+    "api_base": "https://api.linkedin.com",
+    "post_endpoint": "/rest/posts",
+    "image_init_endpoint": "/rest/images?action=initializeUpload",
+    "headers_required": [
+      "Authorization",
+      "LinkedIn-Version",
+      "X-Restli-Protocol-Version"
+    ],
+    "linkedin_version_header_value": "202606",
+    "recommended_app_name": "github 1",
+    "required_products": [
+      "Share on LinkedIn",
+      "Sign In with LinkedIn using OpenID Connect"
+    ],
+    "required_scopes": [
+      "openid",
+      "profile",
+      "email",
+      "w_member_social"
+    ],
+    "how_to_get_person_urn": "Call GET https://api.linkedin.com/v2/userinfo with Bearer token; read 'sub' field from JSON response; author URN is urn:li:person:{sub}. Note: Do NOT use deprecated /v2/me as it requires legacy r_liteprofile and will return 401.",
+    "token_generator_url": "https://www.linkedin.com/developers/tools/oauth/token-generator",
+    "known_invalid_token_causes": [
+      "Querying deprecated /v2/me endpoint which requires legacy r_liteprofile instead of modern /v2/userinfo",
+      "Token generated without checking all 4 required scopes (openid, profile, email, w_member_social) in Developer Token Generator",
+      "Using token from app with unverified Company Page association or incomplete settings ('hakan growth bot')",
+      "Calling terminal curl without exporting LINKEDIN_ACCESS_TOKEN variable, sending empty Bearer header",
+      "Authenticated user is not assigned Developer or Admin role on the app in Development mode",
+      "Omitting LinkedIn-Version header on REST endpoints (/rest/posts or /rest/images)",
+      "Token expiration (Developer Token Generator tokens expire after 60 days)"
+    ],
+    "verification_curl": "curl -s -X GET 'https://api.linkedin.com/v2/userinfo' -H \"Authorization: Bearer $LINKEDIN_ACCESS_TOKEN\""
+  },
+  "other_secrets": [
+    {
+      "name": "NEWS_API_KEY",
+      "required": false,
+      "used_by": "NewsApiConnector.get_top_ai_news in linkedin_agents.py (optional news headline scanner)"
+    },
+    {
+      "name": "TAVILY_API_KEY",
+      "required": false,
+      "used_by": "TavilyConnector.search_ai_context in linkedin_agents.py (optional agentic web search)"
+    },
+    {
+      "name": "FORCED_VIBE",
+      "required": false,
+      "used_by": "Orchestrator._select_vibe_and_format in linkedin_agents.py (optional persona override)"
+    }
+  ],
+  "code_map": {
+    "linkedin_connector_class": "LinkedInConnector (linkedin_agents.py:1162)",
+    "where_token_read": "LinkedInConnector.__init__ (linkedin_agents.py:1164)",
+    "where_urn_read": "LinkedInConnector.__init__ (linkedin_agents.py:1165)",
+    "where_post_happens": "LinkedInConnector.post_content (linkedin_agents.py:1203) called by Orchestrator._publish_phase (linkedin_agents.py:1495)",
+    "where_model_chosen": "Agent.run (linkedin_agents.py:292) loading model.name from config.yaml"
+  },
+  "recent_errors": [
+    {
+      "symptom": "401 INVALID_ACCESS_TOKEN on /v2/me and rest/posts",
+      "likely_causes": [
+        "/v2/me was called instead of OpenID Connect /v2/userinfo endpoint",
+        "Developer Token was minted from 'hakan growth bot' which lacked OIDC product and had unverified page status",
+        "Scopes were partially selected in Token Generator tool (missing openid or w_member_social)",
+        "Missing LinkedIn-Version header (e.g. 202606) required for REST endpoints",
+        "Token environment variable empty in local test shell or GitHub Secret not updated"
+      ],
+      "fix_checklist": [
+        "Open LinkedIn Developer Portal and ensure 'github 1' app has Company Page verified and team roles assigned",
+        "Confirm both 'Share on LinkedIn' and 'Sign In with LinkedIn using OpenID Connect' products are Added",
+        "Open Token Generator, select 'github 1', check 'openid', 'profile', 'email', 'w_member_social', and generate token",
+        "Test token with: curl -H 'Authorization: Bearer $LINKEDIN_ACCESS_TOKEN' https://api.linkedin.com/v2/userinfo",
+        "Extract 'sub' from userinfo response and construct LINKEDIN_PERSON_URN=urn:li:person:{sub}",
+        "Update GitHub Secrets LINKEDIN_ACCESS_TOKEN and LINKEDIN_PERSON_URN",
+        "Update config.yaml model to openai/gpt-oss-120b and .github/workflows/linkedin_scheduler.yml cron to '0 7 * * *'",
+        "Trigger workflow manually via GitHub Actions workflow_dispatch and verify status 201"
+      ]
+    }
+  ],
+  "do_not": [
+    "commit real tokens, client secrets, or API keys into git repository",
+    "print or log secret values in GitHub Actions workflow output",
+    "use /v2/me endpoint with modern OIDC tokens (it will always return 401)",
+    "target company pages or enable the Healer agent until personal profile posting is stable",
+    "modify agent prompts or Critic rule enforcement without benchmarking against memory.json"
+  ],
+  "next_actions_for_fixer": [
+    "Verify 'github 1' developer app verification status and admin role in LinkedIn Developer Portal",
+    "Generate 60-day token with scopes: openid, profile, email, w_member_social",
+    "Execute /v2/userinfo curl to verify token and extract person ID ('sub')",
+    "Update GitHub repository secrets: LINKEDIN_ACCESS_TOKEN and LINKEDIN_PERSON_URN",
+    "Update config.yaml model.name to 'openai/gpt-oss-120b' and workflow cron to '0 7 * * *'",
+    "If /v2/ugcPosts is blocked by LinkedIn for newly issued tokens, update LinkedInConnector to use /rest/posts and /rest/images"
+  ]
+}
