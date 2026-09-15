@@ -26,7 +26,7 @@ from logging_config import logger
 def load_config(config_path: str = "config.yaml") -> Dict[str, Any]:
     """Load configuration from YAML file with defaults."""
     defaults = {
-        "model": {"name": "llama-3.3-70b-versatile", "max_retries": 3, "base_delay_seconds": 5},
+        "model": {"name": "openai/gpt-oss-120b", "max_retries": 3, "base_delay_seconds": 5},
         "sources": {
             "hackernews": {"scan_limit": 15, "ai_results": 5},
             "newsapi": {"limit": 5},
@@ -289,7 +289,7 @@ class Agent:
         
         max_retries = CONFIG.get("model", {}).get("max_retries", 3)
         base_delay = CONFIG.get("model", {}).get("base_delay_seconds", 5)
-        model_name = CONFIG.get("model", {}).get("name", "llama-3.3-70b-versatile")
+        model_name = CONFIG.get("model", {}).get("name", "openai/gpt-oss-120b")
         
         for attempt in range(max_retries):
             try:
