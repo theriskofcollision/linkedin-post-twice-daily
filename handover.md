@@ -20,14 +20,14 @@ This is an autonomous AI agent system that researches, strategizes, creates, and
 * `linkedin_agents.py`: Core logic and agent definitions.
 * `dashboard.py`: Streamlit command center for analytics and tools.
 * `memory.json`: Persistent storage for history, stats, and learned rules.
-* `.github/workflows/linkedin_scheduler.yml`: Automation workflow (runs 09:00 & 17:00 UTC).
+* `.github/workflows/linkedin_scheduler.yml`: Automation workflow (runs once daily at 07:00 UTC / 10:00 Istanbul).
 * `task.md`: Project roadmap and status.
 
 ## 4. Environment Variables (GitHub Secrets)
 
 * `LINKEDIN_ACCESS_TOKEN`
 * `LINKEDIN_PERSON_URN`
-* `GEMINI_API_KEY`
+* `GROQ_API_KEY`
 * `NEWS_API_KEY`
 * `TAVILY_API_KEY`
 
