@@ -23,13 +23,15 @@ To enable the automation, you must add the following **Secrets** to your GitHub 
 3. Add:
     - `LINKEDIN_ACCESS_TOKEN`: Your OAuth 2.0 Access Token.
     - `LINKEDIN_PERSON_URN`: Your LinkedIn ID.
-    - `GEMINI_API_KEY`: Google Gemini API Key.
+    - `GROQ_API_KEY`: Groq API Key (used by the workflow; model is set in `config.yaml`, currently `llama-3.3-70b-versatile`).
     - `NEWS_API_KEY`: NewsAPI Key.
     - `TAVILY_API_KEY`: Tavily Search API Key.
 
+> **Note:** Older docs mentioned `GEMINI_API_KEY`. The live GitHub Action expects **`GROQ_API_KEY`** only — do not set Gemini for this bot.
+
 ### 2. Schedule
 
-The workflow runs twice daily (09:00 & 17:00 UTC) via GitHub Actions.
+The workflow runs **once daily** at **07:00 UTC** (10:00 Istanbul) via GitHub Actions. You can also trigger it manually from the Actions tab (`workflow_dispatch`).
 
 ## 📦 Dashboard
 
