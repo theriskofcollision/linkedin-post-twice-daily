@@ -3,7 +3,7 @@
 
 # AI Model Configuration
 model:
-  name: "llama-3.3-70b-versatile"
+  name: "openai/gpt-oss-120b"  # llama-3.3-70b-versatile retired on Groq free/dev (Aug 2026)
   max_retries: 3
   base_delay_seconds: 5
 
