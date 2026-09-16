@@ -1,0 +1,98 @@
+{
+  "timestamp": "2026-09-16T06:26:00Z",
+  "system": "theriskofcollision/linkedin-post-twice-daily",
+  "target_agent": "Grok Bot",
+  "summary": "Full diagnosis, root cause analysis, and resolution of the LinkedIn 401 INVALID_ACCESS_TOKEN failure in GitHub Actions.",
+  "status": "RESOLVED",
+  "verified_run": {
+    "workflow_run_id": "35020484921",
+    "workflow_run_number": 676,
+    "status": "success",
+    "duration": "1m 51s",
+    "published_post_urn": "urn:li:share:7505873878527832064",
+    "topic": "Enterprise AI adoption mistakes to avoid",
+    "vibe": "The Minimalist"
+  },
+  "what_assistant_did": [
+    {
+      "area": "Documentation & Manifests",
+      "action": "Created HANDOFF.md, handoff.json, and linkedin_auth_runbook.md to completely map out architecture, credentials, and API requirements without secret leakage."
+    },
+    {
+      "area": "Root Cause Diagnosis",
+      "action": "Diagnosed that /v2/me is deprecated for modern OpenID Connect apps (returns 401 INVALID_ACCESS_TOKEN) and pointed the pipeline to /v2/userinfo to resolve author URN."
+    },
+    {
+      "area": "API Versioning & Header Fixes",
+      "action": "Verified and synchronized the REST API headers to LinkedIn-Version: 202606 and X-Restli-Protocol-Version: 2.0.0 to prevent 426 Upgrade Required errors."
+    },
+    {
+      "area": "Resilience & Credential Sanitizer",
+      "action": "Updated LinkedInConnector in linkedin_agents.py to automatically sanitize tokens and URNs (stripping trailing whitespace, line breaks, and stray enclosing quotes)."
+    },
+    {
+      "area": "Observability & Error Logging",
+      "action": "Elevated LinkedIn API error response logging from suppressed logger.debug to logger.error so that GitHub Actions logs always reveal the exact API error payload."
+    },
+    {
+      "area": "Diagnostic Tooling",
+      "action": "Built and pushed verify_linkedin_token.py (zero dependencies, standard library urllib) to allow instant CLI testing of tokens, URN extraction, and post permission checks."
+    },
+    {
+      "area": "Git Hooks Fix",
+      "action": "Patched .git/hooks/pre-commit to use git pull --rebase --autostash origin main to prevent local commit failures when working trees have staged files."
+    }
+  ],
+  "what_user_hakan_did": [
+    {
+      "step": 1,
+      "action": "Selected the correct developer app: 'github 1' (discarded 'hakan growth bot' which lacked OpenID Connect and had unverified company page association)."
+    },
+    {
+      "step": 2,
+      "action": "Navigated to LinkedIn Developer Token Generator (https://www.linkedin.com/developers/tools/oauth/token-generator)."
+    },
+    {
+      "step": 3,
+      "action": "Checked all 4 required scopes: openid, profile, email, w_member_social."
+    },
+    {
+      "step": 4,
+      "action": "Authorized the application with personal LinkedIn account and minted a clean 60-day OAuth Bearer token (AQW-...)."
+    },
+    {
+      "step": 5,
+      "action": "Updated GitHub Repository Secrets (LINKEDIN_ACCESS_TOKEN and LINKEDIN_PERSON_URN) under repository settings."
+    },
+    {
+      "step": 6,
+      "action": "Triggered manual workflow_dispatch for 'LinkedIn Growth Bot' and confirmed 100% green run (Run #676)."
+    }
+  ],
+  "key_learnings_for_grok_bot": {
+    "auth_endpoints": {
+      "userinfo_endpoint": "https://api.linkedin.com/v2/userinfo",
+      "userinfo_method": "GET with Authorization: Bearer <token>",
+      "deprecated_endpoint": "https://api.linkedin.com/v2/me (do NOT use; always fails with 401 on OIDC tokens)",
+      "author_urn_rule": "Read 'sub' field from /v2/userinfo -> urn:li:person:{sub}"
+    },
+    "posting_endpoints": {
+      "post_url": "https://api.linkedin.com/rest/posts",
+      "image_upload_init_url": "https://api.linkedin.com/rest/images?action=initializeUpload",
+      "required_headers": {
+        "Authorization": "Bearer <LINKEDIN_ACCESS_TOKEN>",
+        "Content-Type": "application/json",
+        "X-Restli-Protocol-Version": "2.0.0",
+        "LinkedIn-Version": "202606"
+      }
+    },
+    "schedule_and_model": {
+      "schedule_cron": "0 7 * * * (Once daily at 07:00 UTC = 10:00 Istanbul)",
+      "active_llm_model": "openai/gpt-oss-120b via Groq API (llama-3.3-70b-versatile retired)"
+    },
+    "token_lifecycle": {
+      "ttl_days": 60,
+      "expiry_action": "When token expires after 60 days, operator re-mints via Token Generator and updates GitHub Secret LINKEDIN_ACCESS_TOKEN."
+    }
+  }
+}
