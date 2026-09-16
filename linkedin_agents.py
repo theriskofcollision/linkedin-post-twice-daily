@@ -1163,8 +1163,19 @@ class OrganicImageSearcher:
 
 class LinkedInConnector:
     def __init__(self):
-        self.access_token = os.environ.get("LINKEDIN_ACCESS_TOKEN")
-        self.author_urn = os.environ.get("LINKEDIN_PERSON_URN") 
+        token = os.environ.get("LINKEDIN_ACCESS_TOKEN")
+        if token:
+            token = token.strip()
+            if (token.startswith('"') and token.endswith('"')) or (token.startswith("'") and token.endswith("'")):
+                token = token[1:-1].strip()
+        self.access_token = token
+
+        urn = os.environ.get("LINKEDIN_PERSON_URN")
+        if urn:
+            urn = urn.strip()
+            if (urn.startswith('"') and urn.endswith('"')) or (urn.startswith("'") and urn.endswith("'")):
+                urn = urn[1:-1].strip()
+        self.author_urn = urn
 
     def register_upload_v2(self):
         """Register image upload using modern REST API"""
@@ -1180,13 +1191,18 @@ class LinkedInConnector:
                 "owner": self.author_urn
             }
         }
-        response = requests.post(url, headers=headers, json=payload)
-        response.raise_for_status()
-        data = response.json()
-        
-        upload_url = data['value']['uploadUrl']
-        asset_urn = data['value']['image']
-        return upload_url, asset_urn
+        try:
+            response = requests.post(url, headers=headers, json=payload)
+            response.raise_for_status()
+            data = response.json()
+            
+            upload_url = data['value']['uploadUrl']
+            asset_urn = data['value']['image']
+            return upload_url, asset_urn
+        except requests.exceptions.RequestException as e:
+            err_msg = e.response.text if hasattr(e, 'response') and e.response is not None else str(e)
+            logger.error(f"Image upload registration failed: {e}. LinkedIn Response: {err_msg}")
+            raise
 
     def upload_image(self, upload_url, image_data):
         """Step 2: Upload the binary image data"""
@@ -1278,9 +1294,9 @@ class LinkedInConnector:
             return post_urn
 
         except requests.exceptions.RequestException as e:
-            logger.error(f"Failed to post to LinkedIn: {e}")
-            if hasattr(e, 'response') and e.response is not None:
-                logger.debug(f"Error Details: {e.response.text}")
+            err_msg = e.response.text if hasattr(e, 'response') and e.response is not None else str(e)
+            status = getattr(e.response, 'status_code', 'unknown')
+            logger.error(f"Failed to post to LinkedIn (HTTP {status}): {e}. Response: {err_msg}")
             return None
 
     def get_social_actions(self, urn: str):
