@@ -3393,9 +3393,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-09-21T13:34:06.479483",
+      "topic": "Building AI agents that collaborate autonomously",
+      "vibe": "The Debunker",
+      "urn": "urn:li:share:7507794287355445248",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for **\u201cSkills That Matter in the Age of AI\u201d**\n\n**1. Value Add**  \n> Absolutely spot\u2011on! I\u2019ve seen the same trend at my own company: after we integrated LLM\u2011generated code into our CI pipeline, we added an automated static\u2011analysis step plus a Rust\u2011based safety harness (inspired by Microsoft\u2019s Copilot rewrite). The result was a **27\u202f% drop in post\u2011deployment bugs** within just two sprints, while still keeping the 12\u202f% productivity lift that McKinsey reported. It really underscores how *engineering rigor + prompt engineering* is becoming a non\u2011negotiable skill set.\n\n**2. Contrarian**  \n> Great summary, but I wonder if we\u2019re over\u2011emphasizing \u201cprompt fluency\u201d as a core skill. Recent Harvard research shows teams with high emotional\u2011intelligence outperform AI\u2011only squads on creative problem\u2011solving by **33\u202f%**. If we push every engineer to become a \u201cprompt parrot,\u201d we risk eroding deep domain expertise and critical thinking. Perhaps the real differentiator will be **how quickly people can pivot from prompting to manual debugging when the model trips up**.\n\n**3. Question**  \n> Fascinating points! With the EU AI Act now mandating human\u2011in\u2011the\u2011loop for high\u2011risk systems, what concrete frameworks are you seeing emerge for **AI\u2011stewardship** roles? Specifically, how are organizations balancing the need for legal/ethical oversight with the fast\u2011paced demand for prompt\u2011engineered delivery\u2014are there hybrid certification paths or internal guilds that seem to work best?",
-  "last_updated": "35509248028",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for **Building AI Agents That Collaborate Autonomously**\n\n**1. Value Add:**  \nGreat overview! A concrete illustration of the stack in action is the **AX + Lossless\u2011Memory** combo: a retailer pilot used AX to orchestrate inventory\u2011forecast, pricing, and support agents while storing every interaction in Lossless\u2011Memory. Within two months they cut stock\u2011outs by **15\u202f%** and doubled ticket\u2011resolution speed\u2014showing how a shared, loss\u2011less context can translate directly into measurable ROI.\n\n**2. Contrarian:**  \nInteresting trends, but we should temper the hype around \u201cunrestricted\u201d agents like Heretic. While raw reasoning power is enticing, the EU AI Act now flags any autonomous decision\u2011making as high\u2011risk, and early incidents (e.g., the AI\u2011generated bug that took a popular game offline) illustrate how quickly governance gaps can become public\u2011relations nightmares. Safety\u2011by\u2011design can\u2019t be an afterthought.\n\n**3. Question:**  \nIf we accept that \u201cpurpose\u202f+\u202fshared context\u202f+\u202fhuman\u2011in\u2011the\u2011loop\u201d are the three pillars of safe agentic AI, how should enterprises design the *human\u2011in\u2011the\u2011loop* layer to scale across dozens of autonomous agents without creating a new bottleneck? Would a meta\u2011orchestrator with real\u2011time audit trails be the answer, or do we need a governance protocol baked into the agents themselves?",
+  "last_updated": "35606242306",
   "rules_distilled_at": "2026-08-16T05:24:34.612616"
 }
