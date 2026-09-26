@@ -11,7 +11,8 @@
     "Be concise",
     "Start strongly",
     "End strongly",
-    "Be authentic"
+    "Be authentic",
+    "Listicles, bullet\u2011pointed slides, and asterisk/emphasis formatting are instant reject."
   ],
   "history": [
     {
@@ -3443,9 +3444,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-09-26T12:02:05.643723",
+      "topic": "Learning AI development from scratch",
+      "vibe": "The Satirist",
+      "urn": "urn:li:share:7509583069427896320",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for **\u201cSkills That Matter in the Age of AI (Sept\u202f2026)\u201d**\n\n**1\ufe0f\u20e3 Value Add** \u2013\u202fAgree and enrich with a concrete data point or example.  \n**2\ufe0f\u20e3 Contrarian** \u2013\u202fRespectfully push back or add a missing nuance.  \n**3\ufe0f\u20e3 Question** \u2013\u202fPose a deep, open\u2011ended question that invites dialogue.\n\n---\n\n#### 1\ufe0f\u20e3 Value Add  \n> **Great overview!** The point about \u201cAI\u2011audit literacy\u201d hits home\u2014just last month, my team helped a fintech firm implement an immutable log\u2011chain for their LLM\u2011driven risk engine. By hashing every prompt\u2011response pair to a private ledger (using the **LangChain\u2011Chainlink** pattern), we reduced audit\u2011gap detection time from **48\u202fh to under 5\u202fmin** and passed the regulator\u2019s \u201ctrace\u2011tamper\u201d test on the first try. It\u2019s a solid proof that combining prompt\u2011engineering with blockchain\u2011style provenance can turn a scary vulnerability into a competitive moat.  \n\n---\n\n#### 2\ufe0f\u20e3 Contrarian  \n> **Interesting take on \u201cAI\u2011product design + behavioral economics.\u201d** While the Microsoft ad\u2011credit patent showcases a clever integration, I wonder if focusing solely on \u201cnon\u2011intrusive\u201d ad placement might overlook the **long\u2011term brand trust cost**. Early experiments in the gaming community show a **12\u202f% rise in churn** when users sense any AI\u2011mediated monetisation, even if it\u2019s technically \u201cnon\u2011disruptive.\u201d Perhaps the skill set we need is not just *design* but *AI\u2011ethics governance* that continuously measures **trust elasticity** alongside engagement metrics.  \n\n---\n\n#### 3\ufe0f\u20e3 Question  \n> **Thought\u2011provoking point about the \u201csoft\u2011skill premium.\u201d** If communication, adaptability, and empathy become the biggest differentiators, how should organizations **re\u2011structure performance reviews** to weight those human\u2011centric abilities alongside technical KPIs?  \n> *What concrete metrics or feedback loops have you seen work (e.g., AI\u2011augmented 360\u00b0 surveys, real\u2011time sentiment dashboards) that actually capture the value of \u201cAI\u2011augmented empathy\u201d in day\u2011to\u2011day work?*  \n\n--- \n\nFeel free to copy\u2011paste any of these into relevant LinkedIn posts, tweet threads, or discussion forums to add value, spark thoughtful debate, and deepen the conversation around the evolving skill landscape. \ud83d\ude80",
-  "last_updated": "36135248093",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for Learning AI Development from Scratch (Sept\u202f2026)\n\n**1. Value Add:**  \n> Absolutely spot\u2011on! The recent DataCamp roadmap (see their 2026 AI curriculum) actually includes a hands\u2011on \u201cAgent\u2011First\u201d module where learners spin up an Ollaya\u2011based decision engine on a laptop in under 30\u202fminutes. I tried it last week and was able to connect a Vision\u2011LLM to a simple sales\u2011email generator in just three notebook cells\u2014no cloud credits required. Adding a quick sandboxed Docker step (as suggested by the arXiv\u202f2609.30266v1 paper) also gives newcomers solid experience with immutable logging right from day\u202f1.\n\n**2. Contrarian:**  \n> Great overview, but I think we might be under\u2011estimating the \u201csecurity\u2011by\u2011design\u201d curve. While tools like Ollaya lower the barrier for building agents, the SwarmTraces hack on Hugging\u202fFace showed that even a minimal wrapper can expose API keys if developers ignore proper token scoping and sandboxing. In my recent bootcamp cohort, students who skipped the dedicated trace\u2011audit lab (from the arXiv paper) ended up with agents that could silently overwrite their own logs\u2014something that\u2019s still not covered in most beginner curricula.\n\n**3. Question:**  \n> Fascinating trends! As we push \u201clearn\u2011by\u2011doing\u201d agentic AI to a broader audience, how do you envision credentialing keeping pace? Specifically, will micro\u2011credentials from platforms like DataCamp be enough to prove competence in **auditability & traceability**, or will industry regulators soon require a formal \u201cAgent Security\u201d certification akin to the upcoming WEF Education\u202f4.0 standards?",
+  "last_updated": "36240534488",
   "rules_distilled_at": "2026-08-16T05:24:34.612616"
 }
