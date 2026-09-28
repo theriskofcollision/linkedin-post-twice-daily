@@ -3462,9 +3462,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-09-28T14:53:30.208267",
+      "topic": "Skills that matter in the age of AI",
+      "vibe": "The Satirist",
+      "urn": "urn:li:share:7510350983013617666",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for **AI\u202fETHICS & WHAT\u202fDEVELOPERS\u202fSHOULD\u202fCARE\u202fABOUT \u2013\u202fCIO\u2011LEVEL BRIEF (Sept\u202f2026)**  \n\n**1. Value Add:**  \nGreat roundup! The trace\u2011tampering issue (arXiv\u202f2609.30266) is especially alarming because it directly clashes with the EU AI\u2011Act Phase\u20112\u2019s real\u2011time audit requirement. In our own pilot at a fintech, we added an immutable ledger (AWS\u202fQLDB) for every LLM call and saw a **23\u202f% reduction in compliance\u2011related tickets** within the first quarter. Pairing that with the emerging *TraceGuard* SDK can give teams a concrete path to meet the new regulations today rather than retro\u2011fitting later.  \n\n**2. Contrarian:**  \nWhile the focus on \u201coptics\u201d versus \u201cobligation\u201d in the OpenAI leak is compelling, I think the narrative may underplay a real technical constraint: many LLM\u2011driven services still lack a deterministic way to capture *internal* state changes, not just the API request/response. Without solving the **self\u2011modifying agent** problem at the model\u2011level, even the best audit logs can be gamed. Perhaps the industry should prioritize research on \u201cmodel\u2011anchored provenance\u201d before leaning too heavily on governance layers.  \n\n**3. Question:**  \nGiven the rapid convergence of regulatory pressure (EU AI\u2011Act Phase\u20112, upcoming US accountability bills) and emerging technical capabilities (sandboxed execution, cryptographic audit trails), how are leading enterprises balancing **speed to market** with the need to embed **immutable, real\u2011time traceability**? Are there any proven frameworks or \u201caudit\u2011first\u201d CI/CD pipelines that you\u2019ve seen work at scale?",
-  "last_updated": "36319628803",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for **Human\u2011Centric & AI\u2011Fluent Skills in the Age of AI**\n\n**1. Value Add:**  \nAbsolutely agree\u2014critical thinking, EQ, and ethical reasoning are now the core moat for any organization. A recent McKinsey\u2011WSJ brief (2024) found that firms that paired \u201cprompt\u2011engineering\u201d with strong metacognitive oversight saw **22\u202f% faster time\u2011to\u2011insight** on AI\u2011driven projects, while maintaining lower hallucination rates. It\u2019s the \u201cbridge\u201d skill set that\u2019s turning raw model power into reliable business outcomes.  \n\n**2. Contrarian:**  \nGreat point on the premium for human\u2011centric skills, but we should be careful not to overstate the \u201chuman\u2011only\u201d moat. In sectors like autonomous logistics, companies are already achieving **30\u202f% cost reductions** by automating decision loops that historically required human judgment, relying on robust model\u2011in\u2011the\u2011loop controls instead. The real competitive edge may lie in **how seamlessly we can blend automated loops with selective human oversight**, rather than assuming human judgment must dominate every stage.  \n\n**3. Question:**  \nIf the future talent market values \u201cAI\u2011orchestration\u201d as much as critical thinking, how should universities redesign their curricula to teach *metacognitive prompting* and *AI\u2011ops* alongside traditional liberal\u2011arts skills? What concrete coursework or experiential models have you seen work best for building that hybrid competency?",
+  "last_updated": "36439120505",
   "rules_distilled_at": "2026-09-27T10:20:55.263900"
 }
