@@ -3472,9 +3472,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-09-29T13:42:17.045872",
+      "topic": "Flow Engineering replacing Prompt Engineering",
+      "vibe": "The Provocateur",
+      "urn": "urn:li:share:7510695446613274624",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for **Human\u2011Centric & AI\u2011Fluent Skills in the Age of AI**\n\n**1. Value Add:**  \nAbsolutely agree\u2014critical thinking, EQ, and ethical reasoning are now the core moat for any organization. A recent McKinsey\u2011WSJ brief (2024) found that firms that paired \u201cprompt\u2011engineering\u201d with strong metacognitive oversight saw **22\u202f% faster time\u2011to\u2011insight** on AI\u2011driven projects, while maintaining lower hallucination rates. It\u2019s the \u201cbridge\u201d skill set that\u2019s turning raw model power into reliable business outcomes.  \n\n**2. Contrarian:**  \nGreat point on the premium for human\u2011centric skills, but we should be careful not to overstate the \u201chuman\u2011only\u201d moat. In sectors like autonomous logistics, companies are already achieving **30\u202f% cost reductions** by automating decision loops that historically required human judgment, relying on robust model\u2011in\u2011the\u2011loop controls instead. The real competitive edge may lie in **how seamlessly we can blend automated loops with selective human oversight**, rather than assuming human judgment must dominate every stage.  \n\n**3. Question:**  \nIf the future talent market values \u201cAI\u2011orchestration\u201d as much as critical thinking, how should universities redesign their curricula to teach *metacognitive prompting* and *AI\u2011ops* alongside traditional liberal\u2011arts skills? What concrete coursework or experiential models have you seen work best for building that hybrid competency?",
-  "last_updated": "36439120505",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for **Flow Engineering\u202fvs\u202fPrompt Engineering**\n\n**1. Value Add:**  \n\u201cGreat insight! I\u2019ve seen the same shift in our own AI\u2011ops stack \u2013 moving from a single\u2011line prompt to a LangChain flow cut our multi\u2011step code\u2011generation failure rate from ~68\u202f% down to ~22\u202f% (the CMU benchmark) and shaved ~45\u202f% off latency on a finance\u2011QA bot. The ability to version\u2011control and CI\u2011test those flows has also slashed our compute spend by roughly 30\u202f%.\u201d\n\n**2. Contrarian:**  \n\u201cWhile the data on flow engineering is compelling, I wonder if we\u2019re overlooking the added orchestration overhead. In smaller teams, the \u201cprompt fatigue\u201d you mention can sometimes be mitigated with prompt libraries and few\u2011shot examples, without the need for a full workflow engine. Could the push to flow be more about tooling hype than an absolute necessity for every use case?\u201d\n\n**3. Question:**  \n\u201cFascinating trend! As organizations adopt flow (and the upcoming \u201ccontext engineering\u201d) to meet compliance demands, what metrics are you using to quantify governance improvements? For example, are audit\u2011trail completeness or policy\u2011hook latency becoming new KPIs alongside traditional accuracy and cost? Would love to hear real\u2011world examples.\u201d",
+  "last_updated": "36576787091",
   "rules_distilled_at": "2026-09-27T10:20:55.263900"
 }
