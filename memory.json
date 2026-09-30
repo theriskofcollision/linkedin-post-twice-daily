@@ -3482,9 +3482,19 @@
         "likes": 0,
         "comments": 0
       }
+    },
+    {
+      "date": "2026-09-30T13:16:30.548843",
+      "topic": "LLMs as operating systems for AI agents",
+      "vibe": "The Provocateur",
+      "urn": "urn:li:share:7511051349376204800",
+      "stats": {
+        "likes": 0,
+        "comments": 0
+      }
     }
   ],
-  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for **Flow Engineering\u202fvs\u202fPrompt Engineering**\n\n**1. Value Add:**  \n\u201cGreat insight! I\u2019ve seen the same shift in our own AI\u2011ops stack \u2013 moving from a single\u2011line prompt to a LangChain flow cut our multi\u2011step code\u2011generation failure rate from ~68\u202f% down to ~22\u202f% (the CMU benchmark) and shaved ~45\u202f% off latency on a finance\u2011QA bot. The ability to version\u2011control and CI\u2011test those flows has also slashed our compute spend by roughly 30\u202f%.\u201d\n\n**2. Contrarian:**  \n\u201cWhile the data on flow engineering is compelling, I wonder if we\u2019re overlooking the added orchestration overhead. In smaller teams, the \u201cprompt fatigue\u201d you mention can sometimes be mitigated with prompt libraries and few\u2011shot examples, without the need for a full workflow engine. Could the push to flow be more about tooling hype than an absolute necessity for every use case?\u201d\n\n**3. Question:**  \n\u201cFascinating trend! As organizations adopt flow (and the upcoming \u201ccontext engineering\u201d) to meet compliance demands, what metrics are you using to quantify governance improvements? For example, are audit\u2011trail completeness or policy\u2011hook latency becoming new KPIs alongside traditional accuracy and cost? Would love to hear real\u2011world examples.\u201d",
-  "last_updated": "36576787091",
+  "latest_comment_pack": "### \ud83e\udd1d Comment Pack for **LLMs as Operating Systems for AI\u202fAgents**\n\n**1. Value Add:**  \nGreat summary! The convergence you highlighted between OpenAI\u2019s **Dots** and the academic \u201cMemory OS\u201d work is especially exciting. In our recent pilot, we swapped the underlying model in a Pi.dev MCP from GPT\u20114o to a 7\u202fB quantized SLM using STEPQuant, and the **agent scheduler** kept latency under 150\u202fms while the memory\u2011paging layer reduced token usage by ~3\u00d7. It\u2019s a concrete proof point that the OS\u2011style abstraction can deliver both cost savings and model\u2011agnostic portability.\n\n**2. Contrarian:**  \nI love the optimism around an LLM\u2011level kernel, but we should be careful not to underestimate **security surface area**. Giving an LLM direct control\u2011plane privileges opens up new vectors for prompt\u2011injection attacks that can bypass sandboxed tool calls. Until we have robust policy engines baked into the kernel (e.g., immutable system\u2011call whitelists), large\u2011scale deployments in regulated sectors might still be premature.\n\n**3. Question:**  \nFascinating developments! As we move toward an AI\u2011OS ecosystem, how do you envision **inter\u2011agent communication standards** evolving? Will we adopt something akin to POSIX APIs for agent \u201csystem calls,\u201d or will each platform (Dots, MCP, AIOS) maintain its own protocol, potentially fragmenting the marketplace?",
+  "last_updated": "36720218765",
   "rules_distilled_at": "2026-09-27T10:20:55.263900"
 }
