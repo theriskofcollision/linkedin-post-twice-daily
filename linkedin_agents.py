@@ -824,6 +824,27 @@ class Strategist(Agent):
 Current Persona: {vibe_name}
 {vibe_prompt}"""
 
+BANNED_OUTPUT = (
+    "Honestly",
+    "Funny thing",
+    "*",
+)
+
+
+def sanitize_output(text: str) -> str:
+    """Strip banned phrases and asterisks. The list is the only source."""
+    import re
+    if not text:
+        return text
+    for phrase in BANNED_OUTPUT:
+        if phrase == "*":
+            text = re.sub(r"\*{1,2}([^*]+)\*{1,2}", r"\1", text)
+            text = text.replace("*", "")
+        else:
+            text = re.sub(re.escape(phrase), "", text, flags=re.IGNORECASE)
+    return text
+
+
 class Ghostwriter(Agent):
     def __init__(self):
         self.memory = Memory()
@@ -834,6 +855,17 @@ class Ghostwriter(Agent):
         )
 
     def set_vibe(self, vibe_name: str, vibe_prompt: str, post_format: str = ""):
+        banned_openers = "\n".join(
+            f'- NO starting with "{phrase}" — BANNED.'
+            for phrase in BANNED_OUTPUT
+            if phrase != "*"
+        )
+        bad_examples = "\n\n".join([
+            f'"{BANNED_OUTPUT[0]}, AI is changing everything. It\'s kinda wild."',
+            f'"{BANNED_OUTPUT[0]}, I didn\'t expect this to work. But here we are."',
+            "Just spent 3 hours debugging an agent workflow. The fix was one line of code.",
+            f'"{BANNED_OUTPUT[1]} about AI agents is that they are so scalable."',
+        ])
         self.system_prompt = f"""Write a LinkedIn post. Output ONLY the post text. Nothing else.
 
 Style: {vibe_name}
@@ -862,8 +894,7 @@ ABSOLUTE BANS (instant fail if you use these):
 - NO "Just spent [time] doing X" openings. DEAD GIVEAWAY of AI.
 - NO "Just watched/saw/tried X and..." openings. Templated AI pattern.
 - NO "I dug into..." openings. Another AI pattern.
-- NO starting with "Honestly" — this is the #1 overused AI opener. BANNED.
-- NO starting with "Funny thing" — this is the #2 overused AI opener. BANNED.
+{banned_openers}
 - NO humble brags disguised as insights
 - NO lecturing, teaching tone, or telling people what to do ("You should", "You need to", "Stop doing X")
 - NO negativity, cynicism, skepticism, or doom-saying. Keep the vibes HIGH.
@@ -899,13 +930,7 @@ GOOD EXAMPLES:
 "Ngl the best part of building AI tools is watching them fail in ways you never imagined."
 
 BAD EXAMPLES (NEVER write like this):
-"Honestly, AI is changing everything. It's kinda wild."
-
-"Honestly, I didn't expect this to work. But here we are."
-
-"Just spent 3 hours debugging an agent workflow. The fix was one line of code."
-
-"Funny thing about AI agents is that they are so scalable."
+{bad_examples}
 
 Vary length between 80-250 chars. Super short OR medium, never long. Good vibes only. Just the post text, nothing else."""
 
@@ -975,10 +1000,8 @@ Text Overlay: [Optional - only if truly needed]"""
     def generate_image(self, prompt: str) -> Optional[bytes]:
         logger.info(f"--- {self.name} ({self.role}) Working ---")
         
-        # NUCLEAR APPROACH: Pollinations ignores "no faces" negative prompts.
-        # Instead of filtering the AI prompt, we use HARDCODED safe prompts
-        # that can NEVER produce portraits. The AI's concept is only used
-        # to pick a category.
+        # Safe scene prompts avoid portraits. Banned phrases come from BANNED_OUTPUT
+        # via sanitize_output, not a second list.
         import random
         
         SAFE_PROMPTS = [
@@ -1013,7 +1036,7 @@ Text Overlay: [Optional - only if truly needed]"""
             "telescope pointed at starry night sky, astrophotography",
         ]
         
-        chosen_prompt = random.choice(SAFE_PROMPTS)
+        chosen_prompt = sanitize_output(random.choice(SAFE_PROMPTS))
         logger.info(f"Using safe prompt: {chosen_prompt[:60]}...")
 
         import time
@@ -1061,7 +1084,7 @@ class Critic(Agent):
         super().__init__(
             name="Critic",
             role="Quality Control",
-            system_prompt="""You are a brutal LinkedIn authenticity detector. Your job: catch AI-sounding posts.
+            system_prompt=f"""You are a brutal LinkedIn authenticity detector. Your job: catch AI-sounding posts.
 
 INSTANT REJECT if you find ANY of these:
 1. STATS/PERCENTAGES: "35% faster", "10x", "reduced by 40%" - real humans don't talk like pitch decks
@@ -1074,8 +1097,8 @@ INSTANT REJECT if you find ANY of these:
 8. HUMBLE BRAGS: Disguised boasting as insights
 9. GENERIC OPENERS: "I've been thinking about", "Let me share", "Here's my take"
 10. TEMPLATED STORY OPENERS: "Just spent [time]", "Spent the morning/weekend/afternoon", "Just watched", "Just saw", "Just tried" - these are the #1 AI giveaway pattern
-10b. OVERUSED OPENER: Starting with "Honestly" — this is the single most common AI opener. Instant reject.
-10c. OVERUSED OPENER: Starting with "Funny thing" — this is the second most common AI opener. Instant reject.
+10b. OVERUSED OPENER: Starting with "{BANNED_OUTPUT[0]}" — Instant reject.
+10c. OVERUSED OPENER: Starting with "{BANNED_OUTPUT[1]}" — Instant reject.
 11. ASTERISK EMPHASIS: Using *word* or **word** for emphasis - dead giveaway of AI writing
 12. PERSPECTIVE: Must be first-person. No lecturing. No "you should".
 
@@ -1510,12 +1533,7 @@ class Orchestrator:
         full_package = f"{draft_text}\n\n(Visual: {visual_concept})"
         self.critic.run(full_package)
 
-        # HARD-CODED SANITIZER: Strip any AI artifacts that slip through
-        import re
-        # Remove asterisk emphasis (*word* or **word**)
-        draft_text = re.sub(r'\*{1,2}([^*]+)\*{1,2}', r'\1', draft_text)
-        # Remove any remaining stray asterisks
-        draft_text = draft_text.replace('*', '')
+        draft_text = sanitize_output(draft_text)
         
         # AUTO-APPEND HASHTAGS
         hashtags = pick_hashtags(topic_query)
