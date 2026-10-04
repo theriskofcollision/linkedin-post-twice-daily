@@ -72,3 +72,25 @@ def test_post_formats_list():
     assert len(POST_FORMATS) >= 15
     for fmt in POST_FORMATS:
         assert ":" in fmt # Format: Description
+
+
+def test_sanitize_removes_honestly():
+    from linkedin_agents import sanitize_output
+    cleaned = sanitize_output("Honestly, this shipped.")
+    assert "Honestly" not in cleaned
+    assert "this shipped." in cleaned
+
+
+def test_sanitize_removes_asterisks():
+    from linkedin_agents import sanitize_output
+    cleaned = sanitize_output("*this* is a **post**")
+    assert "*" not in cleaned
+    assert "this" in cleaned
+    assert "post" in cleaned
+
+
+def test_sanitize_removes_funny_thing():
+    from linkedin_agents import sanitize_output
+    cleaned = sanitize_output("Funny thing about agents is they wait.")
+    assert "Funny thing" not in cleaned
+    assert "about agents" in cleaned
