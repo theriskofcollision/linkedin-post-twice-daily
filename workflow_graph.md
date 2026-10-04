@@ -5,7 +5,7 @@ graph TD
     User((User/Hakan)) -->|Trigger/Topic| Orch[Orchestrator]
     
     subgraph Research Phase
-        Orch -->|Request Trends| Scout[TrendScout]
+        Orch -->|Request Trends| Scout[ResearchManager]
         Scout -->|Trend Report| Orch
     end
     

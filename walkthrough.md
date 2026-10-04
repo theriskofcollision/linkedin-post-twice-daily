@@ -10,8 +10,7 @@ Create an autonomous AI agent team that researches trends, strategizes, writes, 
 - **ResearchManager**: Manages intelligence gathering (HackerNews, NewsAPI, arXiv, Tavily).
 - **Strategist**: Defines the angle/hook.
 - **Ghostwriter**: Writes the post (with Memory of past feedback).
-- **ArtDirector**: Creates image prompts.
-- **ImageGenerator**: Generates images via Pollinations.ai.
+- **ArtDirector**: Creates image prompts and generates images via Pollinations.ai.
 - **Critic**: Reviews content and saves rules to `memory.json`.
 - **LinkedInConnector**: Handles API authentication and posting.
 

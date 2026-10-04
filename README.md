@@ -7,8 +7,7 @@ This repository contains an automated agentic workflow to generate and schedule 
 - **ResearchManager**: Aggregates intelligence from HackerNews, NewsAPI, arXiv, and Tavily.
 - **Strategist**: Aligns topics with your personal brand using 5 distinct personas.
 - **Ghostwriter**: Writes viral content with a literary structure.
-- **ArtDirector**: Creates distinct visual concepts (Brutalist, Watercolor, etc.).
-- **ImageGenerator**: Generates images via Pollinations.ai.
+- **ArtDirector**: Creates visual concepts and generates images via Pollinations.ai.
 - **Critic**: Reviews content and saves rules to `memory.json`.
 - **Networker**: Generates a "Comment Pack" for community engagement.
 

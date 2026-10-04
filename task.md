@@ -22,7 +22,7 @@
 - [x] Upgrade LinkedIn Connector for Image Uploads <!-- id: 14 -->
 
 ## Phase 3: Intelligence & Self-Improvement
-- [x] Enable HackerNews API for TrendScout (Replaces Google Search) <!-- id: 15 -->
+- [x] Enable HackerNews API for ResearchManager (Replaces Google Search) <!-- id: 15 -->
 - [x] Implement Memory System (memory.json) <!-- id: 16 -->
 - [x] Connect Critic Feedback to Memory <!-- id: 17 -->
 
@@ -46,4 +46,4 @@
 - [x] Update `Memory` to store "Winning" & "Losing" strategies <!-- id: 31 -->
 - [x] Update `Strategist` to use performance data <!-- id: 32 -->
 - [x] Create `Networker` Agent for comment drafting (Comment Pack Strategy) <!-- id: 33 -->
-- [x] Refactor `TrendScout` into `ResearchManager` (Optional) <!-- id: 26 -->
+- [x] Refactor the research agent into `ResearchManager` (Optional) <!-- id: 26 -->

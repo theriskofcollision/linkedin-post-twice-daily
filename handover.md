@@ -7,10 +7,10 @@ This is an autonomous AI agent system that researches, strategizes, creates, and
 ## 2. Current Architecture
 
 * **Orchestrator**: Main controller (`linkedin_agents.py`).
-* **ResearchManager** (formerly TrendScout): Aggregates data from HackerNews, NewsAPI, arXiv, and Tavily.
+* **ResearchManager**: Aggregates data from HackerNews, NewsAPI, arXiv, and Tavily.
 * **Strategist**: Determines the angle based on "Vibes" (Personas).
 * **Ghostwriter**: Writes content using a literary structure.
-* **ArtDirector & ImageGenerator**: Creates visuals (Pollinations.ai).
+* **ArtDirector**: Creates visuals (Pollinations.ai).
 * **Critic**: Reviews content and saves rules to `memory.json`.
 * **Networker**: Generates a "Comment Pack" for engagement.
 * **LinkedInConnector**: Handles posting and stats retrieval.
@@ -33,7 +33,7 @@ This is an autonomous AI agent system that researches, strategizes, creates, and
 
 ## 5. Recent Changes (Phase 6)
 
-* **Refactor**: `TrendScout` -> `ResearchManager`.
+* **Refactor**: research agent renamed to `ResearchManager`.
 * **Feature**: Added `Networker` agent for comment generation.
 * **Feature**: Built `dashboard.py` with real-time analytics from `memory.json`.
 * **Fix**: Resolved GitHub Actions permission issues for saving memory.
