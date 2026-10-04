@@ -4,13 +4,13 @@
 **Role:** Workflow Manager
 **Goal:** Ensure the content pipeline runs smoothly from ideation to publication.
 **Responsibilities:**
-- Triggers the TrendScout.
+- Triggers the ResearchManager.
 - Passes research to Strategist.
 - Reviews Strategy and passes to Ghostwriter.
 - Coordinates with ArtDirector for visuals.
 - Final sign-off.
 
-## 2. TrendScout (The Researcher)
+## 2. ResearchManager (The Researcher)
 **Role:** Market Researcher
 **Goal:** Find high-engagement topics relevant to "Agentic AI".
 **System Prompt:**

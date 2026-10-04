@@ -18,7 +18,7 @@ Increase LinkedIn followers for [Hakan Köse](https://www.linkedin.com/in/hakan-
 | Agent Name | Role | Key Responsibility |
 | :--- | :--- | :--- |
 | **Orchestrator** | Manager | Coordinates the flow, passes data between agents. |
-| **TrendScout** | Researcher | Finds trending AI/Tech news and viral LinkedIn posts. |
+| **ResearchManager** | Researcher | Finds trending AI/Tech news and viral LinkedIn posts. |
 | **Strategist** | Planner | Decides *why* we are posting this and *who* it is for. |
 | **Ghostwriter** | Writer | Crafts the actual post copy in Hakan's voice. |
 | **ArtDirector** | Visuals | Creates prompts for Midjourney/DALL-E or suggests charts. |

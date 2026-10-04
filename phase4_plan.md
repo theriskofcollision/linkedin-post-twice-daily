@@ -1,7 +1,7 @@
 # Phase 4 Implementation Plan: Multi-Source Intelligence & Analytics
 
 ## Goal
-Expand the `TrendScout` agent's capabilities to gather intelligence from multiple high-quality sources (NewsAPI, arXiv, Tavily) and build a dashboard to track the performance of the LinkedIn bot.
+Expand the `ResearchManager` agent's capabilities to gather intelligence from multiple high-quality sources (NewsAPI, arXiv, Tavily) and build a dashboard to track the performance of the LinkedIn bot.
 
 ## User Review Required
 > [!IMPORTANT]
@@ -35,7 +35,7 @@ We will create a modular connector system.
 - **Role**: Aggregates data from all connectors (HackerNews, NewsAPI, arXiv, Tavily).
 - **Logic**:
     - Can be configured to use one or all sources.
-    - Merges results into a comprehensive "Intelligence Brief" for the `TrendScout`.
+    - Merges results into a comprehensive "Intelligence Brief" for the `ResearchManager`.
 
 ### 3. Analytics & Dashboard (`dashboard.py`)
 We will build a simple, interactive dashboard using **Streamlit**.
