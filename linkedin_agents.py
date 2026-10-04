@@ -1164,6 +1164,14 @@ class OrganicImageSearcher:
 
 # --- LinkedIn Connector ---
 
+def linkedin_api():
+    """The only owner of the LinkedIn version header and the posts path."""
+    return {
+        "version_headers": {"LinkedIn-Version": "202606"},
+        "posts_url": "https://api.linkedin.com/rest/posts",
+    }
+
+
 class LinkedInConnector:
     def __init__(self):
         token = os.environ.get("LINKEDIN_ACCESS_TOKEN")
@@ -1182,12 +1190,13 @@ class LinkedInConnector:
 
     def register_upload_v2(self):
         """Register image upload using modern REST API"""
+        api = linkedin_api()
         url = "https://api.linkedin.com/rest/images?action=initializeUpload"
         headers = {
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json",
             "X-Restli-Protocol-Version": "2.0.0",
-            "LinkedIn-Version": "202606"
+            **api["version_headers"],
         }
         payload = {
             "initializeUploadRequest": {
@@ -1229,12 +1238,13 @@ class LinkedInConnector:
                 logger.error(f"Image upload failed: {e}. Falling back to text-only.")
                 asset_urn = None
 
-        url = "https://api.linkedin.com/rest/posts"
+        api = linkedin_api()
+        url = api["posts_url"]
         headers = {
             "Authorization": f"Bearer {self.access_token}",
             "Content-Type": "application/json",
             "X-Restli-Protocol-Version": "2.0.0",
-            "LinkedIn-Version": "202606"
+            **api["version_headers"],
         }
 
         if asset_urn:
@@ -1308,12 +1318,13 @@ class LinkedInConnector:
             return None
             
         encoded_urn = urllib.parse.quote(urn)
+        api = linkedin_api()
         url = f"https://api.linkedin.com/v2/socialActions/{encoded_urn}"
         
         headers = {
             "Authorization": f"Bearer {self.access_token}",
             "X-Restli-Protocol-Version": "2.0.0",
-            "LinkedIn-Version": "202606"
+            **api["version_headers"],
         }
         
         try:
