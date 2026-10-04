@@ -156,3 +156,13 @@ class TestLinkedInSocialActions:
         stats = connector.get_social_actions('urn:li:share:123')
         
         assert stats == {"likes": 0, "comments": 0}
+
+
+class TestLinkedInVersionOwner:
+    """The version header has one owner."""
+
+    def test_linkedin_version_appears_once(self):
+        import pathlib
+        source = pathlib.Path(__file__).resolve().parents[1] / "linkedin_agents.py"
+        count = source.read_text(encoding="utf-8").count("LinkedIn-Version")
+        assert count == 1
