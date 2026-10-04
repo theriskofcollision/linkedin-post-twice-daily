@@ -23,7 +23,7 @@ To enable the automation, you must add the following **Secrets** to your GitHub 
 3. Add:
     - `LINKEDIN_ACCESS_TOKEN`: Your OAuth 2.0 Access Token.
     - `LINKEDIN_PERSON_URN`: Your LinkedIn ID.
-    - `GROQ_API_KEY`: Groq API Key (used by the workflow; model is set in `config.yaml`, currently `llama-3.3-70b-versatile`).
+    - `GROQ_API_KEY`: Groq API Key (used by the workflow; the model id is set only in `config.yaml`).
     - `NEWS_API_KEY`: NewsAPI Key.
     - `TAVILY_API_KEY`: Tavily Search API Key.
 

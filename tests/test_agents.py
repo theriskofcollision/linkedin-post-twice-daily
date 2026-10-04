@@ -170,3 +170,39 @@ class TestVibes:
         ]
         for vibe in expected_vibes:
             assert vibe in VIBES
+
+
+class TestModelIdOwner:
+    """config.yaml is the only place a model id may live in code or the README."""
+
+    def test_model_id_only_in_config_yaml(self):
+        import pathlib
+        import subprocess
+        import yaml
+
+        root = pathlib.Path(__file__).resolve().parents[1]
+        loaded = yaml.safe_load((root / "config.yaml").read_text())
+        model_id = loaded["model"]["name"]
+        assert isinstance(model_id, str) and model_id.strip()
+        retired = "llama-3.3-" + "70b-versatile"
+        tracked = subprocess.check_output(
+            ["git", "ls-files", "-z"], cwd=root
+        ).split(b"\0")
+        offenders = []
+        for rel_b in tracked:
+            if not rel_b:
+                continue
+            rel = rel_b.decode()
+            if rel == "config.yaml":
+                continue
+            if not (rel.endswith(".py") or rel == "README.md"):
+                continue
+            path = root / rel
+            if not path.is_file():
+                continue
+            body = path.read_text(encoding="utf-8")
+            for needle in (model_id, retired):
+                if needle in body:
+                    offenders.append(rel)
+                    break
+        assert offenders == []
