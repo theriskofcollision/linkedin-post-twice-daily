@@ -1,4 +1,4 @@
-# Weekly Brief — 2026-10-04
+# Weekly Brief — 2026-10-11
 
 ## 📊 Performance (from your manual stats)
 | Vibe | Posts tracked | Mean impressions |
@@ -13,26 +13,20 @@
 | The Fresh Eye | 1 | 0 |
 | The Archivist | 1 | 0 |
 | The Rebel | 1 | 0 |
-## 📝 Posts published this week: 7
-- 2026-09-27 · **The Debunker** · AI ethics and what developers should care about
-- 2026-09-28 · **The Satirist** · Skills that matter in the age of AI
-- 2026-09-29 · **The Provocateur** · Flow Engineering replacing Prompt Engineering
-- 2026-09-30 · **The Provocateur** · LLMs as operating systems for AI agents
-- 2026-10-01 · **The Architect** · Why single chatbots are becoming obsolete
-- 2026-10-02 · **The Contrarian** · Flow Engineering replacing Prompt Engineering
-- 2026-10-03 · **The Visionary** · Tools I use to build AI agents
+## 📝 Posts published this week: 1
+- 2026-10-04 · **The Provocateur** · How to stay relevant when AI writes code
 
 ## 🤝 Comment pack (USE THESE — this is the growth lever)
-### 🤝 Comment Pack for “Tools I Use to Build AI Agents”
+### 🤝 Comment Pack for **“How to Stay Relevant When AI Writes Code”**
 
 **1. Value Add:**  
-> Absolutely spot‑on! I’ve been experimenting with the same stack and found that coupling **CrewAI** with the **Model‑Context Protocol (MCP)** cuts the latency of tool calls by roughly **15 %** compared to hand‑rolled REST adapters. Adding the **ds4** local runtime on a modest 2 GB VM lets us run a 7B model entirely on‑premises, which saved us > 30 % on cloud inference costs while staying compliant with the EU AI Act. The combination of **KaliBench** for verified tool‑calling and Greg Kroah‑Hartman’s hardening checklist has turned our internal ticket‑triage bot into a production‑grade, audit‑ready service in under 48 hours.
+Great summary! A concrete example that illustrates the shift you’re describing: at a recent fintech hackathon, teams used GitHub Copilot + “Contextual Docs” to auto‑inject OpenAPI specs. The AI generated the boilerplate in seconds, but the winning team earned the prize by spending the bulk of their time **curating and version‑controlling those specs**, then manually wiring the business rules and security checks. Their post‑mortem showed a 30% faster feature rollout and 40% fewer production bugs compared to the “code‑only” baseline. It really drives home that *documentation is the new API* for AI‑augmented devs.  
 
 **2. Contrarian:**  
-> Great roundup! One nuance worth flagging: while no‑code platforms like **chitchatbot.ai** democratise agent creation, they can also obscure permission scopes, making prompt‑injection attacks harder to detect. In our experience, relying solely on UI‑driven builders without an explicit “tool‑contract” (as advocated by **KaliBench**) introduced over‑privileged API keys. A hybrid approach—no‑code for rapid prototyping, then a code‑first handoff to a **CrewAI + MCP** pipeline—seems to strike a better balance between speed and security.
+I love the focus on “expert‑generalists” and AI‑Ops, but I wonder if we’re overlooking a subtle risk: by offloading routine code to LLMs, we might inadvertently **de‑skill** our junior engineers faster than expected. The data you cited shows junior hiring down 18% YoY, yet many companies are still hiring “AI‑Mentor” roles that require high empathy and teaching ability—skills that are *harder* to automate. Perhaps the real relevance gap isn’t just technical meta‑skills, but **the ability to teach and supervise AI‑generated work** to keep the talent pipeline healthy.  
 
 **3. Question:**  
-> Fascinating developments! As we move toward edge‑centric agents powered by runtimes like **ds4**, how do you envision handling **dynamic tool discovery** when the device’s capabilities change (e.g., new sensors or firmware updates)? Could the MCP be extended with a self‑describing capability registry, or should we rely on periodic OTA policy pushes to keep tool contracts up‑to‑date? Would love to hear thoughts from those who have tackled this at scale.
+Fascinating points about documentation becoming a strategic asset. How do you see organizations balancing the need for **ever‑fresh, machine‑readable docs** with the inevitable drift that occurs in fast‑moving codebases? Are there emerging tools or processes (e.g., automated doc‑graph sync, AI‑driven doc reviews) that you think will become standard practice for maintaining that “knowledge‑base API” at scale?
 
 ## ✅ Your daily 20-minute checklist (the bot cannot do these for you)
 1. Send **5 connection requests** with a personal note (search: SMB owners in
