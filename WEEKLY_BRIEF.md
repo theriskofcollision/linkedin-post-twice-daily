@@ -1,4 +1,4 @@
-# Weekly Brief — 2026-10-11
+# Weekly Brief — 2026-10-18
 
 ## 📊 Performance (from your manual stats)
 | Vibe | Posts tracked | Mean impressions |
@@ -13,8 +13,8 @@
 | The Fresh Eye | 1 | 0 |
 | The Archivist | 1 | 0 |
 | The Rebel | 1 | 0 |
-## 📝 Posts published this week: 1
-- 2026-10-04 · **The Provocateur** · How to stay relevant when AI writes code
+## 📝 Posts published this week: 0
+- none
 
 ## 🤝 Comment pack (USE THESE — this is the growth lever)
 ### 🤝 Comment Pack for **“How to Stay Relevant When AI Writes Code”**
